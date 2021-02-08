@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://klee30810.github.io/posts/",
+	"title": "Posts",
+	"tags": [],
+	"description": "",
+	"content": "content/posts/_index.md\n"
+},
+{
 	"uri": "https://klee30810.github.io/",
 	"title": "Content",
 	"tags": [],
