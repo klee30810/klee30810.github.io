@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
+
+    <title>Battery Basics :: Kevin&#39;s Codex</title>
+
+    
+    <link href="/css/nucleus.css?1612874901" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1612874901" rel="stylesheet">
+    <link href="/css/hybrid.css?1612874901" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1612874901" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1612874901" rel="stylesheet">
+    <link href="/css/auto-complete.css?1612874901" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1612874901" rel="stylesheet">
+    <link href="/css/theme.css?1612874901" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1612874901" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1612874901"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/battery/battery-basics/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+  <svg id="grav-logo" style="width:100%; height:100%;" viewBox="0 0 504 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <path d="M235.832,71.564l-7.98,-0.001c-1.213,0.001 -2.197,0.987 -2.197,2.204l0,15.327l-0.158,0.132c-4.696,3.962 -10.634,6.14 -16.719,6.14c-14.356,0 -26.034,-11.68 -26.034,-26.037c0,-14.358 11.678,-26.035 26.034,-26.035c5.582,0 10.919,1.767 15.437,5.113c0.877,0.649 2.093,0.56 2.866,-0.211l5.69,-5.69c0.444,-0.442 0.675,-1.055 0.639,-1.681c-0.034,-0.627 -0.336,-1.206 -0.828,-1.597c-6.76,-5.363 -15.214,-8.314 -23.805,-8.314c-21.18,0 -38.414,17.233 -38.414,38.415c0,21.183 17.234,38.415 38.414,38.415c10.937,0 21.397,-4.705 28.698,-12.914c0.358,-0.403 0.556,-0.921 0.556,-1.46l0,-19.603c0,-1.217 -0.985,-2.203 -2.2,-2.203"
+      style="fill:#000;fill-rule:nonzero;"></path>
+    <path d="M502.794,34.445c-0.408,-0.616 -1.1,-0.989 -1.838,-0.989l-8.684,0c-0.879,0 -1.673,0.522 -2.022,1.329l-24.483,56.839l-24.92,-56.852c-0.352,-0.799 -1.142,-1.316 -2.012,-1.316l-8.713,0c-0.744,0 -1.44,0.373 -1.843,0.995c-0.408,0.623 -0.476,1.408 -0.174,2.09l30.186,68.858c0.352,0.799 1.143,1.317 2.017,1.317l10.992,0c0.879,0 1.673,-0.527 2.021,-1.329l29.655,-68.861c0.289,-0.68 0.222,-1.461 -0.182,-2.081"
+      style="fill:#000;fill-rule:nonzero;"></path>
+    <path d="M388.683,34.772c-0.353,-0.798 -1.142,-1.316 -2.017,-1.316l-10.988,0c-0.879,0 -1.673,0.522 -2.021,1.329l-29.655,68.861c-0.294,0.675 -0.226,1.46 0.182,2.077c0.407,0.619 1.096,0.993 1.838,0.993l8.684,0c0.879,0 1.673,-0.526 2.022,-1.329l24.478,-56.842l24.92,56.854c0.353,0.798 1.143,1.317 2.013,1.317l8.717,0c0.744,0 1.44,-0.374 1.843,-0.993c0.408,-0.624 0.471,-1.41 0.174,-2.094l-30.19,-68.857Z"
+      style="fill:#000;fill-rule:nonzero;"></path>
+    <path d="M309.196,81.525l0.476,-0.229c8.675,-4.191 14.279,-13.087 14.279,-22.667c0,-13.881 -11.295,-25.174 -25.176,-25.174l-31.863,0c-1.214,0 -2.199,0.988 -2.199,2.202l0,68.855c0,1.219 0.985,2.204 2.199,2.204l7.979,0c1.214,0 2.2,-0.985 2.2,-2.204l0,-58.679l21.684,0c7.059,0 12.799,5.739 12.799,12.796c0,5.885 -3.996,10.989 -9.728,12.408c-1.032,0.261 -2.064,0.393 -3.071,0.393l-7.977,0c-0.829,0 -1.585,0.467 -1.959,1.205c-0.378,0.74 -0.305,1.625 0.187,2.296l22.62,30.884c0.412,0.566 1.07,0.901 1.771,0.901l9.915,0c0.827,0 1.587,-0.467 1.96,-1.207c0.378,-0.742 0.302,-1.629 -0.186,-2.296l-15.91,-21.688Z"
+      style="fill:#000;fill-rule:nonzero;"></path>
+    <path d="M107.191,80.969c-7.255,-4.794 -11.4,-8.845 -15.011,-16.109c-2.47,4.977 -8.236,12.376 -17.962,18.198c-4.856,15.106 -27.954,44.015 -35.43,39.916c-2.213,-1.212 -2.633,-2.808 -2.133,-4.456c0.536,-4.129 9.078,-13.62 9.078,-13.62c0,0 0.18,1.992 2.913,6.187c-3.609,-11.205 5.965,-25.031 8.5,-29.738c3.985,-1.269 4.274,-6.387 4.274,-6.387c0.255,-7.909 -3.278,-13.635 -6.701,-17.059c2.459,3.002 3.255,7.539 3.372,11.694l0,0.023c0.012,0.469 0.012,0.93 0.011,1.39c-0.117,3.439 -1.157,8.19 -3.383,8.19l0.006,0.03c-2.289,-0.098 -5.115,0.391 -7.639,1.18l-5.582,1.334c0,0 2.977,-0.136 4.584,1.252c-1.79,2.915 -5.769,6.533 -10.206,8.588c-6.457,2.995 -8.312,-2.964 -5.034,-6.838c0.805,-0.946 1.618,-1.745 2.387,-2.399c-0.495,-0.513 -0.807,-1.198 -0.889,-2.068c-0.001,-0.005 -0.004,-0.009 -0.005,-0.013c-0.45,-1.977 -0.202,-4.543 2.596,-8.623c0.551,-0.863 1.214,-1.748 2.007,-2.647c0.025,-0.031 0.046,-0.059 0.072,-0.089c0.034,-0.042 0.072,-0.08 0.108,-0.121c0.02,-0.023 0.039,-0.045 0.059,-0.068c0.2,-0.228 0.413,-0.45 0.639,-0.663c3.334,-3.414 8.599,-6.966 16.897,-10.152c9.675,-14.223 13.219,-16.89 13.219,-16.89c1.071,-1.096 2.943,-2.458 3.632,-2.805c-5.053,-8.781 -6.074,-21.158 -4.75,-24.493c-0.107,0.18 -0.206,0.365 -0.287,0.556c0.49,-1.143 0.819,-1.509 1.328,-2.111c1.381,-1.632 6.058,-2.488 7.737,0.971c0.895,1.844 1.063,4.232 1.034,6.023c-3.704,-0.193 -7.063,4.036 -7.063,4.036c0,0 3.067,-1.448 6.879,-1.473c0,0 1.015,0.883 2.283,2.542c-1.712,3.213 -4.524,10.021 -2.488,17.168c0.338,1.408 0.849,2.619 1.483,3.648c0.024,0.045 0.044,0.089 0.069,0.135c0.051,0.066 0.096,0.122 0.144,0.183c3.368,5.072 9.542,5.665 9.542,5.665c-2.906,-1.45 -5.274,-3.76 -6.816,-6.56c-0.8,-1.498 -1.291,-2.762 -1.592,-3.761c-1.636,-6.313 0.771,-9.999 2.149,-12.471c3.17,-4.917 8.944,-7.893 15.151,-7.185c8.712,0.995 14.968,8.862 13.973,17.571c-0.608,5.321 -3.781,9.723 -8.142,12.117c1.049,2.839 -0.073,6.28 -0.073,6.28c2.642,3.323 2.758,5.238 2.667,7.017c-3.357,-0.565 -6.618,1.701 -6.618,1.701c0,0 6.476,-1.546 10.238,1.81c2.446,2.631 4.078,5.009 5.051,6.766c1.393,2.505 7.859,2.683 7.123,7.188c-0.737,4.499 -5.669,4.542 -13.401,-0.56M69.571,0c-38.424,0 -69.571,31.148 -69.571,69.567c0,38.422 31.147,69.573 69.571,69.573c38.42,0 69.568,-31.151 69.568,-69.573c0,-38.42 -31.148,-69.567 -69.568,-69.567"
+      style="fill:#000;fill-rule:nonzero;"></path>
+    <path d="M73.796,51.693c0.813,-0.814 0.813,-2.134 0,-2.947c-0.815,-0.814 -2.133,-0.814 -2.947,0c-0.815,0.813 -0.815,2.133 0,2.947c0.814,0.813 2.132,0.813 2.947,0" style="fill:#000;fill-rule:nonzero;"></path>
+    <path d="M66.445,53.149c-0.814,0.813 -0.814,2.133 0,2.947c0.813,0.814 2.133,0.814 2.947,0c0.813,-0.814 0.813,-2.134 0,-2.947c-0.814,-0.813 -2.134,-0.813 -2.947,0" style="fill:#000;fill-rule:nonzero;"></path>
+    <path d="M79.231,54.233c-1.274,-1.274 -3.339,-1.272 -4.611,0l-2.713,2.712c-1.274,1.275 -1.274,3.339 0,4.612l2.978,2.978c1.274,1.275 3.338,1.274 4.611,0l2.712,-2.712c1.274,-1.274 1.274,-3.339 0,-4.612l-2.977,-2.978Z" style="fill:#000;fill-rule:nonzero;"></path>
+    <path d="M95.759,41.445c-2.151,-2.578 1.869,-7.257 4.391,-4.463c4.645,5.148 -2.237,7.041 -4.391,4.463M105.004,44.132c3.442,-6.553 -1.427,-10.381 -4.773,-13.523c-5.36,-5.039 -10.706,-7.217 -16.811,-0.241c-6.102,6.977 -2.226,15.068 3.356,19.061c5.584,3.994 14.782,1.255 18.228,-5.297"
+      style="fill:#000;fill-rule:nonzero;"></path>
+  </svg>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1612874901"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1612874901"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/klee30810.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1612874901"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/" title="Batteries" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/battery/">
+          Batteries
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/battery/battery-basics/" title="Battery Basics" class="dd-item active">
+        <a href="/battery/battery-basics/">
+        Battery Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/posts/" title="Posts" class="dd-item
+        
+        
+        
+        ">
+      <a href="/posts/">
+          Posts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/my-first-post/" title="My First Post" class="dd-item ">
+        <a href="/posts/my-first-post/">
+        1st post
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://klee30810.github.io/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Content</a> > <a href='/battery/'>Batteries</a> > Battery Basics
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-2차전지의-필요성">(1) 2차전지의 필요성</a></li>
+        <li><a href="#2-전지">(2) 전지</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-리튬이온전지-개발">(1) 리튬이온전지 개발</a></li>
+    <li><a href="#2-전기자동차">(2) 전기자동차</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-양극재">1. 양극재</a></li>
+        <li><a href="#2-음극재">2. 음극재</a></li>
+        <li><a href="#3-전해액">3. 전해액</a></li>
+        <li><a href="#4-분리막">4. 분리막</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-기초">(1) 기초</a></li>
+    <li><a href="#2-설계">(2) 설계</a>
+      <ul>
+        <li><a href="#1-주요-구성물질">1) 주요 구성물질</a></li>
+        <li><a href="#2-구성-원리">2) 구성 원리</a></li>
+        <li><a href="#3-2차전지-설계">3) 2차전지 설계</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-제품">(3) 제품</a>
+      <ul>
+        <li><a href="#1-셀모듈팩">1) 셀/모듈/팩</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-신뢰성--안전성">(4) 신뢰성 &amp; 안전성</a>
+      <ul>
+        <li><a href="#1-저온--고온">1) 저온 &amp; 고온</a></li>
+        <li><a href="#2-수명특성">2) 수명특성</a></li>
+        <li><a href="#3-안전성">3) 안전성</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-소재---38---12-분리막-13-전해질-11">(1) 소재 : (+) 38%, (-) 12%, 분리막 13%, 전해질 11%</a></li>
+        <li><a href="#2-전고체전지--열로-인한-전해액-팽창--고온-시-발화">(2) 전고체전지 : 열로 인한 전해액 팽창 &amp; 고온 시 발화</a></li>
+        <li><a href="#3-나트륨전지--li-대체용--같은-알칼리-계열이므로-비슷한-화학적-성질">(3) 나트륨전지 : Li+ 대체용 ⇒ 같은 알칼리 계열이므로 비슷한 화학적 성질</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-개요-1">(1) 개요</a></li>
+    <li><a href="#2-세부사항">(2) 세부사항</a>
+      <ul>
+        <li><a href="#1-극판공정">1) 극판공정</a></li>
+        <li><a href="#2-조립-공정">2) 조립 공정</a></li>
+        <li><a href="#3-화성-공정">3) 화성 공정</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-전지-제조-공법-비교">(3) 전지 제조 공법 비교</a>
+      <ul>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Battery Basics
+            </h1>
+          
+
+        
+
+
+<h1 id="2차전지-기본개념">2차전지 기본개념</h1>
+<h1 id="1-개요">1. 개요</h1>
+<hr>
+<h3 id="1-2차전지의-필요성">(1) 2차전지의 필요성</h3>
+<ul>
+<li>일상생활에 많이 쓰임 / 일회용 소모품의 낭비 / 폐기물 및 환경오염</li>
+<li>리튬이온전지 : 가볍고 소형화 가능 / 규제물질(수은) X / 자연방전현상 小 / 3.7V 의 높은 출력</li>
+</ul>
+<h3 id="2-전지">(2) 전지</h3>
+<ul>
+<li>전기에너지를 생성할 수 있는 화학에너지를 저장하는 장치, 산화&amp;환원 작용</li>
+</ul>
+<ol>
+<li>종류</li>
+</ol>
+<ul>
+<li>망간: 일회용 건전지, 저렴</li>
+<li>알칼리 : 수산화 칼륨 전해액, 장시간 사용가능</li>
+<li>납 축전지 : 크고 무겁다 / 높은 전류와 외부 저항 낮음 ⇒ 차량용으로 널리 사용</li>
+<li>산화 은: 가장 소형 &amp; 저렴 (시계), 고온에서 잘 버팀</li>
+</ul>
+<ol start="2">
+<li>분류</li>
+</ol>
+<ul>
+<li>2차전지(축전지, 충전지) : 전기 충전을 반복해 지속적으로 사용가능하도록 만듬
+<ul>
+<li>1차전지: 시간이 흐르며 전압이 낮아짐</li>
+<li>2차전지 : 사용가능 시간까지 일정하게 전압이 유지되다가 방전시에 끊김</li>
+</ul>
+</li>
+<li>리튬전지 : 소형, 휴대용 → 3V 고압, 고밀도 에너지 + 양호한 보존성
+<ul>
+<li>음극에 금속 리튬 &amp; 전해액에 유기용매</li>
+<li>금속 Li는 이온화 경향이 커서 활성화 되어있으므로 물과 반응하면 수소가스를 방출하며 그 자체도 연소성</li>
+</ul>
+</li>
+<li>연료전지 : 화학적으로 에너지를 저장하고 연료를 소모하며 전력 생산
+<ul>
+<li>전해질을 녹임 물로 전류를 흘려보내 $H_2, O_2$발생 → 전해질로 사용하는 전극에 $H_2$, 산화전극에 $O_2$를 보내서 화학반응 유도</li>
+<li>수소 연료와 산화제 ⇒ 배출열을 이용해 연료의 80%까지 에너지로 변환</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/battery/battery_basics/Untitled.png" alt="Untitled"></p>
+<ul>
+<li>태양전지 : 태양 빛에너지 광전효과로 전기 에너지 변환</li>
+<li>커패시터 : 충,방전에 따른 성능 저하를 방지하고 이온 분자를 저장할 수 있는 전기 이중 충전지, 쉽게 열화되지 않는다</li>
+</ul>
+<ul>
+<li>용량 : 방전되어 전류가 흐르지 않기까지 사용할 수 있는 전기에너지의 양</li>
+</ul>
+<ul>
+<li>
+<p>2차전지 재충전은 무한대로 할 수 있는게 아님: 전극의 열화로 용량이 줄어듦 ⇒ 실제 용량이 공칭 용량의 50%까지 충방전할 수 잇는 횟수</p>
+</li>
+<li>
+<p>자기방전율 : 방치시 서서히 방전 ⇒ Mg (10) → alkali (5) → Li (2)</p>
+</li>
+</ul>
+<ul>
+<li>에너지 밀도 : 스마트폰 → 질량 당 $\rho$  /  EV → 체적 당 $\rho$</li>
+</ul>
+<h1 id="2-2차전지-산업">2. 2차전지 산업</h1>
+<hr>
+<h2 id="1-리튬이온전지-개발">(1) 리튬이온전지 개발</h2>
+<p><img src="images/battery/battery_basics/Untitled1.jpg" alt="Untitled 1"></p>
+<ul>
+<li>리튬 : 가장 경량 (작은 밀도), 전기 화학반응으로 가장 높은 전압 방출, 메모리 효과 없음 / 반응성이 커서 폭발의 위험 존재
+<ul>
+<li>양극집전체 : Al 금속 산화물</li>
+<li>양극 : $LiCoO_2, LiFePO_4$</li>
+<li>전해액 : 리튬 소금계열</li>
+<li>분리막 : 폴리에틸렌, 폴리프로필렌</li>
+<li>음극 : 흑연(Graphite)</li>
+<li>음극집전체 : Cu</li>
+</ul>
+</li>
+<li>충전 : Li+ 가 (+) → (-)로 흐름 / 양극 전자와 Li+는 외부 전압으로 인해 음극으로 이동되며 전압차 발생</li>
+<li>방전 : 음극의 Li+ 가 (+)로 흐름 / 전위차가 있으므로 도선을 타고 음극 전자가 양극으로 흐름 &amp; 전해액을 통해 Li+가 (+)dlehd</li>
+<li>소형 배터리 : IT제품 + 가전제품 + EV (원형배터리)</li>
+<li>ESS : 저장장치, 전기에너지가 수요가 많거나 비쌀 때 사용 ⇒ 스마트 그리드</li>
+<li>자동차 배터리 : 기술과 질적으로 앞섬 (중국은 95% 이상이 자국 제품용)</li>
+</ul>
+<ul>
+<li>
+<p>BMS (Battery Management System) : 배터리 모니터링 &amp; 충방전 제어</p>
+</li>
+<li>
+<p>PCS (Power Conversion System) : 저장, 방출을 위한 전기특성 (주파수, 전압, 교류) 조절</p>
+</li>
+<li>
+<p>EMS (Energy Management System) : 컨트롤 센터에서 ESS 모니터링 &amp; 제어</p>
+</li>
+</ul>
+<h2 id="2-전기자동차">(2) 전기자동차</h2>
+<ul>
+<li>연료 폭발로 인한 소음 無, 엔진 왕복운동을 회전으로 바꿀 일이 없어 진동 無, 회전수로 속도 조절 &amp; 일정하게 높은 토크 ⇒ 변속기 無</li>
+</ul>
+<ul>
+<li>완속(AC)/급속(DC) 충전기, 컨버터(350V→12V), 인버터(DC→AC, AC의 freq로 모터 조절), 감속기 (회전수 &amp; 토크), 배터리팩</li>
+</ul>
+<ol>
+<li>
+<p>HEV : 저속, 시동 시 전기, 감속시 발전(에너지 회생 모드), 엔진 메인</p>
+</li>
+<li>
+<p>PHEV : 전기 메인, 연비 + 주행거리, 배터리 없어도 기름으로 구동</p>
+</li>
+<li>
+<p>EV  : 엔진과 연료탱크 無 ⇒ 차체 단순화 &amp; 소음 無</p>
+</li>
+</ol>
+<h1 id="3-2차전지-4대-소재">3. 2차전지 4대 소재</h1>
+<hr>
+<p><img src="images/battery/battery_basics/Untitled2.png" alt="Untitled"></p>
+<h3 id="1-양극재">1. 양극재</h3>
+<ul>
+<li>리튬이온을 제공하는 소스</li>
+<li>배터리의 용량과 전압 결정 ⇒ 배터리 성능 &amp; 특성 결정</li>
+<li>LCO, NCM, NCA, LMO, LFP</li>
+</ul>
+<p><img src="images/battery/battery_basics/Untitled3.png" alt="Untitled"></p>
+<ul>
+<li>가장 원가비중 大,</li>
+<li>에너지 밀도를 높이기 위해 니켈금속(충방전시 입자 균열 큼) 함유량 증가 / 안전성 小</li>
+<li>Cobalt : 가격변동 大, 5% 미만시 성능 하락</li>
+</ul>
+<h3 id="2-음극재">2. 음극재</h3>
+<ul>
+<li>양극의 Li+를 흡수, 방출하며 외부 회로로 전류를 흐르게 함 ⇒ 안정성</li>
+<li>흑연 : 안정된 구조 &amp; 낮은 화학 반응성 ⇒ Li+를 많이 저장</li>
+</ul>
+<h3 id="3-전해액">3. 전해액</h3>
+<ul>
+<li>Li+의 이동 매개체</li>
+<li>양, 음극 사이 Li+만 이동하도록 함 ⇒ 이온의 전도성 보장</li>
+</ul>
+<h3 id="4-분리막">4. 분리막</h3>
+<ul>
+<li>양, 음극 접촉 X</li>
+<li>PE의 미세한 구멍으로 Li+ 이동</li>
+</ul>
+<h1 id="4-2차전지-제품">4. 2차전지 제품</h1>
+<hr>
+<p><img src="images/battery/battery_basics/Untitled4.png" alt="Untitled"></p>
+<p><img src="images/battery/battery_basics/Untitled5.png" alt="Untitled"></p>
+<h2 id="1-기초">(1) 기초</h2>
+<ul>
+<li>충전 : 외부 전기에너지 인가 → 활물질의 포텐셜에너지 증가 → Li+는 전해액으로 이탈 &amp; 전자는 도선으로 이탈 → 음극으로 이동</li>
+<li>충방전시 산화(e- 증가), 환원(e- 감소)이 동시에 일어남</li>
+<li>표준환원전위 : 물질의 고유한 전위차 ⇒ Li+가 가장 큼</li>
+</ul>
+<h2 id="2-설계">(2) 설계</h2>
+<h3 id="1-주요-구성물질">1) 주요 구성물질</h3>
+<ul>
+<li>양극 활물질 : Li함유, 불안정해서 산화물과 함꼐 사용 ⇒ 활물질 + 도전제(전도성 증가) + 바인더 → Li+활용량 증가 &amp; 강한 결합에너지(이온화 에너지)</li>
+<li>음극 활물질 : (+)에서 이동해 온 Li+의 가역적 저장 및 방출로 외부 회로를 통해 전류를 흐르게 함 ⇒ 이동 된 Li+를 얼마나 저장되느냐
+<ul>
+<li>충전 시 Li+는 (-)에 있고 도선시 자연스럽게 방전</li>
+<li>흑연 : 안정적, 반응성 낮음, Li+ 저장량 大</li>
+</ul>
+</li>
+<li>전해액 : Li+의 이동통로, 전도가 높은 유기물 사용 (극성 有)
+<ul>
+<li>이온 전도도 高 &amp; 전극에 대한 안전성 &amp; 온도 범위(20~60$^oC$) &amp; 연소안전성</li>
+<li>염(Li+ 이동 통로) + 용매 (염을 용해) + 첨가제</li>
+</ul>
+</li>
+<li>분리막 : 양극 활물질 접촉 제한 &amp; Li+ 이동통로
+<ul>
+<li>온도 상승시 접촉을 막는 열적 수축 특성 필요 → PE, PP</li>
+<li>충분한 밀착 필요</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-구성-원리">2) 구성 원리</h3>
+<ul>
+<li>많은 에너지 저장을 위한 다층구조 (양극-분리막-음극 ⇒ Jelly Roll)</li>
+<li>와인딩 &amp; 스택</li>
+</ul>
+<h3 id="3-2차전지-설계">3) 2차전지 설계</h3>
+<ul>
+<li>충방전시 양극의 총 전하량과 음극의 총 전하량은 동일</li>
+<li>전지전압은 충방전량에 비례</li>
+<li>설계전위 이상 전압을 보일 수 없음</li>
+<li>음극이 양극보다 가역용량이 더 커야함
+<ul>
+<li>리튬석출: 충전시 음극에 저장되지 않는 Li+형성, 나중에 음극과 접촉하여 쇼트 발생</li>
+</ul>
+</li>
+<li>SEI (Solid Electrolyte Interphase) 막
+<ul>
+<li>음극 활물질 표면의 피막</li>
+<li>전자의 이동을 제한하여 추가적 전기분해 방지 (전해액 소모 방지)</li>
+</ul>
+</li>
+<li>분극 : 실제 전압은 낮게 나오고 충전시 전압은 더 높게 나옴 → 내부 저항에 따른 과전압 형성 or 부위별 Li+ 농도 차이</li>
+</ul>
+<h2 id="3-제품">(3) 제품</h2>
+<h3 id="1-셀모듈팩">1) 셀/모듈/팩</h3>
+<p><img src="images/battery/battery_basics/Untitled6.png" alt="Untitled"></p>
+<ul>
+<li>셀: 기본 최소 단위</li>
+<li>모듈 : 셀이 모인 플랫폼</li>
+<li>팩 : 제품에 맞는 특성 + BMS (정확한 배터리 상태 해석)</li>
+</ul>
+<ul>
+<li>BMS : 장시간 사용시에도 안정성</li>
+</ul>
+<ul>
+<li>다수의 셀을 장시간 사용시 용량 변질 &amp; 각 셀별 스펙이 달라짐</li>
+</ul>
+<p>⇒ 과전압, 과충전 가능 : 셀별 전압 detecting</p>
+<ul>
+<li>필요 이상의 전류/전압을 방지하기 위한 보호회로 장착</li>
+</ul>
+<h2 id="4-신뢰성--안전성">(4) 신뢰성 &amp; 안전성</h2>
+<h3 id="1-저온--고온">1) 저온 &amp; 고온</h3>
+<ul>
+<li>저온 : 용량 감소 (IT : $-10^oC$, EV: $-30^oC$) → 전해액의 mobility 감소 → 내부저항 증가</li>
+<li>고온 : 용량 감소 → 전해액의 부피 팽창으로 mobility 증가 상쇄</li>
+</ul>
+<h3 id="2-수명특성">2) 수명특성</h3>
+<ul>
+<li>특정 용량까지 도달하는데 전지가 충방전을 얼마나 많이 할 수 있는 지횟수</li>
+<li>사이클 특성 : 충방전 회숫 → 충방전 조건의 병기 必
+<ul>
+<li>급속한 경우 : 리튬금속 설축 or 전극판의 균일성 무너뜨림</li>
+</ul>
+</li>
+<li>율속(C-rate) : 전지 충방전시의 속도, 충방전시의 방전 전류의 변화
+<ul>
+<li>1.0C 충전 : 전지 만충까지 1시간 충전 / 0.5C 방전 : 100% 용량을 30분반에 방전</li>
+<li>전동공구,청소기 : 10C↑, EV : 40C↑, 시동용 전지 : 100C↑</li>
+<li>활물질 + 극판설계 : 이온의 path를 줄여야!</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-안전성">3) 안전성</h3>
+<ul>
+<li>외부단락 (External Short) : 상온단락, 고온단락, 물속 투입</li>
+<li>전기적 오사용 (Electric Abuse) : 과충전, 연속충전, 고율 충전 → 팩에서 평가</li>
+<li>기계적 오사용 (Mechanical Abuse) : 관통, 압축, 낙하</li>
+<li>열적 오사용 (Thermal Abuse) : 열노출, 열파편비산, 열파편관통</li>
+</ul>
+<h1 id="5-2차전지의-미래">5. 2차전지의 미래</h1>
+<hr>
+<h3 id="1-소재---38---12-분리막-13-전해질-11">(1) 소재 : (+) 38%, (-) 12%, 분리막 13%, 전해질 11%</h3>
+<ul>
+<li>음극재, 전해액 : 기술장벽 低 → 50% 이상 중국</li>
+<li>분리막 : 기술장벽 高 → 70% 일본</li>
+<li>양극 활물질 : 고용량 → NCM, NCA ⇒ 비싼 Cobalt 줄이기</li>
+<li>음극 활물질 : 동일한 물질에서 Li+ 많이 보관 &amp; 부피 팽창 줄이기</li>
+</ul>
+<ul>
+<li>리튬금속 : 안전성 低, 실리콘 : 300% 팽창</li>
+</ul>
+<h3 id="2-전고체전지--열로-인한-전해액-팽창--고온-시-발화">(2) 전고체전지 : 열로 인한 전해액 팽창 &amp; 고온 시 발화</h3>
+<p>⇒ 안전 &amp; 고용량 / 유해가스 + 계면저항 高</p>
+<h3 id="3-나트륨전지--li-대체용--같은-알칼리-계열이므로-비슷한-화학적-성질">(3) 나트륨전지 : Li+ 대체용 ⇒ 같은 알칼리 계열이므로 비슷한 화학적 성질</h3>
+<h1 id="6-2차전지-생산제조">6. 2차전지 생산/제조</h1>
+<hr>
+<h2 id="1-개요-1">(1) 개요</h2>
+<p><img src="/images/battery/battery_basics/Untitled7.png" alt="Untitled"></p>
+<ul>
+<li>극판공정 : 양극 &amp; 음극 활물질을 집전체에 코팅하여 필요한 폭으로 slitting 한 후 건조된 상태로 제작</li>
+<li>조립공정 : 극판을 알맞게 재단 후 보관 케이스에 삽입, 전해액 주입 후 골고루 분산되도록 에이징</li>
+<li>화성공정 : 충방전을 통해 설계된 전압과 용량이 구현하는지 확인하고 불량 검출 → 최초 충전시 음극 표면 SEI막 형성</li>
+</ul>
+<h2 id="2-세부사항">(2) 세부사항</h2>
+<h3 id="1-극판공정">1) 극판공정</h3>
+<ul>
+<li>약품조합(Mixing) → 코팅(Coating)→프레싱(Pressing)→슬리팅(Slitting)→건조(Drying)
+<ul>
+<li>Mixing: 활물질을 집전체 표면에 코팅하기 위해 접착력을 위한 Binder 첨가 &amp; 도전체 특성을 위한 도전체 첨가 ⇒ 필요한 점도와 분산성 달성</li>
+<li>Coating : (+)활물질은 Al금속집전체, (-)활물질은 구리금속집전체 → 집전체 양면 코팅 &amp; 건조</li>
+<li>Pressing : 흡착력 강화를 위한 프레싱 &amp; 부피감소 + 지속사용에 따른 수명특성 ↑</li>
+<li>Slitting : 전지 높이 맞게 절단, 가로방향 절단</li>
+<li>Drying : 수분 및 기타 불순물 제거</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-조립-공정">2) 조립 공정</h3>
+<ul>
+<li>
+<p>극판을 케이스에 넣고 전해액을 투입해 전지 형태를 갖추는 단계</p>
+</li>
+<li>
+<p>와인딩</p>
+<ul>
+<li>극판을 양극-분리막-음극의 순서대로 배열 후 필요한 두께만큼 감아주는 방식</li>
+<li>활물질이 길이 방향으로 코팅이 단절되어 있고 코팅 길이가 총 길이에 해당</li>
+<li>비 코팅부에 도전으로 전자가 이동하도록 탭 용접</li>
+</ul>
+</li>
+<li>
+<p>스택</p>
+<ul>
+<li>극판을 설계치대로 절단된 양극-분리막-음극으로 적층</li>
+<li>무정형 구조에 적용 가능</li>
+<li>노칭 공정으로 양/음극 극판을 형상에 맞도록  slitting 후, 분리막을 지그재그로 적층하여 사이에 양/음극 투입</li>
+<li>양/음극 각 극판에 단자 연결부가 있으며, 여러 층이 겹치면 극판 간 연결된 상태가 아니므로 극판 간 단자부를 연결하여 전류가 흐름</li>
+</ul>
+</li>
+<li>
+<p>젤리롤의 케이스</p>
+<ul>
+<li>캔타입: 삽입 후 상부 커버와 양/음극 단자를 연결하고 조립, 용접으로 밀봉 후 전해액 주입</li>
+<li>파우치타입 : 평면의 파우치를 금형으로 젤리롤 방에 삽입 → 반대편 용접 &amp; 파우치를 젤리롤보다 크게 하여 Pre-charging시 전해액 분해로 인한 가스 포집의 가스방 형성 → 조립 전 배출 후 최종 과정에서 제거 → 전해액 투입 →에이징</li>
+</ul>
+<p><img src="/images/battery/battery_basics/Untitled8.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="3-화성-공정">3) 화성 공정</h3>
+<ul>
+<li>조립 완료 전지에 전기에너지를 인가 해 Li+ 를 (-)로 이동시켜 전지 기능 확인</li>
+</ul>
+<p><img src="/images/battery/battery_basics/Untitled9.png" alt="Untitled"></p>
+<ul>
+<li>Pre-charging : 음극 표면 SEI막이 중요한 역할</li>
+<li>Degassing : SEI 막 생성 중 전해액 분해의 가스 배출</li>
+<li>Folding : Degas 후 파우치 끝을 접어 sealing 면이 나오지 않고 부피 ↓</li>
+<li>Pressing : 물리적 흡착으로 부품 파손 방지 + 설계값이 두께 조절</li>
+<li>Charging / Discharging : 마지막 충방전 확인 &amp; 불량품</li>
+</ul>
+<h2 id="3-전지-제조-공법-비교">(3) 전지 제조 공법 비교</h2>
+<ul>
+<li>원통형은 와인딩 / 아닌 형태는 와인딩 or 스택</li>
+</ul>
+<ol>
+<li>
+<p>와인딩 : 회전시키며 극판을 감아주면 완성 → 생산성 ↑ → 설비 투자 ↓ ⇒ 원통, 사각형은 생산 가능</p>
+</li>
+<li>
+<p>스택 : 다각형 전지 자유롭게 설계 &amp; 성능 및 품질 면 유리</p>
+</li>
+</ol>
+<p><img src="/images/battery/battery_basics/Untitled10.png" alt="Untitled"></p>
+<p><img src="/images/battery/battery_basics/Untitled11.png" alt="Untitled"></p>
+<h3 id="references">References</h3>
+<hr>
+<ul>
+<li>렛유인 2차전지 기초</li>
+<li>[https://www.heybrandonkim.com/?p=1833](</li>
+</ul>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/battery/" title="Batteries"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1612874901"></script>
+    <script src="/js/perfect-scrollbar.min.js?1612874901"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1612874901"></script>
+    <script src="/js/jquery.sticky.js?1612874901"></script>
+    <script src="/js/featherlight.min.js?1612874901"></script>
+    <script src="/js/highlight.pack.js?1612874901"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1612874901"></script>
+    <script src="/js/learn.js?1612874901"></script>
+    <script src="/js/hugo-learn.js?1612874901"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1612874901"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
