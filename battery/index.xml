@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Batteries on Kevin&#39;s Codex</title>
+    <title>Battery on Kevin&#39;s Codex</title>
     <link>https://klee30810.github.io/battery/</link>
-    <description>Recent content in Batteries on Kevin&#39;s Codex</description>
+    <description>Recent content in Battery on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 09 Feb 2021 21:14:47 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/battery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Feb 2021 22:08:03 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/battery/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Battery Basics</title>
       <link>https://klee30810.github.io/battery/battery-basics/</link>
       <pubDate>Tue, 09 Feb 2021 21:14:47 +0900</pubDate>
       
       <guid>https://klee30810.github.io/battery/battery-basics/</guid>
-      <description>2차전지 기본개념 1. 개요  (1) 2차전지의 필요성  일상생활에 많이 쓰임 / 일회용 소모품의 낭비 / 폐기물 및 환경오염 리튬이온전지 : 가볍고 소형화 가능 / 규제물질(수은) X / 자연방전현상 小 / 3.7V 의 높은 출력  (2) 전지  전기에너지를 생성할 수 있는 화학에너지를 저장하는 장치, 산화&amp;amp;환원 작용   종류   망간: 일회용 건전지, 저렴 알칼리 : 수산화 칼륨 전해액, 장시간 사용가능 납 축전지 : 크고 무겁다 / 높은 전류와 외부 저항 낮음 ⇒ 차량용으로 널리 사용 산화 은: 가장 소형 &amp;amp; 저렴 (시계), 고온에서 잘 버팀  분류   2차전지(축전지, 충전지) : 전기 충전을 반복해 지속적으로 사용가능하도록 만듬  1차전지: 시간이 흐르며 전압이 낮아짐 2차전지 : 사용가능 시간까지 일정하게 전압이 유지되다가 방전시에 끊김   리튬전지 : 소형, 휴대용 → 3V 고압, 고밀도 에너지 + 양호한 보존성  음극에 금속 리튬 &amp;amp; 전해액에 유기용매 금속 Li는 이온화 경향이 커서 활성화 되어있으므로 물과 반응하면 수소가스를 방출하며 그 자체도 연소성   연료전지 : 화학적으로 에너지를 저장하고 연료를 소모하며 전력 생산  전해질을 녹임 물로 전류를 흘려보내 $H_2, O_2$발생 → 전해질로 사용하는 전극에 $H_2$, 산화전극에 $O_2$를 보내서 화학반응 유도 수소 연료와 산화제 ⇒ 배출열을 이용해 연료의 80%까지 에너지로 변환     태양전지 : 태양 빛에너지 광전효과로 전기 에너지 변환 커패시터 : 충,방전에 따른 성능 저하를 방지하고 이온 분자를 저장할 수 있는 전기 이중 충전지, 쉽게 열화되지 않는다   용량 : 방전되어 전류가 흐르지 않기까지 사용할 수 있는 전기에너지의 양    2차전지 재충전은 무한대로 할 수 있는게 아님: 전극의 열화로 용량이 줄어듦 ⇒ 실제 용량이 공칭 용량의 50%까지 충방전할 수 잇는 횟수</description>
+      <description>2차전지 기본개념 adfadf$$a_x b_x$$ $$ a_i b_i $$
+1. 개요  (1) 2차전지의 필요성  일상생활에 많이 쓰임 / 일회용 소모품의 낭비 / 폐기물 및 환경오염 리튬이온전지 : 가볍고 소형화 가능 / 규제물질(수은) X / 자연방전현상 小 / 3.7V 의 높은 출력  (2) 전지  전기에너지를 생성할 수 있는 화학에너지를 저장하는 장치, 산화&amp;amp;환원 작용   종류   망간: 일회용 건전지, 저렴 알칼리 : 수산화 칼륨 전해액, 장시간 사용가능 납 축전지 : 크고 무겁다 / 높은 전류와 외부 저항 낮음 ⇒ 차량용으로 널리 사용 산화 은: 가장 소형 &amp;amp; 저렴 (시계), 고온에서 잘 버팀  분류   2차전지(축전지, 충전지) : 전기 충전을 반복해 지속적으로 사용가능하도록 만듬  1차전지: 시간이 흐르며 전압이 낮아짐 2차전지 : 사용가능 시간까지 일정하게 전압이 유지되다가 방전시에 끊김   리튬전지 : 소형, 휴대용 → 3V 고압, 고밀도 에너지 + 양호한 보존성  음극에 금속 리튬 &amp;amp; 전해액에 유기용매 금속 Li는 이온화 경향이 커서 활성화 되어있으므로 물과 반응하면 수소가스를 방출하며 그 자체도 연소성   연료전지 : 화학적으로 에너지를 저장하고 연료를 소모하며 전력 생산  전해질을 녹임 물로 전류를 흘려보내 $H_2, O_2$발생 → 전해질로 사용하는 전극에 $H_2$, 산화전극에 $O_2$를 보내서 화학반응 유도 수소 연료와 산화제 ⇒ 배출열을 이용해 연료의 80%까지 에너지로 변환     태양전지 : 태양 빛에너지 광전효과로 전기 에너지 변환 커패시터 : 충,방전에 따른 성능 저하를 방지하고 이온 분자를 저장할 수 있는 전기 이중 충전지, 쉽게 열화되지 않는다   용량 : 방전되어 전류가 흐르지 않기까지 사용할 수 있는 전기에너지의 양    2차전지 재충전은 무한대로 할 수 있는게 아님: 전극의 열화로 용량이 줄어듦 ⇒ 실제 용량이 공칭 용량의 50%까지 충방전할 수 잇는 횟수</description>
     </item>
     
   </channel>
