@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="Kevin&#39;s Codex Blog">
+<meta name="author" content="Kyungmin Lee, Kevin">
+
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+ 
+   <title>The Li-Ion Rechargeable Battery: A Perspective - Kevin&#39;s Codex</title>
+
+    
+    <link href="/css/nucleus.css?1613019555" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613019555" rel="stylesheet">
+    <link href="/css/hybrid.css?1613019555" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613019555" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613019555" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613019555" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613019555" rel="stylesheet">
+    <link href="/css/theme.css?1613019555" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613019555" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1613019555" rel="stylesheet">
+    
+    <link href="/css/foo.css?1613019555" rel="stylesheet"><link href="/css/bar.css?1613019555" rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.min.js?1613019555"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/paper_review/battery/goodenough2013/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://klee30810.github.io/">
+<img src="/images/logo.png" alt="logo.png" height="110" width="110">
+</a>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1613019555"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613019555"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/klee30810.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1613019555"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/" title="Paper Review" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/paper_review/">
+          Paper Review
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/battery/" title="Battery" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/paper_review/battery/">
+          Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/paper_review/battery/goodenough2013/" title="The Li-Ion Rechargeable Battery: A Perspective" class="dd-item active">
+        <a href="/paper_review/battery/goodenough2013/">
+        The Li-Ion Rechargeable Battery: A Perspective
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/battery/">
+          Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/battery/battery-basics/" title="Battery Basics" class="dd-item ">
+        <a href="/battery/battery-basics/">
+        Battery Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/posts/" title="Posts" class="dd-item
+        
+        
+        
+        ">
+      <a href="/posts/">
+          Posts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/my-first-post/" title="My First Post" class="dd-item ">
+        <a href="/posts/my-first-post/">
+        1st post
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://klee30810.github.io/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                   The Li-Ion Rechargeable Battery: A Perspective
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/battery">battery</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              The Li-Ion Rechargeable Battery: A Perspective
+            </h1>
+          
+
+        
+
+
+<ul>
+<li>Author : Kyungmin Lee</li>
+<li>Thesis : Li-Ion Battery is hot trend of technology with its cathode, anode, electrolyte, and separation membrane.</li>
+<li>Citation : Goodenough, J. B., &amp; Park, K. S. (2013). The Li-ion rechargeable battery: a perspective. <em>Journal of the American Chemical Society</em>, <em>135</em>(4), 1167-1176.</li>
+</ul>
+
+<h3 id="abstract">Abstract</h3>
+
+<hr>
+
+<ul>
+<li>Each cell of a battery stores electrical energy as chemical energy in two electrodes, a <strong>reductant (anode)</strong> and an <strong>oxidant (cathode)</strong>
+
+<ul>
+<li>separated by an <strong>electrolyte</strong> that transfers the ionic component of the chemical reaction inside the cell and forces the electronic component outside the battery</li>
+</ul></li>
+<li>The chemical reaction of a rechargeable battery must be <strong>reversible</strong> on the application of a charging I and V.</li>
+<li>Critical parameters of a rechargeable battery are <strong>safety</strong>, <strong>density of energy</strong> that can be stored at a specific power input and retrieved at a specific power output, <strong>cycle and shelf life, storage efficiency, and cost of fabrication</strong></li>
+<li>Conventional rechargeable battery have <strong>solid electrode &amp; liquid electrolyte</strong></li>
+<li>The positive electrode (cathode) consists of a host framework into <strong>which the mobile (working) cation is inserted reversibly over a finite solid−solution range</strong> which limits the amount of charge per electrode formula unit and is reduced at higher current by the rate of transfer of the workding ion across the interfaces.</li>
+<li>the difference between energies of the LUMO and the HOMO of the electrolyte, i.e., <strong>electrolyte window</strong>, determines the maximum voltage for a long shelf and cycle life.</li>
+<li>Li-ion rechargeable battery uses an <strong>organic electrolyte</strong> with a larger window, which increase the density of stored energy</li>
+<li>Anode or cathode electrochemical potentials outside the electrolyte window can increase V, but they <strong>require formation of a passivating surface layer</strong> that must be permeable to Li+ and capable of adapting rapidly to the changing electrode surface area as the electrode changes volume during cycling.</li>
+<li>A passivating surface layer adds to the <strong>impedance of the Li+</strong> transfer across the electrode/electrolyte interface and <strong>lowers the cycle life</strong> of a battery cell.</li>
+<li>Moreover, passivation layer on the anode robs Li from the cathode irreversibly.</li>
+<li>Improvement can be doen through by investigating and controlling electrode <strong>passivation layers</strong>, improving the rate of Li+ transfer <strong>across electrode/electrolyte interfaces</strong>, identifying electrolytes <strong>with larger windows while retaining a Li+ conductivity</strong> \(σ_{Li} &gt; 10^{-3}S cm^{-1}\), synthesizing electrode morphologies that <strong>reduce the size of the active particles</strong> while pinning them on current collectors of <strong>large surface area</strong> accessible by the electrolyte, <strong>lowering the cost</strong> of cell fabrication, , <strong>designing displacement-reaction anodes</strong> of higher capacity that allow a safe, fast charge, and designing <strong>alternative cathode</strong> hosts</li>
+<li>Beyond approach : using electrode hosts with <strong>two-electron redox centers</strong>; replacing the cathode hosts by <strong>materials that undergo displacement reactions (e.g. sulfur)</strong> by liquid cathodes that may contain <strong>flow-through redox molecules</strong>, or by catalysts for air cathodes; developing a <strong>Li+ solid electrolyte separator membrane</strong> that allows an organic and aqueous liquid electrolyte on the anode and cathode sides, respectively, and <strong>imaginative morphologies</strong></li>
+</ul>
+
+<h3 id="introduction">Introduction</h3>
+
+<hr>
+
+<ul>
+<li>Li-Ion rechaeable battery (LIB) : for how long a shelf and cycle life, with how rapid a response to a power outage or fluctuation in the grid, and with how large a capacity at a competitive cost?</li>
+<li>The output current <strong>I</strong> and/or time Δt to depletion of the stored energy in a battery can be <strong>increased</strong> <strong>by enlarging the area of the electrodes or connecting cells in parallel</strong>; the voltage <strong>V</strong> for a desired power P = IV by <strong>connecting cells in series</strong>.</li>
+<li>the management of the individual cells of a battery becomes more complex, as does the cost, the larger the number of cells needed for a given battery application.</li>
+</ul>
+
+<h3 id="electrochemical-cells">Electrochemical Cells</h3>
+
+<hr>
+
+<ul>
+<li>An electrochemical cell consists of two electrodes, <strong>the anode and the cathode</strong>, separated by an <strong>electrolyte</strong>, having a reversible chemical reaction at two electrodes.</li>
+<li>The electrolyte may be <strong>a liquid or a solid</strong>. Solid electrolytes are used with gaseous or liquid electrodes; they may be used with solid electrodes, but solid−solid interfaces are problematic <strong>unless the solid electrolyte is a polymer or the solid electrodes are thin.</strong></li>
+<li>Solid electrodes separated by a liquid electrolyte are kept apart by an <strong>electrolyte-permeable separator</strong>.</li>
+</ul>
+
+<p><figure><img src="/images/paper_review/battery/goodenough2013/figure1.png" alt="figure1"></figure></p>
+
+<ul>
+<li><p>The electrolyte <strong>conducts the ionic component of the chemical reaction between the anode and the cathode</strong>, but it <strong>forces the electronic component to traverse an external circuit</strong> where it does work.</p></li>
+
+<li><p>Ionic mobility in the electrolyte is smaller than the electronic conductivity in a metal, so a cell has <strong>large-area electrodes separated by a thin electrolyte;</strong></p></li>
+
+<li><p>metallic current collectors <strong>deliver electronic current</strong> from/to the redox centers of the electrodes to/from posts that connect to the external circuit.</p></li>
+
+<li><p>During discharge and charge, an <strong>internal battery resistance \(R_b\)</strong> to the ionic current \(I<em>i = I\) **reduces the output voltage \(V</em>{dis}\)** from the open-circuit voltage \(V_{oc}\) by a <strong>polarization</strong> \(η = I_{dis}R<em>b\) and <strong>increases the voltage</strong> \(V</em>{ch}\) required to reverse the chemical reaction on charge by an <strong>overvoltage</strong> \(η = I_{ch}R_b\):</p></li>
+</ul>
+
+<p><span  class="math">\[ V_{dis}=V_{oc}-η(q, I_{dis}) \quad V_{dis}=V_{oc}+η(q,I_{ch})  100 \times \frac{\int^{Q_{ids}}_0V_{dis}(q)dq}{\int^{Q_{ch}}_0V_{ch}(q)dq}\quad Q=\int^{\triangle t}_0 Idt=\int^Q_0dq\]</span></p>
+
+<ul>
+<li><p>where q represents the state of charge, Q is the total charge per unit weight (Ah\(kg^{-1}\)) or per volume (Ah\(L^{-1}\)) \(I=dq/dt\) and Q(I) is the <strong>cell capacity</strong> for given I</p></li>
+
+<li><p>Q depends on I because the rate of transfer of ions across <strong>electrode/electrolyte interfaces becomes diffusion-limited at high currents</strong>. A diffusion-limited loss of the Li inserted into an electrode particle at a high rate of charge or discharge <strong>represents a reversible loss of capacity.</strong></p></li>
+
+<li><p>However, <strong>changes in electrode volume, electrode−electrolyte chemical reactions, and/or electrode decomposition</strong> can cause an irreversible loss of capacity</p></li>
+
+<li><p>Electrode−electrolyte chemical reactions that result in the <strong>irreversible formation of a passivating solid−electrolyte interphase (SEI) layer</strong> on an electrode <strong>during an initial charge of a cell</strong> fabricated in a discharged state are distinguished from the irreversible capacity fade that may occur with cycling.</p></li>
+
+<li><p>The <strong>cycle life</strong> of a battery is <strong>the number of cycles until the capacity fades to 80%</strong> of its initial reversible value. Aside from cost and safety, are <strong>its density (specific and volumetric) of stored energy</strong>, its output power \(P(q) = V(q)I_{dis}\)  for a given discharge current, and its calendar (shelf) life.</p></li>
+
+<li><p>The available energy stored in a fully charged cell <strong>depends on the discharge current</strong>\(I_{dis}=dq/dt\). The stored energy is the product of the average voltage and the capacity.</p></li>
+</ul>
+
+<p><span  class="math">\[ energy = \int^{\triangle}_0 IV(t)dt = \int^Q_0 V(q)dq \]</span></p>
+
+<ul>
+<li>The volumetric energy density is of particular interest for portable batteries, especially those that power hand-held or laptop devices. The tap density is a measure of the volume fraction of active particles in a cylinder after “tapping”,
+
+<br></li>
+</ul>
+
+<h3 id="the-challenge">The Challenge</h3>
+
+<hr>
+
+<ul>
+<li>these developments continue to request more operating cycles in electronic devices with thinner and lighter LIBs of higher stored energy</li>
+<li>After 1st LIB of Yoshino, The energy stored in a hand-held LIB has since been successfully increased to &gt;3.0 Ah in the 18 650 cell now available. However, the volumetric energy density has been increased mainly by cell engineering; and sophisticated cell engineering, including the ability of the synthetic chemist <strong>to control the size and morphology of the active particles</strong> as well as t<strong>he architecture of the current collectors</strong>, has almost reached its limits.</li>
+<li>Present LIB uses <strong>reversible Li extraction</strong> from an oxide host as the rechargeable cathode and into carbon or buffered spongy silicon or tin as the anode host.</li>
+<li>The capacity of an oxide host is limited to the <strong>reversible solid−solution range of Li</strong> in the cathode; and where a <strong>passivating layer</strong> forms on the anode during the first charge, the capacity is further reduced by <strong>an irreversible loss of Li from the cathode in the Li+-permeable SEI layer</strong> formed on the anode.</li>
+<li>The open-circuit voltage of a cell is the difference between the electrochemical potentials \(μ_A\) and \(μ<em>C\) of the anode and cathode: \(V</em>{OC}=(μ_A-μ_C)/e\)</li>
+</ul>
+
+<p><figure><img src="/images/paper_review/battery/goodenough2013/figure2.png" alt="figure2"></figure></p>
+
+<ul>
+<li><p>This voltage is limited by either the <strong>“window”</strong> of the electrolyte or <strong>the top of the anion-p bands of the cathode</strong>. The window of the electrolyte is t<strong>he energy gap between its lowest unoccupied and highest occupied molecular orbitals (LUMO and HOMO) of a liquid electrolyte</strong> or <strong>the bottom of the conduction band and top of the valence band of a solid electrolyte.</strong></p></li>
+
+<li><p><strong>\(μ_A \) above the electrolyte LUMO</strong> <strong>reduces the electrolyte</strong> unless the anode−electrolyte reaction becomes blocked by the formation of a passivating SEI layer; similarly, <strong>a \(μ_C\) located below the HOMO oxidizes the electrolyte</strong> unless the reaction is blocked by an SEI layer.</p></li>
+
+<li><p>\(μ_C\) cannot be lowered below the top of the cathode anion-p bands, which may have an energy above the electrolyte HOMO.</p></li>
+
+<li><p>Since the practical HOMO of the organic liquid carbonate electrolytes used in LIBs is at 4.3 eV below \(μ_A\)(Li), the voltage of the simple \(LiMO<em>2\) layered oxides is also self-limited by the energy of the top of the O-2p bands, Figure 2c. As a result, the original \(Li</em>{1-x}CoO_2\)  cathode evolves oxygen or inserts protons on removing Li+ beyond x = 0.55</p></li>
+
+<li><p>In the interval 0.5<x<0.9, there is a **crossover** from polaronic to itinerant holes in states of d-orbital symmetry. This crossover is first-order, which means that a phase segregation into Li-poor and Li-rich regions occurs to give a constant V(q). However, at x > 0.55, the added itinerant holes become trapped in O-2p molecular orbitals of peroxide \O_2^{2−}\) ions at the particle surface, which is followed by \(O_2\) evolution. <strong>Not only is μC pinned at the top of the O-2p bands, it also becomes impossible to oxidize the Co beyond a Co(IV)/Co ratio of 0.55.</strong></p></li>
+
+<li><p>investigation of these high-voltage cathodes has been limited because the <strong>organic liquid carbonate electrolytes used in the LIBs decompose at a voltage V &gt; 5 V</strong>. Moreover, <strong>the counter cation used to lower the top of the O-2p bands reduces the capacity</strong> unless the active redox center can accommodate two electrons without a voltage step between them.</p></li>
+</ul>
+
+<h3 id="rechargeable-liion-batteries-their-evolution">Rechargeable Li-Ion Batteries: Their Evolution</h3>
+
+<hr>
+
+<ul>
+<li><p>Reversible chemical reactions at solid electrodes are of two types: <strong>displacement</strong> and <strong>insertion reactions</strong>. Solid cathodes undergo insertion reactions, and solid anodes commonly undergo displacement reactions, but insertion reactions are also used</p></li>
+
+<li><p><strong>insertion reactions</strong> consist of an electronically conducting host structure <strong>into/from which the working cation, e.g., H+ or Li+, can be inserted/extracted reversibly over a finite solid−solution range</strong>; e.g., the cathode reaction:</p></li>
+</ul>
+
+<p><span  class="math">\[ xH^+ xe^-+NiOOH = NiO_{1-x}(OH)_{1+x} \]</span></p>
+
+<ul>
+<li>The anode of an aqueous-electrolyte battery may be either an insertion host, e.g., a metal hydride MHx, or an elemental metal that undergoes a <strong>displacement reaction</strong></li>
+</ul>
+
+<p><span  class="math">\[ Cd+2xH_2O-2xe^- = Cd(OH)_2 + 2xH^+\]</span></p>
+
+<ul>
+<li><p>The window of an aqueous electrolyte restricts the voltage of a battery with a stable shelf life to V ≤ 1.5V</p></li>
+
+<li><p>The Li-ion battery was motivated by the need for a rechargeable battery with a larger energy density, i.e., a larger voltage, which requires a <strong>nonaqueous electrolyte</strong>. <strong>Since H+ is only mobile in an aqueous medium</strong>, Li+ was chosen as the working ion in a nonaqueous electrolyte.</p></li>
+
+<li><p>Li with liquid carbonate offer a lower practical HOMO at ~ 4.3cV below Li., and primary</p></li>
+</ul>
+
+<p>(unrechargeable) Li batteries with these electrolytes were known to support the anode displacement reaction, provided the the electrolyte included an ethylene carbonate (EC) additive to passivate the Li anode</p>
+
+<p><span  class="math">\[ Li = Li_{1-x}+xLi^+xe^-\]</span></p>
+
+<ul>
+<li>Unfortunately, although the SEI layer that forms with EC to passivate the Li anode is</li>
+</ul>
+
+<p>permeable to Li+, it <strong>prevents uniform plating of Li during charge</strong> in a rechargeable cell. Consequently, dendrites form and, on repeated charging, can grow across the separator to give an <strong>internal short-circuit with incendiary, even explosive, consequences.</strong></p>
+
+<ul>
+<li><p>However, the concept of a LIB was not abandoned. Goodenough recognized that increasing the voltage of the anode would require a cathode providing a larger voltage vs Li.</p></li>
+
+<li><p>Rachid Yazami was exploring Li intercalation into graphite and noted that <strong>reversible Li insertion into carbon avoids the problem of dendrite formation,</strong></p></li>
+
+<li><p>The first Li-ion battery was assembled by Yoshino with a dischared carbon anode and a discharged LiCoO2</p></li>
+</ul>
+
+<p><span  class="math">\[ C+xe^-+xLi^+=Li_xC(anode) \\ LiCoO_2 -xe^- -xLi^+ = Li_{1-x}CoO_2(cathode)\]</span></p>
+
+<ul>
+<li><p>Insertion of a guest Li+ into a layered host like TiS2, CoO2, or graphite was originally referred to as intercalation.</p></li>
+
+<li><p>Nevertheless, O2 evolution inside a cell creates safety problems unless the cell voltage is carefully managed. T<strong>he addition of ∼10% Al3+ stabilizes the layered</strong> oxides against electrode/electrolyte interface reactions on Li extraction, but at <strong>the expense of capacity</strong></p></li>
+
+<li><p>Another safety issue is <strong>internal short-circuits by Li penetration across the separator or by direct cathode and anode contact through a pinhole or thermal shrinkage</strong>. To eliminate this problem, a slurry of Al2O3 and a polymeric binder is coated on the separator to block Li-dendrite penetration.</p></li>
+
+<li><p>If the Fermi energy μA of the charged anode is above the LUMO of the electrolyte, which is the case with a carbon anode at 0.2 V vs Li, a fraction of the Li from the cathode is consumed irreversibly on the initial charge in the passivating Li+-permeable SEI layer that forms on the anode surfaces.</p></li>
+
+<li><p>Moreover, the SEI layer increases the impedance of Li+ transfer across the anode/electrolyte interface, and the SEI layer changes with successive cycling to contribute to a capacity fade.</p></li>
+
+<li><p>Since carbon has a limited capacity and Li is plated onto its surface in a fast charge, the carbon anode is being replaced by <strong>insertion into Si or alloys of Sn or Sb.</strong></p></li>
+
+<li><p>However, a huge lattice expansion (∼300% for Si) on Li insertion r<strong>equires that the active anode be assembled as small particles or a sponge-like array</strong> within a Li+ and electron conductive medium that is <strong>sufficiently elastic to absorb the volume changes.</strong></p></li>
+
+<li><p>a μA ≤ 0.2 V vs Li does not allow safe fast charge that is desired for an electric vehicle battery. The buffering medium may be carbon or a conductive polymer. However, a μA(Li) − μA(alloy) &lt;1.1 eV still requires formation of an SEI layer with the organic liquid-carbonate electrolyte</p></li>
+
+<li><p>In an attempt to improve the stability and lower the impedance of the SEI layer, replacement of <strong>EC by other additives to the electrolyte</strong>, e.g. fluoroethylene carbonate,22 is being explored.</p></li>
+
+<li><p>Kummer &amp; Weber discovered fast 2D Na+ transport in Na2O·11Al2O3, which offered the possibility of a rechargeable battery with molten electrodes and a solid electrolyte, attempt to develop Na+ and Li+ electrolytes.</p></li>
+
+<li><p>The larger Na+ ion requires a relatively large 3D interstitial space. The Li+ ion, on the other hand, is small enough to be mobile at room temperature in a close-packed oxide-ion array, However, these 2D Li+ conductors have <strong>a degree of freedom along the c axis</strong></p></li>
+
+<li><p>cooperative Jahn-Teller distortion : The e-orbital degeneracy on a localized Mn(III):t3e1 high-spin configuration in sufficient concentration gives rise to a cooperative orbital ordering to lower the Mn(III) site symmetry above room temperature.</p></li>
+
+<li><p>The <strong>Ni couples</strong> remain close enough to the top of the O-2p bands that the holes introduced into the σ-bonding 3d orbitals of Ni(II) occupy itinerant states of d-orbital symmetry</p></li>
+
+<li><p>Not only high Li+ mobility in the close-packed oxide-ion array of the spinel framework, but also <strong>that elimination of the anode SEI layer</strong> improves greatly the cycle life of the electrode.</p></li>
+
+<li><p>The FePO4 framework is <strong>inexpensive and environmentally friendly</strong>, but the cost of quality control of the LiFePO4 electrodes is presently too <strong>expensive</strong>.</p></li>
+</ul>
+
+<p>→ exposing the surface to S or N anions has been shown to lower the surface charge-transfer impedance, thereby increasing the capacity at higher rates of charge/discharge</p>
+
+<ul>
+<li><p>two-phase reaction between LiFePO4 and FePO4 gives a flat output voltage, but <strong>it prevents sufficient mixed valence on the iron in either phase to give an adequate</strong> <strong>polaronic conductivity.</strong></p></li>
+
+<li><p>Therefore, it has proved necessary to <strong>either coat small particles of shorter charge-carrier path length with an electronically conductive surface layer and/or reduce the particle size to the nanoscale</strong> where a larger range of single-phase reaction occurs.</p></li>
+</ul>
+
+<h5 id="more-detailed-challenges-go-on-the-paper">More detailed challenges go on the paper....</h5>
+
+<h3 id="strategies-with-solid-electrolytes">Strategies with Solid Electrolytes</h3>
+
+<hr>
+
+<ul>
+<li>Kummer and Weber23 proposed in 1967 the sodium−sulfur battery, which uses cells containing a <strong>solid electrolyte separating a molten Na anode and a cathode of molten sulfur impregnated by carbon felt</strong></li>
+</ul>
+
+<p><span  class="math">\[ 2Na + FeCl_2 = 2NaCl + Fe \]</span></p>
+
+<ul>
+<li><p>Sodium is much less expensive than lithium and widely available, but operation at higher temperatures of corrosive materials presents a challenge.</p></li>
+
+<li><p>On the other hand, solid electrolytes allow consideration of liquid and gaseous reactants.</p></li>
+
+<li><p>An all solid-state Li battery would, in principle, use an <strong>inorganic solid or a polymer Li+ electrolyte.</strong> An inorganic solid Li+ electrolyte has been used with thin solid electrodes in an all solid-state Li cell, but <strong>the volume changes</strong> in the electrodes on charge/discharge have not allowed retention of good electrode/electrolyte contact in a rechargeable storage battery</p></li>
+
+<li><p>Polymer Li+ electrolytes with a sufficiently large window and a Li+ conductivity \(σ_{Li}\) &gt; 10−4 S cm−1 that retains a good contact with solid electrodes have <strong>yet</strong> to be demonstrated.</p></li>
+
+<li><p>a solid Li+ electrolyte membrane separating different liquid electrolytes contacting the anode and cathode would offer the possibility, if it blocked Li+ dendrites, of a <strong>lithium anode and a liquid or gaseous cathode reactant.</strong></p></li>
+
+<li><p>However, a solid Li+ electrolyte separator that blocks dendrites from a Li anode would need to have a major ceramic component, but a sufficiently thin ceramic membrane would be too fragile.</p></li>
+
+<li><p>A practical solid-electrolyte separator membrane would need:</p></li>
+</ul>
+
+<p>(a) a \(σ_{Li}\) &gt; 10−4 S cm−1;</p>
+
+<p>(b) the capability to block Li dendrites without being reduced;</p>
+
+<p>(c) to be chemically stable in the liquid electrolytes;</p>
+
+<p>(d) to be easily fabricated into a mechanically robust, flexible thin membrane.</p>
+
+<ul>
+<li><p>These requirements would appear to <strong>require a ceramic-polymer composite</strong></p></li>
+
+<li><p>Moreover, coating the surface of the electrolyte particles with a hydrophobic skin, e.g., polydopamine, allows Li+ transport while stabilizing the electrolyte particles in an aqueous electrolyte.</p></li>
+
+<li><p>The air cathode offers a high capacity, but the reversible reaction: requires <strong>inexpensive catalysts</strong> for the oxygen-reduction reaction (ORR) and the oxygen-evolution reaction (OER) at a high rate with a voltage difference Vch − Vdis ≤ 0.3 for storage efficiency</p></li>
+
+<li><p><span  class="math">\[ 4Li^+ + 4e^- + O_2 = 2Li_2O \]</span></p></li>
+
+<li><p><span  class="math">\[ 4Li^+ + 4e^- +O_2=2Li_2O\]</span></p></li>
+
+<li><p>With a <strong>solid Li+ electrolyte separator of a nonaqueous electrolyte</strong> at a Li anode and an aqueous electrolyte at the air cathode, the voltage can be increased to ∼3.5 V.</p></li>
+
+<li><p>The <strong>lithium−sulfur battery</strong> also provides a multielectron redox couple at the sulfur cathode and, therefore, a large increase in capacity</p></li>
+
+<li><p>A <strong>composite polymer gel</strong> containing a large volume fraction of an inorganic oxide and an organic liquid electrolyte immobilized in a polymer can give a flexible, thin membrane, but it needs yet to be tests for block dendrite from Li anode</p></li>
+</ul>
+
+<h4 id="summary">Summary</h4>
+
+<hr>
+
+<ul>
+<li>Electrical energy can be stored efficiently in a rechargeable battery, and the shift from an aqueous to the organic liquid-carbonate electrolyte in a LIB increased the energy density of a rechargeable battery sufficiently to enable battery-powered hand-held electronic devices and power tools</li>
+<li>Realization of this vision has led to consideration of multiple-electron redox couples and/or multivalent working ions such as Mg2+ in place of Li+, the electrolyte, catalysts, and organic multiple-electron redox centers, potential of a Li+ electrolyte membrane separating two different liquid electrolytes, a material that will require a composite of a polymer and an inorganic Li+ electrolyte,</li>
+<li>3D current collectors that enable thicker electrodes and flow-through liquid cathodes, electrochemical capacitors of higher energy density, Na-ion battery to eliminate vulnerability to sources of lithium and to lower material costs; however, the larger Na+ ion is adequately mobile only in framework oxides with a larger interstitial volume than is available in a close-packed oxide-ion array</li>
+</ul>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1613019555"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613019555"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613019555"></script>
+    <script src="/js/jquery.sticky.js?1613019555"></script>
+    <script src="/js/featherlight.min.js?1613019555"></script>
+    <script src="/js/highlight.pack.js?1613019555"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613019555"></script>
+    <script src="/js/learn.js?1613019555"></script>
+    <script src="/js/hugo-learn.js?1613019555"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1613019555"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
+
