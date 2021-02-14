@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="Kevin&#39;s Codex Blog">
+<meta name="author" content="Kyungmin Lee, Kevin">
+
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+ 
+   <title>Chap2. 이름에 정보 담기 - Kevin&#39;s Codex</title>
+
+    
+    <link href="/css/nucleus.css?1613346988" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613346988" rel="stylesheet">
+    <link href="/css/hybrid.css?1613346988" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613346988" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613346988" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613346988" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613346988" rel="stylesheet">
+    <link href="/css/theme.css?1613346988" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/foo.css?1613346988" rel="stylesheet"><link href="/css/bar.css?1613346988" rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.min.js?1613346988"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/compu/readable_code/chap2/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://klee30810.github.io/">
+<img src="/images/logo.png" alt="logo.png" height="110" width="110">
+</a>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1613346988"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613346988"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/klee30810.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1613346988"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/" title="Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/">
+          <b> 1. </b>Paper Review
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/battery/">
+          <b>1. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/paper_review/battery/goodenough2013/" title="The Li-Ion Rechargeable Battery: A Perspective" class="dd-item ">
+        <a href="/paper_review/battery/goodenough2013/">
+        LIB Perspective
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/mldl/" title="Machine Learning &amp; Deep Learning Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/mldl/">
+          <b>2. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/">
+          <b>2. </b>Mechanical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/elec/" title="Electrical &amp; Electronic Studies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/elec/">
+          <b>3. </b>Electrical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/" title="Compu" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/">
+          <b>4. </b>Comp. Sci.
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/readable_code/" title="Readable Code Book Review" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/readable_code/">
+          <b>1. </b>Readable Code
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap1/" title="Chap1. 코드는 이해하기 쉬워야 한다." class="dd-item ">
+        <a href="/compu/readable_code/chap1/">
+        1. Easy to Understand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap2/" title="Chap2. 이름에 정보 담기" class="dd-item active">
+        <a href="/compu/readable_code/chap2/">
+        2. Naming with Info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap3/" title="Chap3. 오해할 수 없는 이름들" class="dd-item ">
+        <a href="/compu/readable_code/chap3/">
+        3. Clear Names
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap4/" title="Chap4. 미학" class="dd-item ">
+        <a href="/compu/readable_code/chap4/">
+        4. Aesthetics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap5/" title="Chap5. 주석에 담아야 하는 대상" class="dd-item ">
+        <a href="/compu/readable_code/chap5/">
+        5. Comment Contents
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap6/" title="Chap6. 명확하고 간결한 주석 달기" class="dd-item ">
+        <a href="/compu/readable_code/chap6/">
+        6. Clear Comments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap7/" title="Chap7. 읽기 쉽게 흐름제어 만들기" class="dd-item ">
+        <a href="/compu/readable_code/chap7/">
+        7. Readable Control
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap8/" title="Chap8. 거대한 표현을 잘게 쪼개기" class="dd-item ">
+        <a href="/compu/readable_code/chap8/">
+        8. Segments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap9/" title="Chap9. 변수와 가독성" class="dd-item ">
+        <a href="/compu/readable_code/chap9/">
+        9. Readable Var
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap10/" title="Chap10. 상관없는 하위문제 추출" class="dd-item ">
+        <a href="/compu/readable_code/chap10/">
+        10. Extract Under
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap11/" title="Chap11. 한 번에 하나씩" class="dd-item ">
+        <a href="/compu/readable_code/chap11/">
+        11. One for One
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap12/" title="Chap12. 생각을 코드로 만들기" class="dd-item ">
+        <a href="/compu/readable_code/chap12/">
+        12. Think Coding
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap13/" title="Chap13. 코드 분량 줄이기" class="dd-item ">
+        <a href="/compu/readable_code/chap13/">
+        13. Code Diet
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap14/" title="Chap14. 테스트와 가독성" class="dd-item ">
+        <a href="/compu/readable_code/chap14/">
+        14. Test &amp; Readable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mldl/" title="Machine Learning &amp; Deep Learning" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mldl/">
+          <b>5. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/battery/">
+          <b>6. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/battery/battery-basics/" title="Battery Basics" class="dd-item ">
+        <a href="/battery/battery-basics/">
+        Battery Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/finance/" title="Finance" class="dd-item
+        
+        
+        
+        ">
+      <a href="/finance/">
+          <b>7. </b>Finance
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/math/" title="Mathematics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/math/">
+          <b>8. </b>Mathematics
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sci/" title="Science" class="dd-item
+        
+        
+        
+        ">
+      <a href="/sci/">
+          <b>9. </b>Science
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/" title="Language" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/">
+          <b>10. </b>Language
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/english/" title="English" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/english/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/chinese/" title="Chinese" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/chinese/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/" title="Industry Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/">
+          <b>11. </b>Industry
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/semicon/" title="Semi-conductor Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/semicon/">
+          <b>1. </b>Semi-conductor
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/automob/" title="Automobile Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/automob/">
+          <b>2. </b>Automobile
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://klee30810.github.io/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                   Chap2. 이름에 정보 담기
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/programming">programming</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Chap2. 이름에 정보 담기
+            </h1>
+          
+
+        
+
+
+<p><strong>★ 이름(식별자)에 정보를 담아내라. 이름을 일종의 설명문으로 생각하라. 좋은 이름은 생각보다 많은 정보를 전달할 수 있다.</strong></p>
+
+<h3 id="01-특정한-단어-고르기">__01. 특정한 단어 고르기</h3>
+
+<ul>
+<li>구체적인 단어를 선택하라. 더 '화려한' 단어를 찾아보면 그 변수에 더 적합한 단어를 찾는데 도움이 된다.</li>
+</ul>
+
+<p><strong>★ 재치 있는 이름보다 명확하고 간결한 이름이 더 좋다.</strong></p>
+
+<p><figure><img src="/images/compu/readable_code/chap2/Untitled.png" alt="image"></figure></p>
+
+<h3 id="02-tmp나-retval-같은-보편적인-이름-피하기">__02. tmp나 retval 같은 보편적인 이름 피하기</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">euclidean_norm</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">v</span>) {
+	<span style="color:#815ba4">var</span> <span style="color:#06b6ef">retval</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0.0</span>;
+	<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">&lt;</span> <span style="color:#06b6ef">v</span>.<span style="color:#06b6ef">length</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">+=</span> <span style="color:#f99b15">1</span>)
+		<span style="color:#06b6ef">retval</span> <span style="color:#5bc4bf">+=</span> <span style="color:#06b6ef">v</span>[<span style="color:#06b6ef">i</span>] <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">v</span>[<span style="color:#06b6ef">i</span>];
+	<span style="color:#815ba4">return</span> Math.<span style="color:#06b6ef">sqrt</span>(<span style="color:#06b6ef">retval</span>);
+};</code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>★ retval이라는 이름은 정보를 제대로 담고 있지 않다. 대신 변수값을 설명하는 이름을 사용하라.</strong></p>
+
+<ul>
+<li>하지만 보편적인 이름이 필요한 의미를 더 전달하는 경우도 있다.</li>
+</ul>
+
+<p><strong>★ tmp라는 이름은 대상이 짧게 임시적으로만 존재하고, 임시적 존재 자체가 변수의 가장 중요한 용도일때에 한해서 사용해야한다.</strong></p>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">if</span> (<span style="color:#06b6ef">right</span> <span style="color:#5bc4bf">&lt;</span> <span style="color:#06b6ef">left</span>) {
+	<span style="color:#06b6ef">tmp</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">right</span>;
+	<span style="color:#06b6ef">right</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">left</span>;
+	<span style="color:#06b6ef">left</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">tmp</span>;
+		}   <span style="color:#5bc4bf">/</span><span style="color:#ef6155">/ Acceptable tmp</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>루프 반복자에 조건문의 이니셜 등을 첨자로 넣으면 더 좋은 이름이 된다.</li>
+</ul>
+
+<p><strong>★ tmp, it, retval 같은 보편적인 이름을 사용하려면, 꼭 그렇게 해야 하는 이유가 있어야 한다.</strong></p>
+
+<h3 id="03-추상적인-이름보다-구체적인-이름을-선호하라">__03. 추상적인 이름보다 구체적인 이름을 선호하라</h3>
+
+<ul>
+<li><strong>이름을 지을 때, 추상적인 방식이 아니라 구체적인 방식으로 묘사하라.</strong></li>
+<li>예1 : 서버가 어느 TCP/IP 포트를 사용할 수 있는지 검사하는 내부 메소드의 이름은 ServerCanStart()보다 CanListenOnPort()가 더 구체적이다.</li>
+<li>예2 : DISALLOW_EVIL_CONSTRUCTOR라는 구글이 사용하던 매크로의 명칭은 사악한(evil)이라는 단어가 너무 강한 표현이고, 매크로가 금지하는(disallowing)대상이 명확하지 않기 때문에 좋은 이름이 아니다. 이 이름은 DISALLOW_COPY_AND_ASSIGN으로 대체되었다.</li>
+<li>예3 : 저자들이 사용했던 --run_locally라는 명령행 플래그(command-lind flag) 옵션
+
+<ul>
+<li>1. 새로운 사람이 무엇을 위한 플래그인지 알기 어렵고,</li>
+<li>2. 원격으로 실행되는 프로그램에 쓰이기에는 부적절한 이름이었고,</li>
+<li>3. 성능 저하의 가능성이 있다는 사실을 담고 있지 않다는 문제점이 있었다.</li>
+<li>핵심은 이 이름이 실제 내용보다 주로 사용되는 환경을 나타내는 방식으로 지어졌다는 점이다. 이 이름보다는 --extra_logging이라는 이름이 더 직접적이고 명확하다. 만약 이 플래그가 다른 작업도 수행하며 그 이름이 두 가지 모두를 포괄할 수 있다 하더라도 그럴때는 새로운 역할을 구체적으로 표현하는 새로운 플래그를 만드는 것이 더 좋다.</li>
+</ul></li>
+</ul>
+
+<h3 id="04-추가적인-정보를-이름에-추가하기">__04. 추가적인 정보를 이름에 추가하기</h3>
+
+<ul>
+<li>이름 안에 들어간 추가 정보는 사용할 때마다 전달된다. 따라서 사용자가 반드시 알아야 하는 정보를 이름에 포함시키는 것이 좋다.</li>
+<li>변수가 시간의 양이나 바이트의 수와 같은 측정치를 담고 있다면, 변수명에 단위를 포함시키는게 좋다.</li>
+</ul>
+
+<p><figure><img src="/images/compu/readable_code/chap2/untitled1.png" alt="image"></figure></p>
+
+<ul>
+<li>변수의 의미를 제대로 이해하는 것이 중요하다면 그 의미를 드러내는 정보를 변수의 이름에 포함시켜야 한다.</li>
+</ul>
+
+<p><figure><img src="/images/compu/readable_code/chap2/untitled2.png" alt="image"></figure></p>
+
+<h3 id="05-이름은-얼마나-길어야-하는가">__05. 이름은 얼마나 길어야 하는가?</h3>
+
+<ul>
+<li>좁은 범위에서는 짧은 이름도 좋다. 하지만 어떤 이름이 넓은 범위에서 사용된다면, 의미를 분명하게 하는 것이 더 중요하다.</li>
+<li>팀에 새로 합류한 사람이 이름이 의미하는 바를 이해할 수 있다면 괜찮은 이름이다.</li>
+<li>제거해도 정보가 손실 되지 않는 단어는 제거하는 것이 좋다.</li>
+</ul>
+
+<h3 id="06-이름-포메팅으로-의미를-전달하라">__06. 이름 포메팅으로 의미를 전달하라</h3>
+
+<ul>
+<li>밑줄(underscores)과 대시(dashes) 그리고 대문자를 잘 이용하면 이름에 더 많은 정보를 담을 수 있다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#815ba4">static</span> <span style="color:#815ba4">const</span> <span style="color:#fec418">int</span> kMaxOpenFiles <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">100</span>;   <span style="color:#776e71">// NOT MACRO_NAME to be easily distinguished
+</span><span style="color:#776e71"></span><span style="color:#815ba4">class</span> <span style="color:#fec418">LogReader</span> {    <span style="color:#776e71">// CamelCase for class names
+</span><span style="color:#776e71"></span>	<span style="color:#815ba4">public</span><span style="color:#5bc4bf">:</span>
+		<span style="color:#fec418">void</span> OpenFile(string local_file);     <span style="color:#776e71">// lower_separated for variable name
+</span><span style="color:#776e71"></span>
+	<span style="color:#815ba4">private</span><span style="color:#5bc4bf">:</span>
+		<span style="color:#fec418">int</span> offset_;       <span style="color:#776e71">// class member variable ends with an underscore 
+</span><span style="color:#776e71"></span>		DISALLOW_COPY_AND_ASSIGN(LogReader);
+	};
+</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>문법적 차이가 드러나게 서로 다른 개체의 이름에 다른 포맷팅 방식을 적용하는 것은 코드를 더 읽기 쉽게 해준다.</li>
+</ul>
+
+<h3 id="summary">__Summary</h3>
+
+<ul>
+<li><strong>Use specific words</strong>—for example, instead of Get, words like Fetch or Download might be
+better, depending on the context.</li>
+<li>Avoid generic names like tmp and retval, unless there’s a specific reason to use them.</li>
+<li><strong>Use concrete names</strong> that describe things in more detail—the name ServerCanStart() is
+vague compared to CanListenOnPort().</li>
+<li><strong>Attach important details</strong> to variable names—for example, append <em>ms to a variable
+whose value is in milliseconds or prepend raw</em> to an unprocessed variable that needs
+escaping.</li>
+<li><strong>Use longer names for larger scopes</strong>—don’t use cryptic one- or two-letter names for
+variables that span multiple screens; shorter names are better for variables that span only
+a few lines.</li>
+<li><strong>Use capitalization, underscores, and so on in a meaningful way</strong>—for example, you
+can append “_” to class members to distinguish them from local variables.</li>
+</ul>
+
+
+<footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    </div>
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613346988"></script>
+    <script src="/js/jquery.sticky.js?1613346988"></script>
+    <script src="/js/featherlight.min.js?1613346988"></script>
+    <script src="/js/highlight.pack.js?1613346988"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613346988"></script>
+    <script src="/js/learn.js?1613346988"></script>
+    <script src="/js/hugo-learn.js?1613346988"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1613346988"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
+

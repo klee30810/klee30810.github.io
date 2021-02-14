@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="Kevin&#39;s Codex Blog">
+<meta name="author" content="Kyungmin Lee, Kevin">
+
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+ 
+   <title>Chap10. 상관없는 하위문제 추출 - Kevin&#39;s Codex</title>
+
+    
+    <link href="/css/nucleus.css?1613346988" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613346988" rel="stylesheet">
+    <link href="/css/hybrid.css?1613346988" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613346988" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613346988" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613346988" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613346988" rel="stylesheet">
+    <link href="/css/theme.css?1613346988" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/foo.css?1613346988" rel="stylesheet"><link href="/css/bar.css?1613346988" rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.min.js?1613346988"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/compu/readable_code/chap10/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://klee30810.github.io/">
+<img src="/images/logo.png" alt="logo.png" height="110" width="110">
+</a>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1613346988"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613346988"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/klee30810.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1613346988"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/" title="Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/">
+          <b> 1. </b>Paper Review
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/battery/">
+          <b>1. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/paper_review/battery/goodenough2013/" title="The Li-Ion Rechargeable Battery: A Perspective" class="dd-item ">
+        <a href="/paper_review/battery/goodenough2013/">
+        LIB Perspective
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/mldl/" title="Machine Learning &amp; Deep Learning Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/mldl/">
+          <b>2. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/">
+          <b>2. </b>Mechanical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/elec/" title="Electrical &amp; Electronic Studies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/elec/">
+          <b>3. </b>Electrical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/" title="Compu" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/">
+          <b>4. </b>Comp. Sci.
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/readable_code/" title="Readable Code Book Review" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/readable_code/">
+          <b>1. </b>Readable Code
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap1/" title="Chap1. 코드는 이해하기 쉬워야 한다." class="dd-item ">
+        <a href="/compu/readable_code/chap1/">
+        1. Easy to Understand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap2/" title="Chap2. 이름에 정보 담기" class="dd-item ">
+        <a href="/compu/readable_code/chap2/">
+        2. Naming with Info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap3/" title="Chap3. 오해할 수 없는 이름들" class="dd-item ">
+        <a href="/compu/readable_code/chap3/">
+        3. Clear Names
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap4/" title="Chap4. 미학" class="dd-item ">
+        <a href="/compu/readable_code/chap4/">
+        4. Aesthetics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap5/" title="Chap5. 주석에 담아야 하는 대상" class="dd-item ">
+        <a href="/compu/readable_code/chap5/">
+        5. Comment Contents
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap6/" title="Chap6. 명확하고 간결한 주석 달기" class="dd-item ">
+        <a href="/compu/readable_code/chap6/">
+        6. Clear Comments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap7/" title="Chap7. 읽기 쉽게 흐름제어 만들기" class="dd-item ">
+        <a href="/compu/readable_code/chap7/">
+        7. Readable Control
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap8/" title="Chap8. 거대한 표현을 잘게 쪼개기" class="dd-item ">
+        <a href="/compu/readable_code/chap8/">
+        8. Segments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap9/" title="Chap9. 변수와 가독성" class="dd-item ">
+        <a href="/compu/readable_code/chap9/">
+        9. Readable Var
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap10/" title="Chap10. 상관없는 하위문제 추출" class="dd-item active">
+        <a href="/compu/readable_code/chap10/">
+        10. Extract Under
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap11/" title="Chap11. 한 번에 하나씩" class="dd-item ">
+        <a href="/compu/readable_code/chap11/">
+        11. One for One
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap12/" title="Chap12. 생각을 코드로 만들기" class="dd-item ">
+        <a href="/compu/readable_code/chap12/">
+        12. Think Coding
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap13/" title="Chap13. 코드 분량 줄이기" class="dd-item ">
+        <a href="/compu/readable_code/chap13/">
+        13. Code Diet
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap14/" title="Chap14. 테스트와 가독성" class="dd-item ">
+        <a href="/compu/readable_code/chap14/">
+        14. Test &amp; Readable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mldl/" title="Machine Learning &amp; Deep Learning" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mldl/">
+          <b>5. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/battery/">
+          <b>6. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/battery/battery-basics/" title="Battery Basics" class="dd-item ">
+        <a href="/battery/battery-basics/">
+        Battery Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/finance/" title="Finance" class="dd-item
+        
+        
+        
+        ">
+      <a href="/finance/">
+          <b>7. </b>Finance
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/math/" title="Mathematics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/math/">
+          <b>8. </b>Mathematics
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sci/" title="Science" class="dd-item
+        
+        
+        
+        ">
+      <a href="/sci/">
+          <b>9. </b>Science
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/" title="Language" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/">
+          <b>10. </b>Language
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/english/" title="English" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/english/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/chinese/" title="Chinese" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/chinese/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/" title="Industry Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/">
+          <b>11. </b>Industry
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/semicon/" title="Semi-conductor Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/semicon/">
+          <b>1. </b>Semi-conductor
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/automob/" title="Automobile Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/automob/">
+          <b>2. </b>Automobile
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://klee30810.github.io/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                   Chap10. 상관없는 하위문제 추출
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/programming">programming</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Chap10. 상관없는 하위문제 추출
+            </h1>
+          
+
+        
+
+
+<ul>
+<li>큰 흐름과 관계가 적은 하위 문제를 적극적으로 발견해서 추출하라.</li>
+</ul>
+
+<ol>
+<li><p>주어진 함수나 코드 블록을 보고, 스스로에게 질문하라. &quot;상위 수준에서 본 이 코드의 목적은 무엇인가?&quot;</p></li>
+
+<li><p>코드의 모든 줄에 질문을 던져라. &quot;이 코드는 직접적으로 코드가 해결하기 위한 목적을 위해서 존재하는가?</p></li>
+</ol>
+
+<p>혹은 그 목적을 위해서 필요하긴 하지만 그 자체와 직접적으로 상관없는 하위 문제를 해결하는가?&quot;</p>
+
+<ol start="3">
+<li>만약 본래 목적과 직접적으로 관련되지 않은 하위 문제를 해결하는 코드의 분량이 상당히 많으면, 이를 추출해서 별도의 함수로 만들어라.</li>
+</ol>
+
+<ul>
+<li>이렇게 추출된 코드는 자신이 호출되는 이유를 알 필요가 없어야 한다.</li>
+</ul>
+
+<h3 id="01-소개를-위한-예-findclosestlocation">__01. 소개를 위한 예: findClosestLocation()</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#776e71">// Return which element of &#39;array&#39; is closest to the given latitude/longitude.
+</span><span style="color:#776e71">// Models the Earth as a perfect sphere.
+</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">findClosestLocation</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">lat</span>, <span style="color:#06b6ef">lng</span>, <span style="color:#06b6ef">array</span>) {
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">closest</span>;
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">closest_dist</span> <span style="color:#5bc4bf">=</span> Number.<span style="color:#06b6ef">MAX_VALUE</span>;
+		<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">&lt;</span> <span style="color:#06b6ef">array</span>.<span style="color:#06b6ef">length</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">+=</span> <span style="color:#f99b15">1</span>) {
+				<span style="color:#776e71">// Convert both points to radians.
+</span><span style="color:#776e71"></span>				<span style="color:#815ba4">var</span> <span style="color:#06b6ef">lat_rad</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">radians</span>(<span style="color:#06b6ef">lat</span>);
+				<span style="color:#815ba4">var</span> <span style="color:#06b6ef">lng_rad</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">radians</span>(<span style="color:#06b6ef">lng</span>);
+				<span style="color:#815ba4">var</span> <span style="color:#06b6ef">lat2_rad</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">radians</span>(<span style="color:#06b6ef">array</span>[<span style="color:#06b6ef">i</span>].<span style="color:#06b6ef">latitude</span>);
+				<span style="color:#815ba4">var</span> <span style="color:#06b6ef">lng2_rad</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">radians</span>(<span style="color:#06b6ef">array</span>[<span style="color:#06b6ef">i</span>].<span style="color:#06b6ef">longitude</span>);
+
+				<span style="color:#776e71">// Use the &#34;Spherical Law of Cosines&#34; formula.
+</span><span style="color:#776e71"></span>				<span style="color:#815ba4">var</span> <span style="color:#06b6ef">dist</span> <span style="color:#5bc4bf">=</span> Math.<span style="color:#06b6ef">acos</span>(Math.<span style="color:#06b6ef">sin</span>(<span style="color:#06b6ef">lat_rad</span>) <span style="color:#5bc4bf">*</span> Math.<span style="color:#06b6ef">sin</span>(<span style="color:#06b6ef">lat2_rad</span>) <span style="color:#5bc4bf">+</span>
+									 Math.<span style="color:#06b6ef">cos</span>(<span style="color:#06b6ef">lat_rad</span>) <span style="color:#5bc4bf">*</span> Math.<span style="color:#06b6ef">cos</span>(<span style="color:#06b6ef">lat2_rad</span>) <span style="color:#5bc4bf">*</span>
+									 Math.<span style="color:#06b6ef">cos</span>(<span style="color:#06b6ef">lng2_rad</span> <span style="color:#5bc4bf">-</span> <span style="color:#06b6ef">lng_rad</span>));
+				<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">dist</span> <span style="color:#5bc4bf">&lt;</span> <span style="color:#06b6ef">closest_dist</span>) {
+						<span style="color:#06b6ef">closest</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">array</span>[<span style="color:#06b6ef">i</span>];
+						<span style="color:#06b6ef">closest_dist</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">dist</span>;
+				}
+		}
+		<span style="color:#815ba4">return</span> <span style="color:#06b6ef">closest</span>;
+};</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>예제 코드의 주요 목적은 주어진 점과 가장 가까운 장소를 찾는 것이다. 하지만 예제 안에 있는 대부분의 코드들이 '구 위에 있는 두 개의 위도/경도 점 사이의 거리를 계산한다'는 상위 문제와 상관없고 복잡하기만 한 하위 문제를 다룬다.</li>
+<li>이런 코드는 별도의 함수로 따로 추출하는 편이 좋다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">spherical_distance</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">lat1</span>, <span style="color:#06b6ef">lng1</span>, <span style="color:#06b6ef">lat2</span>, <span style="color:#06b6ef">lng2</span>) {
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">lat1_rad</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">radians</span>(<span style="color:#06b6ef">lat1</span>);
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">lng1_rad</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">radians</span>(<span style="color:#06b6ef">lng1</span>);
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">lat2_rad</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">radians</span>(<span style="color:#06b6ef">lat2</span>);
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">lng2_rad</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">radians</span>(<span style="color:#06b6ef">lng2</span>);
+		<span style="color:#776e71">// Use the &#34;Spherical Law of Cosines&#34; formula.
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">return</span> Math.<span style="color:#06b6ef">acos</span>(Math.<span style="color:#06b6ef">sin</span>(<span style="color:#06b6ef">lat1_rad</span>) <span style="color:#5bc4bf">*</span> Math.<span style="color:#06b6ef">sin</span>(<span style="color:#06b6ef">lat2_rad</span>) <span style="color:#5bc4bf">+</span>
+										 Math.<span style="color:#06b6ef">cos</span>(<span style="color:#06b6ef">lat1_rad</span>) <span style="color:#5bc4bf">*</span> Math.<span style="color:#06b6ef">cos</span>(<span style="color:#06b6ef">lat2_rad</span>) <span style="color:#5bc4bf">*</span>
+										 Math.<span style="color:#06b6ef">cos</span>(<span style="color:#06b6ef">lng2_rad</span> <span style="color:#5bc4bf">-</span> <span style="color:#06b6ef">lng1_rad</span>));
+};
+
+<span style="color:#815ba4">var</span> <span style="color:#06b6ef">findClosestLocation</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">lat</span>, <span style="color:#06b6ef">lng</span>, <span style="color:#06b6ef">array</span>) {
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">closest</span>;
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">closest_dist</span> <span style="color:#5bc4bf">=</span> Number.<span style="color:#06b6ef">MAX_VALUE</span>;
+		<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">&lt;</span> <span style="color:#06b6ef">array</span>.<span style="color:#06b6ef">length</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">+=</span> <span style="color:#f99b15">1</span>) {
+				<span style="color:#815ba4">var</span> <span style="color:#06b6ef">dist</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">spherical_distance</span>(<span style="color:#06b6ef">lat</span>, <span style="color:#06b6ef">lng</span>, <span style="color:#06b6ef">array</span>[<span style="color:#06b6ef">i</span>].<span style="color:#06b6ef">latitude</span>, <span style="color:#06b6ef">array</span>[<span style="color:#06b6ef">i</span>].<span style="color:#06b6ef">longitude</span>);
+				<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">dist</span> <span style="color:#5bc4bf">&lt;</span> <span style="color:#06b6ef">closest_dist</span>) {
+				<span style="color:#06b6ef">closest</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">array</span>[<span style="color:#06b6ef">i</span>];
+				<span style="color:#06b6ef">closest_dist</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">dist</span>;
+				}
+		}
+		<span style="color:#815ba4">return</span> <span style="color:#06b6ef">closest</span>;
+};</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>별도의 함수로 추출하면 복잡한 하위 문제에 방해 받지 않고 상위 수준의 목적에 집중할 수 있으니 전반적인 코드의 가독성이 좋아진다.</li>
+<li>또한 별도로 추출한 함수는 독립적인 테스트를 수행하는데도 유용하다.</li>
+</ul>
+
+<h3 id="02-순수한-유틸리티-코드">__02. 순수한 유틸리티 코드</h3>
+
+<ul>
+<li>문자열 변경, 해시테이블 사용, 파일 읽기/쓰기와 같이 프로그램이 수행하는 일에는 매우 기본적인 작업을 포괄하는 핵심적인 집합이 있다.</li>
+<li>이러한 '기본적인 유틸리티'는 대부분 해당 언어의 내장 라이브러리 안에 있다.</li>
+<li>하지만 이런 작업을 수행하는 코드가 없어서 &quot;라이브러리에 이런 함수가 있었으면 좋겠어!&quot;라는 생각이 든다면 이를 함수로 작성하라.</li>
+<li>이를 잘 정리해두면 다른 프로젝트에서도 사용할 수 있는 그럴듯한 유틸리티 코드 모음을 만들수 있다.</li>
+</ul>
+
+<h3 id="03-일반적인-목적의-코드">__03. 일반적인 목적의 코드</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#776e71">// dictionary example
+</span><span style="color:#776e71"></span><span style="color:#06b6ef">ajax_post</span>({
+		<span style="color:#06b6ef">url</span><span style="color:#5bc4bf">:</span> <span style="color:#48b685">&#39;http://example.com/submit&#39;</span>,
+		<span style="color:#06b6ef">data</span><span style="color:#5bc4bf">:</span> <span style="color:#06b6ef">data</span>,
+		<span style="color:#06b6ef">on_success</span><span style="color:#5bc4bf">:</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">response_data</span>) {
+				<span style="color:#815ba4">var</span> <span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;{\n&#34;</span>;
+				<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">key</span> <span style="color:#815ba4">in</span> <span style="color:#06b6ef">response_data</span>) {
+				<span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">+=</span> <span style="color:#48b685">&#34; &#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">key</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34; = &#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">response_data</span>[<span style="color:#06b6ef">key</span>] <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34;\n&#34;</span>;
+				}
+				<span style="color:#06b6ef">alert</span>(<span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34;}&#34;</span>);
+				<span style="color:#776e71">// Continue handling &#39;response_data&#39; ...
+</span><span style="color:#776e71"></span>		}
+});
+
+<span style="color:#776e71">// extracted function
+</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">format_pretty</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">obj</span>) {
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;{\n&#34;</span>;
+		<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">key</span> <span style="color:#815ba4">in</span> <span style="color:#06b6ef">obj</span>) {
+				<span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">+=</span> <span style="color:#48b685">&#34; &#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">key</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34; = &#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">obj</span>[<span style="color:#06b6ef">key</span>] <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34;\n&#34;</span>;
+		}
+		<span style="color:#815ba4">return</span> <span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34;}&#34;</span>;
+};</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>예제 코드는 디버깅할 때 필요한 정보를 메시지 상자로 표시하는 목적을 수행하는데, 대부분의 코드가 이를 '예쁘게' 출력하는데 사용되고 있다.</li>
+<li>이럴 때는 '예쁘게' 출력하는 부분만 따로 추출해서 함수로 만들 수 있다.</li>
+<li>이렇게 하면 함수를 호출하는 코드를 간단하게 만들고, 이 함수를 다른 곳에서도 간편하게 사용할 수 있다는 장점이 있다.</li>
+<li>또한 필요할 이 함수를 훨씬 손쉽게 개선할 수 있다는 장점도 있다.</li>
+<li>별도로 분리된 작은 함수를 다룰 때는 기능을 더하고, 가독성을 개선하고, 코너케이스를 다루는 일이 상대적으로 쉽게 느껴지기 때문이다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#776e71">// Updated Version
+</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">format_pretty</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">obj</span>, <span style="color:#06b6ef">indent</span>) {
+		<span style="color:#776e71">// Handle null, undefined, strings, and non-objects.
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">obj</span> <span style="color:#5bc4bf">===</span> <span style="color:#815ba4">null</span>) <span style="color:#815ba4">return</span> <span style="color:#48b685">&#34;null&#34;</span>;
+		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">obj</span> <span style="color:#5bc4bf">===</span> <span style="color:#815ba4">undefined</span>) <span style="color:#815ba4">return</span> <span style="color:#48b685">&#34;undefined&#34;</span>;
+		<span style="color:#815ba4">if</span> (<span style="color:#815ba4">typeof</span> <span style="color:#06b6ef">obj</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#34;string&#34;</span>) <span style="color:#815ba4">return</span> <span style="color:#48b685">&#39;&#34;&#39;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">obj</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#39;&#34;&#39;</span>;
+		<span style="color:#815ba4">if</span> (<span style="color:#815ba4">typeof</span> <span style="color:#06b6ef">obj</span> <span style="color:#5bc4bf">!==</span> <span style="color:#48b685">&#34;object&#34;</span>) <span style="color:#815ba4">return</span> String(<span style="color:#06b6ef">obj</span>);
+
+		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">indent</span> <span style="color:#5bc4bf">===</span> <span style="color:#815ba4">undefined</span>) <span style="color:#06b6ef">indent</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;&#34;</span>;
+
+		<span style="color:#776e71">// Handle (non-null) objects.
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;{\n&#34;</span>;
+		<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">key</span> <span style="color:#815ba4">in</span> <span style="color:#06b6ef">obj</span>) {
+				<span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">+=</span> <span style="color:#06b6ef">indent</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34; &#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">key</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34; = &#34;</span>;
+				<span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">+=</span> <span style="color:#06b6ef">format_pretty</span>(<span style="color:#06b6ef">obj</span>[<span style="color:#06b6ef">key</span>], <span style="color:#06b6ef">indent</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34; &#34;</span>) <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34;\n&#34;</span>;
+		}
+		<span style="color:#815ba4">return</span> <span style="color:#06b6ef">str</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">indent</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34;}&#34;</span>;
+};</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="04-일반적인-목적을-가진-코드를-많이-만들어라">__04. 일반적인 목적을 가진 코드를 많이 만들어라</h3>
+
+<ul>
+<li>일반적인 코드는 프로젝트의 나머지 부분에서 완전히 분리되므로 개발하고, 테스트하고, 이해하기에 좋다.</li>
+<li>프로젝트에서 사용하는 코드의 많은 부분이 이렇게 별도의 라이브러리로 만들어질 수 있다면 그렇게 하는 것이 좋다.</li>
+<li>그렇게 하면 코드의 나머지가 차지하는 크기가 그만큼 줄어들어 프로그래머가 생각해야할 내용도 줄어들기 때문이다.</li>
+</ul>
+
+<h3 id="05-특정한-프로젝트를-위한-기능">__05. 특정한 프로젝트를 위한 기능</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#776e71"># Original</span>
+business <span style="color:#5bc4bf">=</span> Business()
+business<span style="color:#5bc4bf">.</span>name <span style="color:#5bc4bf">=</span> request<span style="color:#5bc4bf">.</span>POST[<span style="color:#48b685">&#34;name&#34;</span>]
+url_path_name <span style="color:#5bc4bf">=</span> business<span style="color:#5bc4bf">.</span>name<span style="color:#5bc4bf">.</span>lower()
+url_path_name <span style="color:#5bc4bf">=</span> re<span style="color:#5bc4bf">.</span>sub(<span style="color:#48b685">r</span><span style="color:#48b685">&#34;[&#39;\.]&#34;</span>, <span style="color:#48b685">&#34;&#34;</span>, url_path_name)
+url_path_name <span style="color:#5bc4bf">=</span> re<span style="color:#5bc4bf">.</span>sub(<span style="color:#48b685">r</span><span style="color:#48b685">&#34;[^a-z0-9]+&#34;</span>, <span style="color:#48b685">&#34;-&#34;</span>, url_path_name)
+url_path_name <span style="color:#5bc4bf">=</span> url_path_name<span style="color:#5bc4bf">.</span>strip(<span style="color:#48b685">&#34;-&#34;</span>)
+business<span style="color:#5bc4bf">.</span>url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;/biz/&#34;</span> <span style="color:#5bc4bf">+</span> url_path_name
+business<span style="color:#5bc4bf">.</span>date_created <span style="color:#5bc4bf">=</span> datetime<span style="color:#5bc4bf">.</span>datetime<span style="color:#5bc4bf">.</span>utcnow()
+business<span style="color:#5bc4bf">.</span>save_to_database()
+
+<span style="color:#776e71"># Extracted Version</span>
+CHARS_TO_REMOVE <span style="color:#5bc4bf">=</span> re<span style="color:#5bc4bf">.</span>compile(<span style="color:#48b685">r</span><span style="color:#48b685">&#34;[&#39;\.]+&#34;</span>)
+CHARS_TO_DASH <span style="color:#5bc4bf">=</span> re<span style="color:#5bc4bf">.</span>compile(<span style="color:#48b685">r</span><span style="color:#48b685">&#34;[^a-z0-9]+&#34;</span>)
+<span style="color:#815ba4">def</span> <span style="color:#06b6ef">make_url_friendly</span>(text):
+		text <span style="color:#5bc4bf">=</span> text<span style="color:#5bc4bf">.</span>lower()
+		text <span style="color:#5bc4bf">=</span> CHARS_TO_REMOVE<span style="color:#5bc4bf">.</span>sub(<span style="color:#48b685">&#39;&#39;</span>, text)
+		text <span style="color:#5bc4bf">=</span> CHARS_TO_DASH<span style="color:#5bc4bf">.</span>sub(<span style="color:#48b685">&#39;-&#39;</span>, text)
+		<span style="color:#815ba4">return</span> text<span style="color:#5bc4bf">.</span>strip(<span style="color:#48b685">&#34;-&#34;</span>)
+
+business <span style="color:#5bc4bf">=</span> Business()
+business<span style="color:#5bc4bf">.</span>name <span style="color:#5bc4bf">=</span> request<span style="color:#5bc4bf">.</span>POST[<span style="color:#48b685">&#34;name&#34;</span>]
+business<span style="color:#5bc4bf">.</span>url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;/biz/&#34;</span> <span style="color:#5bc4bf">+</span> make_url_friendly(business<span style="color:#5bc4bf">.</span>name)
+business<span style="color:#5bc4bf">.</span>date_created <span style="color:#5bc4bf">=</span> datetime<span style="color:#5bc4bf">.</span>datetime<span style="color:#5bc4bf">.</span>utcnow()
+business<span style="color:#5bc4bf">.</span>save_to_database()</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>추출된 하위 문제는 사용하는 프로젝트를 전혀 모르는 것이 가장 이상적이다. 하지만 그렇지 않아도 큰 상관은 없다.</li>
+<li>특정한 프로젝트 내에서만 사용되는 하위 문제라도 이를 분리하는 것 만으로 큰 도움이 되기 때문이다.</li>
+</ul>
+
+<h3 id="06-기존의-인터페이스를-단순화하기">__06. 기존의 인터페이스를 단순화하기</h3>
+
+<ul>
+<li>라이브러리가 깔끔한 인터페이스를 제공하면 누구나 좋아한다.</li>
+<li>적은 수의 인수를 받고, 별다른 설정을 요구하지 않으며, 사용하기 간편한 인터페이스가 좋다.</li>
+<li>이러한 인터페이스는 코드를 우아하게 만들고, 동시에 간단하고 강력하게 만든다.</li>
+<li>만약 자신이 사용하는 인터페이스가 이렇게 깔끔하지 않다면 깔끔한 '덮개(wrapper)'를 씌워서 보완할 수 있다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">max_results</span>;
+<span style="color:#815ba4">var</span> <span style="color:#06b6ef">cookies</span> <span style="color:#5bc4bf">=</span> document.<span style="color:#06b6ef">cookie</span>.<span style="color:#06b6ef">split</span>(<span style="color:#48b685">&#39;;&#39;</span>);
+<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">&lt;</span> <span style="color:#06b6ef">cookies</span>.<span style="color:#06b6ef">length</span>; <span style="color:#06b6ef">i</span><span style="color:#5bc4bf">++</span>) {
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">c</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">cookies</span>[<span style="color:#06b6ef">i</span>];
+		<span style="color:#06b6ef">c</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">c</span>.<span style="color:#06b6ef">replace</span>(<span style="color:#48b685">/^[ ]+/</span>, <span style="color:#48b685">&#39;&#39;</span>); <span style="color:#776e71">// remove leading spaces
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">c</span>.<span style="color:#06b6ef">indexOf</span>(<span style="color:#48b685">&#34;max_results=&#34;</span>) <span style="color:#5bc4bf">===</span> <span style="color:#f99b15">0</span>)
+				<span style="color:#06b6ef">max_results</span> <span style="color:#5bc4bf">=</span> Number(<span style="color:#06b6ef">c</span>.<span style="color:#06b6ef">substring</span>(<span style="color:#f99b15">12</span>, <span style="color:#06b6ef">c</span>.<span style="color:#06b6ef">length</span>));
+}
+
+<span style="color:#776e71">// TRANSFORMED
+</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">max_results</span> <span style="color:#5bc4bf">=</span> Number(<span style="color:#06b6ef">get_cookie</span>(<span style="color:#48b685">&#34;max_results&#34;</span>));
+<span style="color:#06b6ef">set_cookie</span>(<span style="color:#06b6ef">name</span>, <span style="color:#06b6ef">value</span>, <span style="color:#06b6ef">days_to_expire</span>);
+<span style="color:#06b6ef">delete_cookie</span>(<span style="color:#06b6ef">name</span>);</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>우리는 이상적이지 않은 인터페이스를 그냥 받아들일 이유가 없다.</li>
+</ul>
+
+<h3 id="07-자신의-필요에-맞춰서-인터페이스의-형태를-바꾸기">__07. 자신의 필요에 맞춰서 인터페이스의 형태를 바꾸기</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#06b6ef">user_info</span> <span style="color:#5bc4bf">=</span> { <span style="color:#48b685">&#34;username&#34;</span><span style="color:#5bc4bf">:</span> <span style="color:#48b685">&#34;...&#34;</span>, <span style="color:#48b685">&#34;password&#34;</span><span style="color:#5bc4bf">:</span> <span style="color:#48b685">&#34;...&#34;</span> }
+<span style="color:#06b6ef">user_str</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">json</span>.<span style="color:#06b6ef">dumps</span>(<span style="color:#06b6ef">user_info</span>)
+<span style="color:#06b6ef">cipher</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">Cipher</span>(<span style="color:#48b685">&#34;aes_128_cbc&#34;</span>, <span style="color:#06b6ef">key</span><span style="color:#5bc4bf">=</span><span style="color:#06b6ef">PRIVATE_KEY</span>, <span style="color:#06b6ef">init_vector</span><span style="color:#5bc4bf">=</span><span style="color:#06b6ef">INIT_VECTOR</span>, <span style="color:#06b6ef">op</span><span style="color:#5bc4bf">=</span><span style="color:#06b6ef">ENCODE</span>)
+<span style="color:#06b6ef">encrypted_bytes</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">cipher</span>.<span style="color:#06b6ef">update</span>(<span style="color:#06b6ef">user_str</span>)
+<span style="color:#06b6ef">encrypted_bytes</span> <span style="color:#5bc4bf">+=</span> <span style="color:#06b6ef">cipher</span>.<span style="color:#815ba4">final</span>() <span style="color:#ef6155">#</span> <span style="color:#06b6ef">flush</span> <span style="color:#06b6ef">out</span> <span style="color:#06b6ef">the</span> <span style="color:#06b6ef">current</span> <span style="color:#f99b15">128</span> <span style="color:#06b6ef">bit</span> <span style="color:#06b6ef">block</span>
+<span style="color:#06b6ef">url</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com/?user_info=&#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">base64</span>.<span style="color:#06b6ef">urlsafe_b64encode</span>(<span style="color:#06b6ef">encrypted_bytes</span>)
+...</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>프로그램 안의 많은 코드들은 다른 코드를 지원하려고 존재한다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#776e71">// Changing Interface
+</span><span style="color:#776e71"></span><span style="color:#06b6ef">def</span> <span style="color:#06b6ef">url_safe_encrypt</span>(<span style="color:#06b6ef">obj</span>)<span style="color:#5bc4bf">:</span>
+		<span style="color:#06b6ef">obj_str</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">json</span>.<span style="color:#06b6ef">dumps</span>(<span style="color:#06b6ef">obj</span>)
+		<span style="color:#06b6ef">cipher</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">Cipher</span>(<span style="color:#48b685">&#34;aes_128_cbc&#34;</span>, <span style="color:#06b6ef">key</span><span style="color:#5bc4bf">=</span><span style="color:#06b6ef">PRIVATE_KEY</span>, <span style="color:#06b6ef">init_vector</span><span style="color:#5bc4bf">=</span><span style="color:#06b6ef">INIT_VECTOR</span>, <span style="color:#06b6ef">op</span><span style="color:#5bc4bf">=</span><span style="color:#06b6ef">ENCODE</span>)
+		<span style="color:#06b6ef">encrypted_bytes</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">cipher</span>.<span style="color:#06b6ef">update</span>(<span style="color:#06b6ef">obj_str</span>)
+		<span style="color:#06b6ef">encrypted_bytes</span> <span style="color:#5bc4bf">+=</span> <span style="color:#06b6ef">cipher</span>.<span style="color:#815ba4">final</span>() <span style="color:#ef6155">#</span> <span style="color:#06b6ef">flush</span> <span style="color:#06b6ef">out</span> <span style="color:#06b6ef">the</span> <span style="color:#06b6ef">current</span> <span style="color:#f99b15">128</span> <span style="color:#06b6ef">bit</span> <span style="color:#06b6ef">block</span>
+		<span style="color:#815ba4">return</span> <span style="color:#06b6ef">base64</span>.<span style="color:#06b6ef">urlsafe_b64encode</span>(<span style="color:#06b6ef">encrypted_bytes</span>)
+
+<span style="color:#776e71">//Then, the resulting code to execute the real logic of the program is simple:
+</span><span style="color:#776e71"></span><span style="color:#06b6ef">user_info</span> <span style="color:#5bc4bf">=</span> { <span style="color:#48b685">&#34;username&#34;</span><span style="color:#5bc4bf">:</span> <span style="color:#48b685">&#34;...&#34;</span>, <span style="color:#48b685">&#34;password&#34;</span><span style="color:#5bc4bf">:</span> <span style="color:#48b685">&#34;...&#34;</span> }
+<span style="color:#06b6ef">url</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com/?user_info=&#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">url_safe_encrypt</span>(<span style="color:#06b6ef">user_info</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>이와 같은 '접착(glue)'코드는 프로그램의 실제 논리와 별로 직접적인 상관이 없으므로 따로 분리하여 독자적인 함수로 만드는 것이 좋다.</li>
+<li>이렇게 하면 프로그램이 수행하는 본래의 논리를 쉽게 파악할 수 있다.</li>
+</ul>
+
+<h3 id="08-지나치게-추출하기">__08. 지나치게 추출하기</h3>
+
+<ul>
+<li>코드에 새로운 함수를 더하는 일에는 <strong>분명히 가독성 비용</strong>이 든다.</li>
+<li>만약 함수를 새로 만들면서 더해지는 가독성 비용이 이를 통해 얻는 이득보다 적다면 이를 수행할 이유가 없다.</li>
+<li><strong>새롭게 만든 작은 함수들이 다른 프로젝트에서도 사용된다면 추출하는 것이 이득</strong>이 되겠지만 그런 순간이 오기 전까지는 그럴 필요가 없다.</li>
+</ul>
+
+<h3 id="요약">__요약</h3>
+
+<ul>
+<li>A simple way to think about this chapter is to <strong>separate the generic code from the project-specific code</strong>. As it turns out, most code is generic. By building a large set of libraries and helper functions to solve the general problems, what’s left will be a small core of what makes your program unique.</li>
+<li>The main reason this technique helps is that it lets the programmer focus on smaller, well-defined problems that are detached from the rest of your project. As a result, the solutions to those subproblems tend to be more thorough and correct. You might also be able to reuse them later.</li>
+</ul>
+
+<p><strong>+추가적인 읽기</strong></p>
+
+<p>『리팩토링: 존재하는 코드의 설계를 개선하기(Refactoring: Improving the Design of Existing Code)』 - 마틴 파울러</p>
+
+<p>⇒ 여기서는 '메소드 추출' 기법과 다양한 코드 리팩토링 방법을 설명한다.</p>
+
+<p>『스몰토크 최선의 실전 패턴(Smalltalk Best Practice Patterns)』 - 켄트 벡</p>
+
+<p>⇒ 여기서는 코드를 잘개 쪼개서 수많은 함수로 구성하는 방법을 의미하는 '구성된 메소드 패턴(Composed Method Pattern)' 원리를 설명한다.</p>
+
+<p>⇒ 여기서 원리란 '모든 연산을 동일한 추상 수준의 메소드 안에 담기'를 말한다.</p>
+
+
+<footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    </div>
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613346988"></script>
+    <script src="/js/jquery.sticky.js?1613346988"></script>
+    <script src="/js/featherlight.min.js?1613346988"></script>
+    <script src="/js/highlight.pack.js?1613346988"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613346988"></script>
+    <script src="/js/learn.js?1613346988"></script>
+    <script src="/js/hugo-learn.js?1613346988"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1613346988"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
+

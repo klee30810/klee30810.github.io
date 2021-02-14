@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="Kevin&#39;s Codex Blog">
+<meta name="author" content="Kyungmin Lee, Kevin">
+
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+ 
+   <title>Chap12. 생각을 코드로 만들기 - Kevin&#39;s Codex</title>
+
+    
+    <link href="/css/nucleus.css?1613346988" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613346988" rel="stylesheet">
+    <link href="/css/hybrid.css?1613346988" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613346988" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613346988" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613346988" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613346988" rel="stylesheet">
+    <link href="/css/theme.css?1613346988" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/foo.css?1613346988" rel="stylesheet"><link href="/css/bar.css?1613346988" rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.min.js?1613346988"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/compu/readable_code/chap12/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://klee30810.github.io/">
+<img src="/images/logo.png" alt="logo.png" height="110" width="110">
+</a>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1613346988"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613346988"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/klee30810.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1613346988"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/" title="Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/">
+          <b> 1. </b>Paper Review
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/battery/">
+          <b>1. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/paper_review/battery/goodenough2013/" title="The Li-Ion Rechargeable Battery: A Perspective" class="dd-item ">
+        <a href="/paper_review/battery/goodenough2013/">
+        LIB Perspective
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/mldl/" title="Machine Learning &amp; Deep Learning Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/mldl/">
+          <b>2. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/">
+          <b>2. </b>Mechanical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/elec/" title="Electrical &amp; Electronic Studies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/elec/">
+          <b>3. </b>Electrical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/" title="Compu" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/">
+          <b>4. </b>Comp. Sci.
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/readable_code/" title="Readable Code Book Review" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/readable_code/">
+          <b>1. </b>Readable Code
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap1/" title="Chap1. 코드는 이해하기 쉬워야 한다." class="dd-item ">
+        <a href="/compu/readable_code/chap1/">
+        1. Easy to Understand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap2/" title="Chap2. 이름에 정보 담기" class="dd-item ">
+        <a href="/compu/readable_code/chap2/">
+        2. Naming with Info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap3/" title="Chap3. 오해할 수 없는 이름들" class="dd-item ">
+        <a href="/compu/readable_code/chap3/">
+        3. Clear Names
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap4/" title="Chap4. 미학" class="dd-item ">
+        <a href="/compu/readable_code/chap4/">
+        4. Aesthetics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap5/" title="Chap5. 주석에 담아야 하는 대상" class="dd-item ">
+        <a href="/compu/readable_code/chap5/">
+        5. Comment Contents
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap6/" title="Chap6. 명확하고 간결한 주석 달기" class="dd-item ">
+        <a href="/compu/readable_code/chap6/">
+        6. Clear Comments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap7/" title="Chap7. 읽기 쉽게 흐름제어 만들기" class="dd-item ">
+        <a href="/compu/readable_code/chap7/">
+        7. Readable Control
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap8/" title="Chap8. 거대한 표현을 잘게 쪼개기" class="dd-item ">
+        <a href="/compu/readable_code/chap8/">
+        8. Segments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap9/" title="Chap9. 변수와 가독성" class="dd-item ">
+        <a href="/compu/readable_code/chap9/">
+        9. Readable Var
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap10/" title="Chap10. 상관없는 하위문제 추출" class="dd-item ">
+        <a href="/compu/readable_code/chap10/">
+        10. Extract Under
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap11/" title="Chap11. 한 번에 하나씩" class="dd-item ">
+        <a href="/compu/readable_code/chap11/">
+        11. One for One
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap12/" title="Chap12. 생각을 코드로 만들기" class="dd-item active">
+        <a href="/compu/readable_code/chap12/">
+        12. Think Coding
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap13/" title="Chap13. 코드 분량 줄이기" class="dd-item ">
+        <a href="/compu/readable_code/chap13/">
+        13. Code Diet
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap14/" title="Chap14. 테스트와 가독성" class="dd-item ">
+        <a href="/compu/readable_code/chap14/">
+        14. Test &amp; Readable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mldl/" title="Machine Learning &amp; Deep Learning" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mldl/">
+          <b>5. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/battery/">
+          <b>6. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/battery/battery-basics/" title="Battery Basics" class="dd-item ">
+        <a href="/battery/battery-basics/">
+        Battery Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/finance/" title="Finance" class="dd-item
+        
+        
+        
+        ">
+      <a href="/finance/">
+          <b>7. </b>Finance
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/math/" title="Mathematics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/math/">
+          <b>8. </b>Mathematics
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sci/" title="Science" class="dd-item
+        
+        
+        
+        ">
+      <a href="/sci/">
+          <b>9. </b>Science
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/" title="Language" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/">
+          <b>10. </b>Language
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/english/" title="English" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/english/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/chinese/" title="Chinese" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/chinese/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/" title="Industry Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/">
+          <b>11. </b>Industry
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/semicon/" title="Semi-conductor Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/semicon/">
+          <b>1. </b>Semi-conductor
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/automob/" title="Automobile Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/automob/">
+          <b>2. </b>Automobile
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://klee30810.github.io/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                   Chap12. 생각을 코드로 만들기
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/programming">programming</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Chap12. 생각을 코드로 만들기
+            </h1>
+          
+
+        
+
+
+<ul>
+<li><p>복잡한 생각을 다른 사람에게 설명할 때 중요하지 않은 자세한 내용 때문에 듣는 사람을 혼동시키는 일이 종종 있다.</p></li>
+
+<li><p>'쉬운 말'로 자신의 생각을 지식이 부족한 사람에게 전달하는 기술은 매우 중요하다.</p></li>
+
+<li><p>여기에는 설명할 내용을 걸러서 요지만 뽑아내는 능력이 요구된다.</p></li>
+</ul>
+
+<p><strong>- 코드도 마찬가지로 '쉬운 말'로 작성되어야 한다.</strong></p>
+
+<ul>
+<li>이 장에서 설명할 코드를 더 명확하게 만드는 간단한 과정은 다음과 같다.</li>
+</ul>
+
+<ol>
+<li><p>코드가 할 일을 다른 사람에게 설명하듯이 '쉬운 말'로 묘사하라.</p></li>
+
+<li><p>이 설명에 들어가는 핵심적인 단어와 문구를 포착하라.</p></li>
+
+<li><p>설명과 부합하는 코드를 작성하라.</p></li>
+</ol>
+
+<h3 id="01-논리를-명확하게-설명하기">__01. 논리를 명확하게 설명하기</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#06b6ef">$is_admin</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">is_admin_request</span>();
+<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">$document</span>) {
+		<span style="color:#815ba4">if</span> (<span style="color:#5bc4bf">!</span><span style="color:#06b6ef">$is_admin</span> <span style="color:#5bc4bf">&amp;&amp;</span> (<span style="color:#06b6ef">$document</span>[<span style="color:#48b685">&#39;username&#39;</span>] <span style="color:#5bc4bf">!=</span> <span style="color:#06b6ef">$_SESSION</span>[<span style="color:#48b685">&#39;username&#39;</span>])) {
+				<span style="color:#815ba4">return</span> <span style="color:#06b6ef">not_authorized</span>();
+		}
+} <span style="color:#815ba4">else</span> {
+		<span style="color:#815ba4">if</span> (<span style="color:#5bc4bf">!</span><span style="color:#06b6ef">$is_admin</span>) {
+				<span style="color:#815ba4">return</span> <span style="color:#06b6ef">not_authorized</span>();
+		}
+}
+<span style="color:#ef6155">// continue rendering the page ...</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>예제 코드는 '사용자가 페이지를 볼 수 있는 허가가 있는지를 확인하고, 만약 허가되어 있지 않으면 이를 설명하는 페이지를 반환한다.'</li>
+<li>예제 코드를 쉬운 말로 묘사하면 다음과 같다.</li>
+</ul>
+
+<p>사용이 허가되는 경우는 두가지다.</p>
+
+<ol>
+<li>관리자다.</li>
+<li>관리자는 아니지만 소유하고 있는 문서이다.
+그렇지 않으면 허가되지 않는다.</li>
+</ol>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">if</span> (<span style="color:#06b6ef">is_admin_request</span>()) {
+		<span style="color:#776e71">// authorized
+</span><span style="color:#776e71"></span>} <span style="color:#06b6ef">elseif</span> (<span style="color:#06b6ef">$document</span> <span style="color:#5bc4bf">&amp;&amp;</span> (<span style="color:#06b6ef">$document</span>[<span style="color:#48b685">&#39;username&#39;</span>] <span style="color:#5bc4bf">==</span> <span style="color:#06b6ef">$_SESSION</span>[<span style="color:#48b685">&#39;username&#39;</span>])) {
+		<span style="color:#776e71">// authorized
+</span><span style="color:#776e71"></span>} <span style="color:#815ba4">else</span> {
+		<span style="color:#815ba4">return</span> <span style="color:#06b6ef">not_authorized</span>();
+}
+<span style="color:#ef6155">// continue rendering the page ...</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>이를 이용해 수정한 예제 코드는 비어있는 본문 두개를 포함해서 조금 이상해보인다.</li>
+<li>하지만 코드의 분량이 더 적고, 부정문이 없어서 논리도 더 간단해졌다.</li>
+<li>즉, 더 이해하기 쉬워졌다.</li>
+</ul>
+
+<h3 id="02-라이브러리를-알면-도움이-된다">__02. 라이브러리를 알면 도움이 된다</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">&lt;<span style="color:#5bc4bf">div</span> <span style="color:#06b6ef">id</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;tip-1&#34;</span> <span style="color:#06b6ef">class</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;tip&#34;</span>&gt;<span style="color:#06b6ef">Tip</span><span style="color:#5bc4bf">:</span> <span style="color:#06b6ef">Log</span> <span style="color:#815ba4">in</span> <span style="color:#06b6ef">to</span> <span style="color:#06b6ef">see</span> <span style="color:#06b6ef">your</span> <span style="color:#06b6ef">past</span> <span style="color:#06b6ef">queries</span>.&lt;/<span style="color:#5bc4bf">div</span>&gt;
+&lt;<span style="color:#5bc4bf">div</span> <span style="color:#06b6ef">id</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;tip-2&#34;</span> <span style="color:#06b6ef">class</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;tip&#34;</span>&gt;<span style="color:#06b6ef">Tip</span><span style="color:#5bc4bf">:</span> <span style="color:#06b6ef">Click</span> <span style="color:#06b6ef">on</span> <span style="color:#06b6ef">a</span> <span style="color:#06b6ef">picture</span> <span style="color:#06b6ef">to</span> <span style="color:#06b6ef">see</span> <span style="color:#06b6ef">it</span> <span style="color:#06b6ef">close</span> <span style="color:#06b6ef">up</span>.&lt;/<span style="color:#5bc4bf">div</span>&gt;
+...
+<span style="color:#815ba4">var</span> <span style="color:#06b6ef">show_next_tip</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> () {
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">num_tips</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">$</span>(<span style="color:#48b685">&#39;.tip&#39;</span>).<span style="color:#06b6ef">size</span>();
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">shown_tip</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">$</span>(<span style="color:#48b685">&#39;.tip:visible&#39;</span>);
+
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">shown_tip_num</span> <span style="color:#5bc4bf">=</span> Number(<span style="color:#06b6ef">shown_tip</span>.<span style="color:#06b6ef">attr</span>(<span style="color:#48b685">&#39;id&#39;</span>).<span style="color:#06b6ef">slice</span>(<span style="color:#f99b15">4</span>));
+		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">shown_tip_num</span> <span style="color:#5bc4bf">===</span> <span style="color:#06b6ef">num_tips</span>) {
+				<span style="color:#06b6ef">$</span>(<span style="color:#48b685">&#39;#tip-1&#39;</span>).<span style="color:#06b6ef">show</span>();
+		} <span style="color:#815ba4">else</span> {
+				<span style="color:#06b6ef">$</span>(<span style="color:#48b685">&#39;#tip-&#39;</span> <span style="color:#5bc4bf">+</span> (<span style="color:#06b6ef">shown_tip_num</span> <span style="color:#5bc4bf">+</span> <span style="color:#f99b15">1</span>)).<span style="color:#06b6ef">show</span>();
+		}
+		<span style="color:#06b6ef">shown_tip</span>.<span style="color:#06b6ef">hide</span>();
+};</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><strong>간결한 코드를 작성하는 기술 중 하나는 라이브러리가 제공하는 기능을 잘 활용하는 것이다.</strong></li>
+</ul>
+
+<p>Describing the code :
+Find the currently visible tip and hide it.
+Then find the next tip after it and show that.
+If we've run out of tips, cycle back to the first tip.</p>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#776e71">// SOLUTION
+</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">show_next_tip</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> () {
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">cur_tip</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">$</span>(<span style="color:#48b685">&#39;.tip:visible&#39;</span>).<span style="color:#06b6ef">hide</span>(); <span style="color:#776e71">// find the currently visible tip and hide it
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">next_tip</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">cur_tip</span>.<span style="color:#06b6ef">next</span>(<span style="color:#48b685">&#39;.tip&#39;</span>); <span style="color:#776e71">// find the next tip after it
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">next_tip</span>.<span style="color:#06b6ef">size</span>() <span style="color:#5bc4bf">===</span> <span style="color:#f99b15">0</span>) { <span style="color:#776e71">// if we&#39;ve run out of tips,
+</span><span style="color:#776e71"></span>				<span style="color:#06b6ef">next_tip</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">$</span>(<span style="color:#48b685">&#39;.tip:first&#39;</span>); <span style="color:#776e71">// cycle back to the first tip
+</span><span style="color:#776e71"></span>		}
+		<span style="color:#06b6ef">next_tip</span>.<span style="color:#06b6ef">show</span>(); <span style="color:#776e71">// show the new tip
+</span><span style="color:#776e71"></span>};</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="03-논리를-쉬운-말로-표현하는-방법을-더-큰-문제에-적용하기">__03. 논리를 쉬운 말로 표현하는 방법을 더 큰 문제에 적용하기</h3>
+
+<p><figure><img src="/images/compu/readable_code/chap12/Untitled.png" alt="image"></figure></p>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#815ba4">def</span> <span style="color:#06b6ef">PrintStockTransactions</span>():
+		stock_iter <span style="color:#5bc4bf">=</span> db_read(<span style="color:#48b685">&#34;SELECT time, ticker_symbol FROM ...&#34;</span>)
+		price_iter <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">...</span>
+		num_shares_iter <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">...</span>
+
+		<span style="color:#776e71"># Iterate through all the rows of the 3 tables in parallel.</span>
+		<span style="color:#815ba4">while</span> stock_iter <span style="color:#5bc4bf">and</span> price_iter <span style="color:#5bc4bf">and</span> num_shares_iter:
+				stock_time <span style="color:#5bc4bf">=</span> stock_iter<span style="color:#5bc4bf">.</span>time
+				price_time <span style="color:#5bc4bf">=</span> price_iter<span style="color:#5bc4bf">.</span>time
+				num_shares_time <span style="color:#5bc4bf">=</span> num_shares_iter<span style="color:#5bc4bf">.</span>time
+
+				<span style="color:#776e71"># If all 3 rows don&#39;t have the same time, skip over the oldest row</span>
+				<span style="color:#776e71"># Note: the &#34;&lt;=&#34; below can&#39;t just be &#34;&lt;&#34; in case there are 2 tied-oldest.</span>
+				<span style="color:#815ba4">if</span> stock_time <span style="color:#5bc4bf">!=</span> price_time <span style="color:#5bc4bf">or</span> stock_time <span style="color:#5bc4bf">!=</span> num_shares_time:
+						<span style="color:#815ba4">if</span> stock_time <span style="color:#5bc4bf">&lt;=</span> price_time <span style="color:#5bc4bf">and</span> stock_time <span style="color:#5bc4bf">&lt;=</span> num_shares_time:
+								stock_iter<span style="color:#5bc4bf">.</span>NextRow()
+						<span style="color:#815ba4">elif</span> price_time <span style="color:#5bc4bf">&lt;=</span> stock_time <span style="color:#5bc4bf">and</span> price_time <span style="color:#5bc4bf">&lt;=</span> num_shares_time:
+								price_iter<span style="color:#5bc4bf">.</span>NextRow()
+						<span style="color:#815ba4">elif</span> num_shares_time <span style="color:#5bc4bf">&lt;=</span> stock_time <span style="color:#5bc4bf">and</span> num_shares_time <span style="color:#5bc4bf">&lt;=</span> price_time:
+								num_shares_iter<span style="color:#5bc4bf">.</span>NextRow()
+						<span style="color:#815ba4">else</span>:
+								<span style="color:#815ba4">assert</span> False <span style="color:#776e71"># impossible</span>
+				<span style="color:#815ba4">continue</span>
+
+		<span style="color:#815ba4">assert</span> stock_time <span style="color:#5bc4bf">==</span> price_time <span style="color:#5bc4bf">==</span> num_shares_time
+
+		<span style="color:#776e71"># Print the aligned rows.</span>
+		<span style="color:#815ba4">print</span> <span style="color:#48b685">&#34;@&#34;</span>, stock_time,
+		<span style="color:#815ba4">print</span> stock_iter<span style="color:#5bc4bf">.</span>ticker_symbol,
+		<span style="color:#815ba4">print</span> price_iter<span style="color:#5bc4bf">.</span>price,
+		<span style="color:#815ba4">print</span> num_shares_iter<span style="color:#5bc4bf">.</span>number_of_shares
+
+		stock_iter<span style="color:#5bc4bf">.</span>NextRow()
+		price_iter<span style="color:#5bc4bf">.</span>NextRow()
+		num_shares_iter<span style="color:#5bc4bf">.</span>NextRow()</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>예제 코드는 주식 구매현황을 기록하는 시스템이다.</li>
+<li>각 거래는 다음의 네 가지 데이터 조각으로 포함한다.</li>
+</ul>
+
+<p>time(구매의 정확한 날짜와 시간), ticker_symbol(예, GOOG), price(예, $600), number_of_share(예, 100)</p>
+
+<ul>
+<li>문제는 이 값들이 시간과 세개의 값이 하나씩 포함된 세개의 서로 다른 테이블에 따로 존재하며 이를 합쳐야 한다는 것이다.</li>
+<li>더 큰 문제는 어떤 행은 아예 존재하지 않으며, 존재하지 않는 행을 무시하면서 세 개의 테이블에서 time값이 동일한 행을 연결해야한다는 것이다.</li>
+<li>이를 해결하기 위해 하려는 일을 쉬운 말로 묘사하면 다음과 같다.</li>
+</ul>
+
+<p>세 개 반복자를 병렬적으로 동시에 읽는다.
+어느 행의 time이 일치하지 않으면, 일치할 때 까지 앞으로 한칸씩 나아간다.
+일치 된 행을 출력하고, 다시 앞으로 나아간다.
+일치하는 행이 더 이상 없을 때 까지 이를 반복한다.</p>
+
+<ul>
+<li>이 중 가장 지저분하게 작성되는 곳은 두 번째 줄이며 이를 함수로 분리할 수 있다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#815ba4">def</span> <span style="color:#06b6ef">PrintStockTransactions</span>():
+		stock_iter <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">...</span>
+		price_iter <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">...</span>
+		num_shares_iter <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">...</span>
+
+		<span style="color:#815ba4">while</span> True:
+				time <span style="color:#5bc4bf">=</span> AdvanceToMatchingTime(stock_iter, price_iter, num_shares_iter)
+				<span style="color:#815ba4">if</span> time <span style="color:#5bc4bf">is</span> None:
+						<span style="color:#815ba4">return</span>
+
+				<span style="color:#776e71"># Print the aligned rows.</span>
+				<span style="color:#815ba4">print</span> <span style="color:#48b685">&#34;@&#34;</span>, time,
+				<span style="color:#815ba4">print</span> stock_iter<span style="color:#5bc4bf">.</span>ticker_symbol,
+				<span style="color:#815ba4">print</span> price_iter<span style="color:#5bc4bf">.</span>price,
+				<span style="color:#815ba4">print</span> num_shares_iter<span style="color:#5bc4bf">.</span>number_of_shares
+
+				stock_iter<span style="color:#5bc4bf">.</span>NextRow()
+				price_iter<span style="color:#5bc4bf">.</span>NextRow()
+				num_shares_iter<span style="color:#5bc4bf">.</span>NextRow()</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#815ba4">def</span> <span style="color:#06b6ef">AdvanceToMatchingTime</span>(stock_iter, price_iter, num_shares_iter):
+		<span style="color:#776e71"># Iterate through all the rows of the 3 tables in parallel.</span>
+		<span style="color:#815ba4">while</span> stock_iter <span style="color:#5bc4bf">and</span> price_iter <span style="color:#5bc4bf">and</span> num_shares_iter:
+				stock_time <span style="color:#5bc4bf">=</span> stock_iter<span style="color:#5bc4bf">.</span>time
+				price_time <span style="color:#5bc4bf">=</span> price_iter<span style="color:#5bc4bf">.</span>time
+				num_shares_time <span style="color:#5bc4bf">=</span> num_shares_iter<span style="color:#5bc4bf">.</span>time
+
+				<span style="color:#776e71"># If all 3 rows don&#39;t have the same time, skip over the oldest row</span>
+				<span style="color:#815ba4">if</span> stock_time <span style="color:#5bc4bf">!=</span> price_time <span style="color:#5bc4bf">or</span> stock_time <span style="color:#5bc4bf">!=</span> num_shares_time:
+						<span style="color:#815ba4">if</span> stock_time <span style="color:#5bc4bf">&lt;=</span> price_time <span style="color:#5bc4bf">and</span> stock_time <span style="color:#5bc4bf">&lt;=</span> num_shares_time:
+								stock_iter<span style="color:#5bc4bf">.</span>NextRow()
+						<span style="color:#815ba4">elif</span> price_time <span style="color:#5bc4bf">&lt;=</span> stock_time <span style="color:#5bc4bf">and</span> price_time <span style="color:#5bc4bf">&lt;=</span> num_shares_time:
+								price_iter<span style="color:#5bc4bf">.</span>NextRow()
+						<span style="color:#815ba4">elif</span> num_shares_time <span style="color:#5bc4bf">&lt;=</span> stock_time <span style="color:#5bc4bf">and</span> num_shares_time <span style="color:#5bc4bf">&lt;=</span> price_time:
+								num_shares_iter<span style="color:#5bc4bf">.</span>NextRow()
+						<span style="color:#815ba4">else</span>:
+								<span style="color:#815ba4">assert</span> False <span style="color:#776e71"># impossible</span>
+						<span style="color:#815ba4">continue</span>
+						<span style="color:#815ba4">assert</span> stock_time <span style="color:#5bc4bf">==</span> price_time <span style="color:#5bc4bf">==</span> num_shares_time
+				<span style="color:#815ba4">return</span> stock_time</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>이 함수가 하는 작업을 다시 한번 쉬운 말로 묘사하면 다음과 같다.</li>
+</ul>
+
+<p>각 테이블의 현재 행에서 time을 확인한다. 값이 모두 같으면 작업이 완료된 것이다.  그렇지 않으면 값이 '뒤쳐진' 행을 한 칸 전진시킨다.
+행이 모두 동일한 time을 가질 때까지 혹은 반복자 중의 하나가 끝에 이를 때까지 작업을 반복한다</p>
+
+<ul>
+<li><p>여기에서 주목할 부분은 이 설명이 우리가 해결하려는 상위 문제와 관련된 어떠한 사항도 언급하지 않는다는 점이다.</p></li>
+
+<li><p>따라서 변수명을 더 간단하고 일반적이게 바꿀 수도 있다.</p></li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#815ba4">def</span> <span style="color:#06b6ef">AdvanceToMatchingTime</span>(row_iter1, row_iter2, row_iter3):
+		<span style="color:#815ba4">while</span> row_iter1 <span style="color:#5bc4bf">and</span> row_iter2 <span style="color:#5bc4bf">and</span> row_iter3:
+				t1 <span style="color:#5bc4bf">=</span> row_iter1<span style="color:#5bc4bf">.</span>time
+				t2 <span style="color:#5bc4bf">=</span> row_iter2<span style="color:#5bc4bf">.</span>time
+				t3 <span style="color:#5bc4bf">=</span> row_iter3<span style="color:#5bc4bf">.</span>time
+
+				<span style="color:#815ba4">if</span> t1 <span style="color:#5bc4bf">==</span> t2 <span style="color:#5bc4bf">==</span> t3:
+						<span style="color:#815ba4">return</span> t1
+
+				tmax <span style="color:#5bc4bf">=</span> max(t1, t2, t3)
+
+				<span style="color:#776e71"># If any row is &#34;behind,&#34; advance it.</span>
+				<span style="color:#776e71"># Eventually, this while loop will align them all.</span>
+				<span style="color:#815ba4">if</span> t1 <span style="color:#5bc4bf">&lt;</span> tmax: row_iter1<span style="color:#5bc4bf">.</span>NextRow()
+				<span style="color:#815ba4">if</span> t2 <span style="color:#5bc4bf">&lt;</span> tmax: row_iter2<span style="color:#5bc4bf">.</span>NextRow()
+				<span style="color:#815ba4">if</span> t3 <span style="color:#5bc4bf">&lt;</span> tmax: row_iter3<span style="color:#5bc4bf">.</span>NextRow()
+
+		<span style="color:#815ba4">return</span> None <span style="color:#776e71"># no alignment could be found</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="요약">__요약</h3>
+
+<ul>
+<li><strong>자신의 문제를 쉬운 말로 설명할 수 없으면, 해당 문제는 무언가 빠져 있거나 아니면 제대로 정의되지 않은 것이다.</strong></li>
+<li>This chapter discussed the simple technique of describing your program in plain English and using that description to help you write more natural code. This technique is deceptively simple, but very powerful. Looking at the words and phrases used in your description can also help you identify which subproblems to break off.</li>
+<li>But this process of “saying things in plain English” is applicable outside of just writing code. For example, one college computer lab policy states that when a student needs help debugging his program, he first has to explain the problem to a dedicated teddy bear in the corner of the room. Surprisingly, just describing the problem aloud can often help the student figure out a solution. This technique is called “rubber ducking.”</li>
+<li>Another way to look at it is this: if you can't describe the problem or your design in words, something is probably missing or undefined. Getting a program (or any idea) into words can really force it into shape.</li>
+</ul>
+
+
+<footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    </div>
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613346988"></script>
+    <script src="/js/jquery.sticky.js?1613346988"></script>
+    <script src="/js/featherlight.min.js?1613346988"></script>
+    <script src="/js/highlight.pack.js?1613346988"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613346988"></script>
+    <script src="/js/learn.js?1613346988"></script>
+    <script src="/js/hugo-learn.js?1613346988"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1613346988"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
+

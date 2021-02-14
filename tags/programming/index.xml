@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Kevin&#39;s Codex</title>
+    <link>https://klee30810.github.io/tags/programming/</link>
+    <description>Recent content in programming on Kevin&#39;s Codex</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 15 Feb 2021 07:55:12 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chap1. 코드는 이해하기 쉬워야 한다.</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap1/</link>
+      <pubDate>Mon, 15 Feb 2021 07:54:02 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap1/</guid>
+      <description>__01. 무엇이 코드를 ‘더 좋게’ 만드는가? __02. 가독성의 기본 정리  코드는 다른 사람이 그것을 이해하는데 들이는 시간을 최소화하는 방식으로 작성되어야 한다. 누군가 코드를 완전히 이해한다는 것은 그가 코드를 자유롭게 수정하고, 버그를 짚어내고, 수정된 내용이 여러분이 작성한 다른 부분의 코드와 어떻게 상호작용 하는지 알 수 있어야 한다는 뜻이다. 여기서의 누군가는 본인이 될 수도 있다.  __03. 분량이 적으면 항상 더 좋은가?  일반적으로 더 적은 분량의 코드가 보기 좋다. 하지만 그보다는 이해하기 쉬운 코드가 더 좋은 코드이다.</description>
+    </item>
+    
+    <item>
+      <title>Chap2. 이름에 정보 담기</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap2/</link>
+      <pubDate>Mon, 15 Feb 2021 07:54:38 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap2/</guid>
+      <description>★ 이름(식별자)에 정보를 담아내라. 이름을 일종의 설명문으로 생각하라. 좋은 이름은 생각보다 많은 정보를 전달할 수 있다.
+__01. 특정한 단어 고르기  구체적인 단어를 선택하라. 더 &#39;화려한&#39; 단어를 찾아보면 그 변수에 더 적합한 단어를 찾는데 도움이 된다.  ★ 재치 있는 이름보다 명확하고 간결한 이름이 더 좋다.
+
+__02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclidean_norm = function (v) { var retval = 0.</description>
+    </item>
+    
+    <item>
+      <title>Chap3. 오해할 수 없는 이름들</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap3/</link>
+      <pubDate>Mon, 15 Feb 2021 07:54:41 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap3/</guid>
+      <description>★ 본인이 지은 이름을 &amp;quot;다른 사람들이 다른 의미로 해석할 수 있을까?&amp;quot;라는 질문을 던져보며 철저하게 확인해야 한다.
+__01. 예: Filter()  filter라는 변수명은 의미가 모호하다. 대상을 &#39;고르는&#39; 기능을 원한다면 select가 &#39;제거하는&#39; 기능을 원한다면 exclude가 더 낫다.  __02. 예: Clip(text, length)  어떤 문단의 내용을 오려내는 함수 Clip(text,length)라면 두 가지 방식으로 이해할 수 있다. 이 함수의 기능은 문단을 처음부터 최대 length만큼 잘라내는 것이므로 truncate(text,max_chars)가 더 좋다. max_length 은 몇몇 애매모호함을 가지고 있다.</description>
+    </item>
+    
+    <item>
+      <title>Chap4. 미학</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap4/</link>
+      <pubDate>Mon, 15 Feb 2021 07:54:43 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap4/</guid>
+      <description>-좋은 소스코드는 &#39;눈을 편하게&#39; 해야 한다. 이 장에서는 다음과 같은 세 가지 원리가 사용된다.
+1. 코드를 읽는 사람이 이미 친숙한, 일관성 있는 레이아웃을 사용하라.
+2. 비슷한 코드는 서로 비슷해 보이게 만들어라.
+3. 서로 연관된 코드는 하나의 블록으로 묶어라.
+※ 여기서 말하는 미학은 가독성 만을 위한 것으로 새롭게 설계하는 리팩토링은 서로 독립된 아이디어에 해당한다. 두 가지 모두를 추구하는게 이상적이다.
+__01. 미학이 무슨 상관인가?  미학적으로 보기 좋은 코드가 사용하기 더 편리하다. 우리는 대부분의 시간을 코드를 그저 바라보는 데 쓴다는 것을 명심하라.</description>
+    </item>
+    
+    <item>
+      <title>Chap5. 주석에 담아야 하는 대상</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap5/</link>
+      <pubDate>Mon, 15 Feb 2021 07:54:46 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap5/</guid>
+      <description>★ 주석의 목적은 코드를 읽는 사람이 코드를 작성한 사람만큼 코드를 잘 이해하게 돕는 데 있다.
+__01. 설명하지 말아야 하는 것 ★ 코드에서 빠르게 유추할 수 있는 내용은 주석으로 달지 말라.
+ 설명 자체를 위한 설명을 달지 말라. 주석을 달아야하겠다면 파악하기 어려운 세부사항을 적는것이 좋다.
+ 나쁜 이름에 주석을 달지 마라. 대신 이름을 고쳐라. 좋은 코드 &amp;gt; 나쁜 코드 + 좋은 주석
+  __02. 생각을 기록하라  코드를 짜면서 의도한 바나 깨달은 바를 주석으로 기록하라.</description>
+    </item>
+    
+    <item>
+      <title>Chap6. 명확하고 간결한 주석 달기</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap6/</link>
+      <pubDate>Mon, 15 Feb 2021 07:54:48 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap6/</guid>
+      <description>주석은 높은 &#39;정보 대 공간&#39; 비율을 맞춰야 한다.  __01. 주석을 간결하게 하라 1 2 3 4 5 6 7 8  // The int is the CategoryType. // The first float in the inner pair is the &amp;#39;score&amp;#39;, // the second is the &amp;#39;weight&amp;#39;. typedef hash_map&amp;lt;int, pair&amp;lt;float, float&amp;gt; &amp;gt; ScoreMap; /* CONCISE ONE!!! */ // CategoryType -&amp;gt; (score, weight) typedef hash_map&amp;lt;int, pair&amp;lt;float, float&amp;gt; &amp;gt; ScoreMap;     짧게 줄여도 정보를 충분히 전달할 수 있다면 주석을 짧게 줄여라.</description>
+    </item>
+    
+    <item>
+      <title>Chap7. 읽기 쉽게 흐름제어 만들기</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap7/</link>
+      <pubDate>Mon, 15 Feb 2021 07:54:50 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap7/</guid>
+      <description>제어문은 사실 코드를 읽기 어렵게 만든다.  ★ 흐름을 제어하는 조건과 루프 그리고 여타 요소를 최대한 &#39;자연스럽게&#39; 만들도록 노력하라.코드를 읽다가 다시 되돌아가서 코드를 읽지 않아도 되게끔 만들어야 한다.
+__01. 조건문에서 인수의 순서  왼쪽에 &#39;질문을 받는&#39; 유동적인 값을 쓰고, 오른쪽에 비교대상으로 사용되는 고정적인 값을 써라.  __02. if/else 블록의 순서  조건은 부정문이 아닌 긍정문으로 쓰려고하라. 간단한 것을 먼저 처리하라. 이러면 한 화면으로 두개의 구문을 볼 수 있을 가능성이 높아진다.</description>
+    </item>
+    
+    <item>
+      <title>Chap8. 거대한 표현을 잘게 쪼개기</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap8/</link>
+      <pubDate>Mon, 15 Feb 2021 07:54:53 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap8/</guid>
+      <description>★ 거대한 표현을 더 소화하기 쉬운 여러 조각으로 나눈다.
+__01. 설명 변수  거대한 표현을 쪼개는 가장 쉬운 방법은 작은 하위 표현을 담을 &#39;추가 변수(extra variable)&#39;을 만드는 것이다.  1 2 3 4 5 6 7  // Here is an example: if line.split(&amp;#39;:&amp;#39;)[0].strip() == &amp;#34;root&amp;#34;: ... //Here is the same code, now with an explaining variable: username = line.split(&amp;#39;:&amp;#39;)[0].strip() if username == &amp;#34;root&amp;#34;: ...     추가 변수는 하위 표현의 의미를 설명하므로 &#39;설명 변수(explaning variable)&#39;라고도 한다.</description>
+    </item>
+    
+    <item>
+      <title>Chap9. 변수와 가독성</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap9/</link>
+      <pubDate>Mon, 15 Feb 2021 07:54:56 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap9/</guid>
+      <description>변수를 잘못 사용하면 다음과 같은 문제가 있다.   변수의 수가 많을수록 기억하고 다루기 더 어려워진다.
+ 변수의 범위가 넓어질수록 기억하고 다루는 시간이 더 길어진다.
+ 변수값이 자주 바뀔수록 현재값을 기억하고 다루기가 더 어려워진다.
+  __01. 변수 제거하기  가독성에 도움되지 않는 변수는 제거하는 것이 좋다.
+ It isn’t breaking down a complex expression. It doesn’t add clarification—the expression datetime.datetime.now() is clear enough. It’s used only once, so it doesn’t compress any redundant code.</description>
+    </item>
+    
+    <item>
+      <title>Chap10. 상관없는 하위문제 추출</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap10/</link>
+      <pubDate>Mon, 15 Feb 2021 07:55:00 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap10/</guid>
+      <description>큰 흐름과 관계가 적은 하위 문제를 적극적으로 발견해서 추출하라.   주어진 함수나 코드 블록을 보고, 스스로에게 질문하라. &amp;quot;상위 수준에서 본 이 코드의 목적은 무엇인가?&amp;quot;
+ 코드의 모든 줄에 질문을 던져라. &amp;quot;이 코드는 직접적으로 코드가 해결하기 위한 목적을 위해서 존재하는가?
+  혹은 그 목적을 위해서 필요하긴 하지만 그 자체와 직접적으로 상관없는 하위 문제를 해결하는가?&amp;quot;
+만약 본래 목적과 직접적으로 관련되지 않은 하위 문제를 해결하는 코드의 분량이 상당히 많으면, 이를 추출해서 별도의 함수로 만들어라.</description>
+    </item>
+    
+    <item>
+      <title>Chap11. 한 번에 하나씩</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap11/</link>
+      <pubDate>Mon, 15 Feb 2021 07:55:03 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap11/</guid>
+      <description>한 번에 여러 가지 일을 수행하는 코드는 이해하기 어렵다.  ★ 한 번에 하나의 작업만 수행하게 코드를 구성해야 한다. (코드를 &#39;탈파편화(Defragmenting)&#39;하라.)
+ 하나의 함수는 오직 한 가지 작업만 하게 하는 것이 좋지만, 큰 함수를 독자적인 논리적 영역들로 재구성하는 것 만으로 가독성에 도움이 된다.
+ 코드가 한 번에 한가지 일만 수행하게 하는 절차는 다음과 같다.
+   코드가 수행하는 모든 &#39;작업&#39;을 나열한다. 이때 작업은 아주 간단한 일일수도 있고, 아주 모호한 일일수도 있다.</description>
+    </item>
+    
+    <item>
+      <title>Chap12. 생각을 코드로 만들기</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap12/</link>
+      <pubDate>Mon, 15 Feb 2021 07:55:05 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap12/</guid>
+      <description>복잡한 생각을 다른 사람에게 설명할 때 중요하지 않은 자세한 내용 때문에 듣는 사람을 혼동시키는 일이 종종 있다.
+ &#39;쉬운 말&#39;로 자신의 생각을 지식이 부족한 사람에게 전달하는 기술은 매우 중요하다.
+ 여기에는 설명할 내용을 걸러서 요지만 뽑아내는 능력이 요구된다.
+  - 코드도 마찬가지로 &#39;쉬운 말&#39;로 작성되어야 한다.
+ 이 장에서 설명할 코드를 더 명확하게 만드는 간단한 과정은 다음과 같다.   코드가 할 일을 다른 사람에게 설명하듯이 &#39;쉬운 말&#39;로 묘사하라.</description>
+    </item>
+    
+    <item>
+      <title>Chap13. 코드 분량 줄이기</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap13/</link>
+      <pubDate>Mon, 15 Feb 2021 07:55:09 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap13/</guid>
+      <description>프로그래머가 배워야 하는 가장 중요한 기술은 언제 코딩을 해야 하는지 아는 것이다.  ★ 가장 읽기 쉬운 코드는 아무것도 없는 코드다.
+__01. 그 기능을 구현하려고 애쓰지 마라 - 그럴 필요가 없다  프로그래머는 대개 프로젝트에 정말로 필요한 기능이 얼마나 있는지 과대평가하는 경향이 있다. 또한 어떤 기능을 구현하는 데 필요한 노력을 과소평가하는 경향도 있다. 이는 조잡한 프로토타입을 구현하는 시간을 지나치게 낙관적으로 에측하고, 그 코드를 장차 유지보수하고, 문서를 만들고, 코드 베이스에 새로운 &#39;무게&#39;를 더하는데 얼마나 많은 시간이 필요한지를 완전히 잊어버리게 한다.</description>
+    </item>
+    
+    <item>
+      <title>Chap14. 테스트와 가독성</title>
+      <link>https://klee30810.github.io/compu/readable_code/chap14/</link>
+      <pubDate>Mon, 15 Feb 2021 07:55:12 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/readable_code/chap14/</guid>
+      <description>We’re going to focus on the readability aspect of tests and not get into whether you should write test code before writing real code (&amp;quot;test-driven development”) or other philosophical aspects of test development.  __01. 읽거나 유지보수하기 쉽게 테스트를 만들어라  Test code should be readable so that other coders are comfortable changing or adding tests.  __02. 이 테스트는 어떤 점이 잘못되었을까? 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  // Sort &amp;#39;docs&amp;#39; by score (highest first) and remove negative-scored documents.</description>
+    </item>
+    
+  </channel>
+</rss>

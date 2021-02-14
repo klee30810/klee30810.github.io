@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="Kevin&#39;s Codex Blog">
+<meta name="author" content="Kyungmin Lee, Kevin">
+
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+ 
+   <title>Chap11. 한 번에 하나씩 - Kevin&#39;s Codex</title>
+
+    
+    <link href="/css/nucleus.css?1613346988" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613346988" rel="stylesheet">
+    <link href="/css/hybrid.css?1613346988" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613346988" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613346988" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613346988" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613346988" rel="stylesheet">
+    <link href="/css/theme.css?1613346988" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/foo.css?1613346988" rel="stylesheet"><link href="/css/bar.css?1613346988" rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.min.js?1613346988"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/compu/readable_code/chap11/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://klee30810.github.io/">
+<img src="/images/logo.png" alt="logo.png" height="110" width="110">
+</a>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1613346988"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613346988"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/klee30810.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1613346988"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/" title="Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/">
+          <b> 1. </b>Paper Review
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/battery/">
+          <b>1. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/paper_review/battery/goodenough2013/" title="The Li-Ion Rechargeable Battery: A Perspective" class="dd-item ">
+        <a href="/paper_review/battery/goodenough2013/">
+        LIB Perspective
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/mldl/" title="Machine Learning &amp; Deep Learning Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/mldl/">
+          <b>2. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/">
+          <b>2. </b>Mechanical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/elec/" title="Electrical &amp; Electronic Studies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/elec/">
+          <b>3. </b>Electrical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/" title="Compu" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/">
+          <b>4. </b>Comp. Sci.
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/readable_code/" title="Readable Code Book Review" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/readable_code/">
+          <b>1. </b>Readable Code
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap1/" title="Chap1. 코드는 이해하기 쉬워야 한다." class="dd-item ">
+        <a href="/compu/readable_code/chap1/">
+        1. Easy to Understand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap2/" title="Chap2. 이름에 정보 담기" class="dd-item ">
+        <a href="/compu/readable_code/chap2/">
+        2. Naming with Info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap3/" title="Chap3. 오해할 수 없는 이름들" class="dd-item ">
+        <a href="/compu/readable_code/chap3/">
+        3. Clear Names
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap4/" title="Chap4. 미학" class="dd-item ">
+        <a href="/compu/readable_code/chap4/">
+        4. Aesthetics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap5/" title="Chap5. 주석에 담아야 하는 대상" class="dd-item ">
+        <a href="/compu/readable_code/chap5/">
+        5. Comment Contents
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap6/" title="Chap6. 명확하고 간결한 주석 달기" class="dd-item ">
+        <a href="/compu/readable_code/chap6/">
+        6. Clear Comments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap7/" title="Chap7. 읽기 쉽게 흐름제어 만들기" class="dd-item ">
+        <a href="/compu/readable_code/chap7/">
+        7. Readable Control
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap8/" title="Chap8. 거대한 표현을 잘게 쪼개기" class="dd-item ">
+        <a href="/compu/readable_code/chap8/">
+        8. Segments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap9/" title="Chap9. 변수와 가독성" class="dd-item ">
+        <a href="/compu/readable_code/chap9/">
+        9. Readable Var
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap10/" title="Chap10. 상관없는 하위문제 추출" class="dd-item ">
+        <a href="/compu/readable_code/chap10/">
+        10. Extract Under
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap11/" title="Chap11. 한 번에 하나씩" class="dd-item active">
+        <a href="/compu/readable_code/chap11/">
+        11. One for One
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap12/" title="Chap12. 생각을 코드로 만들기" class="dd-item ">
+        <a href="/compu/readable_code/chap12/">
+        12. Think Coding
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap13/" title="Chap13. 코드 분량 줄이기" class="dd-item ">
+        <a href="/compu/readable_code/chap13/">
+        13. Code Diet
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap14/" title="Chap14. 테스트와 가독성" class="dd-item ">
+        <a href="/compu/readable_code/chap14/">
+        14. Test &amp; Readable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mldl/" title="Machine Learning &amp; Deep Learning" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mldl/">
+          <b>5. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/battery/">
+          <b>6. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/battery/battery-basics/" title="Battery Basics" class="dd-item ">
+        <a href="/battery/battery-basics/">
+        Battery Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/finance/" title="Finance" class="dd-item
+        
+        
+        
+        ">
+      <a href="/finance/">
+          <b>7. </b>Finance
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/math/" title="Mathematics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/math/">
+          <b>8. </b>Mathematics
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sci/" title="Science" class="dd-item
+        
+        
+        
+        ">
+      <a href="/sci/">
+          <b>9. </b>Science
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/" title="Language" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/">
+          <b>10. </b>Language
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/english/" title="English" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/english/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/chinese/" title="Chinese" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/chinese/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/" title="Industry Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/">
+          <b>11. </b>Industry
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/semicon/" title="Semi-conductor Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/semicon/">
+          <b>1. </b>Semi-conductor
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/automob/" title="Automobile Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/automob/">
+          <b>2. </b>Automobile
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://klee30810.github.io/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                   Chap11. 한 번에 하나씩
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/programming">programming</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Chap11. 한 번에 하나씩
+            </h1>
+          
+
+        
+
+
+<ul>
+<li>한 번에 여러 가지 일을 수행하는 코드는 이해하기 어렵다.</li>
+</ul>
+
+<p><strong>★ 한 번에 하나의 작업만 수행하게 코드를 구성해야 한다. (코드를 '탈파편화(Defragmenting)'하라.)</strong></p>
+
+<ul>
+<li><p>하나의 함수는 오직 한 가지 작업만 하게 하는 것이 좋지만, 큰 함수를 독자적인 논리적 영역들로 재구성하는 것 만으로 가독성에 도움이 된다.</p></li>
+
+<li><p>코드가 한 번에 한가지 일만 수행하게 하는 절차는 다음과 같다.</p></li>
+</ul>
+
+<ol>
+<li><p>코드가 수행하는 모든 '작업'을 나열한다. 이때 작업은 아주 간단한 일일수도 있고, 아주 모호한 일일수도 있다.</p></li>
+
+<li><p>이러한 작업을 분리하여 서로 다른 함수로 혹은 적어도 논리적으로 구분되는 영역에 놓을 수 있는 코드로 만들어라.</p></li>
+</ol>
+
+<h3 id="01-작업은-작을-수-있다">__01. 작업은 작을 수 있다</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">vote_changed</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">old_vote</span>, <span style="color:#06b6ef">new_vote</span>) {
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">score</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">get_score</span>();
+
+		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">new_vote</span> <span style="color:#5bc4bf">!==</span> <span style="color:#06b6ef">old_vote</span>) {
+				<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">new_vote</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;Up&#39;</span>) {
+						<span style="color:#06b6ef">score</span> <span style="color:#5bc4bf">+=</span> (<span style="color:#06b6ef">old_vote</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;Down&#39;</span> <span style="color:#5bc4bf">?</span> <span style="color:#f99b15">2</span> <span style="color:#5bc4bf">:</span> <span style="color:#f99b15">1</span>);
+				} <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (<span style="color:#06b6ef">new_vote</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;Down&#39;</span>) {
+						<span style="color:#06b6ef">score</span> <span style="color:#5bc4bf">-=</span> (<span style="color:#06b6ef">old_vote</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;Up&#39;</span> <span style="color:#5bc4bf">?</span> <span style="color:#f99b15">2</span> <span style="color:#5bc4bf">:</span> <span style="color:#f99b15">1</span>);
+				} <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (<span style="color:#06b6ef">new_vote</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;&#39;</span>) {
+						<span style="color:#06b6ef">score</span> <span style="color:#5bc4bf">+=</span> (<span style="color:#06b6ef">old_vote</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;Up&#39;</span> <span style="color:#5bc4bf">?</span> <span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span> <span style="color:#5bc4bf">:</span> <span style="color:#f99b15">1</span>);
+				}
+		}
+		<span style="color:#06b6ef">set_score</span>(<span style="color:#06b6ef">score</span>);
+};</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><p>예제 코드는 투표 도구의 추천수를 바꾸는 작업을 하는 코드이다. 이때 한명의 사용자는 한 표만 행사할 수 있고 이를 수정할 수 있다.</p></li>
+
+<li><p>이는 '사용자의 이전 투표값과 현재 투표값을 비교하는 작업'과 '점수를 변경하는 작업'으로 분리될 수 있다.</p></li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">vote_value</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">vote</span>) {
+		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">vote</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;Up&#39;</span>) {
+				<span style="color:#815ba4">return</span> <span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>;
+		}
+		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">vote</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;Down&#39;</span>) {
+				<span style="color:#815ba4">return</span> <span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>;
+		}
+		<span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+};
+
+<span style="color:#815ba4">var</span> <span style="color:#06b6ef">vote_changed</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">old_vote</span>, <span style="color:#06b6ef">new_vote</span>) {
+		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">score</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">get_score</span>();
+
+		<span style="color:#06b6ef">score</span> <span style="color:#5bc4bf">-=</span> <span style="color:#06b6ef">vote_value</span>(<span style="color:#06b6ef">old_vote</span>); <span style="color:#776e71">// remove the old vote
+</span><span style="color:#776e71"></span>		<span style="color:#06b6ef">score</span> <span style="color:#5bc4bf">+=</span> <span style="color:#06b6ef">vote_value</span>(<span style="color:#06b6ef">new_vote</span>); <span style="color:#776e71">// add the new vote
+</span><span style="color:#776e71"></span>
+		<span style="color:#06b6ef">set_score</span>(<span style="color:#06b6ef">score</span>);
+};</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>이렇게 각각의 작업을 분리하고 나면 코드를 더 읽기 편하게 만들 수 있다.</li>
+</ul>
+
+<p><strong>- 꼭 함수로 만들어서 분리하지 않더라도 두개의 논리적 영역으로 분류하는 것만으로도 가독성이 향상된다.</strong></p>
+
+<h3 id="02-객체에서-값-추출하기">__02. 객체에서 값 추출하기</h3>
+
+<ul>
+<li><p>예제 코드는 &quot;도시,나라&quot; 포맷으로 정보를 저장하는 코드이다.</p>
+
+<ul>
+<li>이 코드에 입력되는 주소 값은 아래의 네가지이다.</li>
+</ul>
+
+<p>'localityName(도시/마을)','SubAdministrativeAreaName(도시권/자치주)', 'AdministrativeAreaName(주/영역)', 'CountryName(나라명)'</p>
+
+<ul>
+<li>이 예제의 문제점은 값들 중 일부 혹은 전체가 없을 수도 있다는 것이다.</li>
+</ul></li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">place</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">location_info</span>[<span style="color:#48b685">&#34;LocalityName&#34;</span>]; <span style="color:#776e71">// e.g. &#34;Santa Monica&#34;
+</span><span style="color:#776e71"></span><span style="color:#815ba4">if</span> (<span style="color:#5bc4bf">!</span><span style="color:#06b6ef">place</span>) {
+		<span style="color:#06b6ef">place</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">location_info</span>[<span style="color:#48b685">&#34;SubAdministrativeAreaName&#34;</span>]; <span style="color:#776e71">// e.g. &#34;Los Angeles&#34;
+</span><span style="color:#776e71"></span>}
+<span style="color:#815ba4">if</span> (<span style="color:#5bc4bf">!</span><span style="color:#06b6ef">place</span>) {
+		<span style="color:#06b6ef">place</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">location_info</span>[<span style="color:#48b685">&#34;AdministrativeAreaName&#34;</span>]; <span style="color:#776e71">// e.g. &#34;California&#34;
+</span><span style="color:#776e71"></span>}
+<span style="color:#815ba4">if</span> (<span style="color:#5bc4bf">!</span><span style="color:#06b6ef">place</span>) {
+		<span style="color:#06b6ef">place</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;Middle-of-Nowhere&#34;</span>;
+}
+<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">location_info</span>[<span style="color:#48b685">&#34;CountryName&#34;</span>]) {
+		<span style="color:#06b6ef">place</span> <span style="color:#5bc4bf">+=</span> <span style="color:#48b685">&#34;, &#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">location_info</span>[<span style="color:#48b685">&#34;CountryName&#34;</span>]; <span style="color:#776e71">// e.g. &#34;USA&#34;
+</span><span style="color:#776e71"></span>} <span style="color:#815ba4">else</span> {
+		<span style="color:#06b6ef">place</span> <span style="color:#5bc4bf">+=</span> <span style="color:#48b685">&#34;, Planet Earth&#34;</span>;
+}
+<span style="color:#815ba4">return</span> <span style="color:#06b6ef">place</span>;</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>예제 코드에서는 비어있는 값을 다루기 위해서 기본값을 주는 방법을 사용했다.</li>
+</ul>
+
+<ol>
+<li>'도시'를 선택할 때 값이 있으면 '도시/마을'을 사용한다. 만약 이 값이 없으면 '도시권/자치주'를 사용하고, 이도 없으면 '주/영역'을 사용한다.</li>
+<li>세 값이 모두 없으면 '도시/마을'에 &quot;Middle-of-Nowhere(아무 곳도 아닌 곳)'이라는 기본값을 준다.</li>
+<li>만약 '나라'값이 없으면, 기본값으로 &quot;Planet Earth(지구)&quot;라는 값을 준다.</li>
+</ol>
+
+<ul>
+<li>무작정 기본값을 주는 코드를 추가한 예제 코드는 지저분해졌고, 기능을 더 추가하면 더 지저분해질 상황이 되었다.</li>
+<li>그래서 책에서는 '한 번에 한 가지 일' 원리를 적용하기 위해서 코드가 하는 일을 모두 정리했다.</li>
+</ul>
+
+<ol>
+<li>location_info 딕셔너리에서 값들을 읽는다.</li>
+</ol>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">town</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">location_info</span>[<span style="color:#48b685">&#34;LocalityName&#34;</span>]; <span style="color:#776e71">// e.g. &#34;Santa Monica&#34;
+</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">city</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">location_info</span>[<span style="color:#48b685">&#34;SubAdministrativeAreaName&#34;</span>]; <span style="color:#776e71">// e.g. &#34;Los Angeles&#34;
+</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">state</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">location_info</span>[<span style="color:#48b685">&#34;AdministrativeAreaName&#34;</span>]; <span style="color:#776e71">// e.g. &#34;CA&#34;
+</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">country</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">location_info</span>[<span style="color:#48b685">&#34;CountryName&#34;</span>]; <span style="color:#ef6155">// e.g. &#34;USA&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<ol start="2">
+<li>'도시'의 값을 설정하기 위해 정해진 선호도 순으로 값을 읽는다. 아무런 값도 찾을 수 없으면 &quot;아무 곳도 아닌 곳&quot;이라는 기본값을 설정한다.</li>
+</ol>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#776e71">// Start with the default, and keep overwriting with the most specific value.
+</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">second_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;Planet Earth&#34;</span>;
+<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">country</span>) {
+		<span style="color:#06b6ef">second_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">country</span>;
+}
+<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">state</span> <span style="color:#5bc4bf">&amp;&amp;</span> <span style="color:#06b6ef">country</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#34;USA&#34;</span>) {
+		<span style="color:#06b6ef">second_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">state</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ol start="3">
+<li>'나라' 값을 설정한다. 값이 없으면 기본값인 &quot;지구&quot;로 설정한다.</li>
+</ol>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">first_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;Middle-of-Nowhere&#34;</span>;
+<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">state</span> <span style="color:#5bc4bf">&amp;&amp;</span> <span style="color:#06b6ef">country</span> <span style="color:#5bc4bf">!==</span> <span style="color:#48b685">&#34;USA&#34;</span>) {
+		<span style="color:#06b6ef">first_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">state</span>;
+}
+<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">city</span>) {
+		<span style="color:#06b6ef">first_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">city</span>;
+}
+<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">town</span>) {
+		<span style="color:#06b6ef">first_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">town</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ol start="4">
+<li>place를 변경한다.</li>
+</ol>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">return</span> <span style="color:#06b6ef">first_half</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34;, &#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">second_half</span>;</code></pre></td></tr></table>
+</div>
+</div>
+<p><figure><img src="/images/compu/readable_code/chap11/Untitled.png" alt="images"></figure></p>
+
+<p><strong>- 코드를 리팩토링할 때 보통 여러 가지 접근 방법이 있다.</strong></p>
+
+<p><strong>- 일단 몇 가지 작업을 분리하면, 코드는 더 생각하기 쉬워지므로 이를 리팩토링 할 수 있는 더 나은 방법이 떠오르게 될 수도 있다.</strong></p>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">first_half</span>, <span style="color:#06b6ef">second_half</span>;
+<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">country</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#34;USA&#34;</span>) {
+		<span style="color:#06b6ef">first_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">town</span> <span style="color:#5bc4bf">||</span> <span style="color:#06b6ef">city</span> <span style="color:#5bc4bf">||</span> <span style="color:#48b685">&#34;Middle-of-Nowhere&#34;</span>;
+		<span style="color:#06b6ef">second_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">state</span> <span style="color:#5bc4bf">||</span> <span style="color:#48b685">&#34;USA&#34;</span>;
+} <span style="color:#815ba4">else</span> {
+		<span style="color:#06b6ef">first_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">town</span> <span style="color:#5bc4bf">||</span> <span style="color:#06b6ef">city</span> <span style="color:#5bc4bf">||</span> <span style="color:#06b6ef">state</span> <span style="color:#5bc4bf">||</span> <span style="color:#48b685">&#34;Middle-of-Nowhere&#34;</span>;
+		<span style="color:#06b6ef">second_half</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">country</span> <span style="color:#5bc4bf">||</span> <span style="color:#48b685">&#34;Planet Earth&#34;</span>;
+}
+<span style="color:#815ba4">return</span> <span style="color:#06b6ef">first_half</span> <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#34;, &#34;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">second_half</span>;</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="03-더-큰-예제">__03. 더 큰 예제</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#776e71">// WARNING: DO NOT STARE DIRECTLY AT THIS CODE FOR EXTENDED PERIODS OF TIME.
+</span><span style="color:#776e71"></span><span style="color:#815ba4">void</span> <span style="color:#06b6ef">UpdateCounts</span>(<span style="color:#06b6ef">HttpDownload</span> <span style="color:#06b6ef">hd</span>) {
+		<span style="color:#776e71">// Figure out the Exit State, if available.
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">if</span> (<span style="color:#5bc4bf">!</span><span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">has_event_log</span>() <span style="color:#5bc4bf">||</span> <span style="color:#5bc4bf">!</span><span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">event_log</span>().<span style="color:#06b6ef">has_exit_state</span>()) {
+				<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Exit State&#34;</span>][<span style="color:#48b685">&#34;unknown&#34;</span>]<span style="color:#5bc4bf">++</span>;
+		} <span style="color:#815ba4">else</span> {
+				<span style="color:#06b6ef">string</span> <span style="color:#06b6ef">state_str</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">ExitStateTypeName</span>(<span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">event_log</span>().<span style="color:#06b6ef">exit_state</span>());
+				<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Exit State&#34;</span>][<span style="color:#06b6ef">state_str</span>]<span style="color:#5bc4bf">++</span>;
+		}
+
+		<span style="color:#776e71">// If there are no HTTP headers at all, use &#34;unknown&#34; for the remaining elements.
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">if</span> (<span style="color:#5bc4bf">!</span><span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">has_http_headers</span>()) {
+				<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Http Response&#34;</span>][<span style="color:#48b685">&#34;unknown&#34;</span>]<span style="color:#5bc4bf">++</span>;
+				<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Content-Type&#34;</span>][<span style="color:#48b685">&#34;unknown&#34;</span>]<span style="color:#5bc4bf">++</span>;
+				<span style="color:#815ba4">return</span>;
+		}
+
+		<span style="color:#06b6ef">HttpHeaders</span> <span style="color:#06b6ef">headers</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">http_headers</span>();
+
+		<span style="color:#776e71">// Log the HTTP response, if known, otherwise log &#34;unknown&#34;
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">if</span> (<span style="color:#5bc4bf">!</span><span style="color:#06b6ef">headers</span>.<span style="color:#06b6ef">has_response_code</span>()) {
+				<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Http Response&#34;</span>][<span style="color:#48b685">&#34;unknown&#34;</span>]<span style="color:#5bc4bf">++</span>;
+		} <span style="color:#815ba4">else</span> {
+				<span style="color:#06b6ef">string</span> <span style="color:#06b6ef">code</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">StringPrintf</span>(<span style="color:#48b685">&#34;%d&#34;</span>, <span style="color:#06b6ef">headers</span>.<span style="color:#06b6ef">response_code</span>());
+				<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Http Response&#34;</span>][<span style="color:#06b6ef">code</span>]<span style="color:#5bc4bf">++</span>;
+		}
+
+		<span style="color:#776e71">// Log the Content-Type if known, otherwise log &#34;unknown&#34;
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">if</span> (<span style="color:#5bc4bf">!</span><span style="color:#06b6ef">headers</span>.<span style="color:#06b6ef">has_content_type</span>()) {
+				<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Content-Type&#34;</span>][<span style="color:#48b685">&#34;unknown&#34;</span>]<span style="color:#5bc4bf">++</span>;
+		
+		} <span style="color:#815ba4">else</span> {
+				<span style="color:#06b6ef">string</span> <span style="color:#06b6ef">content_type</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">ContentTypeMime</span>(<span style="color:#06b6ef">headers</span>.<span style="color:#06b6ef">content_type</span>());
+				<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Content-Type&#34;</span>][<span style="color:#06b6ef">content_type</span>]<span style="color:#5bc4bf">++</span>;
+		}
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>이번 예제는 더 길고 복잡한 코드이다.</li>
+<li>이 예제는 길고 복잡한만큼 실제로 많은 논리를 포함하며, 심지어 반복되는 코드도 있다. 이런 코드를 읽는 것은 결코 즐겁지 않다.</li>
+<li>이 코드 전반에 걸쳐서 뒤섞여 있는 별도의 작업들은 다음과 같다.</li>
+</ul>
+
+<ol>
+<li><p>각 키를 위한 기본값으로 &quot;unknown&quot; 사용하기.</p></li>
+
+<li><p>HttpDownload의 멤버 중 존재하지 않는 값이 있는지 확인하기.</p></li>
+
+<li><p>값을 읽어서 문자열로 변환하기.</p></li>
+
+<li><p>counts[] 갱신하기.</p></li>
+</ol>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">void</span> <span style="color:#06b6ef">UpdateCounts</span>(<span style="color:#06b6ef">HttpDownload</span> <span style="color:#06b6ef">hd</span>) {
+		<span style="color:#776e71">// Task: define default values for each of the values we want to extract
+</span><span style="color:#776e71"></span>		<span style="color:#06b6ef">string</span> <span style="color:#06b6ef">exit_state</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;unknown&#34;</span>;
+		<span style="color:#06b6ef">string</span> <span style="color:#06b6ef">http_response</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;unknown&#34;</span>;
+		<span style="color:#06b6ef">string</span> <span style="color:#06b6ef">content_type</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;unknown&#34;</span>;
+
+		<span style="color:#776e71">// Task: try to extract each value from HttpDownload, one by one
+</span><span style="color:#776e71"></span>		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">has_event_log</span>() <span style="color:#5bc4bf">&amp;&amp;</span> <span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">event_log</span>().<span style="color:#06b6ef">has_exit_state</span>()) {
+				<span style="color:#06b6ef">exit_state</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">ExitStateTypeName</span>(<span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">event_log</span>().<span style="color:#06b6ef">exit_state</span>());
+		}
+		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">has_http_headers</span>() <span style="color:#5bc4bf">&amp;&amp;</span> <span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">http_headers</span>().<span style="color:#06b6ef">has_response_code</span>()) {
+				<span style="color:#06b6ef">http_response</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">StringPrintf</span>(<span style="color:#48b685">&#34;%d&#34;</span>, <span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">http_headers</span>().<span style="color:#06b6ef">response_code</span>());
+		}
+		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">has_http_headers</span>() <span style="color:#5bc4bf">&amp;&amp;</span> <span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">http_headers</span>().<span style="color:#06b6ef">has_content_type</span>()) {
+				<span style="color:#06b6ef">content_type</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">ContentTypeMime</span>(<span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">http_headers</span>().<span style="color:#06b6ef">content_type</span>());
+		}
+
+		<span style="color:#776e71">// Task: update counts[]
+</span><span style="color:#776e71"></span>		<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Exit State&#34;</span>][<span style="color:#06b6ef">exit_state</span>]<span style="color:#5bc4bf">++</span>;
+		<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Http Response&#34;</span>][<span style="color:#06b6ef">http_response</span>]<span style="color:#5bc4bf">++</span>;
+		<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Content-Type&#34;</span>][<span style="color:#06b6ef">content_type</span>]<span style="color:#5bc4bf">++</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>이렇게 작업을 정리하고 다시 작성한 코드는 다음과 같은 목적을 가진 세 개의 영역으로 분리되었다.</li>
+</ul>
+
+<ol>
+<li><p>읽고자 하는 각각의 값을 위한 기본값을 정의한다. (우리가 관심을 가지고 있는 세 개의 키에 기본값을 설정한다.)</p></li>
+
+<li><p>HttpDownload에서 각각의 값을 하나씩 읽는다. (각 키에 대한 값이 존재하면 그 값을 읽어서 문자열로 변환한다.)</p></li>
+
+<li><p>count[]를 갱신한다. (각각의 키/값 짝에 counts[]를 갱신한다.)</p></li>
+</ol>
+
+<ul>
+<li>처음에 나열한 작업이 네 개인데 실제 코드에는 세 개의 영역만 존재하는데 문제 될 것은 전혀 없다.</li>
+<li><strong>처음에 나열한 작업은 그저 출발점에 해당할 뿐이다. 나열된 대상 중에서 일부만 분리되어도 큰 도움이 된다.</strong></li>
+<li>이러한 개선은 별도로 함수를 만들지 않더라도 코드 정리를 도와준다. 예제에서는 처음에 별도의 함수를 만들지 않고 코드를 정리했다.</li>
+<li><strong>개선은 여러가지 방법으로 행할 수 있으며, 예제에서는 함수를 사용하는 방법도 따로 보여준다.</strong></li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">void</span> <span style="color:#06b6ef">UpdateCounts</span>(<span style="color:#06b6ef">HttpDownload</span> <span style="color:#06b6ef">hd</span>) {
+		<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Exit State&#34;</span>][<span style="color:#06b6ef">ExitState</span>(<span style="color:#06b6ef">hd</span>)]<span style="color:#5bc4bf">++</span>;
+		<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Http Response&#34;</span>][<span style="color:#06b6ef">HttpResponse</span>(<span style="color:#06b6ef">hd</span>)]<span style="color:#5bc4bf">++</span>;
+		<span style="color:#06b6ef">counts</span>[<span style="color:#48b685">&#34;Content-Type&#34;</span>][<span style="color:#06b6ef">ContentType</span>(<span style="color:#06b6ef">hd</span>)]<span style="color:#5bc4bf">++</span>;
+}
+
+<span style="color:#06b6ef">string</span> <span style="color:#06b6ef">ExitState</span>(<span style="color:#06b6ef">HttpDownload</span> <span style="color:#06b6ef">hd</span>) {
+		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">has_event_log</span>() <span style="color:#5bc4bf">&amp;&amp;</span> <span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">event_log</span>().<span style="color:#06b6ef">has_exit_state</span>()) {
+				<span style="color:#815ba4">return</span> <span style="color:#06b6ef">ExitStateTypeName</span>(<span style="color:#06b6ef">hd</span>.<span style="color:#06b6ef">event_log</span>().<span style="color:#06b6ef">exit_state</span>());
+		} <span style="color:#815ba4">else</span> {
+				<span style="color:#815ba4">return</span> <span style="color:#48b685">&#34;unknown&#34;</span>;
+		}
+		}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>함수를 따로 정리한 예제 코드에는 중간 결과값을 저장하는 변수가 제거되었으며, 이는 9장과 관련이 있다.</li>
+<li>두 해결책 모두 코드를 읽는 사람이 한 번에 하나의 일만 생각하게 하므로 가독성을 높여준다.</li>
+</ul>
+
+<h3 id="요약">__요약</h3>
+
+<ul>
+<li>This chapter illustrates a simple technique for organizing your code: do only one task at a
+time.</li>
+<li>If you have code that’s difficult to read, try to list all of the tasks it’s doing. Some of these tasks might easily become separate functions (or classes). Others might just become logical “paragraphs” within a single function. The exact details of how you separate these tasks isn’t as important as the fact that they’re separated. The hard part is accurately describing all the little things your program is doing.</li>
+</ul>
+
+
+<footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    </div>
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613346988"></script>
+    <script src="/js/jquery.sticky.js?1613346988"></script>
+    <script src="/js/featherlight.min.js?1613346988"></script>
+    <script src="/js/highlight.pack.js?1613346988"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613346988"></script>
+    <script src="/js/learn.js?1613346988"></script>
+    <script src="/js/hugo-learn.js?1613346988"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1613346988"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
+

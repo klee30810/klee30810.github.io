@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap1/</loc>
+    <lastmod>2021-02-15T07:54:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/readable_code/</loc>
+    <lastmod>2021-02-15T07:53:20+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/indust/semicon/</loc>
     <lastmod>2021-02-14T23:21:33+09:00</lastmod>
   </url>
@@ -15,6 +25,11 @@
   <url>
     <loc>https://klee30810.github.io/paper_review/</loc>
     <lastmod>2021-02-10T11:28:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap2/</loc>
+    <lastmod>2021-02-15T07:54:38+09:00</lastmod>
   </url>
   
   <url>
@@ -33,8 +48,18 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap3/</loc>
+    <lastmod>2021-02-15T07:54:41+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/elec/</loc>
     <lastmod>2021-02-14T20:40:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap4/</loc>
+    <lastmod>2021-02-15T07:54:43+09:00</lastmod>
   </url>
   
   <url>
@@ -43,8 +68,18 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap5/</loc>
+    <lastmod>2021-02-15T07:54:46+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/mldl/</loc>
     <lastmod>2021-02-14T20:40:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap6/</loc>
+    <lastmod>2021-02-15T07:54:48+09:00</lastmod>
   </url>
   
   <url>
@@ -53,8 +88,18 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap7/</loc>
+    <lastmod>2021-02-15T07:54:50+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/finance/</loc>
     <lastmod>2021-02-14T22:31:50+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap8/</loc>
+    <lastmod>2021-02-15T07:54:53+09:00</lastmod>
   </url>
   
   <url>
@@ -63,8 +108,18 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap9/</loc>
+    <lastmod>2021-02-15T07:54:56+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/sci/</loc>
     <lastmod>2021-02-14T22:38:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap10/</loc>
+    <lastmod>2021-02-15T07:55:00+09:00</lastmod>
   </url>
   
   <url>
@@ -73,8 +128,28 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap11/</loc>
+    <lastmod>2021-02-15T07:55:03+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/indust/</loc>
     <lastmod>2021-02-14T23:19:49+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap12/</loc>
+    <lastmod>2021-02-15T07:55:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap13/</loc>
+    <lastmod>2021-02-15T07:55:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/readable_code/chap14/</loc>
+    <lastmod>2021-02-15T07:55:12+09:00</lastmod>
   </url>
   
   <url>
@@ -88,17 +163,22 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/tags/programming/</loc>
+    <lastmod>2021-02-15T07:55:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/tags/</loc>
+    <lastmod>2021-02-15T07:55:12+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/tags/battery/</loc>
     <lastmod>2021-02-11T05:35:32+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://klee30810.github.io/tags/overview/</loc>
-    <lastmod>2021-02-11T05:35:32+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://klee30810.github.io/tags/</loc>
     <lastmod>2021-02-11T05:35:32+09:00</lastmod>
   </url>
   

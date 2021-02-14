@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="Kevin&#39;s Codex Blog">
+<meta name="author" content="Kyungmin Lee, Kevin">
+
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+ 
+   <title>Chap14. 테스트와 가독성 - Kevin&#39;s Codex</title>
+
+    
+    <link href="/css/nucleus.css?1613346988" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613346988" rel="stylesheet">
+    <link href="/css/hybrid.css?1613346988" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613346988" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613346988" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613346988" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613346988" rel="stylesheet">
+    <link href="/css/theme.css?1613346988" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1613346988" rel="stylesheet">
+    
+    <link href="/css/foo.css?1613346988" rel="stylesheet"><link href="/css/bar.css?1613346988" rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.min.js?1613346988"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/compu/readable_code/chap14/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://klee30810.github.io/">
+<img src="/images/logo.png" alt="logo.png" height="110" width="110">
+</a>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1613346988"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613346988"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/klee30810.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1613346988"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/" title="Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/">
+          <b> 1. </b>Paper Review
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/battery/">
+          <b>1. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/paper_review/battery/goodenough2013/" title="The Li-Ion Rechargeable Battery: A Perspective" class="dd-item ">
+        <a href="/paper_review/battery/goodenough2013/">
+        LIB Perspective
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/mldl/" title="Machine Learning &amp; Deep Learning Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/mldl/">
+          <b>2. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/">
+          <b>2. </b>Mechanical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/elec/" title="Electrical &amp; Electronic Studies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/elec/">
+          <b>3. </b>Electrical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/" title="Compu" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/">
+          <b>4. </b>Comp. Sci.
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/readable_code/" title="Readable Code Book Review" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/readable_code/">
+          <b>1. </b>Readable Code
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap1/" title="Chap1. 코드는 이해하기 쉬워야 한다." class="dd-item ">
+        <a href="/compu/readable_code/chap1/">
+        1. Easy to Understand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap2/" title="Chap2. 이름에 정보 담기" class="dd-item ">
+        <a href="/compu/readable_code/chap2/">
+        2. Naming with Info
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap3/" title="Chap3. 오해할 수 없는 이름들" class="dd-item ">
+        <a href="/compu/readable_code/chap3/">
+        3. Clear Names
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap4/" title="Chap4. 미학" class="dd-item ">
+        <a href="/compu/readable_code/chap4/">
+        4. Aesthetics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap5/" title="Chap5. 주석에 담아야 하는 대상" class="dd-item ">
+        <a href="/compu/readable_code/chap5/">
+        5. Comment Contents
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap6/" title="Chap6. 명확하고 간결한 주석 달기" class="dd-item ">
+        <a href="/compu/readable_code/chap6/">
+        6. Clear Comments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap7/" title="Chap7. 읽기 쉽게 흐름제어 만들기" class="dd-item ">
+        <a href="/compu/readable_code/chap7/">
+        7. Readable Control
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap8/" title="Chap8. 거대한 표현을 잘게 쪼개기" class="dd-item ">
+        <a href="/compu/readable_code/chap8/">
+        8. Segments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap9/" title="Chap9. 변수와 가독성" class="dd-item ">
+        <a href="/compu/readable_code/chap9/">
+        9. Readable Var
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap10/" title="Chap10. 상관없는 하위문제 추출" class="dd-item ">
+        <a href="/compu/readable_code/chap10/">
+        10. Extract Under
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap11/" title="Chap11. 한 번에 하나씩" class="dd-item ">
+        <a href="/compu/readable_code/chap11/">
+        11. One for One
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap12/" title="Chap12. 생각을 코드로 만들기" class="dd-item ">
+        <a href="/compu/readable_code/chap12/">
+        12. Think Coding
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap13/" title="Chap13. 코드 분량 줄이기" class="dd-item ">
+        <a href="/compu/readable_code/chap13/">
+        13. Code Diet
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/compu/readable_code/chap14/" title="Chap14. 테스트와 가독성" class="dd-item active">
+        <a href="/compu/readable_code/chap14/">
+        14. Test &amp; Readable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mldl/" title="Machine Learning &amp; Deep Learning" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mldl/">
+          <b>5. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/battery/">
+          <b>6. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/battery/battery-basics/" title="Battery Basics" class="dd-item ">
+        <a href="/battery/battery-basics/">
+        Battery Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/finance/" title="Finance" class="dd-item
+        
+        
+        
+        ">
+      <a href="/finance/">
+          <b>7. </b>Finance
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/math/" title="Mathematics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/math/">
+          <b>8. </b>Mathematics
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sci/" title="Science" class="dd-item
+        
+        
+        
+        ">
+      <a href="/sci/">
+          <b>9. </b>Science
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/" title="Language" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/">
+          <b>10. </b>Language
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/english/" title="English" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/english/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/chinese/" title="Chinese" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/chinese/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/" title="Industry Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/">
+          <b>11. </b>Industry
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/semicon/" title="Semi-conductor Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/semicon/">
+          <b>1. </b>Semi-conductor
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/automob/" title="Automobile Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/automob/">
+          <b>2. </b>Automobile
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://klee30810.github.io/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                   Chap14. 테스트와 가독성
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/programming">programming</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Chap14. 테스트와 가독성
+            </h1>
+          
+
+        
+
+
+<ul>
+<li>We’re going to focus on the readability aspect of tests and not get into whether you should write test code before writing real code (&quot;test-driven development”) or other philosophical aspects of test development.</li>
+</ul>
+
+<h3 id="01-읽거나-유지보수하기-쉽게-테스트를-만들어라">__01. 읽거나 유지보수하기 쉽게 테스트를 만들어라</h3>
+
+<ul>
+<li><strong>Test code should be readable so that other coders are comfortable changing or
+adding tests.</strong></li>
+</ul>
+
+<h3 id="02-이-테스트는-어떤-점이-잘못되었을까">__02. 이 테스트는 어떤 점이 잘못되었을까?</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// Sort &#39;docs&#39; by score (highest first) and remove negative-scored documents.
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">SortAndFilterDocs</span>(vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;*</span> docs);
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">Test1</span>() {
+		vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;</span> docs;
+		docs.resize(<span style="color:#f99b15">5</span>);
+		docs[<span style="color:#f99b15">0</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">0</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">-</span><span style="color:#f99b15">5.0</span>;
+		docs[<span style="color:#f99b15">1</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">1</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>;
+		<span style="color:#f99b15">150</span> C H A P T E R F O U R T E E N
+		docs[<span style="color:#f99b15">2</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">2</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">4</span>;
+		docs[<span style="color:#f99b15">3</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">3</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">-</span><span style="color:#f99b15">99998.7</span>;
+		docs[<span style="color:#f99b15">4</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">4</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">3.0</span>;
+
+		SortAndFilterDocs(<span style="color:#5bc4bf">&amp;</span>docs);
+
+		assert(docs.size() <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">3</span>);
+		assert(docs[<span style="color:#f99b15">0</span>].score <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">4</span>);
+		assert(docs[<span style="color:#f99b15">1</span>].score <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">3.0</span>);
+		assert(docs[<span style="color:#f99b15">2</span>].score <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">1</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>There are at least eight different problems with this test code.</li>
+</ul>
+
+<h3 id="03-이-테스트를-더-읽기-쉽게-만들기">__03. 이 테스트를 더 읽기 쉽게 만들기</h3>
+
+<ul>
+<li><strong>You should hide less important details from the user, so that more important details are most prominent.</strong></li>
+<li>This test code clearly violates this rule. Every detail of the test is front and center, like the unimportant minutiae of setting up a vector<ScoredDocument>.</li>
+<li>url, score, docs[] are just details about how the underlying C++ objects are set up, not about what this test is doing at a high level.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeScoredDoc</span>(ScoredDocument<span style="color:#5bc4bf">*</span> sd, <span style="color:#fec418">double</span> score, string url) {
+		sd<span style="color:#5bc4bf">-&gt;</span>score <span style="color:#5bc4bf">=</span> score;
+		sd<span style="color:#5bc4bf">-&gt;</span>url <span style="color:#5bc4bf">=</span> url;
+}
+<span style="color:#776e71">// Using this function, our test code becomes slightly more compact:
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">Test1</span>() {
+		vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;</span> docs;
+		docs.resize(<span style="color:#f99b15">5</span>);
+		MakeScoredDoc(<span style="color:#5bc4bf">&amp;</span>docs[<span style="color:#f99b15">0</span>], <span style="color:#5bc4bf">-</span><span style="color:#f99b15">5.0</span>, <span style="color:#48b685">&#34;http://example.com&#34;</span>);
+		MakeScoredDoc(<span style="color:#5bc4bf">&amp;</span>docs[<span style="color:#f99b15">1</span>], <span style="color:#f99b15">1</span>, <span style="color:#48b685">&#34;http://example.com&#34;</span>);
+		MakeScoredDoc(<span style="color:#5bc4bf">&amp;</span>docs[<span style="color:#f99b15">2</span>], <span style="color:#f99b15">4</span>, <span style="color:#48b685">&#34;http://example.com&#34;</span>);
+		MakeScoredDoc(<span style="color:#5bc4bf">&amp;</span>docs[<span style="color:#f99b15">3</span>], <span style="color:#5bc4bf">-</span><span style="color:#f99b15">99998.7</span>, <span style="color:#48b685">&#34;http://example.com&#34;</span>);
+		...
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>The parameter &quot;<a href="http://example.com/">http://example.com</a>&quot; is just an eyesore. it’s just needed to fill out a valid ScoredDocument.</li>
+<li>Another unimportant detail we’re forced to see is docs.resize(5) and &amp;docs[0], &amp;docs[1], and so on.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fec418">void</span> <span style="color:#06b6ef">AddScoredDoc</span>(vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;&amp;</span> docs, <span style="color:#fec418">double</span> score) {
+		ScoredDocument sd;
+		sd.score <span style="color:#5bc4bf">=</span> score;
+		sd.url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs.push_back(sd);
+}
+
+<span style="color:#776e71">// Using this function, our test code is even more compact:
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">Test1</span>() {
+		vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;</span> docs;
+		AddScoredDoc(docs, <span style="color:#5bc4bf">-</span><span style="color:#f99b15">5.0</span>);
+		AddScoredDoc(docs, <span style="color:#f99b15">1</span>);
+		AddScoredDoc(docs, <span style="color:#f99b15">4</span>);
+		AddScoredDoc(docs, <span style="color:#5bc4bf">-</span><span style="color:#f99b15">99998.7</span>);
+		...
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Let’s describe what our test is trying to do in plain English (chapter 12) :</li>
+</ul>
+
+<p>We have a list of documents whose scores are . After
+SortAndFilterDocs(), the remaining documents should have scores of [4, 3, 1], in that order.</p>
+
+<ul>
+<li>Nowhere in that description did we mention a vector<ScoredDocument>.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ef6155">⇒</span> CheckScoresBeforeAfter(<span style="color:#48b685">&#34;-5, 1, 4, -99998.7, 3&#34;</span>, <span style="color:#48b685">&#34;4, 3, 1&#34;</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>In general, defining a custom minilanguage can be a powerful way to express a lot of
+information in a small amount of space.</li>
+<li>In this case, writing some helper functions to parse a comma-separated list of numbers
+shouldn’t be too hard.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fec418">void</span> <span style="color:#06b6ef">CheckScoresBeforeAfter</span>(string input, string expected_output) {
+		vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;</span> docs <span style="color:#5bc4bf">=</span> ScoredDocsFromString(input);
+		SortAndFilterDocs(<span style="color:#5bc4bf">&amp;</span>docs);
+		string output <span style="color:#5bc4bf">=</span> ScoredDocsToString(docs);
+		assert(output <span style="color:#5bc4bf">==</span> expected_output);
+}
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;</span> ScoredDocsFromString(string scores) {
+		vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;</span> docs;
+
+		replace(scores.begin(), scores.end(), <span style="color:#48b685">&#39;,&#39;</span>, <span style="color:#48b685">&#39; &#39;</span>);
+
+		<span style="color:#776e71">// Populate &#39;docs&#39; from a string of space-separated scores.
+</span><span style="color:#776e71"></span>		istringstream <span style="color:#06b6ef">stream</span>(scores);
+		<span style="color:#fec418">double</span> score;
+		<span style="color:#815ba4">while</span> (stream <span style="color:#5bc4bf">&gt;&gt;</span> score) {
+				AddScoredDoc(docs, score);
+		}
+
+		<span style="color:#815ba4">return</span> docs;
+}
+
+string <span style="color:#06b6ef">ScoredDocsToString</span>(vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;</span> docs) {
+		ostringstream stream;
+		<span style="color:#815ba4">for</span> (<span style="color:#fec418">int</span> i <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>; i <span style="color:#5bc4bf">&lt;</span> docs.size(); i<span style="color:#5bc4bf">++</span>) {
+				<span style="color:#815ba4">if</span> (i <span style="color:#5bc4bf">&gt;</span> <span style="color:#f99b15">0</span>) stream <span style="color:#5bc4bf">&lt;&lt;</span> <span style="color:#48b685">&#34;, &#34;</span>;
+				stream <span style="color:#5bc4bf">&lt;&lt;</span> docs[i].score;
+		}
+		<span style="color:#815ba4">return</span> stream.str();
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li></li>
+</ul>
+
+<h3 id="04-읽기-편한-에러-메시지-만들기">__04. 읽기 편한 에러 메시지 만들기</h3>
+
+<ul>
+<li>what happens when that assert(output == expected_output) line fails? It produces an error message like this:</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Assertion failed: (output <span style="color:#5bc4bf">==</span> expected_output),
+function CheckScoresBeforeAfter, file [test.cc](http:<span style="color:#776e71">//test.cc/), line 37.
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Most languages and libraries have more sophisticated versions of assert()</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">BOOST_REQUIRE_EQUAL(output, expected_output)
+</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><p>BETTER ASSERT() IN OTHER LANGUAGES</p></li>
+
+<li><p>In Python, the built-in statement assert a == b produces a plain error message like:</p></li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">File <span style="color:#48b685">&#34;[file.py](http://file.py/)&#34;</span>, line X, <span style="color:#5bc4bf">in</span> <span style="color:#5bc4bf">&lt;</span>module<span style="color:#5bc4bf">&gt;</span>
+		<span style="color:#815ba4">assert</span> a <span style="color:#5bc4bf">==</span> b
+<span style="color:#ef6155">AssertionError</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>Instead, you can use the <strong>assertEqual()</strong> method in the <strong>unittest</strong> module:</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#5bc4bf">import</span> <span style="color:#fec418">unittest</span>
+
+<span style="color:#815ba4">class</span> <span style="color:#fec418">MyTestCase</span>(unittest<span style="color:#5bc4bf">.</span>TestCase):
+		<span style="color:#815ba4">def</span> <span style="color:#06b6ef">testFunction</span>(self):
+				a <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>
+				b <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">2</span>
+				self<span style="color:#5bc4bf">.</span>assertEqual(a, b)
+
+<span style="color:#815ba4">if</span> <span style="color:#5bc4bf">**</span>name<span style="color:#5bc4bf">**</span> <span style="color:#5bc4bf">==</span> <span style="color:#48b685">&#39;**main**&#39;</span>:
+unittest<span style="color:#5bc4bf">.</span>main()
+
+<span style="color:#776e71"># which produces an error message like:</span>
+
+File <span style="color:#48b685">&#34;[MyTestCase.py](http://mytestcase.py/)&#34;</span>, line <span style="color:#f99b15">7</span>, <span style="color:#5bc4bf">in</span> testFunction
+		self<span style="color:#5bc4bf">.</span>assertEqual(a, b)
+<span style="color:#ef6155">AssertionError</span>: <span style="color:#f99b15">1</span> <span style="color:#5bc4bf">!=</span> <span style="color:#f99b15">2</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><p>Whichever language you’re using, there’s probably a library/framework (e.g., XUnit) available to help you. It pays to know your libraries!</p></li>
+
+<li><p>Nicer Error Message</p></li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">CheckScoresBeforeAfter() failed,
+		Input: <span style="color:#48b685">&#34;-5, 1, 4, -99998.7, 3&#34;</span>
+		Expected Output: <span style="color:#48b685">&#34;4, 3, 1&#34;</span>
+		Actual Output: <span style="color:#48b685">&#34;1, 3, 4&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// Implementing!!
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">CheckScoresBeforeAfter</span>(...) {
+		...
+		<span style="color:#815ba4">if</span> (output <span style="color:#5bc4bf">!=</span> expected_output) {
+				cerr <span style="color:#5bc4bf">&lt;&lt;</span> <span style="color:#48b685">&#34;CheckScoresBeforeAfter() failed,&#34;</span> <span style="color:#5bc4bf">&lt;&lt;</span> endl;
+				cerr <span style="color:#5bc4bf">&lt;&lt;</span> <span style="color:#48b685">&#34;Input: </span><span style="color:#f99b15">\&#34;</span><span style="color:#48b685">&#34;</span> <span style="color:#5bc4bf">&lt;&lt;</span> input <span style="color:#5bc4bf">&lt;&lt;</span> <span style="color:#48b685">&#34;</span><span style="color:#f99b15">\&#34;</span><span style="color:#48b685">&#34;</span> <span style="color:#5bc4bf">&lt;&lt;</span> endl;
+				cerr <span style="color:#5bc4bf">&lt;&lt;</span> <span style="color:#48b685">&#34;Expected Output: </span><span style="color:#f99b15">\&#34;</span><span style="color:#48b685">&#34;</span> <span style="color:#5bc4bf">&lt;&lt;</span> expected_output <span style="color:#5bc4bf">&lt;&lt;</span> <span style="color:#48b685">&#34;</span><span style="color:#f99b15">\&#34;</span><span style="color:#48b685">&#34;</span> <span style="color:#5bc4bf">&lt;&lt;</span> endl;
+				cerr <span style="color:#5bc4bf">&lt;&lt;</span> <span style="color:#48b685">&#34;Actual Output: </span><span style="color:#f99b15">\&#34;</span><span style="color:#48b685">&#34;</span> <span style="color:#5bc4bf">&lt;&lt;</span> output <span style="color:#5bc4bf">&lt;&lt;</span> <span style="color:#48b685">&#34;</span><span style="color:#f99b15">\&#34;</span><span style="color:#48b685">&#34;</span> <span style="color:#5bc4bf">&lt;&lt;</span> endl;
+				abort();
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="05-좋은-테스트-입력값의-선택">__05. 좋은 테스트 입력값의 선택</h3>
+
+<ul>
+<li><strong>In general, you should pick the simplest set of inputs that completely exercise the
+code.</strong></li>
+<li>A simpler value is just -1. (If -99998.7 was meant to be “a very negative number,” a better value would have been something crisp like -1e100.)</li>
+<li><strong>Prefer clean and simple test values that still get the job done.</strong></li>
+<li>Large inputs like these do a good job of exposing bugs such as buffer overruns or others you might not expect.</li>
+<li>But code like this is big and scary to look at and not completely effective in stress-testing the code. Instead, it’s more effective to construct large inputs programmatically, constructing a large input of (say) 100,000 values.</li>
+<li>Rather than construct a single “perfect” input to thoroughly exercise your code, it’s often  easier, more effective, and more readable to write multiple smaller tests.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// four tests for SortAndFilterDocs():
+</span><span style="color:#776e71"></span>CheckScoresBeforeAfter(<span style="color:#48b685">&#34;2, 1, 3&#34;</span>, <span style="color:#48b685">&#34;3, 2, 1&#34;</span>); <span style="color:#776e71">// Basic sorting
+</span><span style="color:#776e71"></span>CheckScoresBeforeAfter(<span style="color:#48b685">&#34;0, -0.1, -10&#34;</span>, <span style="color:#48b685">&#34;0&#34;</span>); <span style="color:#776e71">// All values &lt; 0 removed
+</span><span style="color:#776e71"></span>CheckScoresBeforeAfter(<span style="color:#48b685">&#34;1, -2, 1, -2&#34;</span>, <span style="color:#48b685">&#34;1, 1&#34;</span>); <span style="color:#776e71">// Duplicates not a problem
+</span><span style="color:#776e71"></span>CheckScoresBeforeAfter(<span style="color:#48b685">&#34;&#34;</span>, <span style="color:#48b685">&#34;&#34;</span>); <span style="color:#776e71">// Empty input OK
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="06-테스트-함수에-이름-붙이기">__06. 테스트 함수에 이름 붙이기</h3>
+
+<ul>
+<li>Picking a good name for a test function can seem tedious and irrelevant, but don’t resort to meaningless names like Test1(), Test2(), and the like.</li>
+<li>Instead, you should use the name to describe details about the test. In particular, it’s handy if the person reading the test code can quickly figure out:
+• The class being tested (if any)
+• The function being tested
+• The situation or bug being tested</li>
+<li>possibly with a “Test_” prefix</li>
+<li>The test function name is effectively acting like a comment. Also, if that test fails, most testing frameworks will print out the name of the function where the assertion failed, so a descriptive name is especially helpful.</li>
+<li>When it comes to naming helper functions in your test code, it’s useful to highlight whether the function does any assertions itself or is just an ordinary “test-unaware” helper</li>
+</ul>
+
+<h3 id="07-이-테스트-코드는-무엇이-잘못되었는가">__07. 이 테스트 코드는 무엇이 잘못되었는가?</h3>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fec418">void</span> <span style="color:#06b6ef">Test1</span>() {
+		vector<span style="color:#5bc4bf">&lt;</span>ScoredDocument<span style="color:#5bc4bf">&gt;</span> docs;
+		docs.resize(<span style="color:#f99b15">5</span>);
+		docs[<span style="color:#f99b15">0</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">0</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">-</span><span style="color:#f99b15">5.0</span>;
+		docs[<span style="color:#f99b15">1</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">1</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>;
+		docs[<span style="color:#f99b15">2</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">2</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">4</span>;
+		docs[<span style="color:#f99b15">3</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">3</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">-</span><span style="color:#f99b15">99998.7</span>;
+		docs[<span style="color:#f99b15">4</span>].url <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#34;http://example.com&#34;</span>;
+		docs[<span style="color:#f99b15">4</span>].score <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">3.0</span>;
+
+		SortAndFilterDocs(<span style="color:#5bc4bf">&amp;</span>docs);
+
+		assert(docs.size() <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">3</span>);
+		assert(docs[<span style="color:#f99b15">0</span>].score <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">4</span>);
+		assert(docs[<span style="color:#f99b15">1</span>].score <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">3.0</span>);
+		assert(docs[<span style="color:#f99b15">2</span>].score <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">1</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<ol>
+<li>The test is very long and full of unimportant details. You can describe what this test is
+doing in one sentence, so the test statement shouldn’t be much longer.</li>
+<li>Adding another test isn’t easy. You’d be tempted to copy/paste/modify, which would make
+the code even longer and full of duplication.</li>
+<li>The test failure messages aren’t very useful. If this test fails, it will just say Assertion failed:
+docs.size() == 3, which doesn’t give you enough information to debug it further.</li>
+<li>The test tries to test everything at once. It’s trying to test both the negative filtering and
+the sorting functionality. It would be more readable to break this into multiple tests.</li>
+<li>The test inputs aren’t simple. In particular, the example score -99998.7 is “loud” and gets
+your attention even though there isn’t any significance to that specific value. A simpler
+negative value would suffice.</li>
+<li>The test inputs don’t thoroughly exercise the code. For example, it doesn’t test when the
+score is 0. (Would that document be filtered or not?)</li>
+<li>It doesn’t test other extreme inputs, such as an empty input vector, a very large vector, or
+one with duplicate scores.</li>
+<li>The name Test1() is meaningless—the name should describe the function or situation
+being tested.</li>
+</ol>
+
+<h3 id="08-테스트에-친숙한-개발">__08. 테스트에 친숙한 개발</h3>
+
+<ul>
+<li>Ideal code to test has a well-defined interface, doesn’t have much state or other “setup,” and doesn’t have much hidden data to inspect.</li>
+<li><strong>You start designing your code so that it’s easy to test!</strong> Fortunately, coding this way also means that you create better code in general. Test-friendly designs often lead naturally to well-organized code, with separate parts to do separate things.</li>
+</ul>
+
+<p><strong>TEST-DRIVEN DEVELOPMENT</strong>
+Test-driven development (TDD) is a programming style where you write the tests before you write the real code. TDD proponents believe this process profoundly improves the quality of the nontest code, much more so than if you write the tests after writing the code.</p>
+
+<p>This is a hotly debated topic that we won’t get into. At the very least, we’ve found that just keeping testing in mind while writing code helps make the code better.</p>
+
+<p>But regardless of whether you employ TDD, the end result is that you have code that tests other code. The goal of this chapter is to help you make your tests easier to read and write.</p>
+
+<ul>
+<li>Of all the ways to break up a program into classes and methods, the most decoupled ones are usually the easiest to test.</li>
+</ul>
+
+<p><figure><img src="/images/compu/readable_code/chap14/Untitled.png" alt="image"></figure></p>
+
+<p><figure><img src="/images/compu/readable_code/chap14/Untitled1.png" alt="image"></figure></p>
+
+<h3 id="09-지나친-테스트">__09. 지나친 테스트</h3>
+
+<ul>
+<li><strong>Sacrificing the readability of your real code, for the sake of enabling tests.</strong>
+Designing your real code to be testable should be a win-win situation: your real code
+becomes simpler and more decoupled, and your tests are easy to write. But if you have to
+insert lots of ugly plumbing into your real code just so you can test it, something’s wrong.</li>
+<li><strong>Being obsessive about 100% test coverage.</strong> Testing the first 90% of your code is often
+less work than testing that last 10%. That last 10% might involve user interface, or dumb
+error cases, where the cost of the bug isn’t really that high and the effort to test it just isn’t worth it.
+The truth is that you’ll never get 100% coverage anyhow. If it’s not a missed bug, it might
+be a missed feature or you might not realize that the spec should be changed.
+Depending on how costly your bugs are, there’s a sweet spot of how much development
+time it’s worth spending on test code. If you’re building a website prototype, it might not
+be worth writing any test code at all. On the other hand, if you’re writing a controller for
+a spaceship or medical device, testing is probably your main focus.</li>
+<li><strong>Letting testing get in the way of product development.</strong> We’ve seen situations where
+testing, which should be just one aspect of a project, dominates the whole project. Testing becomes some sort of god to be appeased, and coders just go through the rituals and motions without realizing that their precious engineering time might be better spent
+elsewhere.</li>
+</ul>
+
+<h3 id="요약">__요약</h3>
+
+<ul>
+<li>The top level of each test should be as concise as possible; ideally, each test input/output
+can be described in one line of code.</li>
+<li>If your test fails, it should emit an error message that makes the bug easy to track down
+and fix.</li>
+<li>Use the simplest test inputs that completely exercise your code.</li>
+<li>Give your test functions a fully descriptive name so it’s clear what each is testing. Instead
+of Test1(), use a name like Test_&lt;FunctionName&gt;_&lt;Situation&gt;.</li>
+</ul>
+
+
+<footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    </div>
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613346988"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613346988"></script>
+    <script src="/js/jquery.sticky.js?1613346988"></script>
+    <script src="/js/featherlight.min.js?1613346988"></script>
+    <script src="/js/highlight.pack.js?1613346988"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613346988"></script>
+    <script src="/js/learn.js?1613346988"></script>
+    <script src="/js/hugo-learn.js?1613346988"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1613346988"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
+
