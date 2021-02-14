@@ -22,7 +22,7 @@
 },
 {
 	"uri": "https://klee30810.github.io/mech/",
-	"title": "Mechanical_engineering",
+	"title": "Mechanical Engineering",
 	"tags": [],
 	"description": "",
 	"content": "Chapter 2 Mechanical Engineering Mechanical Engineering Studies\n"
@@ -53,7 +53,49 @@
 	"title": "Battery",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 6 Battery Studies Battery Studies in diverse field\n"
+	"content": "Chapter 6 Battery Battery Studies in diverse field\n"
+},
+{
+	"uri": "https://klee30810.github.io/finance/",
+	"title": "Finance",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 7 Finance Finance Studies.\n"
+},
+{
+	"uri": "https://klee30810.github.io/math/",
+	"title": "Mathematics",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 8 Mathematics Mathematics Studies\n"
+},
+{
+	"uri": "https://klee30810.github.io/sci/",
+	"title": "Science",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 9 Science Science Studies\n"
+},
+{
+	"uri": "https://klee30810.github.io/language/",
+	"title": "Language",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 10 Language Languages Studies\n"
+},
+{
+	"uri": "https://klee30810.github.io/language/english/",
+	"title": "English",
+	"tags": [],
+	"description": "",
+	"content": "Chapter X Some Chapter title Lorem Ipsum.\n"
+},
+{
+	"uri": "https://klee30810.github.io/language/chinese/",
+	"title": "Chinese",
+	"tags": [],
+	"description": "",
+	"content": "Chapter X Some Chapter title Lorem Ipsum.\n"
 },
 {
 	"uri": "https://klee30810.github.io/tags/battery/",
