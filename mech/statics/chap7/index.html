@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="Internal Forces Analysis">
+<meta name="author" content="Kyungmin Lee, Kevin">
+
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+ 
+   <title>Chap7. Internal Forces - Kevin&#39;s Codex</title>
+
+    
+    <link href="/css/nucleus.css?1613400765" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1613400765" rel="stylesheet">
+    <link href="/css/hybrid.css?1613400765" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1613400765" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1613400765" rel="stylesheet">
+    <link href="/css/auto-complete.css?1613400765" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1613400765" rel="stylesheet">
+    <link href="/css/theme.css?1613400765" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1613400765" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1613400765" rel="stylesheet">
+    
+    <link href="/css/foo.css?1613400765" rel="stylesheet"><link href="/css/bar.css?1613400765" rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.min.js?1613400765"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/mech/statics/chap7/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://klee30810.github.io/">
+<img src="/images/logo.png" alt="logo.png" height="110" width="110">
+</a>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1613400765"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1613400765"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/klee30810.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1613400765"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/" title="Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/">
+          <b> 1. </b>Paper Review
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/battery/">
+          <b>1. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/paper_review/battery/goodenough2013/" title="The Li-Ion Rechargeable Battery: A Perspective" class="dd-item ">
+        <a href="/paper_review/battery/goodenough2013/">
+        LIB Perspective
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/mldl/" title="Machine Learning &amp; Deep Learning Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/mldl/">
+          <b>2. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/mech/">
+          <b>2. </b>Mechanical Eng.
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/statics/" title="Statics" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/mech/statics/">
+          <b>1. </b>Statics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/material/" title="Material Mechanics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/material/">
+          <b>2. </b>Material Mech.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/thermo/" title="Thermodynamics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/thermo/">
+          <b>3. </b>Thermodynamics
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/mech_experiment/" title="Mechanical experiment" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/mech_experiment/">
+          <b>4. </b>Mechanical Expes.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/elec/" title="Electrical &amp; Electronic Studies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/elec/">
+          <b>3. </b>Electrical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/" title="Computer Science" class="dd-item
+        
+        
+        
+        ">
+      <a href="/compu/">
+          <b>4. </b>Computer Sci.
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/readable_code/" title="Readable Code Book Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/compu/readable_code/">
+          <b>1. </b>Readable Code
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mldl/" title="Machine Learning &amp; Deep Learning" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mldl/">
+          <b>5. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/battery/">
+          <b>6. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/battery/battery-basics/" title="Battery Basics" class="dd-item ">
+        <a href="/battery/battery-basics/">
+        Battery Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/finance/" title="Finance" class="dd-item
+        
+        
+        
+        ">
+      <a href="/finance/">
+          <b>7. </b>Finance
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/math/" title="Mathematics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/math/">
+          <b>8. </b>Mathematics
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sci/" title="Science" class="dd-item
+        
+        
+        
+        ">
+      <a href="/sci/">
+          <b>9. </b>Science
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/" title="Language" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/">
+          <b>10. </b>Language
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/english/" title="English" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/english/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/chinese/" title="Chinese" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/chinese/">
+          <b>X. </b>menu title
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/" title="Industry Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/">
+          <b>11. </b>Industry
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/semicon/" title="Semi-conductor Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/semicon/">
+          <b>1. </b>Semi-conductor
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/automob/" title="Automobile Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/automob/">
+          <b>2. </b>Automobile
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://klee30810.github.io/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                   Chap7. Internal Forces
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/statics">statics</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Chap7. Internal Forces
+            </h1>
+          
+
+        
+
+
+<p>Objectives</p>
+
+<ul>
+<li><p>To show how to use the method of sections to determine the internal loadings in a member</p></li>
+
+<li><p>To generalize this procedure by formulating equations that can be plotted so that they describe the internal shear and moement throughout a member</p></li>
+
+<li><p>To analyze the forces and study the geometry of cables supporting a load</p></li>
+</ul>
+
+<h3 id="71-internal-forces-developed-in-structural-members">7.1 Internal Forces Developed in Structural Members</h3>
+
+<p><figure><img src="https://blog.kakaocdn.net/dn/tvaeP/btqF9DrxX4i/HYtR19fYvAycXMIMdGq1kK/img.png" alt="https://blog.kakaocdn.net/dn/tvaeP/btqF9DrxX4i/HYtR19fYvAycXMIMdGq1kK/img.png"></figure></p>
+
+<ul>
+<li>normal force : $N_B$, acts perpendicular to the cross section</li>
+<li>shear force : $V_B$, acts tangential to the cross section</li>
+<li>bending moment : $M_B$</li>
+<li>The force components prevent the relative translation between the two segments, and the couple moment prevents the relative rotation. These loadings must act in opposite directions on each segment.</li>
+</ul>
+
+<p><figure><img src="https://blog.kakaocdn.net/dn/bmSvxi/btqF9CTI22m/YvPnxQYzS1efdmTb7JjeK0/img.png" alt="https://blog.kakaocdn.net/dn/bmSvxi/btqF9CTI22m/YvPnxQYzS1efdmTb7JjeK0/img.png"></figure></p>
+
+<p><figure><img src="https://blog.kakaocdn.net/dn/JPvuX/btqGbrjV1PN/Lnq7yF3uw5fKXFMBEvkbb0/img.png" alt="https://blog.kakaocdn.net/dn/JPvuX/btqGbrjV1PN/Lnq7yF3uw5fKXFMBEvkbb0/img.png"></figure></p>
+
+<ul>
+<li>$N_y$ : nominal force / $V_x,\ V_z$  : shear force components / $M_y$ : torsional or twisting moment / $M_x, M_z$  : bending moment components</li>
+<li>resultant loadings act at the geometric center or centroid of the section's cross-sectional area</li>
+</ul>
+
+<h3 id="72-shear-and-moment-equations-and-diagrams">7.2 Shear and Moment Equations and Diagrams</h3>
+
+<p><figure><img src="https://blog.kakaocdn.net/dn/vZLmN/btqF9HAnhOV/PgXGSP5qeTWoJ8bP3foHRK/img.png" alt="https://blog.kakaocdn.net/dn/vZLmN/btqF9HAnhOV/PgXGSP5qeTWoJ8bP3foHRK/img.png"></figure></p>
+
+<ul>
+<li>Beams : structural members designed to support loadings applied perpendicular to their axies</li>
+<li>The internal shear and bendind-moment functions will be discontinuous, or their slopes will be discontinuous at points where a distributed load changes or where concentrated forces or couple moments are applied</li>
+
+<li><p>Internal normal force is not considered for two reasons.</p></li>
+
+<li><p>In most cases, the loads applied to a beam act perpendicular to the beam's axis and hence only internal shear force and bending moment are produced.</p></li>
+
+<li><p>And for desing purposes, the beam's resistance to shear, and particularly to bending is more important than its ability to resist a normal force</p></li>
+</ul>
+
+<h3 id="73-relations-between-distributed-load-shear-and-moment">7.3 Relations between Distributed Load, Shear, and Moment</h3>
+
+<p><figure><img src="https://blog.kakaocdn.net/dn/bgr8tB/btqGbN1qML3/wV2SZaYtSHDCjQXwOUVLB0/img.png" alt="https://blog.kakaocdn.net/dn/bgr8tB/btqGbN1qML3/wV2SZaYtSHDCjQXwOUVLB0/img.png"></figure></p>
+
+<p><figure><img src="https://blog.kakaocdn.net/dn/8b2eL/btqGdP46RyP/qVAUyEFa2dUWBA9t5yIcf0/img.png" alt="https://blog.kakaocdn.net/dn/8b2eL/btqGdP46RyP/qVAUyEFa2dUWBA9t5yIcf0/img.png"></figure></p>
+
+<p>(1) Distrubuted Loads : replaced by a resultant force $w(x)\triangle x$ that acts at a fractional distance $k(\triangle x)$ from the right end, where 0&lt;k&lt;1</p>
+
+<p>(2) Relation Between the Distributed Load and Shear</p>
+
+<p><span  class="math">\[\sum F_y = 0; \quad V + w(x)\triangle x - (V+\triangle V) = 0 \quad \triangle V = w(x) \triangle x 
+\\ \frac{dV}{dx} = w(x) \quad, \triangle V = \int w(x)dx\]</span></p>
+
+<p>=&gt; slope of shear diagram = distributed load intensity &amp; Change in shear = Area under loading curve</p>
+
+<p>(3) Relation Between the Shear and Moment</p>
+
+<p><span  class="math">\[\sum M_O=0 \quad (M+\triangle M) - [w(x)\triangle x] k \triangle x - V \triangle x - M = 0 
+\\ \triangle M = V\triangle x + kw(x) \triangle x^2 \\
+ \frac{dM}{dx} = V, \quad \triangle M = \int V dx\]</span></p>
+
+<p>=&gt; slope of moment diagram = Shear &amp; Change in moment = Area under shear diagram</p>
+
+<p>(4) Force : Since the change in shear is positive, the shear diagram will jump upward when F acts upward on the beam.</p>
+
+<p>(5) Couple Moment : Since the change in moment is positive, the moment diagram will jump upward if $M_0$ is clockwise.</p>
+
+<h3 id="74-cables">7.4 Cables</h3>
+
+<ul>
+<li>The weight of the cable may be neglected because it is often small compared to the load it carries, but when cables are used as transmission lines and guys for radio antenas and derricks, the cable weight may become important and must be analyzed.</li>
+
+<li><p>Assume that the cable is perfectly flexible and inextensible.</p></li>
+
+<li><p>perfectly flexible : the cable offers no resistance to bending, therefore the tensile force acting in the cable is always tangent to the cable at points along its length.</p></li>
+
+<li><p>inextensible : the cable has a constant length both before and after the load is applied. =&gt; geometry unchanged and treated as a rigid body</p></li>
+</ul>
+
+<p>(1) Cable Subjected to Concentrated Loads : the from of several straight-line segments, each of which is subjected to a constant tensile force</p>
+
+<p>(2) Cable Subjected to a Distributed Load</p>
+
+<p>$y = \frac{1}{F_H} \int (\int w(x) dx) dx$</p>
+
+<p>(3) Cable Subjected to its Own Weight</p>
+
+<p><span  class="math">\[x = \int \frac{ds}{[1+\frac{1}{F^2_H(\int w(s) ds)^2]^{1/2}}]}\]</span></p>
+
+
+<footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    </div>
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1613400765"></script>
+    <script src="/js/perfect-scrollbar.min.js?1613400765"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1613400765"></script>
+    <script src="/js/jquery.sticky.js?1613400765"></script>
+    <script src="/js/featherlight.min.js?1613400765"></script>
+    <script src="/js/highlight.pack.js?1613400765"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1613400765"></script>
+    <script src="/js/learn.js?1613400765"></script>
+    <script src="/js/hugo-learn.js?1613400765"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1613400765"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
+

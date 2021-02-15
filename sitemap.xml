@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://klee30810.github.io/mech/statics/chap1/</loc>
+    <lastmod>2021-02-15T22:02:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/statics/</loc>
+    <lastmod>2021-02-15T21:45:39+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/compu/readable_code/chap1/</loc>
     <lastmod>2021-02-15T07:54:02+09:00</lastmod>
   </url>
@@ -28,6 +38,16 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/mech/statics/chap2/</loc>
+    <lastmod>2021-02-15T22:02:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/material/</loc>
+    <lastmod>2021-02-15T21:45:46+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/compu/readable_code/chap2/</loc>
     <lastmod>2021-02-15T07:54:38+09:00</lastmod>
   </url>
@@ -48,6 +68,16 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/mech/statics/chap3/</loc>
+    <lastmod>2021-02-15T22:02:22+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/thermo/</loc>
+    <lastmod>2021-02-15T21:45:52+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/compu/readable_code/chap3/</loc>
     <lastmod>2021-02-15T07:54:41+09:00</lastmod>
   </url>
@@ -55,6 +85,16 @@
   <url>
     <loc>https://klee30810.github.io/elec/</loc>
     <lastmod>2021-02-14T20:40:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/statics/chap4/</loc>
+    <lastmod>2021-02-15T22:02:51+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/mech_experiment/</loc>
+    <lastmod>2021-02-15T21:46:47+09:00</lastmod>
   </url>
   
   <url>
@@ -68,6 +108,11 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/mech/statics/chap5/</loc>
+    <lastmod>2021-02-15T22:02:54+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/compu/readable_code/chap5/</loc>
     <lastmod>2021-02-15T07:54:46+09:00</lastmod>
   </url>
@@ -75,6 +120,11 @@
   <url>
     <loc>https://klee30810.github.io/mldl/</loc>
     <lastmod>2021-02-14T20:40:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/statics/chap6/</loc>
+    <lastmod>2021-02-15T22:02:56+09:00</lastmod>
   </url>
   
   <url>
@@ -88,6 +138,11 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/mech/statics/chap7/</loc>
+    <lastmod>2021-02-15T22:02:59+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/compu/readable_code/chap7/</loc>
     <lastmod>2021-02-15T07:54:50+09:00</lastmod>
   </url>
@@ -95,6 +150,11 @@
   <url>
     <loc>https://klee30810.github.io/finance/</loc>
     <lastmod>2021-02-14T22:31:50+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/statics/chap8/</loc>
+    <lastmod>2021-02-15T22:03:01+09:00</lastmod>
   </url>
   
   <url>
@@ -108,6 +168,11 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/mech/statics/chap9/</loc>
+    <lastmod>2021-02-15T22:03:03+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/compu/readable_code/chap9/</loc>
     <lastmod>2021-02-15T07:54:56+09:00</lastmod>
   </url>
@@ -118,6 +183,11 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/mech/statics/chap10/</loc>
+    <lastmod>2021-02-15T22:03:07+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/compu/readable_code/chap10/</loc>
     <lastmod>2021-02-15T07:55:00+09:00</lastmod>
   </url>
@@ -125,6 +195,11 @@
   <url>
     <loc>https://klee30810.github.io/language/</loc>
     <lastmod>2021-02-14T22:35:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/statics/chap11/</loc>
+    <lastmod>2021-02-15T22:03:08+09:00</lastmod>
   </url>
   
   <url>
@@ -163,12 +238,17 @@
   </url>
   
   <url>
-    <loc>https://klee30810.github.io/tags/programming/</loc>
-    <lastmod>2021-02-15T07:55:12+09:00</lastmod>
+    <loc>https://klee30810.github.io/tags/statics/</loc>
+    <lastmod>2021-02-15T22:03:08+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://klee30810.github.io/tags/</loc>
+    <lastmod>2021-02-15T22:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/tags/programming/</loc>
     <lastmod>2021-02-15T07:55:12+09:00</lastmod>
   </url>
   

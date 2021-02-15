@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statics on Kevin&#39;s Codex</title>
+    <link>https://klee30810.github.io/mech/statics/</link>
+    <description>Recent content in Statics on Kevin&#39;s Codex</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 15 Feb 2021 21:45:39 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/mech/statics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chap1. General Principles</title>
+      <link>https://klee30810.github.io/mech/statics/chap1/</link>
+      <pubDate>Mon, 15 Feb 2021 22:02:07 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap1/</guid>
+      <description>Objectives
+ To provide an introduction to the basic quantities and idealizations of mechanics To give a statement of Newton&#39;s Laws of Motion and Gravitation To review the principles for applying the SI system of units To examine the standard procedures for performing numerical calculations To present a general guide for solving problems  1.1 Mechanics (1) A branch of the physical sciences that is concerned with the state of rest or motion of bodies that are subjected to the action of forces</description>
+    </item>
+    
+    <item>
+      <title>Chap2 Force Vectors</title>
+      <link>https://klee30810.github.io/mech/statics/chap2/</link>
+      <pubDate>Mon, 15 Feb 2021 22:02:10 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap2/</guid>
+      <description>Objectives
+ To show how to add forces and resolve them into components using the Parallelogram Law To express force and position in Cartesian vector form and explain how to determine the vector&#39;s magnitude and direction To introduce the dot product in order to determine the angle between two vectors or the projection of one vector onto another  2.1 Scalars and Vector (1) Scalar : a positive or negative physical quantity that can be completely specified by its magnitude</description>
+    </item>
+    
+    <item>
+      <title>Chap3. Equilibrium of Force</title>
+      <link>https://klee30810.github.io/mech/statics/chap3/</link>
+      <pubDate>Mon, 15 Feb 2021 22:02:22 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap3/</guid>
+      <description>Objectives
+ To introduce the concept of the free-body diagram for a particle To show how to solve particle equilibrium problems using the equation of equilibrium  3.1 Condition for the Equilibrium of a Particle (1) equilibrium : if it remains at rest if originally at rest(static equilibrium), or has a constant velocity if originally in motion \(\sum F = ma = 0​\) -&amp;gt; No acceleration
+3.2 The Free-Body Diagram (1) Procedure for Drawing a Free-doby Diagram</description>
+    </item>
+    
+    <item>
+      <title>Chap4. Force System Resultants</title>
+      <link>https://klee30810.github.io/mech/statics/chap4/</link>
+      <pubDate>Mon, 15 Feb 2021 22:02:51 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap4/</guid>
+      <description>Objectives
+ To discuss the concept of the moment of a force and show how to calculate it in two and three dimensions To provide a method for finding the moment of a force about a specified axis To define the moment of a couple To present methods for determining the resultants of nonconcurrent force systems To indicate how to reduce a simple distributed loading to a resultant force having a specified location  4.</description>
+    </item>
+    
+    <item>
+      <title>Chap5. Equilibrium of a Rigid Body</title>
+      <link>https://klee30810.github.io/mech/statics/chap5/</link>
+      <pubDate>Mon, 15 Feb 2021 22:02:54 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap5/</guid>
+      <description>Objectives  To develop the equations of equilibrium for a rigid body. To introduce the concept of the free-body diagram for a rigid body To show how to solve rigid-body equilibrium problems using the equations of equilibrium  5.1 Conditions for Rigid-Body Equilibrium  The internal forces caused by interactions between particles within the body cancel out because these forces occur in equal but opposite collinear paris, a consequence of Newton&#39;s third law.</description>
+    </item>
+    
+    <item>
+      <title>Chap6. Structural Analysis</title>
+      <link>https://klee30810.github.io/mech/statics/chap6/</link>
+      <pubDate>Mon, 15 Feb 2021 22:02:56 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap6/</guid>
+      <description>Objectives
+ To show how to determine the forces in the members of a truss using the method of joints and the method od sections To analyze the forces acting on the members of frames and machines composed of pin-connected members  6.1 Simple Trusses  truss : a structure composed of slender members joined together at their end points  (1) Assumptions for Design =&amp;gt; Two-force member
+a. All loadings are applied at the joints</description>
+    </item>
+    
+    <item>
+      <title>Chap7. Internal Forces</title>
+      <link>https://klee30810.github.io/mech/statics/chap7/</link>
+      <pubDate>Mon, 15 Feb 2021 22:02:59 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap7/</guid>
+      <description>Objectives
+ To show how to use the method of sections to determine the internal loadings in a member
+ To generalize this procedure by formulating equations that can be plotted so that they describe the internal shear and moement throughout a member
+ To analyze the forces and study the geometry of cables supporting a load
+  7.1 Internal Forces Developed in Structural Members 
+ normal force : $N_B$, acts perpendicular to the cross section shear force : $V_B$, acts tangential to the cross section bending moment : $M_B$ The force components prevent the relative translation between the two segments, and the couple moment prevents the relative rotation.</description>
+    </item>
+    
+    <item>
+      <title>Chap8. Friction</title>
+      <link>https://klee30810.github.io/mech/statics/chap8/</link>
+      <pubDate>Mon, 15 Feb 2021 22:03:01 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap8/</guid>
+      <description>Objectives  To introduce the concept of dry friction and show how to analyze the equilbrium of rigid bodies subjected to this force To present specific applications of frictional force analysis on wedges, screws, belts, and bearings To investigate the concept of rolling resistance  8.1 Characteristics of Dry Friction  Friction : a force that resists the movement of two contacting surfaces that slide relative to one another
+ always acts tangent to the surface at the points of contact and is directed so as to oppose the possible or existing motion between the surfaces</description>
+    </item>
+    
+    <item>
+      <title>Chap9. Center of Gravity &amp; Centroid</title>
+      <link>https://klee30810.github.io/mech/statics/chap9/</link>
+      <pubDate>Mon, 15 Feb 2021 22:03:03 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap9/</guid>
+      <description>Objectives  To discuss the concept of center of gravity, center of mass, and the centroid To show how to determine the location of the center of gravity and centroid for a system of discrete particles and a body of arbitray shape. To use the theorems of Pappus and Guldinus for finding the surface area and volume for a body having axial symmetry. To present a method for finding the resultant of a general distributed loading and show how it applies to finding the resultant force of a pressure loading caused by a fluid  9.</description>
+    </item>
+    
+    <item>
+      <title>Chap10. Moment of Inertia</title>
+      <link>https://klee30810.github.io/mech/statics/chap10/</link>
+      <pubDate>Mon, 15 Feb 2021 22:03:07 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap10/</guid>
+      <description>Objectives  To develop a method ofr determining the moment of inertia for an area. To introduce the product of inertia and show how to determine the maximum and minimum moments of inertia for an area To discuss the mass moment of inertia  10.1 Definition of Moments of Inertia for Areas  Whenever a distributed loading acts perpendicular to an area and its intensity varies linearly, the computation of the moment of the loading distribution about an axis will involve a quantity called teh moment of inertia of the area.</description>
+    </item>
+    
+    <item>
+      <title>Chap11. Virtual Work</title>
+      <link>https://klee30810.github.io/mech/statics/chap11/</link>
+      <pubDate>Mon, 15 Feb 2021 22:03:08 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/statics/chap11/</guid>
+      <description>Objectives  To introduce the principle of virtual work and show how it applies to finding the equilibrium configuration of a system of pin-connected members
+ To establish the potential-energy function and use the potential-energy method to investigate the type of equilibirum ofr stablity of a rigid body or system of pin-connected members
+  11.1 Definition of Work (1) Work of Force
+ A force does work when it undergoes a displacement in the direction of its line of action  \[dU = F dr cos\theta = F \cdot dr\]</description>
+    </item>
+    
+  </channel>
+</rss>
