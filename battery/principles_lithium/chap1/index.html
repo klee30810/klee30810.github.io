@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.80.0" />
-    <meta name="description" content="Kevin&#39;s Codex Blog">
+    <meta name="description" content="리튬이차전지">
 <meta name="author" content="Kyungmin Lee, Kevin">
 
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
@@ -14,7 +14,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
  
-   <title>Chap6. 명확하고 간결한 주석 달기 - Kevin&#39;s Codex</title>
+   <title>Chap1. 서론 - Kevin&#39;s Codex</title>
 
     
     <link href="/css/nucleus.css?1613569825" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/compu/readable_code/chap6/">
+  <body class="" data-url="/battery/principles_lithium/chap1/">
     <nav id="sidebar" class="">
 
 
@@ -422,7 +422,7 @@
   
     
     <li data-nav-id="/compu/" title="Computer Science" class="dd-item
-        parent
+        
         
         
         ">
@@ -451,7 +451,7 @@
   
     
     <li data-nav-id="/compu/readable_code/" title="Readable Code Book Review" class="dd-item
-        parent
+        
         
         
         ">
@@ -560,7 +560,7 @@
   
     
     <li data-nav-id="/battery/" title="Battery" class="dd-item
-        
+        parent
         
         
         ">
@@ -610,7 +610,7 @@
   
     
     <li data-nav-id="/battery/principles_lithium/" title="Principles &amp; Applications of Lithium Secondary Batteries" class="dd-item
-        
+        parent
         
         
         ">
@@ -981,7 +981,7 @@
                   <span class="links">
                  
                  
-                   Chap6. 명확하고 간결한 주석 달기
+                   Chap1. 서론
                  
                   </span>
                 </div>
@@ -1000,7 +1000,7 @@
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/programming">programming</a>
+  <a class="tag-link" href="/tags/battery">battery</a>
 
 </div>
 
@@ -1010,152 +1010,93 @@
           
             <h1>
               
-              Chap6. 명확하고 간결한 주석 달기
+              Chap1. 서론
             </h1>
           
 
         
 
 
+<h3 id="11-전지의-역사">1-1 전지의 역사</h3>
+
+<hr>
+
 <ul>
-<li><strong>주석은 높은 '정보 대 공간' 비율을 맞춰야 한다.</strong></li>
+<li><p>전지(battery) : 전기화학반응을 이용하여 전극 물질의 화학에너지를 전기에너지로 직접 변환하는 시스템</p></li>
+
+<li><p>1차전지(Primary battery) :  일정 수명기간 동안만 한 차례 사용이 가능</p>
+
+<ul>
+<li>르클랑셰의 망간전지 → 산성 전해질을 수산화칼륨염(KOH)을 적용한 알칼리전지 → 리튬금속을 음극으로 적용한 3V급 리튬일차전지</li>
+</ul></li>
+
+<li><p>2차전지(Secondary battery) : 재충전을 통해 장시간 반복 사용이 가능</p>
+
+<ul>
+<li>플랑떼의 납축전지 → Ni/Cd 전지 → NiMH 전지 → 리튬이차전지
+
+<br></li>
+</ul></li>
 </ul>
 
-<h3 id="01-주석을-간결하게-하라">__01. 주석을 간결하게 하라</h3>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// The int is the CategoryType.
-</span><span style="color:#776e71">// The first float in the inner pair is the &#39;score&#39;,
-</span><span style="color:#776e71">// the second is the &#39;weight&#39;.
-</span><span style="color:#776e71"></span><span style="color:#815ba4">typedef</span> hash_map<span style="color:#5bc4bf">&lt;</span><span style="color:#fec418">int</span>, pair<span style="color:#5bc4bf">&lt;</span><span style="color:#fec418">float</span>, <span style="color:#fec418">float</span><span style="color:#5bc4bf">&gt;</span> <span style="color:#5bc4bf">&gt;</span> ScoreMap;
+<h3 id="12-전지기술의-혁명">1-2 전지기술의 혁명</h3>
 
-<span style="color:#776e71">/* CONCISE ONE!!! */</span>
-<span style="color:#776e71">// CategoryType -&gt; (score, weight)
-</span><span style="color:#776e71"></span><span style="color:#815ba4">typedef</span> hash_map<span style="color:#5bc4bf">&lt;</span><span style="color:#fec418">int</span>, pair<span style="color:#5bc4bf">&lt;</span><span style="color:#fec418">float</span>, <span style="color:#fec418">float</span><span style="color:#5bc4bf">&gt;</span> <span style="color:#5bc4bf">&gt;</span> ScoreMap;
-</code></pre></td></tr></table>
-</div>
-</div>
+<hr>
+
 <ul>
-<li>짧게 줄여도 정보를 충분히 전달할 수 있다면 주석을 짧게 줄여라.</li>
+<li>리튬이온을 전극 및 전해질 내에서의 전하 전달체(charge carrier)로 사용하는 리튬 이차전지는 경량이면서도 3.7V 이상의 높은 평균 방전전압을 유지함으로써 현재 가장 높은 에너지 밀도를 나타냄</li>
 </ul>
 
-<h3 id="02-모호한-대명사는-피하라">__02. 모호한 대명사는 피하라</h3>
+<h3 id="13-리튬이차전지-개요">1-3 리튬이차전지 개요</h3>
+
+<hr>
 
 <ul>
-<li>모호한 대명사는 원래 명사로 고치거나, 의미가 명확해지도록 문장을 고쳐라.</li>
+<li><p>이차전지 구조 : 양극과 음극이 충전과 방전을 반복적으로 수행할 수 있는 구조</p></li>
+
+<li><p>전극 내에서는 이온의 삽입과 탈리가 용이하고 과정 중 전극의 구조가 용이</p></li>
 </ul>
 
-<h3 id="03-엉터리-문장을-다듬어라">__03. 엉터리 문장을 다듬어라</h3>
+<p><figure><img src="/images/battery/principles_lithium/1.png" alt="image"></figure></p>
 
 <ul>
-<li>주석을 명확하게 하는 작업과 간결하게 하는 작업은 대부분 한꺼번에 이루어진다.</li>
+<li><p>전지에서 전극 내로 삽입되는 이온은 집전체를 통해 전극으로 들어온 전자와 <strong>전하중성</strong>을 이루어 전극 내에 전기에너지를 저장하는 매개체가 된다. ⇒ 즉 전지의 전체 반응 속도에 크게 영향을 미치는 것은 전해질 및 전극 영역에서의 <strong>이온 이동속도</strong> 이다. 또한 저장가능한 전기 에너지의 양을 결정하는 것은 전하 중성을 위해 <strong>전극에 삽입된 이온의 양</strong>이다. → <strong>전극의 소재와 이온의 종류</strong>가 실제 저장할 수 있는 전기에너지의 양 결정!</p></li>
+
+<li><p>리튬 : 자연계 금속 중 가장 가볍고, 표준 환원전위가 가장 낮아 3V이상의 높은 기전력 &amp; 중량 및 체적당 에너지 밀도가 높다.</p>
+
+<ul>
+<li>작동 전압이 물분해 전압보다 높기 때문에 수용액 대신 <strong>유기용매</strong>를 전해질로 사용해야함</li>
+</ul></li>
+
+<li><p>일반적으로 전이금속산화물(transition metal oxide)를 양극소재로, 탄소를 음극재로, 전해질로 액체전해질을 사용할 경우 리튬이온전지(LIB), 고분자전해질 사용시 리튬이온폴리머전지(LiPB)</p></li>
+
+<li><p>원통형(cylindrical), 각형(prismatic), 코인형(coin), 파우치형(pouch) 존재</p></li>
 </ul>
 
-<p>  </p>
+<p><figure><img src="/images/battery/principles_lithium/2.jpg" alt="image"></figure></p>
 
-<h3 id="04-함수의-동작을-명확하게-설명하라">__04. 함수의 동작을 명확하게 설명하라</h3>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// Count how many newline bytes (&#39;\n&#39;) are in the file.
-</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">CountLines</span>(string filename) { ... }
-</code></pre></td></tr></table>
-</div>
-</div>
 <ul>
-<li>애매한 단어를 사용하지 말고 구현한 방식을 명확하게 설명하는 것이 좋다.</li>
+<li>(+): 리튬이 격자 구조의 일부분을 이루고 있다가 탈리 시에 이온의 형태로 빠져 나오기 때문에 구조적으로 안정한 <strong>전이금속계 산화물 소재 사용</strong></li>
+<li>(-): 양극에서 빠져나온 리튬이온을 안정적으로 저장하고 큰 기전력을 제공하도록, <strong>표준환원전위가 리튬과 크게 차이나지 않는 물질</strong> 사용</li>
+<li>전해질: 작동 전압 범위 내에서 전기적 화학적 안정성을 유지하고 열 밀 화학적 안정성이 높은 <strong>리튬염과 유기용매</strong> 사용</li>
+<li>분리막 : 고온에서 용융될 수 있는 고분자 또는 세라믹 물질을 사용</li>
 </ul>
 
-<h3 id="05-구체적인-용법을-설명해주는-입출력-예를-사용하라">__05. 구체적인 용법을 설명해주는 입/출력 예를 사용하라</h3>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// ...
-</span><span style="color:#776e71">// Example: Partition([8 5 9 8 2], 8) might result in [5 2 | 8 9 8] and return 1
-</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">Partition</span>(vector<span style="color:#5bc4bf">&lt;</span><span style="color:#fec418">int</span><span style="color:#5bc4bf">&gt;*</span> v, <span style="color:#fec418">int</span> pivot);
-</code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li>주석을 작성하는 데 신중하게 선택된 입/출력 예는 천 마디 말보다 위력적이다.</li>
-<li>모든 동작을 표현할 수 있는 입/출력 예를 주석으로 사용하라.</li>
-</ul>
+<h3 id="14-리튬이차전지의-미래">1-4 리튬이차전지의 미래</h3>
 
-<h3 id="06-코드의-의도를-명시하라">__06. 코드의 의도를 명시하라</h3>
+<hr>
 
 <ul>
-<li>이러한 주석은 코드가 의도와 다르게 작동하는지 확인하기 좋다.</li>
-</ul>
-
-<h3 id="07-이름을-가진-함수-파라미터-주석">__07. 이름을 가진 함수 파라미터 주석</h3>
-
-<ul>
-<li>뜻이 잘 드러나는 이름을 지을 수 없거나 값을 전달할 때 그 값의 의미를 알기가 힘들다면 값의 앞에 주석을 달아라.</li>
-</ul>
-
-<h3 id="08-정보-축약형-단어를-사용하라">__08. 정보 축약형 단어를 사용하라</h3>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">As another example, a comment such as:
-<span style="color:#776e71">// Remove excess whitespace from the street address, and do lots of other cleanup
-</span><span style="color:#776e71">// like turn &#34;Avenue&#34; into &#34;Ave.&#34; This way, if there are two different street addresses
-</span><span style="color:#776e71">// that are typed in slightly differently, they will have the same cleaned-up version and
-</span><span style="color:#776e71">// we can detect that these are equal.
-</span><span style="color:#776e71"></span>
-could instead be:
-<span style="color:#776e71">// Canonicalize the street address (remove extra spaces, &#34;Avenue&#34; -&gt; &#34;Ave.&#34;, etc.)
-</span></code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li>지속적으로 반복되는 문제에 대해서는 이를 표현하기 위한 관용적 표현이 만들어져 있는 경우가 많다. 이를 찾아보고 활용하라.</li>
-</ul>
-
-<p>ex) '경험적인(heuristic)', '주먹구구식(brute_force)', '순진한 해법(native solution)' 등</p>
-
-<h3 id="요약">__요약</h3>
-
-<ul>
-<li>Avoid pronouns like “it” and “this” when they can refer to multiple things.</li>
-<li>Describe a function’s behavior with as much precision as is practical.</li>
-<li>Illustrate your comments with carefully chosen input/output examples.</li>
-<li>State the high-level intent of your code, rather than the obvious details.</li>
-<li>Use inline comments (e.g., Function(/* arg = */ ... ) ) to explain mysterious function
-arguments.</li>
-<li>Keep your comments brief by using words that pack a lot of meaning.</li>
+<li>초소형 전지</li>
+<li>플렉시블 전지</li>
+<li>완전 고체형 리튬 이차전지</li>
+<li>고분자형 전해질 or 무기계 또는 유.무기계 복합계 전해질의 개발</li>
 </ul>
 
 
 <footer class="footline">
 	
-	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 17/02/2021
 	    </div>
 	
 </footer>
@@ -1424,7 +1365,6 @@ arguments.</li>
             
                 
                     
-                    
                 
                 
 
@@ -1440,7 +1380,6 @@ arguments.</li>
             
                 
                     
-                    
                 
                 
 
@@ -1451,25 +1390,6 @@ arguments.</li>
                     
                         
             
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -1526,7 +1446,6 @@ arguments.</li>
             
                 
                     
-                    
                 
                 
 
@@ -1543,8 +1462,21 @@ arguments.</li>
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -1696,6 +1628,7 @@ arguments.</li>
             
                 
                     
+                    
                 
                 
 
@@ -1710,6 +1643,9 @@ arguments.</li>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1727,6 +1663,7 @@ arguments.</li>
             
                 
                     
+                    
                 
                 
 
@@ -1750,6 +1687,9 @@ arguments.</li>
             
             
                 
+                    
+                        
+                        
                     
                 
                 

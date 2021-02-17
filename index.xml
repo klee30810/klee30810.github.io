@@ -8,6 +8,18 @@
     <language>ko-kr</language>
     <lastBuildDate>Mon, 08 Feb 2021 23:39:19 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Chap1. 서론</title>
+      <link>https://klee30810.github.io/battery/principles_lithium/chap1/</link>
+      <pubDate>Wed, 17 Feb 2021 20:31:24 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/battery/principles_lithium/chap1/</guid>
+      <description>1-1 전지의 역사   전지(battery) : 전기화학반응을 이용하여 전극 물질의 화학에너지를 전기에너지로 직접 변환하는 시스템
+ 1차전지(Primary battery) : 일정 수명기간 동안만 한 차례 사용이 가능
+ 르클랑셰의 망간전지 → 산성 전해질을 수산화칼륨염(KOH)을 적용한 알칼리전지 → 리튬금속을 음극으로 적용한 3V급 리튬일차전지  2차전지(Secondary battery) : 재충전을 통해 장시간 반복 사용이 가능
+ 플랑떼의 납축전지 → Ni/Cd 전지 → NiMH 전지 → 리튬이차전지    1-2 전지기술의 혁명   리튬이온을 전극 및 전해질 내에서의 전하 전달체(charge carrier)로 사용하는 리튬 이차전지는 경량이면서도 3.</description>
+    </item>
+    
+    <item>
       <title>Chap1. General Principles</title>
       <link>https://klee30810.github.io/mech/statics/chap1/</link>
       <pubDate>Mon, 15 Feb 2021 22:02:07 +0900</pubDate>
@@ -24,6 +36,15 @@
       
       <guid>https://klee30810.github.io/compu/readable_code/chap1/</guid>
       <description>__01. 무엇이 코드를 ‘더 좋게’ 만드는가? __02. 가독성의 기본 정리  코드는 다른 사람이 그것을 이해하는데 들이는 시간을 최소화하는 방식으로 작성되어야 한다. 누군가 코드를 완전히 이해한다는 것은 그가 코드를 자유롭게 수정하고, 버그를 짚어내고, 수정된 내용이 여러분이 작성한 다른 부분의 코드와 어떻게 상호작용 하는지 알 수 있어야 한다는 뜻이다. 여기서의 누군가는 본인이 될 수도 있다.  __03. 분량이 적으면 항상 더 좋은가?  일반적으로 더 적은 분량의 코드가 보기 좋다. 하지만 그보다는 이해하기 쉬운 코드가 더 좋은 코드이다.</description>
+    </item>
+    
+    <item>
+      <title>Battery Basics</title>
+      <link>https://klee30810.github.io/battery/battery-basics/</link>
+      <pubDate>Tue, 09 Feb 2021 21:14:47 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/battery/battery-basics/</guid>
+      <description>2차전지 기본개념 1. 개요  (1) 2차전지의 필요성  일상생활에 많이 쓰임 / 일회용 소모품의 낭비 / 폐기물 및 환경오염 리튬이온전지 : 가볍고 소형화 가능 / 규제물질(수은) X / 자연방전현상 小 / 3.7V 의 높은 출력  (2) 전지  전기에너지를 생성할 수 있는 화학에너지를 저장하는 장치, 산화&amp;amp;환원 작용   종류   망간: 일회용 건전지, 저렴 알칼리 : 수산화 칼륨 전해액, 장시간 사용가능 납 축전지 : 크고 무겁다 / 높은 전류와 외부 저항 낮음 ⇒ 차량용으로 널리 사용 산화 은: 가장 소형 &amp;amp; 저렴 (시계), 고온에서 잘 버팀  분류   2차전지(축전지, 충전지) : 전기 충전을 반복해 지속적으로 사용가능하도록 만듬  1차전지: 시간이 흐르며 전압이 낮아짐 2차전지 : 사용가능 시간까지 일정하게 전압이 유지되다가 방전시에 끊김   리튬전지 : 소형, 휴대용 → 3V 고압, 고밀도 에너지 + 양호한 보존성  음극에 금속 리튬 &amp;amp; 전해액에 유기용매 금속 Li는 이온화 경향이 커서 활성화 되어있으므로 물과 반응하면 수소가스를 방출하며 그 자체도 연소성   연료전지 : 화학적으로 에너지를 저장하고 연료를 소모하며 전력 생산  전해질을 녹임 물로 전류를 흘려보내 \(H_2, O_2\)발생 → 전해질로 사용하는 전극에 \(H_2​\), 산화전극에 \(O_2\)를 보내서 화학반응 유도 수소 연료와 산화제 ⇒ 배출열을 이용해 연료의 80%까지 에너지로 변환     태양전지 : 태양 빛에너지 광전효과로 전기 에너지 변환 커패시터 : 충,방전에 따른 성능 저하를 방지하고 이온 분자를 저장할 수 있는 전기 이중 충전지, 쉽게 열화되지 않는다   용량 : 방전되어 전류가 흐르지 않기까지 사용할 수 있는 전기에너지의 양    2차전지 재충전은 무한대로 할 수 있는게 아님: 전극의 열화로 용량이 줄어듦 ⇒ 실제 용량이 공칭 용량의 50%까지 충방전할 수 잇는 횟수</description>
     </item>
     
     <item>
@@ -285,15 +306,6 @@ __01. 그 기능을 구현하려고 애쓰지 마라 - 그럴 필요가 없다  
       
       <guid>https://klee30810.github.io/paper_review/battery/goodenough2013/</guid>
       <description>The Li-Ion Rechargeable Battery: A Perspective  Author : Kyungmin Lee Thesis : Li-Ion Battery is hot trend of technology with its cathode, anode, electrolyte, and separation membrane. Citation : Goodenough, J. B., &amp;amp; Park, K. S. (2013). The Li-ion rechargeable battery: a perspective. Journal of the American Chemical Society, 135(4), 1167-1176.  Abstract   Each cell of a battery stores electrical energy as chemical energy in two electrodes, a reductant (anode) and an oxidant (cathode)  separated by an electrolyte that transfers the ionic component of the chemical reaction inside the cell and forces the electronic component outside the battery  The chemical reaction of a rechargeable battery must be reversible on the application of a charging I and V.</description>
-    </item>
-    
-    <item>
-      <title>Battery Basics</title>
-      <link>https://klee30810.github.io/battery/battery-basics/</link>
-      <pubDate>Tue, 09 Feb 2021 21:14:47 +0900</pubDate>
-      
-      <guid>https://klee30810.github.io/battery/battery-basics/</guid>
-      <description>2차전지 기본개념 1. 개요  (1) 2차전지의 필요성  일상생활에 많이 쓰임 / 일회용 소모품의 낭비 / 폐기물 및 환경오염 리튬이온전지 : 가볍고 소형화 가능 / 규제물질(수은) X / 자연방전현상 小 / 3.7V 의 높은 출력  (2) 전지  전기에너지를 생성할 수 있는 화학에너지를 저장하는 장치, 산화&amp;amp;환원 작용   종류   망간: 일회용 건전지, 저렴 알칼리 : 수산화 칼륨 전해액, 장시간 사용가능 납 축전지 : 크고 무겁다 / 높은 전류와 외부 저항 낮음 ⇒ 차량용으로 널리 사용 산화 은: 가장 소형 &amp;amp; 저렴 (시계), 고온에서 잘 버팀  분류   2차전지(축전지, 충전지) : 전기 충전을 반복해 지속적으로 사용가능하도록 만듬  1차전지: 시간이 흐르며 전압이 낮아짐 2차전지 : 사용가능 시간까지 일정하게 전압이 유지되다가 방전시에 끊김   리튬전지 : 소형, 휴대용 → 3V 고압, 고밀도 에너지 + 양호한 보존성  음극에 금속 리튬 &amp;amp; 전해액에 유기용매 금속 Li는 이온화 경향이 커서 활성화 되어있으므로 물과 반응하면 수소가스를 방출하며 그 자체도 연소성   연료전지 : 화학적으로 에너지를 저장하고 연료를 소모하며 전력 생산  전해질을 녹임 물로 전류를 흘려보내 \(H_2, O_2\)발생 → 전해질로 사용하는 전극에 \(H_2​\), 산화전극에 \(O_2\)를 보내서 화학반응 유도 수소 연료와 산화제 ⇒ 배출열을 이용해 연료의 80%까지 에너지로 변환     태양전지 : 태양 빛에너지 광전효과로 전기 에너지 변환 커패시터 : 충,방전에 따른 성능 저하를 방지하고 이온 분자를 저장할 수 있는 전기 이중 충전지, 쉽게 열화되지 않는다   용량 : 방전되어 전류가 흐르지 않기까지 사용할 수 있는 전기에너지의 양    2차전지 재충전은 무한대로 할 수 있는게 아님: 전극의 열화로 용량이 줄어듦 ⇒ 실제 용량이 공칭 용량의 50%까지 충방전할 수 잇는 횟수</description>
     </item>
     
   </channel>

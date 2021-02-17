@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Principles &amp; Applications of Lithium Secondary Batteries on Kevin&#39;s Codex</title>
+    <link>https://klee30810.github.io/battery/principles_lithium/</link>
+    <description>Recent content in Principles &amp; Applications of Lithium Secondary Batteries on Kevin&#39;s Codex</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 17 Feb 2021 20:38:34 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/battery/principles_lithium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chap1. 서론</title>
+      <link>https://klee30810.github.io/battery/principles_lithium/chap1/</link>
+      <pubDate>Wed, 17 Feb 2021 20:31:24 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/battery/principles_lithium/chap1/</guid>
+      <description>1-1 전지의 역사   전지(battery) : 전기화학반응을 이용하여 전극 물질의 화학에너지를 전기에너지로 직접 변환하는 시스템
+ 1차전지(Primary battery) : 일정 수명기간 동안만 한 차례 사용이 가능
+ 르클랑셰의 망간전지 → 산성 전해질을 수산화칼륨염(KOH)을 적용한 알칼리전지 → 리튬금속을 음극으로 적용한 3V급 리튬일차전지  2차전지(Secondary battery) : 재충전을 통해 장시간 반복 사용이 가능
+ 플랑떼의 납축전지 → Ni/Cd 전지 → NiMH 전지 → 리튬이차전지    1-2 전지기술의 혁명   리튬이온을 전극 및 전해질 내에서의 전하 전달체(charge carrier)로 사용하는 리튬 이차전지는 경량이면서도 3.</description>
+    </item>
+    
+  </channel>
+</rss>
