@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Chap2. 전지화학의 기본</title>
+      <link>https://klee30810.github.io/battery/principles_lithium/chap2/</link>
+      <pubDate>Wed, 17 Feb 2021 20:31:27 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/battery/principles_lithium/chap2/</guid>
+      <description>전기화학 : 금속 또는 반도체 등의 전자반도체와 전해질 같은 이온전도체와의 계면에서 일어나는 산화 환원반응에 의한 전자전달을 다루는 학문  2-1 전지의 구성  전기화학 셀 및 전지  셀 : 화학 에너지를 전기 에너지로 변환하거나 그 반대로 전기 에너지를 화학 에너지로 변환하는 소재의 가장 작은 단위구조  2개의 서로 다른 전극과 전해질로 구성. 두 전극은 서로 다른 전위(electric potential)를 가져 전해질을 매개로 하여 연결되었을 때 전위차(기전력)가 발생한다.  전위 : 전기장 내에서 단위 전하가 받는 위치에너지 기전력에 의해서 각 전극에서는 산화, 환원반응이 일어나고 발생된 전자는 외부 회로를 통하여 이동한다.</description>
+    </item>
+    
+    <item>
       <title>Chap2 Force Vectors</title>
       <link>https://klee30810.github.io/mech/statics/chap2/</link>
       <pubDate>Mon, 15 Feb 2021 22:02:10 +0900</pubDate>
