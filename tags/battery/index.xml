@@ -6,7 +6,7 @@
     <description>Recent content in battery on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 17 Feb 2021 20:31:27 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/battery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Feb 2021 07:38:15 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/battery/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chap1. 서론</title>
       <link>https://klee30810.github.io/battery/principles_lithium/chap1/</link>
@@ -17,6 +17,15 @@
  1차전지(Primary battery) : 일정 수명기간 동안만 한 차례 사용이 가능
  르클랑셰의 망간전지 → 산성 전해질을 수산화칼륨염(KOH)을 적용한 알칼리전지 → 리튬금속을 음극으로 적용한 3V급 리튬일차전지  2차전지(Secondary battery) : 재충전을 통해 장시간 반복 사용이 가능
  플랑떼의 납축전지 → Ni/Cd 전지 → NiMH 전지 → 리튬이차전지    1-2 전지기술의 혁명   리튬이온을 전극 및 전해질 내에서의 전하 전달체(charge carrier)로 사용하는 리튬 이차전지는 경량이면서도 3.</description>
+    </item>
+    
+    <item>
+      <title>Li-ion battery materials: present &amp; future</title>
+      <link>https://klee30810.github.io/paper_review/battery/nitta2015/</link>
+      <pubDate>Sun, 21 Feb 2021 07:38:15 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/paper_review/battery/nitta2015/</guid>
+      <description>Nitta, N., Wu, F., Lee, J. T., &amp;amp; Yushin, G. (2015). Li-ion battery materials: present and future. Materials today, 18(5), 252-264.  Abstract   This review covers key technological developments and scientific challenges for a broad range of Li-ion battery electrodes materials : lithium cobalt oxide (LCO), lithium nickel cobalt manganese oxide (NCM), lithium nickel cobalt aluminum oxide (NCA), lithium iron phosphate (LFP), lithium titanium oxide (LTO) and others are contrasted with that of conversion materials, such as alloying anodes (Si, Ge, Sn, etc.</description>
     </item>
     
     <item>
