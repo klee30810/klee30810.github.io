@@ -115,11 +115,11 @@ __02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclid
     </item>
     
     <item>
-      <title>Chap3. 리튬 이차전지용 주요 소재</title>
-      <link>https://klee30810.github.io/battery/principles_lithium/chap3/</link>
+      <title>Chap3-1. 리튬 이차전지용 주요 소재 - 양극 활물질</title>
+      <link>https://klee30810.github.io/battery/principles_lithium/chap3-1/</link>
       <pubDate>Wed, 17 Feb 2021 20:31:29 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/battery/principles_lithium/chap3/</guid>
+      <guid>https://klee30810.github.io/battery/principles_lithium/chap3-1/</guid>
       <description>3-1 양극 활물질  양극 활물질 개발 역사  intercalation : 활물질의 격자구조 변화없이 리튬 이온이 삽입/탈리 되는 현상
  \(Li/CF_n\): 주기율표 상에서 가장 전기음성도가 큰 불소를 탄소 화합물의 층간에 intecalation
  \(Li/MnO_2\): 기존의 1~1.5V에서 분해되는 수용액 대신에 유기 전해액을 사용하여 3V의 높은 작동전압을 갖게 됨
@@ -187,6 +187,15 @@ __01. 미학이 무슨 상관인가?  미학적으로 보기 좋은 코드가 �
       
       <guid>https://klee30810.github.io/language/chinese/hsk5_word/</guid>
       <description>哎 [āi] 감탄사 (놀람·반가움 등을 나타내어) 어! 야!     唉 [āi] 감탄사 (탄식하는 소리로) 후. 에그.   爱护 [àihù] 동사 소중히 하다. 잘 보살피다. 사랑하고 보호하다.   爱惜 [àixī] 동사 아끼다. 소중히 여기다.   爱心 [àixīn] 명사 (인간이나 환경에 대한) 관심과 사랑. 사랑하는 마음.   暗 [àn] 형용사 어둡다.   岸 [àn] 명사 물가. 해안.   安慰 [ānwèi] 형용사 (마음에) 위로가 되다.</description>
+    </item>
+    
+    <item>
+      <title>Chap5. 전지의 설계 및 제조</title>
+      <link>https://klee30810.github.io/battery/principles_lithium/chap5/</link>
+      <pubDate>Wed, 17 Feb 2021 20:31:36 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/battery/principles_lithium/chap5/</guid>
+      <description>전지설계 : 양극 및 음극의 전기화학적인 전위 및 용량, 기구 설계를 통한 전기적인 집전과 전극의 속도론적(kinetics) 요소 및 기본적 안정성 전지 제조공정 : 공정 산포 + 활물질과 제반 조성물의 균일도 및 전극의 코팅 두꼐, 길이와 같은 물리적 균일도  5-1 전지의 설계   기본 원칙  충,방전시 양극의 총 전하량과 음극의 총 전하량은 같다. 전지의 전압은 충, 방전량에 비례한다 사용될 수 있는 전하량은 양극과 음극의 전위 설계에 따라 다르며, 설계전위 이상으로 충전하거나 이하로 방전할 수 없다.</description>
     </item>
     
     <item>
@@ -393,6 +402,24 @@ __01. 그 기능을 구현하려고 애쓰지 마라 - 그럴 필요가 없다  
       
       <guid>https://klee30810.github.io/compu/readable_code/chap14/</guid>
       <description>We’re going to focus on the readability aspect of tests and not get into whether you should write test code before writing real code (&amp;quot;test-driven development”) or other philosophical aspects of test development.  __01. 읽거나 유지보수하기 쉽게 테스트를 만들어라  Test code should be readable so that other coders are comfortable changing or adding tests.  __02. 이 테스트는 어떤 점이 잘못되었을까? 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  // Sort &amp;#39;docs&amp;#39; by score (highest first) and remove negative-scored documents.</description>
+    </item>
+    
+    <item>
+      <title>Chap3 3</title>
+      <link>https://klee30810.github.io/battery/principles_lithium/chap3-3/</link>
+      <pubDate>Sat, 06 Mar 2021 15:44:59 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/battery/principles_lithium/chap3-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chap3 2</title>
+      <link>https://klee30810.github.io/battery/principles_lithium/chap3-2/</link>
+      <pubDate>Sat, 06 Mar 2021 15:44:53 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/battery/principles_lithium/chap3-2/</guid>
+      <description></description>
     </item>
     
     <item>

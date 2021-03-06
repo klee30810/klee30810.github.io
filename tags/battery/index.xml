@@ -38,15 +38,24 @@
     </item>
     
     <item>
-      <title>Chap3. 리튬 이차전지용 주요 소재</title>
-      <link>https://klee30810.github.io/battery/principles_lithium/chap3/</link>
+      <title>Chap3-1. 리튬 이차전지용 주요 소재 - 양극 활물질</title>
+      <link>https://klee30810.github.io/battery/principles_lithium/chap3-1/</link>
       <pubDate>Wed, 17 Feb 2021 20:31:29 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/battery/principles_lithium/chap3/</guid>
+      <guid>https://klee30810.github.io/battery/principles_lithium/chap3-1/</guid>
       <description>3-1 양극 활물질  양극 활물질 개발 역사  intercalation : 활물질의 격자구조 변화없이 리튬 이온이 삽입/탈리 되는 현상
  \(Li/CF_n\): 주기율표 상에서 가장 전기음성도가 큰 불소를 탄소 화합물의 층간에 intecalation
  \(Li/MnO_2\): 기존의 1~1.5V에서 분해되는 수용액 대신에 유기 전해액을 사용하여 3V의 높은 작동전압을 갖게 됨
  활물질에 따라 \( Li(CF)_n,\ Li/MnO_2,\ LiSO_2,\ LiSOCl_2 \) 등이 사용되며 이들 중 \(LiMnO_2\)가 가장 널리 사용되고 있다. \(LiSO_2, LiSOCl_2\)는 저온성능과 내구성이 뛰어나지만 인체에 유해한 물질을 사용하므로 특수 목적에만 사용된다.</description>
+    </item>
+    
+    <item>
+      <title>Chap5. 전지의 설계 및 제조</title>
+      <link>https://klee30810.github.io/battery/principles_lithium/chap5/</link>
+      <pubDate>Wed, 17 Feb 2021 20:31:36 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/battery/principles_lithium/chap5/</guid>
+      <description>전지설계 : 양극 및 음극의 전기화학적인 전위 및 용량, 기구 설계를 통한 전기적인 집전과 전극의 속도론적(kinetics) 요소 및 기본적 안정성 전지 제조공정 : 공정 산포 + 활물질과 제반 조성물의 균일도 및 전극의 코팅 두꼐, 길이와 같은 물리적 균일도  5-1 전지의 설계   기본 원칙  충,방전시 양극의 총 전하량과 음극의 총 전하량은 같다. 전지의 전압은 충, 방전량에 비례한다 사용될 수 있는 전하량은 양극과 음극의 전위 설계에 따라 다르며, 설계전위 이상으로 충전하거나 이하로 방전할 수 없다.</description>
     </item>
     
     <item>
