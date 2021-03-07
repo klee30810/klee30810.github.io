@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://klee30810.github.io/compu/data_structure/chap1/</loc>
+    <lastmod>2021-03-07T14:34:59+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/math/stats/</loc>
     <lastmod>2021-03-07T12:04:17+09:00</lastmod>
   </url>
@@ -73,6 +78,16 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/compu/data_structure/chap2/</loc>
+    <lastmod>2021-03-07T14:35:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/data_structure/</loc>
+    <lastmod>2021-03-07T14:34:26+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/language/chinese/hsk2_word/</loc>
     <lastmod>2021-03-06T07:37:17+09:00</lastmod>
   </url>
@@ -133,6 +148,11 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/compu/data_structure/chap3/</loc>
+    <lastmod>2021-03-07T14:35:03+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/language/chinese/hsk3_word/</loc>
     <lastmod>2021-03-06T07:39:38+09:00</lastmod>
   </url>
@@ -163,6 +183,11 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/compu/data_structure/chap4/</loc>
+    <lastmod>2021-03-07T14:35:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/language/chinese/hsk4_word/</loc>
     <lastmod>2021-03-06T07:43:31+09:00</lastmod>
   </url>
@@ -185,6 +210,11 @@
   <url>
     <loc>https://klee30810.github.io/compu/</loc>
     <lastmod>2021-02-14T20:40:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/data_structure/chap5/</loc>
+    <lastmod>2021-03-07T14:35:08+09:00</lastmod>
   </url>
   
   <url>
@@ -213,6 +243,11 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/compu/data_structure/chap6/</loc>
+    <lastmod>2021-03-07T14:35:11+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/language/chinese/hsk6_word/</loc>
     <lastmod>2021-03-06T07:43:37+09:00</lastmod>
   </url>
@@ -230,6 +265,11 @@
   <url>
     <loc>https://klee30810.github.io/battery/</loc>
     <lastmod>2021-02-09T22:08:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/compu/data_structure/chap7/</loc>
+    <lastmod>2021-03-07T14:35:13+09:00</lastmod>
   </url>
   
   <url>
@@ -338,17 +378,22 @@
   </url>
   
   <url>
+    <loc>https://klee30810.github.io/tags/data-structure/</loc>
+    <lastmod>2021-03-07T14:35:13+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/tags/</loc>
+    <lastmod>2021-03-07T14:35:13+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/tags/ask/</loc>
     <lastmod>2021-03-06T07:43:37+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://klee30810.github.io/tags/chinese/</loc>
-    <lastmod>2021-03-06T07:43:37+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://klee30810.github.io/tags/</loc>
     <lastmod>2021-03-06T07:43:37+09:00</lastmod>
   </url>
   

@@ -8,6 +8,15 @@
     <language>ko-kr</language>
     <lastBuildDate>Mon, 08 Feb 2021 23:39:19 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Chap1. 자료구조와 알고리즘 이해</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap1/</link>
+      <pubDate>Sun, 07 Mar 2021 14:34:59 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap1/</guid>
+      <description>1. 자료와 자료구조  자료(data)는 현실 세계로부터 단순한 관찰이나 측정을 통해서 수집한 사실(fact)들 또는 값이다. 자료는 가공되지 않은 상태를 의미하고, 정보(information)는 어떤 기준에 의해 정리되고 기록된 것을 의미한다. 자료 구조(Data Structure)는 자료 개체(Data Object)의 집합, 자료 값 사이의 관계 그리고 자료에 적용 가능한 함수 또는 연산 등을 의미한다. 프로그램이란 데이터를 표현하고, 그렇게 표현된 데이터를 처리하는 것이다. 데이터의 표현은 데이터의 저장을 포함하고, 데이터의 저장을 담당하는 것이 자료구조이다.  2. 자료의 구성  비트, 바이트, 단어, 항목, 레코드, 파일, 데이터베이스  3.</description>
+    </item>
+    
+    <item>
       <title>HSK 1급 단어</title>
       <link>https://klee30810.github.io/language/chinese/hsk1_word/</link>
       <pubDate>Sat, 06 Mar 2021 07:32:54 +0900</pubDate>
@@ -63,6 +72,17 @@
       
       <guid>https://klee30810.github.io/battery/battery-basics/</guid>
       <description>2차전지 기본개념 1. 개요  (1) 2차전지의 필요성  일상생활에 많이 쓰임 / 일회용 소모품의 낭비 / 폐기물 및 환경오염 리튬이온전지 : 가볍고 소형화 가능 / 규제물질(수은) X / 자연방전현상 小 / 3.7V 의 높은 출력  (2) 전지  전기에너지를 생성할 수 있는 화학에너지를 저장하는 장치, 산화&amp;amp;환원 작용   종류   망간: 일회용 건전지, 저렴 알칼리 : 수산화 칼륨 전해액, 장시간 사용가능 납 축전지 : 크고 무겁다 / 높은 전류와 외부 저항 낮음 ⇒ 차량용으로 널리 사용 산화 은: 가장 소형 &amp;amp; 저렴 (시계), 고온에서 잘 버팀  분류   2차전지(축전지, 충전지) : 전기 충전을 반복해 지속적으로 사용가능하도록 만듬  1차전지: 시간이 흐르며 전압이 낮아짐 2차전지 : 사용가능 시간까지 일정하게 전압이 유지되다가 방전시에 끊김   리튬전지 : 소형, 휴대용 → 3V 고압, 고밀도 에너지 + 양호한 보존성  음극에 금속 리튬 &amp;amp; 전해액에 유기용매 금속 Li는 이온화 경향이 커서 활성화 되어있으므로 물과 반응하면 수소가스를 방출하며 그 자체도 연소성   연료전지 : 화학적으로 에너지를 저장하고 연료를 소모하며 전력 생산  전해질을 녹임 물로 전류를 흘려보내 \(H_2, O_2\)발생 → 전해질로 사용하는 전극에 \(H_2​\), 산화전극에 \(O_2\)를 보내서 화학반응 유도 수소 연료와 산화제 ⇒ 배출열을 이용해 연료의 80%까지 에너지로 변환     태양전지 : 태양 빛에너지 광전효과로 전기 에너지 변환 커패시터 : 충,방전에 따른 성능 저하를 방지하고 이온 분자를 저장할 수 있는 전기 이중 충전지, 쉽게 열화되지 않는다   용량 : 방전되어 전류가 흐르지 않기까지 사용할 수 있는 전기에너지의 양    2차전지 재충전은 무한대로 할 수 있는게 아님: 전극의 열화로 용량이 줄어듦 ⇒ 실제 용량이 공칭 용량의 50%까지 충방전할 수 잇는 횟수</description>
+    </item>
+    
+    <item>
+      <title>Chap2. 배열</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap2/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:01 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap2/</guid>
+      <description>1. 배열  배열은 크기와 성격이 같은 자료형을 연속된 기억 장소에 저장한 것이다. 배열 구조는 선형 리스트(linear list) 또는 순서 리스트(ordered list)를 표현하는 가장 일반적인 형태이다. 일반적으로 배열은 배열명(Array name)으로 식별되고, 배열의 요소(원소)는 배열명에 괄호를 붙여 그 안의 첨자(subscript Or index)로 식별한다.
+ 1차원 배열 (One-dimensional Array Or vector) A는 A(L:U)로 표시할 수 있다.
+ 이 때, L은 배열 첨자의 하한 값으로 배열의 시작 값을 의미하고, U는 상한 값으로 배열의 마지막 값을 의미한다.</description>
     </item>
     
     <item>
@@ -124,6 +144,18 @@ __02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclid
     </item>
     
     <item>
+      <title>Chap3. Linked List 1</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap3/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:03 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap3/</guid>
+      <description>ADT : Abstract Data Type   추상 자료형(ADT) : 구체적인 기능의 완성과 정을 언급하지 않고, 순수하게 기능이 무엇인지를 나열한 것 자료형은 기능의 명세이다! 기능 사용 설명서  ex) int 자료형 : integer를 통해서 가능한 연산(기능)이 나열한 것
+
+ 구조체 멤버를 밖에서 접근할 필요 없도록 함수적 기능의 구현 필요 구조체 : Data + 관련 연산  ⇒ 관련 연산이 함께 정의되어야 함!
+ C : [구조체&amp;amp;함수 함께 정의: 자료형] + [함수]  배열을 이용한 리스트의 구현  1.</description>
+    </item>
+    
+    <item>
       <title>HSK 3급 단어</title>
       <link>https://klee30810.github.io/language/chinese/hsk3_word/</link>
       <pubDate>Sat, 06 Mar 2021 07:39:38 +0900</pubDate>
@@ -166,6 +198,15 @@ __01. 예: Filter()  filter라는 변수명은 의미가 모호하다. 대상을
     </item>
     
     <item>
+      <title>Chap4. Linked List 2</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap4/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:05 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap4/</guid>
+      <description>1. 연결 리스트의 개념적인 이해   배열 : 순차적 접근이 index를 통해서 가능 / 크기가 미리 결정 되어야 하고 변경이 불가능 동적할당 : 순차 접근이 불가능 ⇒ 연결 리스트로 관리할 것  1 2 3 4 5  typedef struct _node { int data; // 데이터를 담을 공간 	struct _node * next; // 연결의 도구! } Node;     노드를 연결 다른 노드를 가리키기 위한 포인터 변수 존재  - 예제 LinkedRead.</description>
+    </item>
+    
+    <item>
       <title>HSK 4급 단어</title>
       <link>https://klee30810.github.io/language/chinese/hsk4_word/</link>
       <pubDate>Sat, 06 Mar 2021 07:43:31 +0900</pubDate>
@@ -196,6 +237,16 @@ __01. 예: Filter()  filter라는 변수명은 의미가 모호하다. 대상을
 3. 서로 연관된 코드는 하나의 블록으로 묶어라.
 ※ 여기서 말하는 미학은 가독성 만을 위한 것으로 새롭게 설계하는 리팩토링은 서로 독립된 아이디어에 해당한다. 두 가지 모두를 추구하는게 이상적이다.
 __01. 미학이 무슨 상관인가?  미학적으로 보기 좋은 코드가 사용하기 더 편리하다. 우리는 대부분의 시간을 코드를 그저 바라보는 데 쓴다는 것을 명심하라.</description>
+    </item>
+    
+    <item>
+      <title>Chap5. Linked List 3</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap5/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:08 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap5/</guid>
+      <description>1. 원형 연결 리스트   단순 연결 리스트의 마지막 노드는 NULL을 가리키지만, 원형 연결 리스트의 마지막 노드는 첫 번째 노드를 가리킨다. 모든 노드가 원의 형태를 이루면서 연결되어 있기 때문에 원형 연결 리스트 에서는 사실상 머리와 꼬리의 구분이 없다.  1. 원형 연결 리스트의 대표적인 장점 
+ 단순 연결 리스트처럼 머리와 꼬리를 가리키는 포인터 변수를 각각 두지 않아도, 하나의 포인터 변수만 있어도 머리 또는 꼬리에 노드를 간단히 추가할 수 있다.</description>
     </item>
     
     <item>
@@ -239,6 +290,15 @@ __01. 설명하지 말아야 하는 것 ★ 코드에서 빠르게 유추할 수
     </item>
     
     <item>
+      <title>Chap6. Stack</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap6/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:11 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap6/</guid>
+      <description>1. 스택의 이해와 ADT정의   스택은 ‘먼저 들어간 것이 나중에 나오는 자료구조’로써 초코볼이 담겨있는 통에 비유할 수 있다. ⇒ LIFO(Last-in, First-out)  Push : 초코볼 통에 초코볼을 넣는다 Pop : 초코볼 통에서 초코볼을 꺼낸다. (데이터 추출 &amp;amp; 삭제) Peek : 이번에 꺼낼 초코볼의 색이 무엇인지 통 안을 들여다 본다 (데이터 추출만)   ADT 정의 : 배열 혹은 연결 리스트 기반 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  void StackInit(Stack * pstack); // 스택의 초기화 진행, 스택 생성 후 제일 먼저 호출되어야 함  int SIsEmpty(Stack * pstack); // 스택인 빈 경우 TRUE, 그렇지 않으면 FALSE  void SPush(Stack * pstack, Data data); // 스택에 데이터를 저장, 매개변수 data로 전달된 값을 저장  Data SPop(Stack * pstack); // 마지막에 저장된 요소를 반환하고 삭제 // 본 함수 호출을 위해 데이터가 하나 이상 존재함이 보장되어야 함 =&amp;gt; SIsEmpty 사용  Data SPeek(Stack * pstack); // 마지막 저장요소를 반환하되 삭제하지 않음 // 본 함수 호출을 위해 데이터가 하나 이상 존재함이 보장되어야 함 =&amp;gt; SIsEmpty 사용    2.</description>
+    </item>
+    
+    <item>
       <title>HSK 6급 단어</title>
       <link>https://klee30810.github.io/language/chinese/hsk6_word/</link>
       <pubDate>Sat, 06 Mar 2021 07:43:37 +0900</pubDate>
@@ -265,6 +325,15 @@ a. All loadings are applied at the joints</description>
       
       <guid>https://klee30810.github.io/compu/readable_code/chap6/</guid>
       <description>주석은 높은 &#39;정보 대 공간&#39; 비율을 맞춰야 한다.  __01. 주석을 간결하게 하라 1 2 3 4 5 6 7 8  // The int is the CategoryType. // The first float in the inner pair is the &amp;#39;score&amp;#39;, // the second is the &amp;#39;weight&amp;#39;. typedef hash_map&amp;lt;int, pair&amp;lt;float, float&amp;gt; &amp;gt; ScoreMap; /* CONCISE ONE!!! */ // CategoryType -&amp;gt; (score, weight) typedef hash_map&amp;lt;int, pair&amp;lt;float, float&amp;gt; &amp;gt; ScoreMap;     짧게 줄여도 정보를 충분히 전달할 수 있다면 주석을 짧게 줄여라.</description>
+    </item>
+    
+    <item>
+      <title>Chap7. Queue</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap7/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:13 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap7/</guid>
+      <description>1. 큐의 의해와 ADT 정의  큐는 LIFO(Last-in, First-out) 구조의 자료구조이다. 때문에 먼저 들어간 것이 먼저 나오는, 일종의 줄서기에 비유할 수 있는 자료구조이다 큐에 데이터를 넣는 연산 enqueue &amp;amp; 큐에서 데이터를 꺼내는 연산 dequeue  ADT 정의 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  void QueueInit(Queue * pq); // 큐의 초기화 진행, 큐 생성 후 가장 먼저 호출되어야 함  int QIsEmpty(Queue * pq); // 큐가 빈 경우 TRUE(1)  void Enqueue(Queue * pq, Data data); // 큐에 data로 전달된 값을 저장  Data Dequeue(Queue * pq); // 저장 순서가 앞선 데이터를 반환하고 삭제한다.</description>
     </item>
     
     <item>
