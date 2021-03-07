@@ -7,5 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 17 Feb 2021 02:01:46 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/sci/funda_physics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chap1. 힘과 운동</title>
+      <link>https://klee30810.github.io/sci/funda_physics/chap1/</link>
+      <pubDate>Wed, 17 Feb 2021 02:02:07 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/sci/funda_physics/chap1/</guid>
+      <description>1. 속도와 가속도  (1) 위치의 변화와 변위  운동 : 물체의 위치가 시간에 따라 변하는 현상  기준점을 먼저 정하고, 그 기준점으로부터의 거리와 방향을 함께 나타내야 함  이동거리 : 물체가 이동한 경로의 길 변위 : 물체의 이동경로는 생각하지 않고 출발점과 도착점을 최단거리로 연결하는 선분의 길이와 방향을 함께 나타낸 것  스칼라 : 크기만으로 완전히 표현되는 물리량 벡터 : 크기와 방향을 함께 나타내는 물리량   (2) 속력과 속도  속력 (speed) : 물체가 단위 시간(1초)에 이동한 거리  \[ 속력=\frac{이동거리}{걸린시간},\quad v=\frac{x}{t} \]</description>
+    </item>
+    
+    <item>
+      <title>Chap2. 운동량과 에너지</title>
+      <link>https://klee30810.github.io/sci/funda_physics/chap2/</link>
+      <pubDate>Wed, 17 Feb 2021 02:03:58 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/sci/funda_physics/chap2/</guid>
+      <description>1. 운동량과 충격량  (1) 운동량  우리는 물체의 질량이 같을 때는 속도가 빠른 물체의 운동의 양이 속도가 느린 물체보다 더 크고, 속도가 같을 떄는 질량이 큰 물체의 운동의 양이 질량이 작은 물체보다 더 크다 ⇒ 물체의 운동 효과는 물체의 질량 및 속도에 관련 운동량 : 물체의 운동 효과, 물체의 질량과 속도의 곱, 속도와 같은 방향을 가지는 물리량 \(운동량 = 질량 \times 속도, p=mv\)  (2) 충격량  운동량은 그 물체에 힘을 얼마나 가했느냐에 따라 변화의 정도가 달라진다.</description>
+    </item>
+    
   </channel>
 </rss>
