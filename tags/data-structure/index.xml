@@ -6,7 +6,7 @@
     <description>Recent content in Data Structure on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 07 Mar 2021 14:35:13 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Mar 2021 14:35:17 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chap1. 자료구조와 알고리즘 이해</title>
       <link>https://klee30810.github.io/compu/data_structure/chap1/</link>
@@ -74,6 +74,15 @@
       
       <guid>https://klee30810.github.io/compu/data_structure/chap7/</guid>
       <description>1. 큐의 의해와 ADT 정의  큐는 LIFO(Last-in, First-out) 구조의 자료구조이다. 때문에 먼저 들어간 것이 먼저 나오는, 일종의 줄서기에 비유할 수 있는 자료구조이다 큐에 데이터를 넣는 연산 enqueue &amp;amp; 큐에서 데이터를 꺼내는 연산 dequeue  ADT 정의 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  void QueueInit(Queue * pq); // 큐의 초기화 진행, 큐 생성 후 가장 먼저 호출되어야 함  int QIsEmpty(Queue * pq); // 큐가 빈 경우 TRUE(1)  void Enqueue(Queue * pq, Data data); // 큐에 data로 전달된 값을 저장  Data Dequeue(Queue * pq); // 저장 순서가 앞선 데이터를 반환하고 삭제한다.</description>
+    </item>
+    
+    <item>
+      <title>Chap8. Tree</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap8/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:17 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap8/</guid>
+      <description>1. 트리의 개요  </description>
     </item>
     
   </channel>

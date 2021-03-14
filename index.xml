@@ -177,6 +177,15 @@ __02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclid
     </item>
     
     <item>
+      <title>Chap3. 전기와 자기</title>
+      <link>https://klee30810.github.io/sci/funda_physics/chap3/</link>
+      <pubDate>Wed, 17 Feb 2021 02:04:01 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/sci/funda_physics/chap3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Chap3. Equilibrium of Force</title>
       <link>https://klee30810.github.io/mech/statics/chap3/</link>
       <pubDate>Mon, 15 Feb 2021 22:02:22 +0900</pubDate>
@@ -358,6 +367,15 @@ a. All loadings are applied at the joints</description>
       <guid>https://klee30810.github.io/compu/readable_code/chap7/</guid>
       <description>제어문은 사실 코드를 읽기 어렵게 만든다.  ★ 흐름을 제어하는 조건과 루프 그리고 여타 요소를 최대한 &#39;자연스럽게&#39; 만들도록 노력하라.코드를 읽다가 다시 되돌아가서 코드를 읽지 않아도 되게끔 만들어야 한다.
 __01. 조건문에서 인수의 순서  왼쪽에 &#39;질문을 받는&#39; 유동적인 값을 쓰고, 오른쪽에 비교대상으로 사용되는 고정적인 값을 써라.  __02. if/else 블록의 순서  조건은 부정문이 아닌 긍정문으로 쓰려고하라. 간단한 것을 먼저 처리하라. 이러면 한 화면으로 두개의 구문을 볼 수 있을 가능성이 높아진다.</description>
+    </item>
+    
+    <item>
+      <title>Chap8. Tree</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap8/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:17 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap8/</guid>
+      <description>1. 트리의 개요  </description>
     </item>
     
     <item>
