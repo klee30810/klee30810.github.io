@@ -182,7 +182,9 @@ __02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclid
       <pubDate>Wed, 17 Feb 2021 02:04:01 +0900</pubDate>
       
       <guid>https://klee30810.github.io/sci/funda_physics/chap3/</guid>
-      <description></description>
+      <description>1. 전기  (1) 전류 1) 전기력과 전하  전하 : 전기적 성질을 갖게 하는 원인이 되는 성질
+ 원자핵 속에 있는 양전하(+)를 띤 양성자들이 전자를 궤도운동하게 함 대전 : 원자가 외부의 자극에 의해 (+) / (-) 전하를 띠는 현상 전하량 기본 전하 : \(e=1/60\times 10^{-19}C\)  전기력 : 두 종류의 전하 사이에는 서로 끌거나 미는 힘이 작용
+  ⇒ 두 같은 종류의 전하는 서로 밀고, 다른 종류의 전하는 서로 당긴다.</description>
     </item>
     
     <item>
