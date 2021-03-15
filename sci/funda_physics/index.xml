@@ -36,5 +36,32 @@
   ⇒ 두 같은 종류의 전하는 서로 밀고, 다른 종류의 전하는 서로 당긴다.</description>
     </item>
     
+    <item>
+      <title>Chap4. 파동과 입자</title>
+      <link>https://klee30810.github.io/sci/funda_physics/chap4/</link>
+      <pubDate>Wed, 17 Feb 2021 02:04:06 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/sci/funda_physics/chap4/</guid>
+      <description>1. 파동의 성질  (1) 파동의 발생과 전파  진동 : 물체가 한 점을 중심으로 흔들리는 것, 한 순간에 존재할 수 없고 좌우 또는 앞뒤로 움직이는 시간 필요 파동 : 진동 상태가 물질(매질)을 따라 퍼져나가는 것 파원 : 파동이 처음 발생한 부분  물결파에서 파동이 전파되어 나갈 때 매질의 각 부분은 제자리에서 아래위로 진동하면서 에너지를 인접 부분으로 전달할 뿐이지, 매질이 파동과 함께 이동하지 않는다.  횡파 : 파동의 진행 방향과 매질의 진동 방향이 수직인 파동, 매질의 위치가 높아졌다 낮아졌다 함 (고저파) 종파 : 파동의 진행 방향과 매딜의 진동 방향이 나란한 파동, 매질의 간격이 빽빽한 부분과 성긴 부분이 생김 (소밀파) 파동은 한 장소에만 존재할 수 없고 한 장소에서 다른 장소로 퍼져나간다.</description>
+    </item>
+    
+    <item>
+      <title>Chap5. 운동과 에너지</title>
+      <link>https://klee30810.github.io/sci/funda_physics/chap5/</link>
+      <pubDate>Wed, 17 Feb 2021 02:04:08 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/sci/funda_physics/chap5/</guid>
+      <description>1. 운동의 기술  (1) 벡터 (2) 등속 직선 운동 (3) 등가속도 직선 운동 2. 중력장 내의 운동  (1) 중력장 내의 직선 운동  중력 : 지구라는 거대한 물체와 지구 표면상에 있는 물체들 사이에 작용하는 만유인력 → 언제나 지구의 중심을 향함 중력장 : 중력이 미치는 공간 범위  1) 자유낙하 운동  물체가 정지상태로부터 중력만을 받으며 낙하하는 운동 → 낙하 동안에도 계속 중력 작용  2) 연직 아래로 던진 물체의 운동  물체를 아래로 던졌기 때문에 초속도 \(v_0\) 존재  3) 연직 위로 던진 물체의 운동  위로 던진 힘과 중력의 방향이 반대로 작용  (2) 포물선 운동 1) 수평방향으로 던진 물체의 운동    (3) 저항과 운동 3.</description>
+    </item>
+    
+    <item>
+      <title>Chap6. 전기장과 자기장</title>
+      <link>https://klee30810.github.io/sci/funda_physics/chap6/</link>
+      <pubDate>Wed, 17 Feb 2021 02:04:10 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/sci/funda_physics/chap6/</guid>
+      <description>1. 전기장  (1) 마찰 전기 (2) 정전기 유도 (3) 쿨롱의 법칙 (4) 전기장과 전기력선 (5) 전위와 전위차 2. 직류 회로  (1) 축전기 (2) 기전력과 내부 저항 (3) 직류 회로에서의 전류와 전압 3. 자기장  (1) 전자기력 (2) 자기장에서 운동 전하가 받는 힘 (3) 자기장 내에서 대전 입자의 운동 (4) 전자기 유도 4. 교류  (1) 교류 (2) 교류 회로 5. 전자기파  (1) 전기 진동 (2) 전자기파 </description>
+    </item>
+    
   </channel>
 </rss>
