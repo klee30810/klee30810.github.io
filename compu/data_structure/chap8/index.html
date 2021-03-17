@@ -17,21 +17,21 @@
    <title>Chap8. Tree - Kevin&#39;s Codex</title>
 
     
-    <link href="/css/nucleus.css?1615936324" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1615936324" rel="stylesheet">
-    <link href="/css/hybrid.css?1615936324" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1615936324" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1615936324" rel="stylesheet">
-    <link href="/css/auto-complete.css?1615936324" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1615936324" rel="stylesheet">
-    <link href="/css/theme.css?1615936324" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1615936324" rel="stylesheet">
+    <link href="/css/nucleus.css?1615959270" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1615959270" rel="stylesheet">
+    <link href="/css/hybrid.css?1615959270" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1615959270" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1615959270" rel="stylesheet">
+    <link href="/css/auto-complete.css?1615959270" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1615959270" rel="stylesheet">
+    <link href="/css/theme.css?1615959270" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1615959270" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1615936324" rel="stylesheet">
+    <link href="/css/theme-blue.css?1615959270" rel="stylesheet">
     
-    <link href="/css/foo.css?1615936324" rel="stylesheet"><link href="/css/bar.css?1615936324" rel="stylesheet">
+    <link href="/css/foo.css?1615959270" rel="stylesheet"><link href="/css/bar.css?1615959270" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1615936324"></script>
+    <script src="/js/jquery-3.3.1.min.js?1615959270"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -61,14 +61,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1615936324"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1615936324"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1615959270"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1615959270"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/klee30810.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1615936324"></script>
+<script type="text/javascript" src="/js/search.js?1615959270"></script>
 
     
   </div>
@@ -1212,10 +1212,306 @@
         
 
 
+<ul>
+<li>대부분의 비선형 자료구조는 표현을 목적으로 하며 Tree 구조 또한 그렇다.</li>
+</ul>
+
 <h2 id="1-트리의-개요">1. 트리의 개요</h2>
 
 <hr>
 
+<h4 id="1-이진트리">(1) 이진트리</h4>
+
+<ul>
+<li>연결리스트 : 노드를 추가하지 않고 데이터를 삽입했다.</li>
+<li>트리 : 구조체를 만들고 삽입, 삭제, 추출 등 구조체를 위한 도구가 될 함수를 만들 것이다. 방향보다는 서로간 연결이 더 중요하다. 각자 서로의 주소값을 알고 있으면 연결정보가 있는 것이다.</li>
+<li><strong>계층적 관계(Hierarchical Relationship)</strong> 을 표현하는 자료구조</li>
+<li><strong>데이터 표현을 위한 도구</strong>
+
+<ul>
+<li>노드 node: 트리의 구성요소, 실제 data를 담을 수 있는 구조</li>
+<li>간선 edge: 노드 간 연결선</li>
+<li>루트 노드 root node: 트리 최상위 노드</li>
+<li>단말 노드 terminal code : 아래로 다른 노드가 연결되어 있지 않는 노드</li>
+<li>내부 노드 internal node : 단말 노드를 제외한 모든 노드</li>
+<li>노드간 관계 : 부모 노드, 자식 노드, 형제 노드</li>
+</ul></li>
+<li>서브 트리 : 각 트리는 또다른 서브 트리로 이뤄져 있고 그 주고는 <strong>재귀적</strong>이다.</li>
+<li>이진트리의 조건</li>
+</ul>
+
+<blockquote>
+<p><strong>1. 루트 노드를 중심으로 두 개의 서브 트리로 나뉘어 진다.</strong></p>
+
+<p><strong>2. 나뉘어진 두 서브트리도 모두 이진트리어어야 한다.</strong></p>
+</blockquote>
+
+<ul>
+<li>이진 트리는 구조가 <strong>재귀적</strong> 이고, 트리와 관련된 연산은 재귀적으로 사고하고 재귀적으로 구현할 필요가 있다.</li>
+</ul>
+
+<h4 id="2-공집합-노드">(2) 공집합 노드</h4>
+
+<ul>
+<li>이진 트리의 재귀성을 계속하기 위하여 공집합(Empty Set)도 노드로 간주한다.</li>
+<li>트리의 높이와 레벨의 최대값은 같다
+
+<ul>
+<li>포화 이진 트리 : 모든 레벨에 노드가 꽉찬 트리</li>
+<li>완전 이진 트리 : 빈 틈 없이 채워진 이진 트리 ⇒ 위에서 아래로 왼쪽에서 오른쪽으로 채워진 트리</li>
+</ul></li>
+</ul>
+
+<h3 id="2-이진-트리의-구현">2. 이진 트리의 구현</h3>
+
+<hr>
+
+<ul>
+<li>이진 트리 활용 도구 만들기</li>
+<li>배열 기반 : 노드에 번호를 부여하고 그 번호에 해당하는 값을 배열의 인덱스 값으로 활용, 편의상 배열의 첫 번째 요소는 사용하지 않는다.</li>
+<li>연결리스트 기반 : 트리의 구조와 리스트의 연결 구조가 일치한다. → 직관적 이해</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> _bTreeNode
+{
+  BTData data;
+  <span style="color:#815ba4">struct</span> _bTreeNode <span style="color:#5bc4bf">*</span> left;
+  <span style="color:#815ba4">struct</span> _bTreeNode <span style="color:#5bc4bf">*</span> right;
+} BTreeNode;</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>이진 트리의 모든 노드는 직/간접적으로 연결되어있다. 따라서 <strong>루트 노드의 주소값</strong> 만 기억하면, 이진 트리 전체를 가리키는 것과 다름없다.</li>
+<li>논리적으로도 하나의 노드는 그 자체로 이진 트리다. 따라서 노드를 표현한 구조체는 실제로 이진 트리를 표현한 구조체이다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">MakeBTreeNode</span>(); <span style="color:#776e71">// 노드의 생성
+</span><span style="color:#776e71">// 노드를 동적으로 할당하고 SetData 함수로 채우고, left &amp; right는 NULL로 자동 초기화
+</span><span style="color:#776e71"></span>
+BTData <span style="color:#06b6ef">GetData</span>(BTreeNOde <span style="color:#5bc4bf">*</span> bt); <span style="color:#776e71">// 노드에 저장된 데이터 반환
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">SetData</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt, BTData data) <span style="color:#776e71">// 노드에 데이터 저장
+</span><span style="color:#776e71">// 노드에 직접 접근하는 것 보다 함수를 통한 접근이 보다 좋은 접근
+</span><span style="color:#776e71">// 구조체가 정의 되면 관련 연산은 함수를 통하는 것이 좋다.
+</span><span style="color:#776e71"></span>
+<span style="color:#776e71">// 하나의 노드도 서브트리 이므로 SubTree로 이름 짓는 것이 타당
+</span><span style="color:#776e71"></span>BTreeNode <span style="color:#5bc4bf">*</span> GetLeftSubTree(BTreeNode <span style="color:#5bc4bf">*</span> bt); <span style="color:#776e71">// 왼쪽 서브 트리의 주소 값 반환
+</span><span style="color:#776e71"></span>
+BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt); <span style="color:#776e71">// 오른쪽 서브 트리의 주소 값 반환
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub); <span style="color:#776e71">// main의 서브 왼쪽 서브 트리로 sub 연결
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub); <span style="color:#5bc4bf">//</span> main의 <span style="color:#ef6155">오른쪽</span> <span style="color:#ef6155">서브</span> <span style="color:#ef6155">트리로</span> sub <span style="color:#ef6155">연결</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">main</span>()
+{
+  BTreeNode <span style="color:#5bc4bf">*</span> ndA <span style="color:#5bc4bf">=</span> MakeBTreeNode();  <span style="color:#776e71">// 노드 A 생성
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> ndB <span style="color:#5bc4bf">=</span> MakeBTreeNode();  <span style="color:#776e71">// 노드 B 생성
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> ndC <span style="color:#5bc4bf">=</span> MakeBTreeNode();  <span style="color:#776e71">// 노드 C 생성
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// ndA, ndB, ndC를 이용한 SetData 함수 호출을 통해 데이터를 채운 후...
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// 노드 A의 왼쪽 자식 노드로 노드 B 연결
+</span><span style="color:#776e71"></span>  MakeLeftSubTree(ndA, ndB);
+  <span style="color:#776e71">// 노드 A의 오른쪽 자식 노드로 노드 C 연결
+</span><span style="color:#776e71"></span>  MakeRightSubTree(ndA, ndB);
+  
+  ....
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>이진 트리의 구현</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">MakeBTreeNode</span>()
+{
+  BTreeNode <span style="color:#5bc4bf">*</span> nd <span style="color:#5bc4bf">=</span> (BTreeNode <span style="color:#5bc4bf">*</span>)malloc(<span style="color:#815ba4">sizeof</span>(BTreeNode));
+  nd<span style="color:#5bc4bf">-&gt;</span>left <span style="color:#5bc4bf">=</span> NULL;
+  nd<span style="color:#5bc4bf">-&gt;</span>right <span style="color:#5bc4bf">=</span> NULL;
+  <span style="color:#815ba4">return</span> nd;
+}
+
+BTData <span style="color:#06b6ef">GetData</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
+{
+  <span style="color:#815ba4">return</span> bt<span style="color:#5bc4bf">-&gt;</span>data;
+}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">SetData</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt, BTData data)
+{
+  bt<span style="color:#5bc4bf">-&gt;</span>data <span style="color:#5bc4bf">=</span> data;
+}
+
+BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
+{
+  <span style="color:#815ba4">return</span> bt<span style="color:#5bc4bf">-&gt;</span>left;
+}
+
+BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
+{
+  <span style="color:#815ba4">return</span> bt<span style="color:#5bc4bf">-&gt;</span>right;
+}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub)
+{
+  <span style="color:#815ba4">if</span>(main<span style="color:#5bc4bf">-&gt;</span>left <span style="color:#5bc4bf">!=</span> NULL)
+    free(main<span style="color:#5bc4bf">-&gt;</span>left);  <span style="color:#776e71">// 만약 하부 노드가 있었으면 메모리 누수
+</span><span style="color:#776e71"></span>  
+  main<span style="color:#5bc4bf">-&gt;</span>left <span style="color:#5bc4bf">=</span> sub;
+}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub)
+{
+  <span style="color:#815ba4">if</span>(main<span style="color:#5bc4bf">-&gt;</span>right <span style="color:#5bc4bf">!=</span> NULL)
+    free(main<span style="color:#5bc4bf">-&gt;</span>right);
+  
+  main<span style="color:#5bc4bf">-&gt;</span>right <span style="color:#5bc4bf">=</span> sub;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="3-이진-트리의-순회travelsal">3. 이진 트리의 순회(Travelsal)</h3>
+
+<hr>
+
+<ul>
+<li>순회의 세가지 방법 : 중위, 후위, 전위 ⇒ 루트 노드를 방문하는 시점에 따라서 나뉘어 짐</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 이진트리 중위순회
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">InorderTraverse</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
+{
+  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>left);
+  printf(<span style="color:#48b685">&#34;%d </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, bt<span style="color:#5bc4bf">-&gt;</span>data); <span style="color:#776e71">// root
+</span><span style="color:#776e71"></span>  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>right);
+  <span style="color:#776e71">// 노드에 트리가 들어오는 경우 &amp; 탈출 경우 없음
+</span><span style="color:#776e71"></span>}
+
+<span style="color:#776e71">// 재귀 탈출 조건 포함
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">InorderTraverse</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
+{
+  <span style="color:#815ba4">if</span>(bt<span style="color:#5bc4bf">==</span>NULL)		<span style="color:#776e71">// 노드가 단말 노드이면 단말 노드의 자식노드는 NULL (들어가봐야 앎)
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">return</span>;
+  
+  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>left);
+  printf(<span style="color:#48b685">&#34;%d </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, bt<span style="color:#5bc4bf">-&gt;</span>data); <span style="color:#776e71">// root
+</span><span style="color:#776e71"></span>  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>right);
+}</code></pre></td></tr></table>
+</div>
+</div>
 
 <footer class="footline">
 	
@@ -2177,19 +2473,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1615936324"></script>
-    <script src="/js/perfect-scrollbar.min.js?1615936324"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1615936324"></script>
-    <script src="/js/jquery.sticky.js?1615936324"></script>
-    <script src="/js/featherlight.min.js?1615936324"></script>
-    <script src="/js/highlight.pack.js?1615936324"></script>
+    <script src="/js/clipboard.min.js?1615959270"></script>
+    <script src="/js/perfect-scrollbar.min.js?1615959270"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1615959270"></script>
+    <script src="/js/jquery.sticky.js?1615959270"></script>
+    <script src="/js/featherlight.min.js?1615959270"></script>
+    <script src="/js/highlight.pack.js?1615959270"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1615936324"></script>
-    <script src="/js/learn.js?1615936324"></script>
-    <script src="/js/hugo-learn.js?1615936324"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1615959270"></script>
+    <script src="/js/learn.js?1615959270"></script>
+    <script src="/js/hugo-learn.js?1615959270"></script>
     
         
-            <script src="/mermaid/mermaid.js?1615936324"></script>
+            <script src="/mermaid/mermaid.js?1615959270"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

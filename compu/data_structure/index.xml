@@ -82,7 +82,7 @@
       <pubDate>Sun, 07 Mar 2021 14:35:17 +0900</pubDate>
       
       <guid>https://klee30810.github.io/compu/data_structure/chap8/</guid>
-      <description>1. 트리의 개요  </description>
+      <description>대부분의 비선형 자료구조는 표현을 목적으로 하며 Tree 구조 또한 그렇다.  1. 트리의 개요  (1) 이진트리  연결리스트 : 노드를 추가하지 않고 데이터를 삽입했다. 트리 : 구조체를 만들고 삽입, 삭제, 추출 등 구조체를 위한 도구가 될 함수를 만들 것이다. 방향보다는 서로간 연결이 더 중요하다. 각자 서로의 주소값을 알고 있으면 연결정보가 있는 것이다. 계층적 관계(Hierarchical Relationship) 을 표현하는 자료구조 데이터 표현을 위한 도구  노드 node: 트리의 구성요소, 실제 data를 담을 수 있는 구조 간선 edge: 노드 간 연결선 루트 노드 root node: 트리 최상위 노드 단말 노드 terminal code : 아래로 다른 노드가 연결되어 있지 않는 노드 내부 노드 internal node : 단말 노드를 제외한 모든 노드 노드간 관계 : 부모 노드, 자식 노드, 형제 노드  서브 트리 : 각 트리는 또다른 서브 트리로 이뤄져 있고 그 주고는 재귀적이다.</description>
     </item>
     
   </channel>
