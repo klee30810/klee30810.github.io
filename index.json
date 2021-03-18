@@ -1,10 +1,17 @@
 [
 {
+	"uri": "https://klee30810.github.io/mldl/mathml/chap1/",
+	"title": "Chap1. Introduction &amp; Motivation",
+	"tags": ["Machine Learning"],
+	"description": "Introduction &amp; Motivation",
+	"content": " We believe that the mathematical foundations of machine learning are important in order to understand fundamental principles upon which more complicated machine learning systems are built.  1.1 Finding Words for Intuitions   machine learning algorithm (predictor) : a system that makes predictions based on input data training : a system that adapts some internal parameters of the predictor so that it performs well on future unseen input data  "
+},
+{
 	"uri": "https://klee30810.github.io/mldl/mathml/",
-	"title": "MathML",
+	"title": "Mathematics for Machine Learning",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 1 Mathematics for Machine Learning Mathematics for Machine Learning Book Review\n Referenced from Deisenroth, M. P., Faisal, A. A., \u0026amp; Ong, C. S. (2020). Mathematics for machine learning. Cambridge University Press.   "
+	"content": "Chapter 1 Mathematics for Machine Learning Mathematics for Machine Learning Book Review\n Referenced from Deisenroth, M. P., Faisal, A. A., \u0026amp; Ong, C. S. (2020). Mathematics for machine learning. Cambridge University Press.   Chap1. Introduction \u0026amp; Motivation   "
 },
 {
 	"uri": "https://klee30810.github.io/compu/data_structure/chap1/",
@@ -120,7 +127,7 @@
 },
 {
 	"uri": "https://klee30810.github.io/compu/data_structure/",
-	"title": "Data_structure",
+	"title": "Data Structure",
 	"tags": [],
 	"description": "",
 	"content": "Chapter 2 Data Structure Data Structure Studies.\n 열혈 자료구조, 윤성우 저. Orange Media   Chap1. 자료구조와 알고리즘 이해   Chap2. 배열   Chap3. Linked List 1   Chap4. Linked List 2   Chap5. Linked List 3   Chap6. Stack   Chap7. Queue   Chap8. Tree   "
@@ -312,7 +319,7 @@
 	"title": "Computer Science",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 4 Computer Science Computer Science Studies  Readable Code Book Review   Data_structure   "
+	"content": "Chapter 4 Computer Science Computer Science Studies  Readable Code Book Review   Data Structure   "
 },
 {
 	"uri": "https://klee30810.github.io/compu/data_structure/chap5/",
@@ -361,7 +368,7 @@
 	"title": "Machine Learning &amp; Deep Learning",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 5 Machine Learning \u0026amp; Deep Learning Machine Learning \u0026amp; Deep Learning Studies  MathML     "
+	"content": "Chapter 5 Machine Learning \u0026amp; Deep Learning Machine Learning \u0026amp; Deep Learning Studies  Mathematics for Machine Learning   "
 },
 {
 	"uri": "https://klee30810.github.io/compu/data_structure/chap6/",
@@ -567,8 +574,8 @@
 	"content": ""
 },
 {
-	"uri": "https://klee30810.github.io/tags/data-structure/",
-	"title": "Data Structure",
+	"uri": "https://klee30810.github.io/tags/machine-learning/",
+	"title": "Machine Learning",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -576,6 +583,13 @@
 {
 	"uri": "https://klee30810.github.io/tags/",
 	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://klee30810.github.io/tags/data-structure/",
+	"title": "Data Structure",
 	"tags": [],
 	"description": "",
 	"content": ""

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.80.0" />
-    <meta name="description" content="Virtual Work">
+    <meta name="description" content="Introduction &amp; Motivation">
 <meta name="author" content="Kyungmin Lee, Kevin">
 
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
@@ -14,7 +14,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
  
-   <title>Chap11. Virtual Work - Kevin&#39;s Codex</title>
+   <title>Chap1. Introduction &amp; Motivation - Kevin&#39;s Codex</title>
 
     
     <link href="/css/nucleus.css?1616075113" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/mech/statics/chap11/">
+  <body class="" data-url="/mldl/mathml/chap1/">
     <nav id="sidebar" class="">
 
 
@@ -200,7 +200,7 @@
   
     
     <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
-        parent
+        
         
         
         ">
@@ -229,7 +229,7 @@
   
     
     <li data-nav-id="/mech/statics/" title="Statics" class="dd-item
-        parent
+        
         
         
         ">
@@ -581,7 +581,7 @@
   
     
     <li data-nav-id="/mldl/" title="Machine Learning &amp; Deep Learning" class="dd-item
-        
+        parent
         
         
         ">
@@ -610,7 +610,7 @@
   
     
     <li data-nav-id="/mldl/mathml/" title="Mathematics for Machine Learning" class="dd-item
-        
+        parent
         
         
         ">
@@ -1189,7 +1189,7 @@
                   <span class="links">
                  
                  
-                   Chap11. Virtual Work
+                   Chap1. Introduction &amp; Motivation
                  
                   </span>
                 </div>
@@ -1208,7 +1208,7 @@
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/statics">statics</a>
+  <a class="tag-link" href="/tags/machine-learning">Machine Learning</a>
 
 </div>
 
@@ -1218,134 +1218,30 @@
           
             <h1>
               
-              Chap11. Virtual Work
+              Chap1. Introduction &amp; Motivation
             </h1>
           
 
         
 
 
-<h3 id="objectives">Objectives</h3>
-
 <ul>
-<li><p>To introduce the principle of virtual work and show how it applies to finding the equilibrium configuration of a system of pin-connected members</p></li>
-
-<li><p>To establish the potential-energy function and use the potential-energy method to investigate the type of equilibirum ofr stablity of a rigid body or system of pin-connected members</p></li>
+<li>We believe that the mathematical foundations of machine learning are important in order to understand fundamental principles upon which more complicated machine learning systems are built.</li>
 </ul>
 
-<h3 id="111-definition-of-work">11.1 Definition of Work</h3>
+<h3 id="11-finding-words-for-intuitions">1.1 Finding Words for Intuitions</h3>
 
-<p>(1) Work of Force</p>
-
-<ul>
-<li>A force does work when it undergoes a displacement in the direction of its line of action</li>
-</ul>
-
-<p><span  class="math">\[dU = F dr cos\theta = F \cdot dr\]</span></p>
+<hr>
 
 <ul>
-<li>1[J] = 1[\(N\cdot m​\)]</li>
-</ul>
-
-<p>(2) Work of a Couple Moment</p>
-
-<p><figure><img src="https://blog.kakaocdn.net/dn/3llr8/btqGqWpRSw0/PudTTscP2qZfCjjKX5MzU0/img.png" alt="https://blog.kakaocdn.net/dn/3llr8/btqGqWpRSw0/PudTTscP2qZfCjjKX5MzU0/img.png"></figure></p>
-
-<ul>
-<li><span  class="math">\(U = Fdr'' = Frd\theta => dU = Mdθ\)</span></li>
-</ul>
-
-<p>(3) Virtual Work</p>
-
-<p><span  class="math">\[\delta U = F cos\theta \delta r = M \delta θ\]</span></p>
-
-<h3 id="112-principle-of-virtual-work">11.2 Principle of Virtual Work</h3>
-
-<ul>
-<li>If a body is in equilibrium, the algebraic sum of the virtual work done by all the forces and couple moments acting on the body is zero for any virtual displacement of the body.</li>
-</ul>
-
-<p><span  class="math">\[\delta U =0\]</span></p>
-
-<ul>
-<li>No added advantages is gained by solving particle and rigid-body euqilibirum problems using the principle of virtual work because the virtual displacement factors out, leaving the euqation that could have been obtained in a more direct manner by simply applying an equation of equilibrium.</li>
-</ul>
-
-<h3 id="114-conservative-forces">11.4 Conservative Forces</h3>
-
-<ul>
-<li>Conservative Forces : when the work of a force only depends upon its initial and final positions, and is indenpendent of the path it travels.</li>
-</ul>
-
-<p>(1) Weight</p>
-
-<p><figure><img src="https://blog.kakaocdn.net/dn/bc7AUE/btqGpwZnsUa/Saw5TQFczy9GhjcdZDyGDk/img.png" alt="https://blog.kakaocdn.net/dn/bc7AUE/btqGpwZnsUa/Saw5TQFczy9GhjcdZDyGDk/img.png"></figure></p>
-
-<p><span  class="math">\[dU = W\cdot dr =-W(dr cos\theta)=-Wdy ,\quad  U=-\int^h_0 Wdy=-Wh\]</span></p>
-
-<ul>
-<li>it only depends on height, and is independent of the path along which it travels</li>
-</ul>
-
-<p>(2) Spring Force</p>
-
-<p><figure><img src="https://blog.kakaocdn.net/dn/Wp2JZ/btqGqPKVNHl/USMvYNA2kD4bDul7UaRzXK/img.png" alt="https://blog.kakaocdn.net/dn/Wp2JZ/btqGqPKVNHl/USMvYNA2kD4bDul7UaRzXK/img.png"></figure></p>
-
-<p><span  class="math">\[dU=-F_s ds = -ksds ,\quad  U=\int^{s_2}_{s_1} ksds = -(\frac{1}{2}ks^2_2 -\frac{1}{2}ks^2_1)\]</span></p>
-
-<p>(3) Friction : the frictional force depends on the path. It is nonconservative, and most of the work is dissipated from the body in the form of heat</p>
-
-<h3 id="115-potential-energy">11.5 Potential Energy</h3>
-
-<ul>
-<li>Potential Energy : The capacity ot work, depends on the location of the body relative to a fixed reference position or datum</li>
-</ul>
-
-<p>(1) Gravitational Potential Energy : when a body is located a distance y above a fixed horizontal reference  \(V_g = Wy​\)</p>
-
-<p>(2) Elastic Potential Energy : when a spring is eigher elongated or compressed by an amount x from its unstreched position, energy stored in the spring \(V_e= \frac{1}{2} ks^2​\)</p>
-
-<p>(3) Potential Function \(V = V_g + V_e​\)</p>
-
-<h3 id="116-potentialenergy-criterion-for-equilibrium">11.6 Potential-Energy Criterion for Equilibrium</h3>
-
-<p>\(dU = V(q) - V(q+dq)=-dV\) , since the principle of virtual work \(\delta U = 0 =&gt; \frac{dV}{dq}=0\)</p>
-
-<ul>
-<li>When a frictionless connected system of rigid bodies is in equilibrium, the first derivative of its potential function is zero.</li>
-</ul>
-
-<h3 id="117-stability-of-equilibirum-configuration">11.7 Stability of Equilibirum Configuration</h3>
-
-<p><figure><img src="https://blog.kakaocdn.net/dn/txWr6/btqGqRIJj8M/h5TeEP4u8JCYPyo0t3shKK/img.png" alt="https://blog.kakaocdn.net/dn/txWr6/btqGqRIJj8M/h5TeEP4u8JCYPyo0t3shKK/img.png"></figure></p>
-
-<p><figure><img src="https://blog.kakaocdn.net/dn/bzytXl/btqGp16kjna/JCnVSF7ZrSbCku5jqqmMF1/img.png" alt="https://blog.kakaocdn.net/dn/bzytXl/btqGp16kjna/JCnVSF7ZrSbCku5jqqmMF1/img.png"></figure></p>
-
-<p>(1) Stable Equilibrium</p>
-
-<ul>
-<li>when a system has a tendency to return to its original position when a small displacement is given to the system</li>
-<li>The potential energy of the system is at its minimum</li>
-</ul>
-
-<p>(2) Neutral Equilibrium</p>
-
-<ul>
-<li>when the system still remains in equilibrium when the system is given a small displacement away from its original position.</li>
-<li>The potential energy of the system is constant</li>
-</ul>
-
-<p>(3) Unstable Equilibrium</p>
-
-<ul>
-<li>when a system has a tendency to be displaced further away from its original equilibrium position when it is given a small displacement</li>
-<li>The potential energy is a maximum</li>
+<li>machine learning algorithm (predictor) : a system that makes predictions based on input data</li>
+<li>training : a system that <strong>adapts</strong> some internal parameters of the predictor so that it performs well on future unseen input data</li>
 </ul>
 
 
 <footer class="footline">
 	
-	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/03/2021
 	    </div>
 	
 </footer>
@@ -1455,7 +1351,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1471,7 +1366,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1484,9 +1378,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1927,6 +1818,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1941,6 +1833,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1965,6 +1858,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 

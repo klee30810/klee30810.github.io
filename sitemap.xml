@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://klee30810.github.io/mldl/mathml/chap1/</loc>
+    <lastmod>2021-03-15T11:15:46+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/mldl/mathml/</loc>
     <lastmod>2021-03-15T11:12:12+09:00</lastmod>
   </url>
@@ -408,12 +413,17 @@
   </url>
   
   <url>
-    <loc>https://klee30810.github.io/tags/data-structure/</loc>
-    <lastmod>2021-03-07T14:35:17+09:00</lastmod>
+    <loc>https://klee30810.github.io/tags/machine-learning/</loc>
+    <lastmod>2021-03-15T11:15:46+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://klee30810.github.io/tags/</loc>
+    <lastmod>2021-03-15T11:15:46+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/tags/data-structure/</loc>
     <lastmod>2021-03-07T14:35:17+09:00</lastmod>
   </url>
   

@@ -8,6 +8,15 @@
     <language>ko-kr</language>
     <lastBuildDate>Mon, 08 Feb 2021 23:39:19 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Chap1. Introduction &amp; Motivation</title>
+      <link>https://klee30810.github.io/mldl/mathml/chap1/</link>
+      <pubDate>Mon, 15 Mar 2021 11:15:46 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mldl/mathml/chap1/</guid>
+      <description> We believe that the mathematical foundations of machine learning are important in order to understand fundamental principles upon which more complicated machine learning systems are built.  1.1 Finding Words for Intuitions   machine learning algorithm (predictor) : a system that makes predictions based on input data training : a system that adapts some internal parameters of the predictor so that it performs well on future unseen input data  </description>
+    </item>
+    
+    <item>
       <title>Chap1. 자료구조와 알고리즘 이해</title>
       <link>https://klee30810.github.io/compu/data_structure/chap1/</link>
       <pubDate>Sun, 07 Mar 2021 14:34:59 +0900</pubDate>
