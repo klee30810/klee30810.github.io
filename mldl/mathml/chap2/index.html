@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.80.0" />
-    <meta name="description" content="Setting FBD &amp; Equilibrium Equation">
+    <meta name="description" content="Linear Algebra">
 <meta name="author" content="Kyungmin Lee, Kevin">
 
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
@@ -14,24 +14,24 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
  
-   <title>Chap3. Equilibrium of Force - Kevin&#39;s Codex</title>
+   <title>Chap2. Linear Algebra - Kevin&#39;s Codex</title>
 
     
-    <link href="/css/nucleus.css?1616137847" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1616137847" rel="stylesheet">
-    <link href="/css/hybrid.css?1616137847" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1616137847" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1616137847" rel="stylesheet">
-    <link href="/css/auto-complete.css?1616137847" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1616137847" rel="stylesheet">
-    <link href="/css/theme.css?1616137847" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1616137847" rel="stylesheet">
+    <link href="/css/nucleus.css?1616137848" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1616137848" rel="stylesheet">
+    <link href="/css/hybrid.css?1616137848" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1616137848" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1616137848" rel="stylesheet">
+    <link href="/css/auto-complete.css?1616137848" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1616137848" rel="stylesheet">
+    <link href="/css/theme.css?1616137848" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1616137848" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1616137847" rel="stylesheet">
+    <link href="/css/theme-blue.css?1616137848" rel="stylesheet">
     
-    <link href="/css/foo.css?1616137847" rel="stylesheet"><link href="/css/bar.css?1616137847" rel="stylesheet">
+    <link href="/css/foo.css?1616137848" rel="stylesheet"><link href="/css/bar.css?1616137848" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1616137847"></script>
+    <script src="/js/jquery-3.3.1.min.js?1616137848"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/mech/statics/chap3/">
+  <body class="" data-url="/mldl/mathml/chap2/">
     <nav id="sidebar" class="">
 
 
@@ -61,14 +61,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1616137847"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1616137847"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1616137848"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1616137848"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/klee30810.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1616137847"></script>
+<script type="text/javascript" src="/js/search.js?1616137848"></script>
 
     
   </div>
@@ -200,7 +200,7 @@
   
     
     <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
-        parent
+        
         
         
         ">
@@ -229,7 +229,7 @@
   
     
     <li data-nav-id="/mech/statics/" title="Statics" class="dd-item
-        parent
+        
         
         
         ">
@@ -581,7 +581,7 @@
   
     
     <li data-nav-id="/mldl/" title="Machine Learning &amp; Deep Learning" class="dd-item
-        
+        parent
         
         
         ">
@@ -610,7 +610,7 @@
   
     
     <li data-nav-id="/mldl/mathml/" title="Mathematics for Machine Learning" class="dd-item
-        
+        parent
         
         
         ">
@@ -1192,7 +1192,7 @@
                   <span class="links">
                  
                  
-                   Chap3. Equilibrium of Force
+                   Chap2. Linear Algebra
                  
                   </span>
                 </div>
@@ -1211,7 +1211,7 @@
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/statics">statics</a>
+  <a class="tag-link" href="/tags/machine-learning">Machine Learning</a>
 
 </div>
 
@@ -1221,52 +1221,179 @@
           
             <h1>
               
-              Chap3. Equilibrium of Force
+              Chap2. Linear Algebra
             </h1>
           
 
         
 
 
-<p>Objectives</p>
-
 <ul>
-<li>To introduce the concept of the free-body diagram for a particle</li>
-<li>To show how to solve particle equilibrium problems using the equation of equilibrium</li>
+<li>algebra : common approach is to construct a set of objects (symbols) and a set of rules to manipulate these objects</li>
+<li>polynomials are vectors → can be added and multiplied by scalar</li>
+<li>Considering vectors as elements of \(\R^n\)</li>
 </ul>
 
-<h3 id="31-condition-for-the-equilibrium-of-a-particle">3.1 Condition for the Equilibrium of a Particle</h3>
+<p><figure><img src="/images/mldl/mathml/chap2/2-2.png" alt="image"></figure></p>
 
-<p>(1) equilibrium : if it remains at rest if originally at rest(static equilibrium), or has a constant velocity if originally in motion  \(\sum F = ma = 0​\)  -&gt; No acceleration</p>
+<h3 id="21-systems-of-linear-equations">2.1 Systems of Linear Equations</h3>
 
-<h3 id="32-the-freebody-diagram">3.2 The Free-Body Diagram</h3>
-
-<p>(1) Procedure for Drawing a Free-doby Diagram</p>
+<hr>
 
 <ul>
-<li>Draw Outlined Shape : Imagin the particle to be isolated or cut &quot;free&quot; from its surroundings</li>
-<li>Show All Forces : Indicate on this sketch all the forces that act on the particle. These forces can be an active forces, which tend to set the particle in motion, or they can be reactive forces which are the result of the constraints or supports that tend to prevent motion. It may be helpful to trace around the particle's boundary, carefully noting each force acting on it</li>
-<li>Identify Each Force : The forces that are known should be labeled with their proper magnitudes and directions</li>
+<li>Many real-world problems can be described with matrices &amp; vectors.</li>
 </ul>
 
-<p>(2) Springs : if a linearly elastic spring of undeformed length is used to support a particle, the length of the spring will change in direct proportion to the force acting on it. A characteristic that defines the elasticity of a spring is the spring constant or stiffness k.  \(F = kδ\)</p>
+<p>⇒ system of linear equations.</p>
 
-<p>(3) Cables and Pulleys</p>
+<p><span  class="math">\[a_{11}x_1+\dots+a_{1n}x_n=b_1 \\\quad...         \\ a_{m1}x_1+\dots+a_{mn}x_n=b_m \]</span></p>
 
 <ul>
-<li>Cable can support only a tension or &quot;pulling&quot; force, this force always acts in the direction of the cable</li>
+<li>Geometric Interpretation
+
+<ul>
+<li>Since a solution to a system of linear equations must satisfy all equations simultaneously, the solution set is the intersection of these lines. This intersection set can be a line (if the linear equations describe the same line), a point, or empty (when the lines are parallel).</li>
+<li>For three variables, each linear equation determines a plane in three-dimensional space. When we intersect these planes, i.e., satisfy all linear equations at the same time, we can obtain a solution set that is a plane, a line, a point or empty (when the planes have no common intersection).</li>
+</ul></li>
 </ul>
 
-<h3 id="33--34-coplanar-force-systems">3.3 ~ 3.4 Coplanar Force Systems</h3>
+<h3 id="22-matrices">2.2 Matrices</h3>
+
+<hr>
 
 <ul>
-<li>a force vector can be disected following the plane axis. Since it is on the static equilibrium condition, the sum of each force following the axis is zero. Negative sign describes the opposite direction.</li>
+<li>Matrix : represents systems of linear equations &amp; linear functions(linear mapping)</li>
+<li>With \(m, n\in \N\) a real-valued (m,n) matrix A is an m-n-tuple of elements \(a_{ij}, i=1,...,m,\ j=1,...,n\), which is ordered according to a rectangular scheme consisting of m rows &amp; n columns.</li>
+</ul>
+
+<p><span  class="math">\[A=\begin{bmatrix}a_{11} & a_{12} & ... & a_{1n} \\a_{21} & a_{22} & ... & a_{2n}\\...&...&...&...  \\a_{m1} & a_{m2} & ... & a_{mn}\end{bmatrix}, a_{ij}\in\R \]</span></p>
+
+<ul>
+<li>\(\R^{m\times n}\) is the set of all real-valued (m,n)-matrices.</li>
+</ul>
+
+<h4 id="221-matrix-addition--multiplication">2.2.1 Matrix Addition &amp; Multiplication</h4>
+
+<ul>
+<li>For matrices \(A\in\R^{m\times n},\ B\in\R^{n\times k}\), the element \(c_{ij}\) of the product \(C=AB\in\R^{m\times k}\) are computed as</li>
+</ul>
+
+<p><span  class="math">\[\displaystyle c_{ij}=\sum^n_{l=1}a_{il}b_{lj},\quad i=1,...,m,\quad j=1,...,k \]</span></p>
+
+<ul>
+<li>Matrices can only be multiplied if their “neighboring” dimensions match.</li>
+</ul>
+
+<p><span  class="math">\[AB=C : (n\times k)(k\times m)=(n\times m) \]</span></p>
+
+<ul>
+<li><p>BA is not defined if \(m\neq n\)</p></li>
+
+<li><p>\(AB \neq BA\)</p></li>
+
+<li><p>Matrix multiplication is not defined as an element-wise operation on matrix elements.</p></li>
+
+<li><p>Identity matrix: the \(n\times n\)-matrix containing 1 on the diagonal and 0 everywhere else.</p></li>
+</ul>
+
+<p><span  class="math">\[I_n=\begin{bmatrix}1 & 0 & ... & 0 \\0 & 1 & ... & 0\\...&...&...&...  \\ 0 & 0 & ... & 1\end{bmatrix}\in\R^{n\times m}  \]</span></p>
+
+<ul>
+<li><p>Some properties of matrices:</p>
+
+<ul>
+<li>Associativity:</li>
+</ul>
+
+<p><span  class="math">\[\forall A\in\R^{m\times n}, B\in\R^{n\times p},C\in\R^{p\times q}:\ (AB)C=A(BC)\\ \]</span></p>
+
+<ul>
+<li>Distributivity:</li>
+</ul>
+
+<p><span  class="math">\[\forall A,B\in\R^{m\times n},C,D\in\R^{n\times p}:\ (A+B)C=AC+BC,\\ \qquad \qquad \qquad \qquad  A(C+D)=AC+AD  \]</span></p>
+
+<ul>
+<li>Multiplication with the identity matrix:</li>
+</ul>
+
+<p><span  class="math">\[\forall A\in\R^{m\times n}:\ I_mA=A_n=A \]</span></p></li>
+</ul>
+
+<h4 id="222-inverse-and-transpose">2.2.2 Inverse and Transpose</h4>
+
+<blockquote>
+<p>&lt; Inverse Matrix &gt;</p>
+
+<p>Consider a square matrix \(A\in\R^{n\times n}\). Let matrix \(B\in\R^{n\times n}\) have the property that \(AB=I_n=BA\). B is called the <em>inverse</em> of A and denoted by \(A^{-1}\).</p>
+</blockquote>
+
+<ul>
+<li>If inverse matrix does exist, A is called <strong>regular, invertible, nonsingular</strong>, otherwise <strong>singular, noninvertible</strong></li>
+<li>When the matrix inverse exists, it is unique</li>
+</ul>
+
+<blockquote>
+<p>&lt; Transpose &gt;</p>
+
+<p>For \(A\in\R^{m\times n}\), the matrix \(B\in\R^{n\times m}\) with \(b_{ij}=a_{ij}\) is called the <em>transpose</em> of A. \(B=A^T\)</p>
+</blockquote>
+
+<ul>
+<li>Important properties of inverses and transposes</li>
+</ul>
+
+<p><span  class="math">\[AA^{-1}=I=A^{-1}A\\(AB)^{-1}=B^{=1}A^{-1}\\(A+B)^{-1}\neq A^{-1} + B^{-1}\\(A^T)^T=A\\(A+B)^T=A^T+B^T\\(AB)^T=B^TA^T \]</span></p>
+
+<blockquote>
+<p>&lt; Symmetric matrix &gt;</p>
+
+<p>A matrix \(A\in \R^{n\times n}\) is <em>symmetric</em> if \(A=A^T\)</p>
+</blockquote>
+
+<ul>
+<li>only (n,n)-matrices can be symmetric.</li>
+<li>Sum of symmetric matrices \(A,B\in \R^{n\times n}\) is always symmetric, but their product is generally not symmetric.</li>
+</ul>
+
+<h4 id="223-multiplication-by-a-scalar">2.2.3 Multiplication by a Scalar</h4>
+
+<ul>
+<li><p>Let \(A\in\R^{m\times n}&amp;λ\in\R.\ Then\ λ A=K,\ K_{ij}=λ a_{ij}\).</p>
+
+<ul>
+<li>Associativity</li>
+</ul>
+
+<p><span  class="math">\[(λ \psi)C=λ(\psi C),\quad C\in\R^{m\times n} \\ λ(BC)=(λ B)C=B(λ C)=(BC)λ,\quad B\in\R^{m\times n},\ C\in\R^{n\times k}\\(λ C)^T=C^Tλ^T=C^Tλ=λ C^T\]</span></p>
+
+<ul>
+<li>Distributivity</li>
+</ul>
+
+<p><span  class="math">\[(λ +\psi)C=λ C+\psi C, C\in\R^{m\times n} \\λ(B+C)=λ B+λ C,\ B,C\in\R^{m\times n} \]</span></p></li>
+</ul>
+
+<h4 id="224-compact-representations-of-systems-of-linear-equations">2.2.4 Compact Representations of Systems of Linear Equations</h4>
+
+<ul>
+<li>Generally, a system of linear equations can be compactly represented in their matrix form as Ax = b.</li>
+</ul>
+
+<h3 id="23-solving-systems-of-linear-equations">2.3 Solving Systems of Linear Equations</h3>
+
+<hr>
+
+<h4 id="231-particular-and-general-solution">2.3.1 Particular and General Solution</h4>
+
+<ul>
+<li></li>
 </ul>
 
 
 <footer class="footline">
 	
-	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/03/2021
 	    </div>
 	
 </footer>
@@ -1376,7 +1503,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1392,7 +1518,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1405,9 +1530,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1848,6 +1970,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1862,6 +1985,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1891,6 +2015,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
