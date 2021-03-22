@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.80.0" />
-    <meta name="description" content="Tree Data Structure">
+    <meta name="description" content="Priority Queue &amp; Heap">
 <meta name="author" content="Kyungmin Lee, Kevin">
 
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
@@ -14,7 +14,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
  
-   <title>Chap8. Tree - Kevin&#39;s Codex</title>
+   <title>Chap9. Priority Queue &amp; Heap - Kevin&#39;s Codex</title>
 
     
     <link href="/css/nucleus.css?1616373334" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/compu/data_structure/chap8/">
+  <body class="" data-url="/compu/data_structure/chap9/">
     <nav id="sidebar" class="">
 
 
@@ -1195,7 +1195,7 @@
                   <span class="links">
                  
                  
-                   Chap8. Tree
+                   Chap9. Priority Queue &amp; Heap
                  
                   </span>
                 </div>
@@ -1224,94 +1224,86 @@
           
             <h1>
               
-              Chap8. Tree
+              Chap9. Priority Queue &amp; Heap
             </h1>
           
 
         
 
 
-<ul>
-<li>대부분의 비선형 자료구조는 표현을 목적으로 하며 Tree 구조 또한 그렇다.</li>
-</ul>
-
-<h2 id="1-트리의-개요">1. 트리의 개요</h2>
+<h3 id="1-우선순위-큐의-이해">1. 우선순위 큐의 이해</h3>
 
 <hr>
 
-<h4 id="1-이진트리">(1) 이진트리</h4>
+<ul>
+<li>data의 우선순위 결정 → 들어가는 순서와 상관없이 우선순위 근거로 연산 진행 ⇒ 우선순위는 프로그래머가 직접 결정</li>
+</ul>
+
+<h5 id="구현-방법">구현 방법</h5>
+
+<ol>
+<li><p>배열 기반 구현 : 우선순위 기준을 배열에 추가 →  data가 많아질 경우 배열이 길어지기 때문에 성능 악화</p></li>
+
+<li><p>연결리스트 기반 구현 : 원하는 값을 찾기 위해 포인터 이동 연산을 ㅁ많이 해야 함 → 성능 악화</p></li>
+
+<li><p>힙을 이용하는 방법</p></li>
+</ol>
+
+<h5 id="힙">힙</h5>
 
 <ul>
-<li>연결리스트 : 노드를 추가하지 않고 데이터를 삽입했다.</li>
-<li>트리 : 구조체를 만들고 삽입, 삭제, 추출 등 구조체를 위한 도구가 될 함수를 만들 것이다. 방향보다는 서로간 연결이 더 중요하다. 각자 서로의 주소값을 알고 있으면 연결정보가 있는 것이다.</li>
-<li><strong>계층적 관계(Hierarchical Relationship)</strong> 을 표현하는 자료구조</li>
-<li><strong>데이터 표현을 위한 도구</strong>
+<li>완전 이진트리의 일종 → 데이터를 넣고 빼기 쉬워서 성능 문제가 없다.</li>
+<li>모든 노드에 저장된 값은 자식 노드에 저장된 값보다 크거나 같아야 한다. → 부모 노드 보다만 작으면 된다 ⇒ 루트 노드에 저장된 값이 가장 커야 한다.</li>
+</ul>
+
+<h3 id="2-힙의-구현과-우선순위-큐의-완성">2. 힙의 구현과 우선순위 큐의 완성</h3>
+
+<hr>
 
 <ul>
-<li>노드 node: 트리의 구성요소, 실제 data를 담을 수 있는 구조</li>
-<li>간선 edge: 노드 간 연결선</li>
-<li>루트 노드 root node: 트리 최상위 노드</li>
-<li>단말 노드 terminal code : 아래로 다른 노드가 연결되어 있지 않는 노드</li>
-<li>내부 노드 internal node : 단말 노드를 제외한 모든 노드</li>
-<li>노드간 관계 : 부모 노드, 자식 노드, 형제 노드</li>
+<li><p>우선순위는 값이 낮을수록 높다고 가정</p></li>
+
+<li><p>힙에서 데이터 저장 과정</p>
+
+<ul>
+<li>자식 노드 데이터의 우선순위 \(\leq\) 부모 노드 데이터의 우선순위</li>
+<li>새 데이터는 우선순위가 낮다는 가정하에 끝에 저장</li>
+<li>부모 노드와 비교 진행</li>
+<li>자리바꿈</li>
+<li>반복</li>
 </ul></li>
-<li>서브 트리 : 각 트리는 또다른 서브 트리로 이뤄져 있고 그 주고는 <strong>재귀적</strong>이다.</li>
-<li>이진트리의 조건</li>
+
+<li><p>힙에서 데이터 삭제 과정</p>
+
+<ul>
+<li>루트 노드 삭제</li>
+<li>마지막 노드를 루트 노드로 이동</li>
+<li>자식 노드와 비교 후 이동 → 우선순위가 높은 노드만 비교하면 됨</li>
+<li>반복 후 자리 확정</li>
+</ul></li>
+
+<li><p>성능 평가 (삽입 &amp; 삭제)</p>
+
+<ol>
+<li><p>배열기반 : O(n), O(1) → 삽입 마다 우선순위 비교 필요</p></li>
+
+<li><p>연결리스트 기반 : O(n), O(1) → 우선순위 비교시 포인터 연산 필요</p></li>
+
+<li><p>힙 기반 : \(O(\log_2n), O(\log_2n)\)→ 총 연산이 이진법 깊이와 비슷 → 깊이가 비교 연산의 횟수가 됨</p></li>
+</ol></li>
+
+<li><p>연결리스트를 기반으로 힙을 구현하면 새로운 노드를 힙의 마지막 위치에 추가하는 것이 쉽지 않다 (계속 이동해야 하므로)</p></li>
 </ul>
 
 <blockquote>
-<p><strong>1. 루트 노드를 중심으로 두 개의 서브 트리로 나뉘어 진다.</strong></p>
+<p>왼쪽 자식 노드의 인덱스 = 부모 노드 인덱스 * 2</p>
 
-<p><strong>2. 나뉘어진 두 서브트리도 모두 이진트리어어야 한다.</strong></p>
+<p>오른쪽 자식 노드 인덱스 = 부모 노드 인덱스 * 2 + 1</p>
+
+<p>부모 노드 인덱스 = 자식 노드 인덱스 / 2</p>
 </blockquote>
 
-<ul>
-<li>이진 트리는 구조가 <strong>재귀적</strong> 이고, 트리와 관련된 연산은 재귀적으로 사고하고 재귀적으로 구현할 필요가 있다.</li>
-</ul>
-
-<h4 id="2-공집합-노드">(2) 공집합 노드</h4>
-
-<ul>
-<li>이진 트리의 재귀성을 계속하기 위하여 공집합(Empty Set)도 노드로 간주한다.</li>
-<li>트리의 높이와 레벨의 최대값은 같다
-
-<ul>
-<li>포화 이진 트리 : 모든 레벨에 노드가 꽉찬 트리</li>
-<li>완전 이진 트리 : 빈 틈 없이 채워진 이진 트리 ⇒ 위에서 아래로 왼쪽에서 오른쪽으로 채워진 트리</li>
-</ul></li>
-</ul>
-
-<h3 id="2-이진-트리의-구현">2. 이진 트리의 구현</h3>
-
-<hr>
-
-<ul>
-<li>이진 트리 활용 도구 만들기</li>
-<li>배열 기반 : 노드에 번호를 부여하고 그 번호에 해당하는 값을 배열의 인덱스 값으로 활용, 편의상 배열의 첫 번째 요소는 사용하지 않는다.</li>
-<li>연결리스트 기반 : 트리의 구조와 리스트의 연결 구조가 일치한다. → 직관적 이해</li>
-</ul>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> _bTreeNode
-{
-  BTData data;
-  <span style="color:#815ba4">struct</span> _bTreeNode <span style="color:#5bc4bf">*</span> left;
-  <span style="color:#815ba4">struct</span> _bTreeNode <span style="color:#5bc4bf">*</span> right;
-} BTreeNode;</code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li>이진 트리의 모든 노드는 직/간접적으로 연결되어있다. 따라서 <strong>루트 노드의 주소값</strong> 만 기억하면, 이진 트리 전체를 가리키는 것과 다름없다.</li>
-<li>논리적으로도 하나의 노드는 그 자체로 이진 트리다. 따라서 노드를 표현한 구조체는 실제로 이진 트리를 표현한 구조체이다.</li>
-</ul>
+<h5 id="원리-이해-중심의-힙-구현">원리 이해 중심의 힙 구현</h5>
 <div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1330,24 +1322,101 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">MakeBTreeNode</span>(); <span style="color:#776e71">// 노드의 생성
-</span><span style="color:#776e71">// 노드를 동적으로 할당하고 SetData 함수로 채우고, left &amp; right는 NULL로 자동 초기화
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#815ba4">typedef</span> <span style="color:#fec418">char</span> HData;
+<span style="color:#815ba4">typedef</span> <span style="color:#fec418">int</span> Priority;
+
+<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> _heapElem
+{
+  Priority pr; <span style="color:#776e71">// 값이 작을 수록 높은 우선순위
+</span><span style="color:#776e71"></span>  HData data;
+} HeapElem;   <span style="color:#776e71">// data와 우선순위 각각 구분
 </span><span style="color:#776e71"></span>
-BTData <span style="color:#06b6ef">GetData</span>(BTreeNOde <span style="color:#5bc4bf">*</span> bt); <span style="color:#776e71">// 노드에 저장된 데이터 반환
-</span><span style="color:#776e71"></span>
-<span style="color:#fec418">void</span> <span style="color:#06b6ef">SetData</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt, BTData data) <span style="color:#776e71">// 노드에 데이터 저장
-</span><span style="color:#776e71">// 노드에 직접 접근하는 것 보다 함수를 통한 접근이 보다 좋은 접근
-</span><span style="color:#776e71">// 구조체가 정의 되면 관련 연산은 함수를 통하는 것이 좋다.
-</span><span style="color:#776e71"></span>
-<span style="color:#776e71">// 하나의 노드도 서브트리 이므로 SubTree로 이름 짓는 것이 타당
-</span><span style="color:#776e71"></span>BTreeNode <span style="color:#5bc4bf">*</span> GetLeftSubTree(BTreeNode <span style="color:#5bc4bf">*</span> bt); <span style="color:#776e71">// 왼쪽 서브 트리의 주소 값 반환
-</span><span style="color:#776e71"></span>
-BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt); <span style="color:#776e71">// 오른쪽 서브 트리의 주소 값 반환
-</span><span style="color:#776e71"></span>
-<span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub); <span style="color:#776e71">// main의 서브 왼쪽 서브 트리로 sub 연결
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub); <span style="color:#5bc4bf">//</span> main의 <span style="color:#ef6155">오른쪽</span> <span style="color:#ef6155">서브</span> <span style="color:#ef6155">트리로</span> sub <span style="color:#ef6155">연결</span></code></pre></td></tr></table>
+<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> _heap
+{
+  <span style="color:#fec418">int</span> numOfData;
+  HeapElem heapArr[HEAP_LEN];
+} Heap;
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">HeapInit</span>(Heap <span style="color:#5bc4bf">*</span> ph);
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">HIsEmpty</span>(Heap <span style="color:#5bc4bf">*</span> ph);
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">HInsert</span>(Heap <span style="color:#5bc4bf">*</span> ph, HData data, Priority pr);
+HData <span style="color:#06b6ef">HDelete</span>(Heap <span style="color:#5bc4bf">*</span> ph); <span style="color:#5bc4bf">//</span> <span style="color:#ef6155">우선순위</span> <span style="color:#ef6155">높은</span> <span style="color:#ef6155">데이터</span> <span style="color:#ef6155">삭제</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>힙은 완전 이진 트리이다.</li>
+<li>힙은 배열기반으로 구현하며 인덱스 0은 비워둔다.</li>
+<li><strong>힙에 저장된 노드의 개수와 마지막 노드의 고유번호는 일치한다.</strong></li>
+<li>노드의 고유 번호가 저장되는 배열의 인덱스 값이 된다.</li>
+<li>우선순위를 나타내는 정수 값이 작을수록 높은 우선순위를 나타낸다고 가정한다.</li>
+</ul>
+
+<p>→ 배열을 기반으로 하는 경우 힙에 저장된 노드의 개수와 마지막 노드의 고유번호가 일치하기 때문에 마지막 노드의 인덱스 값을 쉽게 얻을 수 있다.</p>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">void</span> <span style="color:#06b6ef">HeapInit</span>(Heap <span style="color:#5bc4bf">*</span> ph)
+{
+  ph<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>;
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">HIsEmpty</span>(Heap <span style="color:#5bc4bf">*</span> ph)
+{
+  <span style="color:#815ba4">if</span>(ph<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">0</span>)
+    <span style="color:#815ba4">return</span> TRUE;
+  <span style="color:#815ba4">else</span>
+    <span style="color:#815ba4">return</span> FALSE;
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">GetParentIDX</span>(<span style="color:#fec418">int</span> idx)
+{
+  <span style="color:#815ba4">return</span> idx<span style="color:#5bc4bf">/</span><span style="color:#f99b15">2</span>;
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">GetLChildIDX</span>(<span style="color:#fec418">int</span> idx)
+{
+  <span style="color:#815ba4">return</span> idx<span style="color:#5bc4bf">*</span><span style="color:#f99b15">2</span>;
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">GetRChildIDX</span>(<span style="color:#fec418">int</span> idx)
+{
+  <span style="color:#815ba4">return</span> GetLChildIDX(idx) <span style="color:#5bc4bf">+</span> <span style="color:#f99b15">1</span>;
+}</code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1366,28 +1435,203 @@ BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetRi
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 우선 순위가 높은 자식의 인덱스 값 반환
+</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">GetHiPriChildIDX</span>(Heap <span style="color:#5bc4bf">*</span> ph, <span style="color:#fec418">int</span> idx)
+{
+  <span style="color:#776e71">// 자식 노드가 없다면
+</span><span style="color:#776e71"></span>  <span style="color:#776e71">// numOfData는 마지막 노드의 고유번호라서, 자식 노드의 값이 이보다 크면 존재하지 않는 자식 노드이다.
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(GetLChildIDX(idx) <span style="color:#5bc4bf">&gt;</span> ph<span style="color:#5bc4bf">-&gt;</span>numOfData)
+    <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+  
+  <span style="color:#776e71">// 자식 노드가 왼쪽 자식 노드 하나만 존재한다면,
+</span><span style="color:#776e71"></span>  <span style="color:#776e71">// 자식 노드가 하나 존재하면 왼쪽 자식노드이다 =&gt; 완전 이진 트리
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span>(GetLChildIDX(idx) <span style="color:#5bc4bf">==</span> ph<span style="color:#5bc4bf">-&gt;</span>numOfData)
+    <span style="color:#815ba4">return</span> GetLChildIDX(idx);
+  
+  <span style="color:#776e71">// 자식 노드가 둘 다 존재한다면,
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">else</span>
+  {
+    <span style="color:#776e71">// 오른쪽 자식 노드의 우선순위가 높다면,
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">if</span>(ph<span style="color:#5bc4bf">-&gt;</span>heapArr[GetLChildIDX(idx)].pr <span style="color:#5bc4bf">&gt;</span> ph<span style="color:#5bc4bf">-&gt;</span>heapArr[GetRChildIDX(idx)].pr)
+      <span style="color:#815ba4">return</span> GetRChildIDX(idx); <span style="color:#776e71">// 오른쪽 자식 노드의 인덱스 값 반환
+</span><span style="color:#776e71"></span>    
+    <span style="color:#776e71">// 왼쪽 자식 노드의 우선순위가 높다면,
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">else</span>
+      <span style="color:#815ba4">return</span> GetLChildIDX(idx); <span style="color:#776e71">// 왼쪽 자식 노드 인덱스 값 반환
+</span><span style="color:#776e71"></span>  }
+}</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 굳이 루트 노드의 자리로 옮기지 않아도 된다.
+</span><span style="color:#776e71"></span>HData <span style="color:#06b6ef">HDelete</span>(Heap <span style="color:#5bc4bf">*</span> ph)
+{
+  HData retData <span style="color:#5bc4bf">=</span> (ph<span style="color:#5bc4bf">-&gt;</span>heapArr[<span style="color:#f99b15">1</span>]).data; <span style="color:#776e71">// 삭제할 데이터 저장
+</span><span style="color:#776e71"></span>  HeapElem lastElem <span style="color:#5bc4bf">=</span> ph<span style="color:#5bc4bf">-&gt;</span>heapArr[ph<span style="color:#5bc4bf">-&gt;</span>numOfData]; <span style="color:#776e71">// 힙의 마지막 노드 저장
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// parentIdx 에는 마지막 노드가 저장 될 위치 정보가 담긴다
+</span><span style="color:#776e71"></span>  <span style="color:#fec418">int</span> parentIdx <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>; <span style="color:#776e71">// 루트 노드가 위치해야 할 인덱스 값 저장
+</span><span style="color:#776e71"></span>  <span style="color:#fec418">int</span> childIdx;
+  
+  <span style="color:#776e71">// 루트 노드의 우선순위가 높은 자식 노드를 시작으로 반복문 시작
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">while</span>(childIdx <span style="color:#5bc4bf">=</span> GetHiPriChildIDX(ph, parentIdx))
+  {
+    <span style="color:#815ba4">if</span>(lastElem.pr <span style="color:#5bc4bf">&lt;=</span> ph<span style="color:#5bc4bf">-&gt;</span>heapArr[childIdx].pr) <span style="color:#776e71">// 마지막 노드와 우선순위 비교
+</span><span style="color:#776e71"></span>      <span style="color:#815ba4">break</span>;   <span style="color:#776e71">// 마지막 노드의 우선순위가 높으면 반복문 탈출
+</span><span style="color:#776e71"></span>    
+    <span style="color:#776e71">// 마지막 노드보다 우선순위 높으니, 비교대상 노드의 위치를 한 레벨 올림
+</span><span style="color:#776e71"></span>    ph<span style="color:#5bc4bf">-&gt;</span>heapArr[parentIdx] <span style="color:#5bc4bf">=</span> ph<span style="color:#5bc4bf">-&gt;</span>heapArr[childIdx];
+    parentIdx <span style="color:#5bc4bf">=</span> childIdx;  <span style="color:#776e71">// 마지막 노드가 저장될 위치 정보를 한 레벨 내림
+</span><span style="color:#776e71"></span>  }  <span style="color:#776e71">// 반복문 탈출시 parentIdx에는 마지막 노드의 위치정보가 저장됨
+</span><span style="color:#776e71"></span>  
+  ph<span style="color:#5bc4bf">-&gt;</span>heapArr[parentIdx] <span style="color:#5bc4bf">=</span> lastElem; <span style="color:#776e71">// 마지막 노드 최종저장
+</span><span style="color:#776e71"></span>  ph<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">-=</span> <span style="color:#f99b15">1</span>;  <span style="color:#776e71">// 삭제 했으므로
+</span><span style="color:#776e71"></span>  
+  <span style="color:#815ba4">return</span> retData; <span style="color:#776e71">// 삭제 데이터 반환
+</span><span style="color:#776e71"></span>}</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 마지막 노드에 저장했다고 가정하고 임시저장 &amp; idx 유지
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">HInsert</span>(Heap <span style="color:#5bc4bf">*</span> ph, HData data, Priority pr)
+{
+  <span style="color:#fec418">int</span> idx <span style="color:#5bc4bf">=</span> ph<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">+</span> <span style="color:#f99b15">1</span>;  <span style="color:#776e71">// 새 노드가 저장될 인덱스 값을 idx에 저장
+</span><span style="color:#776e71"></span>  HeapElem nelem <span style="color:#5bc4bf">=</span> {pr, data};  <span style="color:#776e71">// 새 노드의 생성 및 초기화
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// 새 노드가 저장될 위치가 루트 노드의 위치가 아니라면 while문 반복
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">while</span>(idx <span style="color:#5bc4bf">!=</span> <span style="color:#f99b15">1</span>)
+  {
+    <span style="color:#776e71">// 새 노드와 부모 노드의 우선순위 비교
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">if</span>(pr <span style="color:#5bc4bf">&lt;</span> (ph<span style="color:#5bc4bf">-&gt;</span>heapArr[GetParentIDX(idx)].pr)) <span style="color:#776e71">// 새 노드의 우선순위가 높다면
+</span><span style="color:#776e71"></span>    {
+      <span style="color:#776e71">// 부모 노드를 한 레벨 내림, 실제로 내림
+</span><span style="color:#776e71"></span>      ph<span style="color:#5bc4bf">-&gt;</span>heapArr[idx] <span style="color:#5bc4bf">=</span> ph<span style="color:#5bc4bf">-&gt;</span>heapArr[GetParentIDX(idx)];
+      
+      <span style="color:#776e71">// 새 노드를 한 레벨 올림, 실제로 올리지는 않고 인덱스 값만 갱신
+</span><span style="color:#776e71"></span>      idx <span style="color:#5bc4bf">=</span> GetParentIDX(idx);
+    }
+    <span style="color:#815ba4">else</span>    <span style="color:#776e71">// 새 노드의 우선순위가 높지 않다면 
+</span><span style="color:#776e71"></span>      <span style="color:#815ba4">break</span>;
+  }
+  ph<span style="color:#5bc4bf">-&gt;</span>heapArr[idx] <span style="color:#5bc4bf">=</span> nelem; <span style="color:#776e71">// 새 노드를 배열에 저장
+</span><span style="color:#776e71"></span>  ph<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">+=</span> <span style="color:#f99b15">1</span>;
+}</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">main</span>()
 {
-  BTreeNode <span style="color:#5bc4bf">*</span> ndA <span style="color:#5bc4bf">=</span> MakeBTreeNode();  <span style="color:#776e71">// 노드 A 생성
-</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> ndB <span style="color:#5bc4bf">=</span> MakeBTreeNode();  <span style="color:#776e71">// 노드 B 생성
-</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> ndC <span style="color:#5bc4bf">=</span> MakeBTreeNode();  <span style="color:#776e71">// 노드 C 생성
-</span><span style="color:#776e71"></span>  
-  <span style="color:#776e71">// ndA, ndB, ndC를 이용한 SetData 함수 호출을 통해 데이터를 채운 후...
-</span><span style="color:#776e71"></span>  
-  <span style="color:#776e71">// 노드 A의 왼쪽 자식 노드로 노드 B 연결
-</span><span style="color:#776e71"></span>  MakeLeftSubTree(ndA, ndB);
-  <span style="color:#776e71">// 노드 A의 오른쪽 자식 노드로 노드 C 연결
-</span><span style="color:#776e71"></span>  MakeRightSubTree(ndA, ndB);
+  Heap heap;
+  HeapInit(<span style="color:#5bc4bf">&amp;</span>heap);
   
-  ....
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;A&#39;</span>, <span style="color:#f99b15">1</span>);
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;B&#39;</span>, <span style="color:#f99b15">2</span>);
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;C&#39;</span>, <span style="color:#f99b15">3</span>);
+  printf(<span style="color:#48b685">&#34;%c </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, HDelete(<span style="color:#5bc4bf">&amp;</span>heap));
+  
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;A&#39;</span>, <span style="color:#f99b15">1</span>);
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;B&#39;</span>, <span style="color:#f99b15">2</span>);
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;C&#39;</span>, <span style="color:#f99b15">3</span>);
+  printf(<span style="color:#48b685">&#34;%c </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, HDelete(<span style="color:#5bc4bf">&amp;</span>heap));
+  
+  <span style="color:#815ba4">while</span>(<span style="color:#5bc4bf">!</span>HIsEmpty(<span style="color:#5bc4bf">&amp;</span>heap))
+    printf(<span style="color:#48b685">&#34;%c </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, HDelete(<span style="color:#5bc4bf">&amp;</span>heap));
+  
+  <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
 }</code></pre></td></tr></table>
 </div>
 </div>
-<ul>
-<li>이진 트리의 구현</li>
-</ul>
+<p>⇒ 프로그래머가 우선순위를 직접 정해야 함 : 일반적으로 우선순위 정보를 별도로 프로그래머가 전달하는 것은 적합하지 않다. <strong>데이터를 근거로 데이터의 우선순위가 정해지는 것이 바람직하다.</strong></p>
+
+<h5 id="쓸만한-수준의-힙-변경">쓸만한 수준의 힙 변경</h5>
 <div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1411,259 +1655,39 @@ BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetRi
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">MakeBTreeNode</span>()
-{
-  BTreeNode <span style="color:#5bc4bf">*</span> nd <span style="color:#5bc4bf">=</span> (BTreeNode <span style="color:#5bc4bf">*</span>)malloc(<span style="color:#815ba4">sizeof</span>(BTreeNode));
-  nd<span style="color:#5bc4bf">-&gt;</span>left <span style="color:#5bc4bf">=</span> NULL;
-  nd<span style="color:#5bc4bf">-&gt;</span>right <span style="color:#5bc4bf">=</span> NULL;
-  <span style="color:#815ba4">return</span> nd;
-}
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">/* 우선순위를 별도로 저장하지 않고 함수의 호출 결과로 판단하기 할 것 
+</span><span style="color:#776e71"> 구조체 자료형 HeapElem : 우선순위 정보를 묶기 위함 -&gt; 사용자가 직접 지정해줘야 하기에 직접 사용하기에는 무리가 있음
+</span><span style="color:#776e71">*/</span>
 
-BTData <span style="color:#06b6ef">GetData</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
+<span style="color:#815ba4">typedef</span> <span style="color:#fec418">int</span> <span style="color:#06b6ef">PriorityComp</span>(HData d1, HData d2);
+<span style="color:#776e71">// * 없음 : &#34;PriorityComp형 포인터 면수 선언시 반드시 *를 붙여라&#34;
+</span><span style="color:#776e71"></span>
+<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> _heap
 {
-  <span style="color:#815ba4">return</span> bt<span style="color:#5bc4bf">-&gt;</span>data;
-}
+  PriorityComp <span style="color:#5bc4bf">*</span> comp;
+  <span style="color:#fec418">int</span> numOfData;
+  HData heapArr[HEAP_LEN];
+} Heap;
 
-<span style="color:#fec418">void</span> <span style="color:#06b6ef">SetData</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt, BTData data)
+<span style="color:#776e71">// 구조체 변경에 따른 초기화 함수 변경
+</span><span style="color:#776e71">// 프로그래머가 힙의 우선순위 판단 기준을 설정할 수 있어야 함
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">HeapInit</span>(Heap <span style="color:#5bc4bf">*</span> ph, PriorityComp pc)
 {
-  bt<span style="color:#5bc4bf">-&gt;</span>data <span style="color:#5bc4bf">=</span> data;
-}
-
-BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
-{
-  <span style="color:#815ba4">return</span> bt<span style="color:#5bc4bf">-&gt;</span>left;
-}
-
-BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
-{
-  <span style="color:#815ba4">return</span> bt<span style="color:#5bc4bf">-&gt;</span>right;
-}
-
-<span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub)
-{
-  <span style="color:#815ba4">if</span>(main<span style="color:#5bc4bf">-&gt;</span>left <span style="color:#5bc4bf">!=</span> NULL)
-    free(main<span style="color:#5bc4bf">-&gt;</span>left);  <span style="color:#776e71">// 만약 하부 노드가 있었으면 메모리 누수
-</span><span style="color:#776e71"></span>  
-  main<span style="color:#5bc4bf">-&gt;</span>left <span style="color:#5bc4bf">=</span> sub;
-}
-
-<span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub)
-{
-  <span style="color:#815ba4">if</span>(main<span style="color:#5bc4bf">-&gt;</span>right <span style="color:#5bc4bf">!=</span> NULL)
-    free(main<span style="color:#5bc4bf">-&gt;</span>right);
-  
-  main<span style="color:#5bc4bf">-&gt;</span>right <span style="color:#5bc4bf">=</span> sub;
+  ph<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>;
+  ph<span style="color:#5bc4bf">-&gt;</span>comp <span style="color:#5bc4bf">=</span> pc;
 }</code></pre></td></tr></table>
 </div>
 </div>
-<h3 id="3-이진-트리의-순회travelsal">3. 이진 트리의 순회(Travelsal)</h3>
-
-<hr>
+<ul>
+<li>PriorityComp 형 함수 정의 기준 (임의 가능)
 
 <ul>
-<li>순회의 세가지 방법 : 중위, 후위, 전위 ⇒ 루트 노드를 방문하는 시점에 따라서 나뉘어 짐</li>
-</ul>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 이진트리 중위순회
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">InorderTraverse</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
-{
-  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>left);
-  printf(<span style="color:#48b685">&#34;%d </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, bt<span style="color:#5bc4bf">-&gt;</span>data); <span style="color:#776e71">// root
-</span><span style="color:#776e71"></span>  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>right);
-  <span style="color:#776e71">// 노드에 트리가 들어오는 경우 &amp; 탈출 경우 없음
-</span><span style="color:#776e71"></span>}
-
-<span style="color:#776e71">// 재귀 탈출 조건 포함
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">InorderTraverse</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
-{
-  <span style="color:#815ba4">if</span>(bt<span style="color:#5bc4bf">==</span>NULL)		<span style="color:#776e71">// 노드가 단말 노드이면 단말 노드의 자식노드는 NULL (들어가봐야 앎)
-</span><span style="color:#776e71"></span>    <span style="color:#815ba4">return</span>;
-  
-  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>left);
-  printf(<span style="color:#48b685">&#34;%d </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, bt<span style="color:#5bc4bf">-&gt;</span>data); <span style="color:#776e71">// root
-</span><span style="color:#776e71"></span>  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>right);
-}
-
-<span style="color:#776e71">// 전위 순회
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">PreorderTraverse</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
-{
-  <span style="color:#815ba4">if</span>(bt<span style="color:#5bc4bf">==</span>NULL)		
-    <span style="color:#815ba4">return</span>;
-  
-  printf(<span style="color:#48b685">&#34;%d </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, bt<span style="color:#5bc4bf">-&gt;</span>data); <span style="color:#776e71">// root
-</span><span style="color:#776e71"></span>  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>left);
-  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>right);
-}
-
-<span style="color:#776e71">// 후위 순회
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">PostorderTraverse</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
-{
-  <span style="color:#815ba4">if</span>(bt<span style="color:#5bc4bf">==</span>NULL)		
-    <span style="color:#815ba4">return</span>;
-  
-  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>left);
-  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>right);
-  printf(<span style="color:#48b685">&#34;%d </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, bt<span style="color:#5bc4bf">-&gt;</span>data); <span style="color:#776e71">// root
-</span><span style="color:#776e71"></span>}</code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li>함수 포인터를 이용한 노드의 방문이유 구성하기</li>
-</ul>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 함수 포인터 형 정의
-</span><span style="color:#776e71"></span><span style="color:#815ba4">typedef</span> <span style="color:#fec418">void</span> <span style="color:#06b6ef">VisitFuncPtr</span>(BTData data) <span style="color:#776e71">// (* VisitFuncPtr 가능)
-</span><span style="color:#776e71"></span>  
-<span style="color:#fec418">void</span> InorderTraverse(BTreeNode <span style="color:#5bc4bf">*</span> bt, VisitFuncPtr action)
-{
-  <span style="color:#815ba4">if</span>(bt <span style="color:#5bc4bf">==</span> NULL)
-    <span style="color:#815ba4">return</span>;
-  
-  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>left, action);
-  action(bt<span style="color:#5bc4bf">-&gt;</span>data);    <span style="color:#776e71">// 노드의 방문
-</span><span style="color:#776e71"></span>  InorderTraverse(bt<span style="color:#5bc4bf">-&gt;</span>right, action);
-}
-
-<span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowIntData</span>(<span style="color:#fec418">int</span> data) <span style="color:#776e71">// BTData가 int 가정
-</span><span style="color:#776e71"></span>{
-  printf(<span style="color:#48b685">&#34;%d &#34;</span>, data);
-  <span style="color:#776e71">// 목적을 사용자가 직접 정의하는 부분
-</span><span style="color:#776e71"></span>}</code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="4-수식-트리-expression-tree의-구현">4. 수식 트리 (Expression Tree)의 구현</h3>
-
-<hr>
-
-<ul>
-<li>수식 트리의 이해 : 중위 표기법의 수식을 수식 트리로 변환하는 프로그램의 작성이 목적!
-
-<ul>
-<li>중위 표기법 수식은 사람이 인식하기 좋은 수식이나 컴퓨터는 인식이 어렵다.</li>
-<li>수식 트리는 해석이 쉽다.</li>
-<li>연산자 우선순위를 고려하지 않아도 되고, In &amp; Post &amp; Pre로 면환이 쉽다.</li>
+<li>첫 번째 인자의 우선순위가 높다면 0보다 큰 값 반환</li>
+<li>두 번째 인자의 우선순위가 높다면 0보다 작은 값 반환</li>
+<li>두 인자의 우선순위가 같다면 0 반환</li>
 </ul></li>
-</ul>
-
-<p>중위 표기법 수식 → 후위 표기법 수식 → 수식 트리</p>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">#include</span> <span style="color:#776e71">&#34;BinaryTree2.h&#34;</span><span style="color:#776e71">
-</span><span style="color:#776e71"></span>
-BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">MakeExpTree</span>(<span style="color:#fec418">char</span> exp[]); 	<span style="color:#776e71">// 수식 트리 구성
-</span><span style="color:#776e71">// 후위 표기법의 수식을 인자로 받아서 수식 트리를 구성하고 루트 노드의 주소 값을 반환한다.
-</span><span style="color:#776e71"></span>
-<span style="color:#fec418">int</span> <span style="color:#06b6ef">EvaluateExpTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt);	<span style="color:#776e71">// 수식 트리 계산
-</span><span style="color:#776e71"></span>
-<span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowPrefixTypeExp</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt);	<span style="color:#776e71">// 전위 표기법 기반 출력
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowInfixTypeExp</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt);	<span style="color:#776e71">// 중위 표기법 기반 출력
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowPostfixTypeExp</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt);	<span style="color:#5bc4bf">//</span> <span style="color:#ef6155">후위</span> <span style="color:#ef6155">표기법</span> <span style="color:#ef6155">기반</span> <span style="color:#ef6155">출력</span></code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li>후위 표기법의 수식에서 먼저 등장하는 피연산자와 연산자를 이용해서 트리의 하단부터 구성해 나가고 이어서 윗부분을 구성해나간다.</li>
-<li>차례차례 스택을 쌓는다. 서브트리가 있다면 스택에 그대로 쌓으면 된다. → 루트 노드가 쌓이면 그 자체로 서브트리로 인식</li>
 </ul>
 <div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1729,69 +1753,195 @@ BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">MakeE
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">MakeExpTree</span>(<span style="color:#fec418">char</span> exp[])
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">GetHiPriChildIDX</span>(Heap <span style="color:#5bc4bf">*</span> ph, <span style="color:#fec418">int</span> idx)
 {
-  <span style="color:#776e71">/*
-</span><span style="color:#776e71">  - 피연산자는 스택으로 옮긴다.
-</span><span style="color:#776e71">  - 연산자를 만나면 스택에서 두 개의 피연산자 꺼내 자식노드로 연결
-</span><span style="color:#776e71">  - 자식 노드를 연결해서 만들어진 트리는 다시 스택으로 옮긴다.
-</span><span style="color:#776e71">  - 완성 결과를 스택에 저장하고, 수식트리의 root node 주소값을 반환한다.
-</span><span style="color:#776e71">  */</span>
-  Stack stack;
-  BTreeNode <span style="color:#5bc4bf">*</span> pnode;
-  <span style="color:#fec418">int</span> expLen <span style="color:#5bc4bf">=</span> strlen(exp);
-  <span style="color:#fec418">int</span> i;
+  <span style="color:#815ba4">if</span>(GetLChildIDX(idx) <span style="color:#5bc4bf">&gt;</span> ph<span style="color:#5bc4bf">-&gt;</span>numOfData)
+    <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
   
-  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span>expLen; i<span style="color:#5bc4bf">++</span>)
+  <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (GetLChildIDX(idx) <span style="color:#5bc4bf">==</span> ph<span style="color:#5bc4bf">-&gt;</span>numOfData)
+    <span style="color:#815ba4">return</span> GetLChildIDX(idx);
+  
+  <span style="color:#815ba4">else</span>
   {
-    pnode <span style="color:#5bc4bf">=</span> MakeBTreeNode();
-    <span style="color:#815ba4">if</span>(isdigit(exp[i]))					<span style="color:#776e71">// 피연산자라면
-</span><span style="color:#776e71"></span>    {
-      SetData(pnode, exp[i]<span style="color:#5bc4bf">-</span><span style="color:#48b685">&#39;0&#39;</span>);  <span style="color:#776e71">// 문자를 정수로 변경
-</span><span style="color:#776e71"></span>    }
-    <span style="color:#815ba4">else</span>	<span style="color:#776e71">// 연산자라면
-</span><span style="color:#776e71"></span>    {
-      MakeRightSubTree(pnode, SPop(<span style="color:#5bc4bf">&amp;</span>stack));
-      MakeLeftSubTree(pnode, SPop(<span style="color:#5bc4bf">&amp;</span>stack));
-      SetData(pnode, exp[i]);
-    }
-    SPush(<span style="color:#5bc4bf">&amp;</span>stack, pnode);
+    <span style="color:#776e71">// if(ph-&gt;heapArr[GetLChildIDX(idx)].pr &gt; ph-&gt;heapArr[GetRChildIDX(idx)].pr) 
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">if</span>(ph<span style="color:#5bc4bf">-&gt;</span>comp(ph<span style="color:#5bc4bf">-&gt;</span>heapArr[GetLChildIDX(idx)], ph<span style="color:#5bc4bf">-&gt;</span>heapArr[GetRChildIDX(idx)]) <span style="color:#5bc4bf">&lt;</span> <span style="color:#f99b15">0</span>) <span style="color:#776e71">// comp에 등록된 함수의 호출결과로 우선순위를 판단한다.
+</span><span style="color:#776e71"></span>      <span style="color:#815ba4">return</span> GetRChildIDX(idx);
+    <span style="color:#815ba4">else</span>
+      <span style="color:#815ba4">return</span> GetLChildIDX(idx);
   }
-  
-  <span style="color:#815ba4">return</span> SPop(<span style="color:#5bc4bf">&amp;</span>stack);
 }
 
-<span style="color:#776e71">// 계산 기본구성
-</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">EvaluateExpTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">HInsert</span>(Heap <span style="color:#5bc4bf">*</span> ph, HData data)
 {
-  <span style="color:#fec418">int</span> op1, op2;
+  <span style="color:#fec418">int</span> idx <span style="color:#5bc4bf">=</span> ph<span style="color:#5bc4bf">-&gt;</span>numOfData<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>;
   
-  <span style="color:#776e71">// 단말노드라면 바로 탈출
-</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(GetLeftSubTree(bt)<span style="color:#5bc4bf">==</span>NULL <span style="color:#5bc4bf">&amp;&amp;</span> GetRightSubTree(bt)<span style="color:#5bc4bf">==</span>NULL)
-    <span style="color:#815ba4">return</span> GetData(bt);
-  
-  <span style="color:#776e71">// SubTree 도 올 수 있으므로 재귀적 표현 필요!
-</span><span style="color:#776e71"></span>  op1 <span style="color:#5bc4bf">=</span> EvaluateExpTree((GetLeftSubTree(bt)));
-  op2 <span style="color:#5bc4bf">=</span> EvaluateExpTree((GetRightSubTree(bt)));
-  
-  <span style="color:#815ba4">switch</span>(GetData(bt))
+  <span style="color:#815ba4">while</span>(idx <span style="color:#5bc4bf">!=</span> <span style="color:#f99b15">1</span>)
   {
-    <span style="color:#815ba4">case</span> <span style="color:#48b685">&#39;+&#39;</span><span style="color:#5bc4bf">:</span>
-      <span style="color:#815ba4">return</span> op1<span style="color:#5bc4bf">+</span>op2;
-    
-    <span style="color:#815ba4">case</span> <span style="color:#48b685">&#39;-&#39;</span><span style="color:#5bc4bf">:</span>
-      <span style="color:#815ba4">return</span> op1<span style="color:#5bc4bf">-</span>op2;
-
-    <span style="color:#815ba4">case</span> <span style="color:#48b685">&#39;*&#39;</span><span style="color:#5bc4bf">:</span>
-      <span style="color:#815ba4">return</span> op1<span style="color:#5bc4bf">*</span>op2;
-
-    <span style="color:#815ba4">case</span> <span style="color:#48b685">&#39;/&#39;</span><span style="color:#5bc4bf">:</span>
-      <span style="color:#815ba4">return</span> op1<span style="color:#5bc4bf">/</span>op2;
+    <span style="color:#776e71">// if(pr &lt; (ph-&gt;heapArr[GetParentIDX(idx)].pr))
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">if</span>(ph<span style="color:#5bc4bf">-&gt;</span>comp(data, ph<span style="color:#5bc4bf">-&gt;</span>heapArr[GetParentIDX(idx)]) <span style="color:#5bc4bf">&gt;</span> <span style="color:#f99b15">0</span>)
+    {
+      ph<span style="color:#5bc4bf">-&gt;</span>heapArr[idx] <span style="color:#5bc4bf">=</span> ph<span style="color:#5bc4bf">-&gt;</span>heapArr[GetParentIDX(idx)];
+      idx <span style="color:#5bc4bf">=</span> GetParentIDX(idx);
+    }
+    <span style="color:#815ba4">else</span>
+    {
+      <span style="color:#815ba4">break</span>;
+    }
   }
+  
+  ph<span style="color:#5bc4bf">-&gt;</span>heapArr[idx] <span style="color:#5bc4bf">=</span> data;
+  ph<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">+=</span> <span style="color:#f99b15">1</span>;
+}
 
+HData <span style="color:#06b6ef">HDelete</span>(Heap <span style="color:#5bc4bf">*</span> ph)
+{
+  HData retData <span style="color:#5bc4bf">=</span> ph<span style="color:#5bc4bf">-&gt;</span>heapArr[<span style="color:#f99b15">1</span>];
+  HData lastElem <span style="color:#5bc4bf">=</span> ph<span style="color:#5bc4bf">-&gt;</span>heapArr[ph<span style="color:#5bc4bf">-&gt;</span>numOfData];
+  
+  <span style="color:#fec418">int</span> parentIdx <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>;
+  <span style="color:#fec418">int</span> childIdx;
+  
+  <span style="color:#815ba4">while</span>(childIdx <span style="color:#5bc4bf">=</span> GetHiPriChildIDX(ph, parentIdx))
+  {
+    <span style="color:#776e71">// if(lastElem.pr &lt;= ph-&gt;heapArr[childIdx].pr)
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">if</span>(ph<span style="color:#5bc4bf">-&gt;</span>comp(lastElem, ph<span style="color:#5bc4bf">-&gt;</span>heapArr[childIdx]) <span style="color:#5bc4bf">&gt;=</span> <span style="color:#f99b15">0</span>) <span style="color:#776e71">// comp함수가 판단 기준
+</span><span style="color:#776e71"></span>      <span style="color:#815ba4">break</span>;
+    
+    ph<span style="color:#5bc4bf">-&gt;</span>heapArr[parentIdx] <span style="color:#5bc4bf">=</span> ph<span style="color:#5bc4bf">-&gt;</span>heapArr[childIdx];
+    parentIdx <span style="color:#5bc4bf">=</span> childIdx;
+  }
+  
+  ph<span style="color:#5bc4bf">-&gt;</span>heapArr[parentIdx] <span style="color:#5bc4bf">=</span> lastElem;
+  ph<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">-=</span> <span style="color:#f99b15">1</span>;
+  
+  <span style="color:#815ba4">return</span> retData;
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">DataPriorityComp</span>(<span style="color:#fec418">char</span> ch1, <span style="color:#fec418">char</span> ch2)
+{
+  <span style="color:#815ba4">return</span> ch2 <span style="color:#5bc4bf">-</span> ch1; <span style="color:#776e71">// 내림차순
+</span><span style="color:#776e71"></span>  <span style="color:#776e71">// return ch1 - ch2
+</span><span style="color:#776e71"></span>} <span style="color:#776e71">// 아스키 코드 값이 작은 문자의 우선순위가 더 높다.
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">main</span>()
+{
+  Heap heap;
+  HeapInit(<span style="color:#5bc4bf">&amp;</span>heap, DataPriorityComp); <span style="color:#776e71">// 우선순위 판단기준 등록
+</span><span style="color:#776e71"></span>  
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;A&#39;</span>, <span style="color:#f99b15">1</span>);
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;B&#39;</span>, <span style="color:#f99b15">2</span>);
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;C&#39;</span>, <span style="color:#f99b15">3</span>);
+  printf(<span style="color:#48b685">&#34;%c </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, HDelete(<span style="color:#5bc4bf">&amp;</span>heap));
+  
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;A&#39;</span>, <span style="color:#f99b15">1</span>);
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;B&#39;</span>, <span style="color:#f99b15">2</span>);
+  HInsert(<span style="color:#5bc4bf">&amp;</span>heap, <span style="color:#48b685">&#39;C&#39;</span>, <span style="color:#f99b15">3</span>);
+  printf(<span style="color:#48b685">&#34;%c </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, HDelete(<span style="color:#5bc4bf">&amp;</span>heap));
+  
+  <span style="color:#815ba4">while</span>(<span style="color:#5bc4bf">!</span>HIsEmpty(<span style="color:#5bc4bf">&amp;</span>heap))
+    printf(<span style="color:#48b685">&#34;%c </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, HDelete(<span style="color:#5bc4bf">&amp;</span>heap));
+  
   <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h5 id="쓸만한-힙을-이용한-우선순위-큐의-구현">쓸만한 힙을 이용한 우선순위 큐의 구현</h5>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">#include</span> <span style="color:#776e71">&#34;UsefulHeap.h&#34;</span><span style="color:#776e71">
+</span><span style="color:#776e71"></span>
+<span style="color:#815ba4">typedef</span> Heap PQueue;
+<span style="color:#815ba4">typedef</span> HData PQData;
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">PQueueInit</span>(PQueue <span style="color:#5bc4bf">*</span> ppq, PriorityComp pc);
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">PQIsEmpty</span>(PQueue <span style="color:#5bc4bf">*</span> ppq);
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">PEnqueue</span>(PQueue <span style="color:#5bc4bf">*</span> ppq, PQData data);
+PQData <span style="color:#06b6ef">PDequeue</span>(PQueue <span style="color:#5bc4bf">*</span> ppq);</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">void</span> <span style="color:#06b6ef">PQueueInit</span>(PQueue <span style="color:#5bc4bf">*</span> ppq, PriorityComp pc)
+{
+  HeapInit(ppq, pc);
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">PQIsEmpty</span>(PQueue <span style="color:#5bc4bf">*</span> ppq)
+{
+  <span style="color:#815ba4">return</span> HIsEmpty(ppq);
+}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">PEnqueue</span>(PQueue <span style="color:#5bc4bf">*</span> ppq, PQData data)
+{
+  HInsert(ppq, data);
+}
+
+PQData <span style="color:#06b6ef">PDequeue</span>(PQueue <span style="color:#5bc4bf">*</span> ppq)
+{
+  <span style="color:#815ba4">return</span> HDelete(ppq);
 }</code></pre></td></tr></table>
 </div>
 </div>

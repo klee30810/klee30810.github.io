@@ -17,21 +17,21 @@
    <title>Chap2. Linear Algebra - Kevin&#39;s Codex</title>
 
     
-    <link href="/css/nucleus.css?1616137848" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1616137848" rel="stylesheet">
-    <link href="/css/hybrid.css?1616137848" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1616137848" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1616137848" rel="stylesheet">
-    <link href="/css/auto-complete.css?1616137848" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1616137848" rel="stylesheet">
-    <link href="/css/theme.css?1616137848" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1616137848" rel="stylesheet">
+    <link href="/css/nucleus.css?1616373335" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1616373335" rel="stylesheet">
+    <link href="/css/hybrid.css?1616373335" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1616373335" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1616373335" rel="stylesheet">
+    <link href="/css/auto-complete.css?1616373335" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1616373335" rel="stylesheet">
+    <link href="/css/theme.css?1616373335" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1616373335" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1616137848" rel="stylesheet">
+    <link href="/css/theme-blue.css?1616373335" rel="stylesheet">
     
-    <link href="/css/foo.css?1616137848" rel="stylesheet"><link href="/css/bar.css?1616137848" rel="stylesheet">
+    <link href="/css/foo.css?1616373335" rel="stylesheet"><link href="/css/bar.css?1616373335" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1616137848"></script>
+    <script src="/js/jquery-3.3.1.min.js?1616373335"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -61,14 +61,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1616137848"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1616137848"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1616373335"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1616373335"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/klee30810.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1616137848"></script>
+<script type="text/javascript" src="/js/search.js?1616373335"></script>
 
     
   </div>
@@ -530,6 +530,9 @@
           
 
         
+          
+            
+            
           
             
             
@@ -1387,6 +1390,70 @@
 <h4 id="231-particular-and-general-solution">2.3.1 Particular and General Solution</h4>
 
 <ul>
+<li>paricular solution : a vector that satisfies Ax=b whether the solution is unique</li>
+<li>general solution : all solutions of the equation system</li>
+</ul>
+
+<blockquote>
+<p>The general approach</p>
+
+<ol>
+<li>Find a particular solution to \(Ax=b\)</li>
+<li>Find all solutions to \(Ax=0\)</li>
+<li>Combine the solutions from steps 1. and 2. to the general solution</li>
+</ol>
+</blockquote>
+
+<ul>
+<li>neither the general nor the particular solution is unique</li>
+</ul>
+
+<h4 id="232-elementry-transformations">2.3.2 Elementry Transformations</h4>
+
+<ul>
+<li>keep the solution set the same, but that transform the equation system into a simpler form</li>
+</ul>
+
+<blockquote>
+<ul>
+<li>Exchange of two equations (rows in the matrix representing the system of equations)</li>
+<li>Multiplication of an equation (row) with a constant \(λ \in\R{0}\)</li>
+<li>Addition of two equations (rows)</li>
+</ul>
+</blockquote>
+
+<ul>
+<li><p>augmented matrix : \([A|b]\)</p></li>
+
+<li><p>pivot : the leading coefficient of a row (first nonzero number from the left)</p></li>
+</ul>
+
+<p>⇒ always strictly to the right of the pivot of the row above → any equation system in row-echelon form always has a “staircase” structure</p>
+
+<blockquote>
+<p>&lt; row-echelon form &gt;</p>
+
+<ul>
+<li>All rows that contain only zeros are at the bottom of the matrix; correspondingly, all rows that contain at least one nonzero element are on top of rows that contain only zeros.</li>
+<li>Looking at nonzero rows only, the first nonzero number from the left(<em>pivot</em> or the leading coefficient) is always strictly to the right of the pivot of the row above it.</li>
+</ul>
+</blockquote>
+
+<ul>
+<li>basic variables : variables coresponding to the pivots in the row-echolon form / others: free variables</li>
+<li>Reduced Row Echelon Form
+
+<ul>
+<li>It is in row-echelon form</li>
+<li>Every pivot is 1.</li>
+<li>The pivot is the only nonzero entry in its column.</li>
+</ul></li>
+<li>Gaussian elimination is an algorithm that performs elementary transformations to bring a system of linear equations into reduced row-echelon form.</li>
+</ul>
+
+<h4 id="233-calculating-the-inverse">2.3.3 Calculating the Inverse</h4>
+
+<ul>
 <li></li>
 </ul>
 
@@ -1959,6 +2026,11 @@
             
         
                     
+                        
+            
+            
+        
+                    
             
         
                     
@@ -2358,19 +2430,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1616137848"></script>
-    <script src="/js/perfect-scrollbar.min.js?1616137848"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1616137848"></script>
-    <script src="/js/jquery.sticky.js?1616137848"></script>
-    <script src="/js/featherlight.min.js?1616137848"></script>
-    <script src="/js/highlight.pack.js?1616137848"></script>
+    <script src="/js/clipboard.min.js?1616373335"></script>
+    <script src="/js/perfect-scrollbar.min.js?1616373335"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1616373335"></script>
+    <script src="/js/jquery.sticky.js?1616373335"></script>
+    <script src="/js/featherlight.min.js?1616373335"></script>
+    <script src="/js/highlight.pack.js?1616373335"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1616137848"></script>
-    <script src="/js/learn.js?1616137848"></script>
-    <script src="/js/hugo-learn.js?1616137848"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1616373335"></script>
+    <script src="/js/learn.js?1616373335"></script>
+    <script src="/js/hugo-learn.js?1616373335"></script>
     
         
-            <script src="/mermaid/mermaid.js?1616137848"></script>
+            <script src="/mermaid/mermaid.js?1616373335"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
