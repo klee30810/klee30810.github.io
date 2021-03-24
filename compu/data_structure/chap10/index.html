@@ -1,0 +1,3061 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="description" content="Sort">
+<meta name="author" content="Kyungmin Lee, Kevin">
+
+    <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+ 
+   <title>Chap10. Sort - Kevin&#39;s Codex</title>
+
+    
+    <link href="/css/nucleus.css?1616563272" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1616563272" rel="stylesheet">
+    <link href="/css/hybrid.css?1616563272" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1616563272" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1616563272" rel="stylesheet">
+    <link href="/css/auto-complete.css?1616563272" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1616563272" rel="stylesheet">
+    <link href="/css/theme.css?1616563272" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1616563272" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1616563272" rel="stylesheet">
+    
+    <link href="/css/foo.css?1616563272" rel="stylesheet"><link href="/css/bar.css?1616563272" rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.min.js?1616563272"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/compu/data_structure/chap10/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://klee30810.github.io/">
+<img src="/images/logo.png" alt="logo.png" height="110" width="110">
+</a>
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1616563272"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1616563272"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/klee30810.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1616563272"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/" title="Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/">
+          <b> 1. </b>Paper Review
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/battery/">
+          <b>1. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/paper_review/mldl/" title="Machine Learning &amp; Deep Learning Paper Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/paper_review/mldl/">
+          <b>2. </b>ML &amp; DL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/">
+          <b>2. </b>Mechanical Eng.
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/statics/" title="Statics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/statics/">
+          <b>1. </b>Statics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/material/" title="Material Mechanics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/material/">
+          <b>2. </b>Material Mech.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/thermo/" title="Thermodynamics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/thermo/">
+          <b>3. </b>Thermodynamics
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mech/mech_experiment/" title="Mechanical experiment" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mech/mech_experiment/">
+          <b>4. </b>Mechanical Expes.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/elec/" title="Electrical &amp; Electronic Studies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/elec/">
+          <b>3. </b>Electrical Eng.
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/" title="Computer Science" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/">
+          <b>4. </b>Computer Sci.
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/readable_code/" title="Readable Code Book Review" class="dd-item
+        
+        
+        
+        ">
+      <a href="/compu/readable_code/">
+          <b>1. </b>Readable Code
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/compu/data_structure/" title="Data Structure" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/compu/data_structure/">
+          <b>2. </b>Data Structure 
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mldl/" title="Machine Learning &amp; Deep Learning" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mldl/">
+          <b>5. </b>ML &amp; DL
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/mldl/mathml/" title="Mathematics for Machine Learning" class="dd-item
+        
+        
+        
+        ">
+      <a href="/mldl/mathml/">
+          <b>1. </b>Math for ML
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/" title="Battery" class="dd-item
+        
+        
+        
+        ">
+      <a href="/battery/">
+          <b>6. </b>Battery
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/battery/battery-basics/" title="Battery Basics" class="dd-item ">
+        <a href="/battery/battery-basics/">
+        <b>1. </b>Battery Basics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/battery/principles_lithium/" title="Principles &amp; Applications of Lithium Secondary Batteries" class="dd-item
+        
+        
+        
+        ">
+      <a href="/battery/principles_lithium/">
+          <b>2. </b>Princ &amp; Applic of LSB
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/finance/" title="Finance" class="dd-item
+        
+        
+        
+        ">
+      <a href="/finance/">
+          <b>7. </b>Finance
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/math/" title="Mathematics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/math/">
+          <b>8. </b>Mathematics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/math/stats/" title="Statistics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/math/stats/">
+          <b>1. </b>Statistics
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sci/" title="Science" class="dd-item
+        
+        
+        
+        ">
+      <a href="/sci/">
+          <b>9. </b>Science
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/sci/funda_physics/" title="Fundamental Physics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/sci/funda_physics/">
+          <b>1. </b>Fundamental Physics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/" title="Language" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/">
+          <b>10. </b>Language
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/english/" title="English" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/english/">
+          <b>1. </b>English
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/chinese/" title="Chinese" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/chinese/">
+          <b>2. </b>Chinese
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/" title="Industry Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/">
+          <b>11. </b>Industry
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/semicon/" title="Semi-conductor Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/semicon/">
+          <b>1. </b>Semi-conductor
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/indust/automob/" title="Automobile Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/indust/automob/">
+          <b>2. </b>Automobile
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://klee30810.github.io/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                   Chap10. Sort
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/data-structure">Data Structure</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Chap10. Sort
+            </h1>
+          
+
+        
+
+
+<ul>
+<li>3대 연산 : 삽입, 삭제, 탐색</li>
+<li>정렬은 탐색을 이야기 하기 위함 ⇒ 탐색 전에 정렬이 필요!</li>
+</ul>
+
+<h3 id="101-단순한-정렬-알고리즘">10.1 단순한 정렬 알고리즘</h3>
+
+<hr>
+
+<h5 id="버블-정렬-bubble-sort">버블 정렬 (Bubble Sort)</h5>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">void</span> <span style="color:#06b6ef">BubbleSort</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> n)
+{
+  <span style="color:#fec418">int</span> i, j;
+  <span style="color:#fec418">int</span> temp;
+  
+  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span>n<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>; i<span style="color:#5bc4bf">++</span>)
+  {
+    <span style="color:#815ba4">for</span>(j<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; j<span style="color:#5bc4bf">&lt;</span>(n<span style="color:#5bc4bf">-</span>i)<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>; j<span style="color:#5bc4bf">++</span>)
+    {
+      <span style="color:#815ba4">if</span>(arr[j] <span style="color:#5bc4bf">&gt;</span> arr[j<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>])
+      {
+        <span style="color:#776e71">// 데이터의 교환
+</span><span style="color:#776e71"></span>        temp <span style="color:#5bc4bf">=</span> arr[j];
+        arr[j] <span style="color:#5bc4bf">=</span> arr[j<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>];
+        arr[j<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>] <span style="color:#5bc4bf">=</span> temp;
+      }
+    }
+  }
+}</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">main</span>()
+{
+  <span style="color:#fec418">int</span> arr[<span style="color:#f99b15">4</span>] <span style="color:#5bc4bf">=</span> {<span style="color:#f99b15">3</span>,<span style="color:#f99b15">2</span>,<span style="color:#f99b15">4</span>,<span style="color:#f99b15">1</span>};
+  <span style="color:#fec418">int</span> i;
+  
+  BubbleSort(arr, <span style="color:#815ba4">sizeof</span>(arr)<span style="color:#5bc4bf">/</span><span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>));
+  
+  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span><span style="color:#f99b15">4</span>; i<span style="color:#5bc4bf">++</span>)
+    printf(<span style="color:#48b685">&#34;%d &#34;</span>, arr[i]);
+  
+  printf(<span style="color:#48b685">&#34;</span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>);
+  <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>성능평가
+
+<ul>
+<li>비교 횟수 : 두 데이터간의 비교 연산 횟수</li>
+<li>이동 횟수 : 위치의 변경을 위한 데이터 이동 횟수</li>
+</ul></li>
+</ul>
+
+<p><span  class="math">\[(n-1)+...+2+1 \Rightarrow \displaystyleΣ^{n-1}_{i=1}i=\frac{n(n-1)}{2}=\frac{n^2-n}{2}\Rightarrow O(n^2) \]</span></p>
+
+<ul>
+<li>최악의 경우에는 비교의 횟수와 이동의 횟수는 일치한다.</li>
+</ul>
+
+<h5 id="선택-정렬selection-sort">선택 정렬(Selection Sort)</h5>
+
+<ul>
+<li>하나씩 선택해서 정렬 결과를 완성 → <em>별도의 메모리 공간이 요구됨</em> ⇒ 실제 구현시에는 별도 공간을 만들지 말고 하나 옮기면 빈 공간 이용</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">void</span> <span style="color:#06b6ef">SelSort</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> n)
+{
+  <span style="color:#fec418">int</span> i,j;
+  <span style="color:#fec418">int</span> maxIdx;
+  <span style="color:#fec418">int</span> temp;
+  
+  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span>n<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>; i<span style="color:#5bc4bf">++</span>)
+  {
+    maxIdx <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>;
+    
+    <span style="color:#815ba4">for</span>(j<span style="color:#5bc4bf">=</span>i<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>; j<span style="color:#5bc4bf">&lt;</span>n; j<span style="color:#5bc4bf">++</span>)    <span style="color:#776e71">// 최소값 탐색
+</span><span style="color:#776e71"></span>    {
+      <span style="color:#815ba4">if</span>(arr[j] <span style="color:#5bc4bf">&lt;</span> arr[maxIdx])   <span style="color:#776e71">// 비교 연산
+</span><span style="color:#776e71"></span>        maxIdx <span style="color:#5bc4bf">=</span> j;
+    }
+    
+    <span style="color:#776e71">// 교환 -&gt; 이동 연산
+</span><span style="color:#776e71"></span>    temp <span style="color:#5bc4bf">=</span> arr[i];
+    arr[i] <span style="color:#5bc4bf">=</span> arr[maxIdx];
+    arr[maxIdx] <span style="color:#5bc4bf">=</span> temp;
+  }
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">main</span>()
+{
+  <span style="color:#fec418">int</span> arr[<span style="color:#f99b15">4</span>] <span style="color:#5bc4bf">=</span> {<span style="color:#f99b15">3</span>,<span style="color:#f99b15">4</span>,<span style="color:#f99b15">2</span>,<span style="color:#f99b15">1</span>};
+  <span style="color:#fec418">int</span> i;
+  
+  SelSort(arr, <span style="color:#815ba4">sizeof</span>(arr)<span style="color:#5bc4bf">/</span><span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>));
+  
+  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span><span style="color:#f99b15">4</span>; i<span style="color:#5bc4bf">++</span>)
+    printf(<span style="color:#48b685">&#34;%d &#34;</span>, arr[i]);
+  
+  printf(<span style="color:#48b685">&#34;</span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>);
+  <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>성능평가</li>
+</ul>
+
+<p><span  class="math">\[(n-1)+(n-2)+...+2+1 \Rightarrow Σ^{n-1}_{i=1}=\frac{n(n-1)}{2}=\frac{n^2-n}{2} \Rightarrow O(n^2) \]</span></p>
+
+<p>→ 바깥 for 문에 있으므로 데이터 이동의 횟수는 동일하다</p>
+
+<h5 id="삽입-정렬-insertion-sort">삽입 정렬 (Insertion Sort)</h5>
+
+<p><figure><img src="/images/compu/DS/chap10/1.png" alt="image"></figure></p>
+
+<ul>
+<li>정렬이 완료된 영역과 그렇지 않은 영역을 구분하고 점진적으로 정렬 영역을 넓혀감
+
+<ul>
+<li>어느 위치로 가느냐에 따라 이동해야 할 거리가 달라진다.</li>
+</ul></li>
+</ul>
+
+<p><figure><img src="/images/compu/DS/chap10/2.png" alt="image"></figure></p>
+
+<ul>
+<li>위치와 이동을 함께 구현하면 성능이 좋지 않아진다.</li>
+<li>대소 비교 후 해당 위치를 찾고 바로 이동하도록 구현한다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">void</span> <span style="color:#06b6ef">InsertSort</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> n)
+{
+  <span style="color:#fec418">int</span> i, j;
+  <span style="color:#fec418">int</span> insData;
+  
+  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>; i<span style="color:#5bc4bf">&lt;</span>n; i<span style="color:#5bc4bf">++</span>) <span style="color:#776e71">// idx 0 데이터는 이미 정렬 됬으므로 i=1
+</span><span style="color:#776e71"></span>  {
+    insData <span style="color:#5bc4bf">=</span> arr[i];
+    
+    <span style="color:#815ba4">for</span>(j<span style="color:#5bc4bf">=</span>i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>; j<span style="color:#5bc4bf">&gt;=</span><span style="color:#f99b15">0</span>; j<span style="color:#5bc4bf">--</span>)
+    {
+      <span style="color:#815ba4">if</span>(arr[j] <span style="color:#5bc4bf">&gt;</span> insData)
+        arr[j<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>] <span style="color:#5bc4bf">=</span> arr[j];  <span style="color:#776e71">// 비교 대상 한 칸 밀기
+</span><span style="color:#776e71"></span>      <span style="color:#815ba4">else</span>
+        <span style="color:#815ba4">break</span>;	<span style="color:#776e71">// 적정 위치 찾았으므로 빠져나감
+</span><span style="color:#776e71"></span>    }
+    arr[j<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>] <span style="color:#5bc4bf">=</span> insData; <span style="color:#776e71">// 찾은 위치에 정렬 대상 삽입
+</span><span style="color:#776e71"></span>  }
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">main</span>()
+{
+  <span style="color:#fec418">int</span> arr[<span style="color:#f99b15">5</span>] <span style="color:#5bc4bf">=</span> {<span style="color:#f99b15">5</span>,<span style="color:#f99b15">3</span>,<span style="color:#f99b15">2</span>,<span style="color:#f99b15">4</span>,<span style="color:#f99b15">1</span>};
+  <span style="color:#fec418">int</span> i;
+  
+  InsertSort(arr, <span style="color:#815ba4">sizeof</span>(arr)<span style="color:#5bc4bf">/</span><span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>));
+  
+  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span><span style="color:#f99b15">5</span>; i<span style="color:#5bc4bf">++</span>)
+    printf(<span style="color:#48b685">&#34;%d &#34;</span>, arr[i]);
+  
+  printf(<span style="color:#48b685">&#34;</span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>);
+  <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>성능 평가
+
+<ul>
+<li>비교 및 이동 연산 모두 안쪽 for문에 존재하므로 최악의 경우는 \(O(n^2)\)</li>
+</ul></li>
+</ul>
+
+<h3 id="102-복잡하지만-효율적인-정렬-알고리즘">10.2 복잡하지만 효율적인 정렬 알고리즘</h3>
+
+<hr>
+
+<h5 id="힙-정렬-heap-sort">힙 정렬 (Heap Sort)</h5>
+
+<ul>
+<li>힙의 특성을 활용하여 힙에 정렬할 대상을 모두 넣었다가 다시 꺼내어 정렬을 진행한다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">PriComp</span>(<span style="color:#fec418">int</span> n1, <span style="color:#fec418">int</span> n2)
+{
+  <span style="color:#815ba4">return</span> n2<span style="color:#5bc4bf">-</span>n1;     <span style="color:#776e71">// 오름차순 정렬
+</span><span style="color:#776e71"></span>  <span style="color:#776e71">// return n1-n2;
+</span><span style="color:#776e71"></span>}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">HeapSort</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> n, PriorityComp pc)   <span style="color:#776e71">// n: 길이
+</span><span style="color:#776e71"></span>{
+  Heap heap;
+  <span style="color:#fec418">int</span> i;
+  
+  HeapInit(<span style="color:#5bc4bf">&amp;</span>heap,pc);
+  
+  <span style="color:#776e71">// 정렬 대상으로 힙 구성
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span>n; i<span style="color:#5bc4bf">++</span>)
+    HInsert(<span style="color:#5bc4bf">&amp;</span>heap, arr[i]);
+  
+  <span style="color:#776e71">// 순서대로 하나씩 꺼내서 정렬 완성
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span>n; i<span style="color:#5bc4bf">++</span>)
+    arr[i] <span style="color:#5bc4bf">=</span> HDelete(<span style="color:#5bc4bf">&amp;</span>heap);
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">main</span>()
+{
+  <span style="color:#fec418">int</span> arr[<span style="color:#f99b15">4</span>] <span style="color:#5bc4bf">=</span> {<span style="color:#f99b15">3</span>,<span style="color:#f99b15">4</span>,<span style="color:#f99b15">2</span>,<span style="color:#f99b15">1</span>};
+  <span style="color:#fec418">int</span> i;
+  
+  HeapSort(arr, <span style="color:#815ba4">sizeof</span>(arr)<span style="color:#5bc4bf">/</span><span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>), PriComp);
+  
+  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span><span style="color:#f99b15">4</span>; i<span style="color:#5bc4bf">++</span>)
+    printf(<span style="color:#48b685">&#34;%d &#34;</span>, arr[i]);
+  
+  printf(<span style="color:#48b685">&#34;</span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>);
+  <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><p>성능 평가</p>
+
+<ul>
+<li>하나의 데이터 → 저장 시간 복잡도 \(O(\log_2n)\) &amp; 삭제 시간복잡도 \(O(\log_2n)\)</li>
+</ul>
+
+<p>⇒ n개의 데이터 : \(O(n\log_2n)\)</p></li>
+</ul>
+
+<h5 id="병합-정렬-merge-sort--divide-and-conquer">병합 정렬 (Merge Sort) : Divide And Conquer</h5>
+
+<blockquote>
+<ol>
+<li>분할 (Divide) : 해결이 용이한 단계까지 문제를 분할</li>
+<li>정복 (Conquer) : 분할된 문제 해결</li>
+<li>결합 (Combine) : 해결한 결과를 결합하여 마무리</li>
+</ol>
+</blockquote>
+
+<p><figure><img src="/images/compu/DS/chap10/3.png" alt="image"></figure></p>
+
+<ul>
+<li>분할 과정 : 재귀적, 구분 될 때 까지만 분할 진행</li>
+<li>병합 과정 : 핵심 연산, 재귀적으로 조금씩 병합해나감</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">void</span> <span style="color:#06b6ef">MergeSort</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> left, <span style="color:#fec418">int</span> right)
+{
+  <span style="color:#fec418">int</span> mid;
+  
+  <span style="color:#815ba4">if</span>(left <span style="color:#5bc4bf">&lt;</span> right) <span style="color:#776e71">// left가 더 작음 : 더 나눌 수 있음
+</span><span style="color:#776e71"></span>  {
+    <span style="color:#776e71">// 중간지점 계산
+</span><span style="color:#776e71"></span>    mid <span style="color:#5bc4bf">=</span> (left<span style="color:#5bc4bf">+</span>right)<span style="color:#5bc4bf">/</span><span style="color:#f99b15">2</span>;
+    
+    <span style="color:#776e71">// 둘로 나눠서 각각 정렬
+</span><span style="color:#776e71"></span>    MergeSort(arr, left, mid); <span style="color:#776e71">// left ~ mid 정렬
+</span><span style="color:#776e71"></span>    MergeSort(arr, mid<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>, right) <span style="color:#776e71">// mid+1 ~ right 정렬
+</span><span style="color:#776e71"></span>      
+    <span style="color:#776e71">// 정렬된 두 배열 병합
+</span><span style="color:#776e71"></span>    MergeTwoArray(arr, left, mid, right);
+  }
+}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">MergeTwoArray</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> left, <span style="color:#fec418">int</span> mid, <span style="color:#fec418">int</span> right)
+{
+  <span style="color:#fec418">int</span> fIdx <span style="color:#5bc4bf">=</span> left; <span style="color:#fec418">int</span> rIdx <span style="color:#5bc4bf">=</span> mid<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>; <span style="color:#fec418">int</span> i;
+  <span style="color:#fec418">int</span> <span style="color:#5bc4bf">*</span> sortArr <span style="color:#5bc4bf">=</span> (<span style="color:#fec418">int</span><span style="color:#5bc4bf">*</span>)malloc(<span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>) <span style="color:#5bc4bf">*</span> (right<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>));  <span style="color:#776e71">// 병합 결과를 담을 메모리 공간 할당 
+</span><span style="color:#776e71"></span>  <span style="color:#776e71">// -&gt; 내부에 데이터를 옮기기 번거로워 임시로 공간 할당
+</span><span style="color:#776e71"></span>  <span style="color:#fec418">int</span> sIdx <span style="color:#5bc4bf">=</span> left;
+  
+  <span style="color:#776e71">// 병합 할 두 영역의 데이터를 비교하여 sortArr에 담음
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">while</span>(fIdx <span style="color:#5bc4bf">&lt;=</span> mid <span style="color:#5bc4bf">&amp;&amp;</span> rIdx <span style="color:#5bc4bf">&lt;=</span> right)
+  {
+    <span style="color:#815ba4">if</span>(arr[fIdx] <span style="color:#5bc4bf">&lt;=</span> arr[rIdx])
+      sortArr[sIdx] <span style="color:#5bc4bf">=</span> arr[fIdx<span style="color:#5bc4bf">++</span>];
+    <span style="color:#815ba4">else</span>
+      sortArr[sIdx] <span style="color:#5bc4bf">=</span> arr[rIdx<span style="color:#5bc4bf">++</span>];
+    sIdx<span style="color:#5bc4bf">++</span>;
+  }
+  
+  <span style="color:#776e71">// 배열의 앞 부분이 sortArr로 모두 이동되어서 
+</span><span style="color:#776e71"></span>  <span style="color:#776e71">// 배열 뒷부분에 남은 데이터를 모두 sortArr로 이동
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(fIdx <span style="color:#5bc4bf">&gt;</span> mid)
+  {
+    <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span>rIdx; i<span style="color:#5bc4bf">&lt;=</span>right; i<span style="color:#5bc4bf">++</span>, sIdx<span style="color:#5bc4bf">++</span>)
+      sortArr[sIdx] <span style="color:#5bc4bf">=</span> arr[i];
+  }
+  <span style="color:#776e71">// 배열의 뒷 부분이 sortArr로 모두 이동되어서 
+</span><span style="color:#776e71"></span>  <span style="color:#776e71">// 배열 앞부분에 남은 데이터를 모두 sortArr로 이동
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">else</span>
+  {
+    <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span>fIdx; i <span style="color:#5bc4bf">&lt;=</span> mid; i<span style="color:#5bc4bf">++</span>, sIdx<span style="color:#5bc4bf">++</span>)
+      sortArr[sIdx] <span style="color:#5bc4bf">=</span> arr[i];
+  }
+  <span style="color:#776e71">// 병합 결과를 옮겨 담는다.
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span>left; i<span style="color:#5bc4bf">&lt;=</span>right; i<span style="color:#5bc4bf">++</span>)
+    arr[i] <span style="color:#5bc4bf">=</span> sortArr[i];
+  
+  free(sortArr);
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><p>성능 평가</p>
+
+<ul>
+<li>데이터 비교 및 이동은 MergeTwoArea 함수 중심으로 진행</li>
+<li>비교 연산</li>
+</ul></li>
+</ul>
+
+<p>&quot;정렬 대상 데이터 수가 n개 일때, 각 병합 단계마다 최대 n번의 비교 연산 진행&quot; → \(n\log_2n\) → \(n\log_2n\)</p>
+
+<ul>
+<li>이동 연산</li>
+</ul>
+
+<p>병합 한번 &amp; 저장된 데이터 옮기는 과정 한번 \(2n\log_2n \rightarrow n\log_2n\)</p>
+
+<h5 id="퀵-정렬quick-sort">퀵 정렬(Quick Sort)</h5>
+
+<ul>
+<li>1) 초기화
+
+<ul>
+<li>left : 정렬 대상 가장 왼쪽 지점</li>
+<li>right : 정렬 대상 가장 오른쪽 지점</li>
+<li>pivot : 중심점</li>
+<li>low : 피벗을 제외한 가장 왼쪽</li>
+<li>high : 피벗을 제외한 가장 오른쪽</li>
+</ul></li>
+<li>2) low &amp; high 이동
+
+<ul>
+<li>low의 오른쪽 이동 : 피벗보다 정렬의 우선순위가 낮은 데이터를 만날 때 까지</li>
+<li>high의 왼쪽 이동 : 피벗보다 정렬의 우선순위가 높은 데이터를 만날 때 까지</li>
+</ul></li>
+<li>3) low &amp; high 교환</li>
+</ul>
+
+<p><figure><img src="/images/compu/DS/chap10/4.png" alt="image"></figure></p>
+
+<ul>
+<li>4) pivot의 이동
+
+<ul>
+<li>왼쪽은 pivot 보다 높은 우선순위 보장</li>
+<li>오른쪽은 pivot 보다 낮은 우선순위 보장</li>
+<li>역전 시에는 pivot과 high 교환</li>
+<li>영역 나누어 반복 실행</li>
+<li>left &gt; right ⇒ 쪼갤 영역이 없는 상태</li>
+</ul></li>
+</ul>
+
+<p><figure><img src="/images/compu/DS/chap10/5.png" alt="image"></figure></p>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">Partition</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> left, <span style="color:#fec418">int</span> right)
+{
+  <span style="color:#fec418">int</span> pivot <span style="color:#5bc4bf">=</span> arr[left];
+  <span style="color:#fec418">int</span> low <span style="color:#5bc4bf">=</span> pivot <span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>;
+  <span style="color:#fec418">int</span> high <span style="color:#5bc4bf">=</span> right;
+  
+  <span style="color:#815ba4">while</span>(low <span style="color:#5bc4bf">&lt;=</span> high)
+  {
+    <span style="color:#776e71">// 피벗보다 큰 값을 찾는 과정
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">while</span>(pivot <span style="color:#5bc4bf">&gt;</span> arr[low]) <span style="color:#776e71">// 우선순위 낮은 것 만날때까지
+</span><span style="color:#776e71"></span>      low<span style="color:#5bc4bf">++</span>;
+    
+    <span style="color:#776e71">// 피벗보다 작은 값을 찾는 과정
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">while</span>(pivot <span style="color:#5bc4bf">&lt;</span> arr[high]) <span style="color:#776e71">// 우선순위 높은 것 만날 때까지
+</span><span style="color:#776e71"></span>      high<span style="color:#5bc4bf">--</span>;
+    
+    <span style="color:#776e71">// 교차되지 않는다면 swap
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">if</span>(low <span style="color:#5bc4bf">&lt;=</span> high)
+      Swap(arr, low, high);
+  }
+  Swap(arr, left, high);	<span style="color:#776e71">// 피벗과 high의 교환
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">return</span> high		<span style="color:#776e71">// 옮겨진 피벗의 위치정보 반환
+</span><span style="color:#776e71"></span>}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>재귀적 완성과 수정</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">void</span> <span style="color:#06b6ef">QuickSort</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> left, <span style="color:#fec418">int</span> right)
+{
+  <span style="color:#815ba4">if</span>(left <span style="color:#5bc4bf">&lt;=</span> right)
+  {
+    <span style="color:#fec418">int</span> pivot <span style="color:#5bc4bf">=</span> Partition(arr, left, right);
+    QuickSort(arr, left, pivot<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>); <span style="color:#776e71">// 왼쪽 영역 정렬
+</span><span style="color:#776e71"></span>    QuickSort(arr, pivot<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>, right); <span style="color:#776e71">// 오른쪽 영역 정렬
+</span><span style="color:#776e71"></span>  }
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>arr={3,3,3}의 경우</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">Partition</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> left, <span style="color:#fec418">int</span> right)
+{
+  ...
+  <span style="color:#815ba4">while</span>(low <span style="color:#5bc4bf">&lt;=</span> high)
+  {
+    <span style="color:#776e71">// while(pivot &gt; arr[low]), 정렬의 범위를 넘지 않도록 경계 검사
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">while</span>(pivot <span style="color:#5bc4bf">&gt;=</span> arr[low] <span style="color:#5bc4bf">&amp;&amp;</span> low <span style="color:#5bc4bf">&lt;=</span> right)
+      low<span style="color:#5bc4bf">++</span>;
+    <span style="color:#776e71">// while(pivot &lt; arr[high]), 정렬 범위 넘지 않도록 경계 검사
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">while</span>(pivot <span style="color:#5bc4bf">&lt;=</span> arr[high] <span style="color:#5bc4bf">&amp;&amp;</span> high <span style="color:#5bc4bf">&gt;=</span> (left<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>))
+      high<span style="color:#5bc4bf">--</span>;
+  }
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><strong>데이터가 불규칙적으로 나열되어 있고 피벗이 중간에 해당하는 값에 가깝게 선택이 될 수록 최상의 경우가 보임</strong> → 불규칙적 나열시 아무거나 선택해도 중간을 선택할 확률이 높다.</li>
+<li>중간에 가까운 값으로 빅-오를 선택하려는 노력을 조금만 하더라도 퀵정렬은 최악의 경우를 만들지 않는다. \(\Rightarrow O(n\log_2n)\)</li>
+</ul>
+
+<h5 id="기수-정렬-radix-sort">기수 정렬 (Radix Sort)</h5>
+
+<blockquote>
+<ul>
+<li>정렬순서의 앞서고 뒤섬을 비교하지 않는다.</li>
+<li>정렬 알고리즘의 한계로 알려진 \(O(n\log_2n)\)을 뛰어 넘을 수 있다.</li>
+<li>적용할 수 있는 대상이 매우 제한적이다. <strong>길이가 동일한 데이터들</strong>의 정렬에 용이하다!</li>
+</ul>
+</blockquote>
+
+<p><figure><img src="/images/compu/DS/chap10/6.png" alt="image"></figure></p>
+
+<ul>
+<li>자리를 찾기 위한 비교연산이 필요할 수 있으나, 버킷을 배열로 만들면 비교 불필요
+
+<ul>
+<li>기수(radix) : 주어진 데이터를 구성하는 기본 요소</li>
+<li>버킷(bucket) : 기수의 수에 해당하는 만큼의 버킷 활용</li>
+</ul></li>
+<li>LSD : Least Significant Digit를 시작으로 정렬 진행
+
+<ul>
+<li>LSD 먼저 연산 : &quot;앞 자리가 값이 같다면&quot; 이라는 가정 ⇒ 다음 연산에서 이전 연산 아랫자리 비교 결과 순서는 바꾸지 않는다.</li>
+</ul></li>
+</ul>
+
+<p><figure><img src="/images/compu/DS/chap10/7.png" alt="image"></figure></p>
+
+<ul>
+<li>MSD : Most Significant Digit
+
+<ul>
+<li>정렬의 기준 선정 방향 반대</li>
+<li>점진적으로 정렬이 완성되어가므로, 중간 중간에 정렬이 완료된 데이터는 더 이상 정렬과정은 진행하지 않아야 함 (<strong>선별 과정에서 연산 낭비 증가</strong>)</li>
+</ul></li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">#include</span> <span style="color:#776e71">&#34;ListBaseQueue.h&#34;</span><span style="color:#776e71">
+</span><span style="color:#776e71">#define BUCKET_NUM	10
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">RadixSort</span>(<span style="color:#fec418">int</span> arr[], <span style="color:#fec418">int</span> num, <span style="color:#fec418">int</span> maxLen)
+{
+  Queue buckets[BUCKET_NUM];
+  <span style="color:#fec418">int</span> bi, pos, id, divfac<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>, radix;
+  
+  <span style="color:#776e71">// 총 10개 버킷 초기화
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">for</span>(bi<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; bi<span style="color:#5bc4bf">&lt;</span>BUCKET_NUM; bi<span style="color:#5bc4bf">++</span>)
+    QueueInit(<span style="color:#5bc4bf">&amp;</span>buckets[bi]);
+  
+  <span style="color:#776e71">// 가장 긴 데이터 길이만큼 반복
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">for</span>(pos<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; pos<span style="color:#5bc4bf">&lt;</span>maxLen; pos<span style="color:#5bc4bf">++</span>)
+  {
+    <span style="color:#776e71">// 정렬 대상의 수만큼 반복
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">for</span>(di<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; di<span style="color:#5bc4bf">&lt;</span>num; di<span style="color:#5bc4bf">++</span>)
+    {
+      <span style="color:#776e71">// N번째 자리의 숫자 추출
+</span><span style="color:#776e71"></span>      radix <span style="color:#5bc4bf">=</span> (arr[di] <span style="color:#5bc4bf">/</span> divfac) <span style="color:#5bc4bf">%</span> <span style="color:#f99b15">10</span>;
+      <span style="color:#776e71">// 추출한 숫자를 근거로 버킷에 데이터 저장
+</span><span style="color:#776e71"></span>      Enqueue(<span style="color:#5bc4bf">&amp;</span>buckets[radix], arr[di]);
+    }
+    
+    <span style="color:#776e71">// 버킷 수만큼 반복
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">for</span>(bi<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>, di<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; bi<span style="color:#5bc4bf">&lt;</span>BUCKET_NUM; bi<span style="color:#5bc4bf">++</span>)
+    {
+      <span style="color:#776e71">// 버킷 저장된 것 순서대로 다 꺼내서 arr에 저장
+</span><span style="color:#776e71"></span>      <span style="color:#815ba4">while</span>(<span style="color:#5bc4bf">!</span>QIsEmpty(<span style="color:#5bc4bf">&amp;</span>buckets[bi]))
+      {
+        arr[di<span style="color:#5bc4bf">++</span>] <span style="color:#5bc4bf">=</span> Dequeue(<span style="color:#5bc4bf">&amp;</span>buckets[bi]); <span style="color:#776e71">// FIFO
+</span><span style="color:#776e71"></span>      }
+    }
+    
+    <span style="color:#776e71">// N번째 자리 추출 : 1 -&gt; 10 -&gt; 100
+</span><span style="color:#776e71"></span>    divfac <span style="color:#5bc4bf">*=</span> <span style="color:#f99b15">10</span>;
+  }
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><p>성능평가</p>
+
+<ul>
+<li><p>버킷으로의 데이터 삽입과 추출을 근거로 빅-오 결정</p></li>
+
+<li><p>삽입과 추출 연산을 한 쌍으로 묶으면</p></li>
+</ul>
+
+<p><span  class="math">\[ data 길이 \times data\# =O(l\cdot n)\]</span></p></li>
+</ul>
+
+<p>⇒ 보편적으로 퀵정렬 → 적용가능시 기수 정렬</p>
+
+
+<footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 07/03/2021
+	    </div>
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1616563272"></script>
+    <script src="/js/perfect-scrollbar.min.js?1616563272"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1616563272"></script>
+    <script src="/js/jquery.sticky.js?1616563272"></script>
+    <script src="/js/featherlight.min.js?1616563272"></script>
+    <script src="/js/highlight.pack.js?1616563272"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1616563272"></script>
+    <script src="/js/learn.js?1616563272"></script>
+    <script src="/js/hugo-learn.js?1616563272"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1616563272"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
+

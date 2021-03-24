@@ -484,6 +484,15 @@ __01. 설명 변수  거대한 표현을 쪼개는 가장 쉬운 방법은 작�
     </item>
     
     <item>
+      <title>Chap10. Sort</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap10/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:22 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap10/</guid>
+      <description>3대 연산 : 삽입, 삭제, 탐색 정렬은 탐색을 이야기 하기 위함 ⇒ 탐색 전에 정렬이 필요!  10.1 단순한 정렬 알고리즘  버블 정렬 (Bubble Sort) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  void BubbleSort(int arr[], int n) { int i, j; int temp; for(i=0; i&amp;lt;n-1; i++) { for(j=0; j&amp;lt;(n-i)-1; j++) { if(arr[j] &amp;gt; arr[j+1]) { // 데이터의 교환  temp = arr[j]; arr[j] = arr[j+1]; arr[j+1] = temp; } } } }  1 2 3 4 5 6 7 8 9 10 11 12 13  int main() { int arr[4] = {3,2,4,1}; int i; BubbleSort(arr, sizeof(arr)/sizeof(int)); for(i=0; i&amp;lt;4; i++) printf(&amp;#34;%d &amp;#34;, arr[i]); printf(&amp;#34;\n&amp;#34;); return 0; }    성능평가  비교 횟수 : 두 데이터간의 비교 연산 횟수 이동 횟수 : 위치의 변경을 위한 데이터 이동 횟수   \[(n-1)+.</description>
+    </item>
+    
+    <item>
       <title>Chap10. Moment of Inertia</title>
       <link>https://klee30810.github.io/mech/statics/chap10/</link>
       <pubDate>Mon, 15 Feb 2021 22:03:07 +0900</pubDate>

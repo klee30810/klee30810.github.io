@@ -17,21 +17,21 @@
    <title>Chap2. Linear Algebra - Kevin&#39;s Codex</title>
 
     
-    <link href="/css/nucleus.css?1616373335" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1616373335" rel="stylesheet">
-    <link href="/css/hybrid.css?1616373335" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1616373335" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1616373335" rel="stylesheet">
-    <link href="/css/auto-complete.css?1616373335" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1616373335" rel="stylesheet">
-    <link href="/css/theme.css?1616373335" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1616373335" rel="stylesheet">
+    <link href="/css/nucleus.css?1616563272" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1616563272" rel="stylesheet">
+    <link href="/css/hybrid.css?1616563272" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1616563272" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1616563272" rel="stylesheet">
+    <link href="/css/auto-complete.css?1616563272" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1616563272" rel="stylesheet">
+    <link href="/css/theme.css?1616563272" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1616563272" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1616373335" rel="stylesheet">
+    <link href="/css/theme-blue.css?1616563272" rel="stylesheet">
     
-    <link href="/css/foo.css?1616373335" rel="stylesheet"><link href="/css/bar.css?1616373335" rel="stylesheet">
+    <link href="/css/foo.css?1616563272" rel="stylesheet"><link href="/css/bar.css?1616563272" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1616373335"></script>
+    <script src="/js/jquery-3.3.1.min.js?1616563272"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -61,14 +61,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1616373335"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1616373335"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1616563272"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1616563272"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/klee30810.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1616373335"></script>
+<script type="text/javascript" src="/js/search.js?1616563272"></script>
 
     
   </div>
@@ -530,6 +530,9 @@
           
 
         
+          
+            
+            
           
             
             
@@ -1454,6 +1457,56 @@
 <h4 id="233-calculating-the-inverse">2.3.3 Calculating the Inverse</h4>
 
 <ul>
+<li>Need to find a matrix X that satisfies \(AX=I_n\), then \(X=A^{-1}\)</li>
+<li>Use augmented matrix notation</li>
+</ul>
+
+<p><span  class="math">\[[A|I_n]\rightarrow[I_n|A^{-1}] \]</span></p>
+
+<p>→ Determining the inverse of a matrix is equivalent to solving systems of linear equations</p>
+
+<h5 id="234-algorithms-for-solving-a-system-of-linear-equations">2.3.4 Algorithms for Solving a System of Linear Equations</h5>
+
+<ul>
+<li><p>Assume that a solution exists, and it is able to determine the inverse \(A^{-1}\) → only possible <strong>when A is a square matrix and invertible</strong></p></li>
+
+<li><p>Otherwise, under mild assumptions ( A needs to have linearly independent columns)...</p></li>
+</ul>
+
+<p><span  class="math">\[Ax=b \rightarrow A^TAx=A^Tb\rightarrow x=(A^TA)^{-1}A^Tb \]</span></p>
+
+<p>→ and use the <em>Moore-Penrose pseudo-inverse</em> \((A^T A)^{-1} A^T\) ⇒ <strong>minimum norm least-squares solution</strong>.</p>
+
+<ul>
+<li><p>It requires many computations for the matrix-matrix product &amp; computing the inverse of \(A^T A\)</p></li>
+
+<li><p>Gaussian elimination plays an important role when computing determinants, checking whether a set of vectors is linearly independent, computing the inverse of a matrix, computing the rank of a matrix, and determining a basis of a vector space.</p>
+
+<ul>
+<li>it is impractical as the required number of arithmetic operations scales cubically in the number of  simultaneous equations.</li>
+</ul></li>
+
+<li><p>In practice, systems of many linear equations are solved indirectly, by iterative methods.</p></li>
+</ul>
+
+<h3 id="24-vector-spaces">2.4 Vector Spaces</h3>
+
+<hr>
+
+<h5 id="241-groups">2.4.1 Groups</h5>
+
+<blockquote>
+<p>Group : Consider a set \(G\) and an operation : \(\otimes: G \times G \rightarrow G\) defined on \(G\). Then \(G:=(G,\otimes )\) is called a <em>group</em> if the following hold:</p>
+
+<ol>
+<li><em>Closure</em> of \(G\) under \(\otimes: \forall x, y \in G : x \otimes y \in G\)</li>
+<li><em>Associativity</em> : \(\forall x,y,z \in G : (x \otimes y) \otimes z = x \otimes (y \otimes z)\)</li>
+<li><em>Neutral element</em> : \(\exist e \in G,\ \forall x \in G : x \otimes e = x\ and\ e \otimes x = x\)</li>
+<li>Inverse element : \(\forall x \in G,\ \exist y \in G : x\otimes y = e\ and\ y \otimes x = e\) where e is the neural element. We often write \(x^{-1}\) to denote the inverse element of x.</li>
+</ol>
+</blockquote>
+
+<ul>
 <li></li>
 </ul>
 
@@ -2031,6 +2084,11 @@
             
         
                     
+                        
+            
+            
+        
+                    
             
         
                     
@@ -2430,19 +2488,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1616373335"></script>
-    <script src="/js/perfect-scrollbar.min.js?1616373335"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1616373335"></script>
-    <script src="/js/jquery.sticky.js?1616373335"></script>
-    <script src="/js/featherlight.min.js?1616373335"></script>
-    <script src="/js/highlight.pack.js?1616373335"></script>
+    <script src="/js/clipboard.min.js?1616563272"></script>
+    <script src="/js/perfect-scrollbar.min.js?1616563272"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1616563272"></script>
+    <script src="/js/jquery.sticky.js?1616563272"></script>
+    <script src="/js/featherlight.min.js?1616563272"></script>
+    <script src="/js/highlight.pack.js?1616563272"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1616373335"></script>
-    <script src="/js/learn.js?1616373335"></script>
-    <script src="/js/hugo-learn.js?1616373335"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1616563272"></script>
+    <script src="/js/learn.js?1616563272"></script>
+    <script src="/js/hugo-learn.js?1616563272"></script>
     
         
-            <script src="/mermaid/mermaid.js?1616373335"></script>
+            <script src="/mermaid/mermaid.js?1616563272"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
