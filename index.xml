@@ -514,6 +514,15 @@ __01. 설명 변수  거대한 표현을 쪼개는 가장 쉬운 방법은 작�
     </item>
     
     <item>
+      <title>Chap11. Search-1</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap11/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:23 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap11/</guid>
+      <description>&amp;quot;탐색을 잘하기 위한 저장 방법은 무엇인가?&amp;quot; 탐색은 이전에 데이터 정렬이 필수적  1. 탐색의 이해와 보간 탐색   효율적인 탐색을 위한 저장방법, 효율적인 탐색이 가능한 대표적인 자료구조는 &amp;quot;이진트리&amp;quot;이다.  보간 탐색  이진 탐색 : 무조건 중간에 위치한 데이터를 탐색의 위치로 결정 보간 탐색 : 대상에 비례하여 탐색의 위치를 결정 → 단순 비례 가정 후 비슷한 위치 찾기 노력 비례식 구성 → 완전 비례 가정  s : 탐색 대상이 저장된 인덱스 값   \[ A:Q=(high-low):(s-low) \Rightarrow s=\frac{Q}{A}(high-low)+low \\ \Rightarrow s=\frac{x-arr[low]}{arr[high]-arr[low]}(high-low)+low\]</description>
+    </item>
+    
+    <item>
       <title>Chap11. Virtual Work</title>
       <link>https://klee30810.github.io/mech/statics/chap11/</link>
       <pubDate>Mon, 15 Feb 2021 22:03:08 +0900</pubDate>

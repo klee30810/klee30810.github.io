@@ -6,7 +6,7 @@
     <description>Recent content in Data Structure on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 07 Mar 2021 14:35:22 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Mar 2021 14:35:23 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chap1. 자료구조와 알고리즘 이해</title>
       <link>https://klee30810.github.io/compu/data_structure/chap1/</link>
@@ -104,6 +104,15 @@
       
       <guid>https://klee30810.github.io/compu/data_structure/chap10/</guid>
       <description>3대 연산 : 삽입, 삭제, 탐색 정렬은 탐색을 이야기 하기 위함 ⇒ 탐색 전에 정렬이 필요!  10.1 단순한 정렬 알고리즘  버블 정렬 (Bubble Sort) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  void BubbleSort(int arr[], int n) { int i, j; int temp; for(i=0; i&amp;lt;n-1; i++) { for(j=0; j&amp;lt;(n-i)-1; j++) { if(arr[j] &amp;gt; arr[j+1]) { // 데이터의 교환  temp = arr[j]; arr[j] = arr[j+1]; arr[j+1] = temp; } } } }  1 2 3 4 5 6 7 8 9 10 11 12 13  int main() { int arr[4] = {3,2,4,1}; int i; BubbleSort(arr, sizeof(arr)/sizeof(int)); for(i=0; i&amp;lt;4; i++) printf(&amp;#34;%d &amp;#34;, arr[i]); printf(&amp;#34;\n&amp;#34;); return 0; }    성능평가  비교 횟수 : 두 데이터간의 비교 연산 횟수 이동 횟수 : 위치의 변경을 위한 데이터 이동 횟수   \[(n-1)+.</description>
+    </item>
+    
+    <item>
+      <title>Chap11. Search-1</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap11/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:23 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap11/</guid>
+      <description>&amp;quot;탐색을 잘하기 위한 저장 방법은 무엇인가?&amp;quot; 탐색은 이전에 데이터 정렬이 필수적  1. 탐색의 이해와 보간 탐색   효율적인 탐색을 위한 저장방법, 효율적인 탐색이 가능한 대표적인 자료구조는 &amp;quot;이진트리&amp;quot;이다.  보간 탐색  이진 탐색 : 무조건 중간에 위치한 데이터를 탐색의 위치로 결정 보간 탐색 : 대상에 비례하여 탐색의 위치를 결정 → 단순 비례 가정 후 비슷한 위치 찾기 노력 비례식 구성 → 완전 비례 가정  s : 탐색 대상이 저장된 인덱스 값   \[ A:Q=(high-low):(s-low) \Rightarrow s=\frac{Q}{A}(high-low)+low \\ \Rightarrow s=\frac{x-arr[low]}{arr[high]-arr[low]}(high-low)+low\]</description>
     </item>
     
   </channel>

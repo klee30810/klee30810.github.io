@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.80.0" />
-    <meta name="description" content="Linked List 3">
+    <meta name="description" content="Search-1">
 <meta name="author" content="Kyungmin Lee, Kevin">
 
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
@@ -14,7 +14,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
  
-   <title>Chap5. Linked List 3 - Kevin&#39;s Codex</title>
+   <title>Chap11. Search-1 - Kevin&#39;s Codex</title>
 
     
     <link href="/css/nucleus.css?1616723436" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/compu/data_structure/chap5/">
+  <body class="" data-url="/compu/data_structure/chap11/">
     <nav id="sidebar" class="">
 
 
@@ -1201,7 +1201,7 @@
                   <span class="links">
                  
                  
-                   Chap5. Linked List 3
+                   Chap11. Search-1
                  
                   </span>
                 </div>
@@ -1230,70 +1230,46 @@
           
             <h1>
               
-              Chap5. Linked List 3
+              Chap11. Search-1
             </h1>
           
 
         
 
 
-<h2 id="1-원형-연결-리스트">1. 원형 연결 리스트</h2>
+<ul>
+<li>&quot;탐색을 잘하기 위한 저장 방법은 무엇인가?&quot;</li>
+<li><strong>탐색은 이전에 데이터 정렬이 필수적</strong></li>
+</ul>
+
+<h3 id="1-탐색의-이해와-보간-탐색">1. 탐색의 이해와 보간 탐색</h3>
 
 <hr>
 
 <ul>
-<li>단순 연결 리스트의 마지막 노드는 NULL을 가리키지만, 원형 연결 리스트의 마지막 노드는 첫 번째 노드를 가리킨다.</li>
-<li>모든 노드가 원의 형태를 이루면서 연결되어 있기 때문에 원형 연결 리스트 에서는 사실상 <strong>머리와 꼬리의 구분이 없다.</strong></li>
+<li>효율적인 탐색을 위한 저장방법, 효율적인 탐색이 가능한 대표적인 자료구조는 &quot;이진트리&quot;이다.</li>
 </ul>
 
-<h3 id="1-원형-연결-리스트의-대표적인-장점">1. 원형 연결 리스트의 대표적인 장점</h3>
-
-<p><figure><img src="/images/compu/DS/chap5/1.png" alt="3%20Linked%20List%201%202391bffe280542fe83f0c81d9e03d829/Untitled.png"></figure></p>
+<h5 id="보간-탐색">보간 탐색</h5>
 
 <ul>
-<li><strong>단순 연결 리스트처럼 머리와 꼬리를 가리키는 포인터 변수를 각각 두지 않아도, 하나의 포인터 변수만 있어도 머리 또는 꼬리에 노드를 간단히 추가할 수 있다.”</strong></li>
-<li>앞서 소개한 모델을 기반으로는 위의 장점을 살리기 어렵다. 그래서 우리는 변형된, 그러나 보다 일반적이라고 인식이 되고 있는 <strong>변형된 원형 연결 리스트</strong>를 구현한다</li>
-<li>꼬리를 가리키는 포인터 변수는 tail이고, 머리를 가리키는 포인터 변수는 tail→next이다. 리스트의 꼬리와 머리 주소값을 쉽게 알 수 있으므로 <strong>포인터 변수는 하나만 있으면 된다.</strong></li>
+<li>이진 탐색 : <strong>무조건 중간</strong>에 위치한 데이터를 탐색의 위치로 결정</li>
+<li>보간 탐색 : <strong>대상에 비례하여</strong> 탐색의 위치를 결정 → 단순 비례 가정 후 비슷한 위치 찾기 노력</li>
+<li>비례식 구성 → <strong>완전 비례 가정</strong>
+
+<ul>
+<li>s : 탐색 대상이 저장된 인덱스 값</li>
+</ul></li>
 </ul>
 
-<p><figure><img src="/images/compu/DS/chap5/2.png" alt="3%20Linked%20List%201%202391bffe280542fe83f0c81d9e03d829/Untitled.png"></figure></p>
+<p><span  class="math">\[ A:Q=(high-low):(s-low) \Rightarrow s=\frac{Q}{A}(high-low)+low \\ \Rightarrow s=\frac{x-arr[low]}{arr[high]-arr[low]}(high-low)+low\]</span></p>
+
+<h5 id="탐색-키--탐색-데이터">탐색 키 &amp; 탐색 데이터</h5>
+
+<ul>
+<li>실제 프로그램 개발에 있어서 <strong>탐색의 대상은 '데이터'가 아닌 '키(key)' 이다.</strong></li>
+</ul>
 <div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#815ba4">typedef</span> <span style="color:#fec418">int</span> Data
-
-<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> <span style="color:#fec418">_node</span>
-{
-	Data data;
-	<span style="color:#815ba4">struct</span> <span style="color:#fec418">_node</span> <span style="color:#5bc4bf">*</span> next;
-} Node;
-
-<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> <span style="color:#fec418">_CLL</span>
-{
-	Node <span style="color:#5bc4bf">*</span> tail;
-	Node <span style="color:#5bc4bf">*</span> cur;
-	Node <span style="color:#5bc4bf">*</span> before;
-	<span style="color:#fec418">int</span> numofData;
-} CList;
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
@@ -1303,161 +1279,20 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// 모든 멤버를 NULL &amp; 0으로 초기화
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">ListInit</span>(List <span style="color:#5bc4bf">*</span> plist)
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#815ba4">typedef</span> Key <span style="color:#fec418">int</span>;			<span style="color:#776e71">// search key
+</span><span style="color:#776e71"></span><span style="color:#815ba4">typedef</span> Data <span style="color:#fec418">double</span>;  <span style="color:#776e71">// search data
+</span><span style="color:#776e71"></span>
+<span style="color:#776e71">// 원래는 구분이 되어야 좋다
+</span><span style="color:#776e71"></span><span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> item
 {
-	plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">=</span> NULL;
-	plist<span style="color:#5bc4bf">-&gt;</span>cur <span style="color:#5bc4bf">=</span> NULL;
-	plist<span style="color:#5bc4bf">-&gt;</span>before <span style="color:#5bc4bf">=</span> NULL;
-	plist<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>;
-}
-</code></pre></td></tr></table>
+  Key searchKey;		<span style="color:#776e71">// search key
+</span><span style="color:#776e71"></span>  Data searchData;	<span style="color:#776e71">// search data
+</span><span style="color:#776e71"></span>} Item;</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="2-원형-연결-리스트-구현-첫-번째-노드-삽입">2. 원형 연결 리스트 구현: 첫 번째 노드 삽입</h3>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// LInsert(꼬리 삽입) &amp; LInsertFront(머리 삽입) 공통부분
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> LInser<span style="color:#5bc4bf">~</span>(List <span style="color:#5bc4bf">*</span> plist, Data data)
-{
-	Node <span style="color:#5bc4bf">*</span> newNode <span style="color:#5bc4bf">=</span> (Node<span style="color:#5bc4bf">*</span>)malloc(<span style="color:#815ba4">sizeof</span>(Node));
-	newNode<span style="color:#5bc4bf">-&gt;</span>data <span style="color:#5bc4bf">=</span> data;
-
-	<span style="color:#776e71">// 첫 노드는 그 자체가 머리이자 꼬리이므로 뒤이던 앞이던 결과는 동일
-</span><span style="color:#776e71"></span>	<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>tail<span style="color:#5bc4bf">==</span>NULL) <span style="color:#776e71">// 첫번째 노드
-</span><span style="color:#776e71"></span>	{
-		plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">=</span> newNode; 
-		newNode<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">=</span> newNode;
-	}
-	<span style="color:#815ba4">else</span>
-	{
-		...
-	}
-
-	(plist<span style="color:#5bc4bf">-&gt;</span>numOfData)<span style="color:#5bc4bf">++</span>;
-}
-</code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="3-원형-연결-리스트-구현-두-번째-이후-노드-머리로-삽입">3. 원형 연결 리스트 구현: 두 번째 이후 노드 머리로 삽입</h3>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// 노드 머리 삽입
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">LInsertFront</span>(List <span style="color:#5bc4bf">*</span> plist, Data data)
-{
-	Node <span style="color:#5bc4bf">*</span> newNode <span style="color:#5bc4bf">=</span> (Node<span style="color:#5bc4bf">*</span>)malloc(<span style="color:#815ba4">sizeof</span>(Node));
-	newNode<span style="color:#5bc4bf">-&gt;</span>data <span style="color:#5bc4bf">=</span> data;
-
-	<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">==</span> NULL) 
-	{
-		plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">=</span> newNode;
-		newNode<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">=</span> newNode;
-	}
-	<span style="color:#815ba4">else</span> <span style="color:#776e71">// 두번째 이후 노드 머리 추가
-</span><span style="color:#776e71"></span>	{
-		newNode<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>tail<span style="color:#5bc4bf">-&gt;</span>next;
-		plist<span style="color:#5bc4bf">-&gt;</span>tail<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">=</span> newNode;
-	}
-
-	(plist<span style="color:#5bc4bf">-&gt;</span>numOfData)<span style="color:#5bc4bf">++</span>;
-}
-</code></pre></td></tr></table>
-</div>
-</div>
-<p><figure><img src="/images/compu/DS/chap5/3.png" alt="3%20Linked%20List%201%202391bffe280542fe83f0c81d9e03d829/Untitled.png"></figure></p>
-
-<p>→ tail이 가리키는 노드가 차이가 난다!</p>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// 노드 꼬리 삽입
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">LInsert</span>(List <span style="color:#5bc4bf">*</span> plist, Data data)
-{
-	Node <span style="color:#5bc4bf">*</span> newNode <span style="color:#5bc4bf">=</span> (Node<span style="color:#5bc4bf">*</span>)malloc(<span style="color:#815ba4">sizeof</span>(Node));
-	newNode<span style="color:#5bc4bf">-&gt;</span>data <span style="color:#5bc4bf">=</span> data;
-
-	<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">==</span> NULL) 
-	{
-		...
-	}
-	<span style="color:#815ba4">else</span> 
-	{
-		newNode<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>tail<span style="color:#5bc4bf">-&gt;</span>next;
-		plist<span style="color:#5bc4bf">-&gt;</span>tail<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">=</span> newNode;
-			plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">=</span> newNode;<span style="color:#776e71">// 가리키는 노드의 조정 =&gt; 유일한 차이
-</span><span style="color:#776e71"></span>	}
-
-	(plist<span style="color:#5bc4bf">-&gt;</span>numOfData)<span style="color:#5bc4bf">++</span>;
-}
-</code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="4-조회-lfirst--lnext">4. 조회 LFirst &amp; LNext</h3>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
@@ -1484,186 +1319,52 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fec418">int</span> <span style="color:#06b6ef">LFirst</span>(List <span style="color:#5bc4bf">*</span> plist, Data <span style="color:#5bc4bf">*</span> pdata)
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 이진 탐색의 보간 탐색으로의 개선
+</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">BSearchRecur</span>(<span style="color:#fec418">int</span> ar[], <span style="color:#fec418">int</span> first, <span style="color:#fec418">int</span> last, <span style="color:#fec418">int</span> target)
 {
-	<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">==</span> NULL)    <span style="color:#776e71">// 저장된 노드가 없다면
-</span><span style="color:#776e71"></span>		<span style="color:#815ba4">return</span> FALSE;
-
-	plist<span style="color:#5bc4bf">-&gt;</span>before <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>tail;   <span style="color:#776e71">// 삭제를 위한 백업
-</span><span style="color:#776e71"></span>	plist<span style="color:#5bc4bf">-&gt;</span>cur <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>tail<span style="color:#5bc4bf">-&gt;</span>next;
-
-	<span style="color:#5bc4bf">*</span>pdata <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>data;
-	<span style="color:#815ba4">return</span> TRUE;
-}
-
-<span style="color:#fec418">int</span> <span style="color:#06b6ef">LNext</span>(List <span style="color:#5bc4bf">*</span> plist, Data <span style="color:#5bc4bf">*</span> pdata)
-{
-	<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">==</span> NULL)    <span style="color:#776e71">// 저장된 노드가 없다면
-</span><span style="color:#776e71"></span>		<span style="color:#815ba4">return</span> FALSE;
-
-	plist<span style="color:#5bc4bf">-&gt;</span>before <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur;
-	plist<span style="color:#5bc4bf">-&gt;</span>cur <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>next;
-
-	<span style="color:#5bc4bf">*</span>pdata <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>data;
-	<span style="color:#815ba4">return</span> TRUE;
-}
-</code></pre></td></tr></table>
+  <span style="color:#fec418">int</span> mid;
+  <span style="color:#776e71">/*
+</span><span style="color:#776e71">  if(first &gt; last)   =&gt; 탐색 대상이 존재하지 않는 경우 범위를 넘어서게 됨
+</span><span style="color:#776e71">    return -1; */</span>
+  
+  <span style="color:#776e71">// 범위에 없다면
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(ar[first]<span style="color:#5bc4bf">&gt;</span>target <span style="color:#5bc4bf">||</span> ar[last]<span style="color:#5bc4bf">&lt;</span>target)
+    <span style="color:#815ba4">return</span> <span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>; <span style="color:#776e71">// -1은 반환의 실패
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// mid = (first+last)/2;
+</span><span style="color:#776e71"></span>  mid <span style="color:#5bc4bf">=</span> ((<span style="color:#fec418">double</span>)(target<span style="color:#5bc4bf">-</span>ar[first]) <span style="color:#5bc4bf">/</span> (ar[last]<span style="color:#5bc4bf">-</span>ar[first]) <span style="color:#5bc4bf">*</span> (last<span style="color:#5bc4bf">-</span>first)) <span style="color:#5bc4bf">+</span> first;
+  
+  <span style="color:#815ba4">if</span>(ar[mid] <span style="color:#5bc4bf">==</span> target)
+    <span style="color:#815ba4">return</span> mid;
+  <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span>(target <span style="color:#5bc4bf">&lt;</span> ar[mid])
+    <span style="color:#815ba4">return</span> BSearchRecur(ar, first, mid<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>, target);
+  <span style="color:#815ba4">else</span>
+    <span style="color:#815ba4">return</span> BSearchRecur(ar, mid<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span>, last, target);
+  
+}</code></pre></td></tr></table>
 </div>
 </div>
-<ul>
-<li>원형 연결 리스트 이므로 리스트의 끝을 검사하는 코드가 없다!</li>
-</ul>
-
-<h3 id="5-노드의-삭제">5. 노드의 삭제</h3>
-
-<p>(복습)</p>
-
-<ul>
-<li>핵심연산 1. 삭제할 노드의 이전 노드가, 삭제할 노드의 다음 노드를 가리키게 한다.</li>
-<li>핵심연산 2. 포인터 변수 cur을 한 칸 뒤로 이동시킨다</li>
-</ul>
-
-<p><figure><img src="/images/compu/DS/chap5/4.png" alt="3%20Linked%20List%201%202391bffe280542fe83f0c81d9e03d829/Untitled.png"></figure></p>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">LData <span style="color:#06b6ef">LRemove</span>(List <span style="color:#5bc4bf">*</span> plist) <span style="color:#776e71">// 더미 기반 단순 연결 리스트의 삭제
-</span><span style="color:#776e71"></span>{
-	Node <span style="color:#5bc4bf">*</span> rpos <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur;
-	LData rdata <span style="color:#5bc4bf">=</span> rpos<span style="color:#5bc4bf">-&gt;</span>data;
-
-	plist<span style="color:#5bc4bf">-&gt;</span>before<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>next;  <span style="color:#776e71">// 연산 1
-</span><span style="color:#776e71"></span>	plist<span style="color:#5bc4bf">-&gt;</span>cur <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>before;    <span style="color:#776e71">//  연산 2
-</span><span style="color:#776e71"></span>
-	free(rpos);
-	(plist<span style="color:#5bc4bf">-&gt;</span>numOfData)<span style="color:#5bc4bf">--</span>;
-	<span style="color:#815ba4">return</span> rdata;
-}
-</code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li>원형 연결 리스트 노드 삭제 구현</li>
-</ul>
-
-<ol>
-<li>예외 1 : 삭제할 노드를 tail이 가리키는 경우</li>
-<li>예외 2 : 삭제할 노드를 tail이 가리키는데, 그 노드가 마지막 노드라면</li>
-</ol>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Data <span style="color:#06b6ef">LRemove</span>(List <span style="color:#5bc4bf">*</span> plist)
-{
-	Node <span style="color:#5bc4bf">*</span> rpos <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur;
-	Data rdata <span style="color:#5bc4bf">=</span> rpos<span style="color:#5bc4bf">-&gt;</span>data;
-
-	<span style="color:#815ba4">if</span>(rpos <span style="color:#5bc4bf">==</span> plist<span style="color:#5bc4bf">-&gt;</span>tail)    <span style="color:#776e71">// 삭제 대상을 tail이 가리킨다면
-</span><span style="color:#776e71"></span>	{
-		<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">==</span> plist<span style="color:#5bc4bf">-&gt;</span>tail<span style="color:#5bc4bf">-&gt;</span>next)    <span style="color:#776e71">// 그리고 마지막 남은 노드라면
-</span><span style="color:#776e71"></span>			plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">=</span> NULL;
-		<span style="color:#815ba4">else</span>
-			plist<span style="color:#5bc4bf">-&gt;</span>tail <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>before;
-	}
-
-	plist<span style="color:#5bc4bf">-&gt;</span>before<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>next;   <span style="color:#776e71">// 단순 연결과 동일
-</span><span style="color:#776e71"></span>	plist<span style="color:#5bc4bf">-&gt;</span>cur <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>before;
-
-	free(rpos);
-	(plist<span style="color:#5bc4bf">-&gt;</span>numOfData)<span style="color:#5bc4bf">--</span>;
-	<span style="color:#815ba4">return</span> rdata;
-}
-</code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="2-양방향-연결-리스트">2. 양방향 연결 리스트</h2>
+<h3 id="2-이진-탐색-트리">2. 이진 탐색 트리</h3>
 
 <hr>
 
 <ul>
-<li>양방향으로 연결하는 이유
+<li>이진 탐색 트리 = 이진 트리 + 데이터의 저장규칙
 
 <ul>
-<li>단순 연결 리스트와 같이 before를 유지할 필요가 없다</li>
-<li>이전 노드로의 이동이 용이하며, 양방향인 것이 더 복잡한 것은 아니다</li>
+<li>이진 탐색 트리 노드에 저장된 키(key)는 유일</li>
+<li>루트 노드의 키 &gt; 왼쪽 서브 트리 키</li>
+<li>루트 노드의 키 &lt; 오른쪽 서브 트리 키</li>
 </ul></li>
 </ul>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#815ba4">typedef</span> <span style="color:#fec418">int</span> Data;
 
-<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> <span style="color:#fec418">_node</span>
-{
-	Data data;
-	<span style="color:#815ba4">struct</span> <span style="color:#fec418">_node</span> <span style="color:#5bc4bf">*</span> next;
-	<span style="color:#815ba4">struct</span> <span style="color:#fec418">_node</span> <span style="color:#5bc4bf">*</span> prev;
-} Node;
+<h5 id="노드-추가-및-탐색-과정">노드 추가 및 탐색 과정</h5>
 
-<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> <span style="color:#fec418">_dbLinkedList</span>
-{
-	Node <span style="color:#5bc4bf">*</span> head;
-	Node <span style="color:#5bc4bf">*</span> cur;
-	<span style="color:#fec418">int</span> numOfData;
-} DBLinkedList;
-</code></pre></td></tr></table>
-</div>
-</div>
-<p><figure><img src="/images/compu/DS/chap5/5.png" alt="3%20Linked%20List%201%202391bffe280542fe83f0c81d9e03d829/Untitled.png"></figure></p>
+<p><figure><img src="/images/compu/DS/chap11/1.png" alt="image"></figure></p>
 
-<ul>
-<li>더미가 없으므로 첫 노드와 두 번째 노드 삽입 과정이 달라짐</li>
-</ul>
+<h5 id="구현-방안">구현 방안</h5>
+
+<p>⇒ 이진 탐색 트리도 이진 트리이니, 이전에 구현한 이진 트리를 활용하여 구현한다. → BinaryTree2.h &amp; BinaryTree2.c  활용 / 기능이 부족하다면 도구의 성능을 확장 및 개선시키면 된다.</p>
 <div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1690,32 +1391,113 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fec418">void</span> <span style="color:#06b6ef">ListInit</span>(List <span style="color:#5bc4bf">*</span> plist)
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// BinaryTree2.h
+</span><span style="color:#776e71"></span>
+BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">MakeBTreeNode</span>(<span style="color:#fec418">void</span>); 
+<span style="color:#776e71">// 노드를 동적으로 할당해서 그 노드의 주소값을 반환
+</span><span style="color:#776e71"></span>
+BTData <span style="color:#06b6ef">GetData</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt);
+<span style="color:#776e71">// 노드에 저장된 데이터를 반환
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">SetData</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt, BTData data);
+<span style="color:#776e71">// 인자로 전달된 데이터를 노드에 저장
+</span><span style="color:#776e71"></span>
+BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt);
+<span style="color:#776e71">// 인자로 전달된 노드의 왼쪽 자식 노드 주소값 반환
+</span><span style="color:#776e71"></span>
+BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">GetRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt);
+<span style="color:#776e71">// 인자로 전달된 노드의 오른쪽 자식 노드 주소값 반환
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub);
+<span style="color:#776e71">// 인자로 전달된 노드의 왼쪽 자식 노드 삭제
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">MakeRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode sub);
+<span style="color:#5bc4bf">//</span> <span style="color:#ef6155">인자로</span> <span style="color:#ef6155">전달된</span> <span style="color:#ef6155">노드의</span> <span style="color:#ef6155">오른쪽</span> <span style="color:#ef6155">자식</span> <span style="color:#ef6155">노드</span> <span style="color:#ef6155">교체</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// BinarySearchTree.h
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">BSTMakeAndInit</span>(BTreeNode <span style="color:#5bc4bf">**</span> pRoot);
+<span style="color:#776e71">// BST의 생성 및 초기화
+</span><span style="color:#776e71"></span>
+BSTData <span style="color:#06b6ef">BSTGetNodeData</span>(BTreeNode <span style="color:#5bc4bf">*</span> bst);
+<span style="color:#776e71">// 노드에 저장된 데이터 반환
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">BSTInsert</span>(BTreeNode <span style="color:#5bc4bf">**</span> pRoot, BSTData data);
+<span style="color:#776e71">// BST를 대상으로 하여 데이터 저장 (노드의 생성과정 포함)
+</span><span style="color:#776e71"></span>
+BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">BSTSearch</span>(BTreeNode <span style="color:#5bc4bf">*</span> bst, BSTData target);
+<span style="color:#5bc4bf">//</span> BST를 <span style="color:#ef6155">대상으로</span> <span style="color:#ef6155">데이터</span> <span style="color:#ef6155">탐색</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">main</span>()
 {
-	<span style="color:#776e71">// cur은 조회과정 중 초기화 되므로 초기화 필요 X
-</span><span style="color:#776e71"></span>	plist<span style="color:#5bc4bf">-&gt;</span>head <span style="color:#5bc4bf">=</span> NULL;
-	plist<span style="color:#5bc4bf">-&gt;</span>numOfData <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>;
-}
-
-<span style="color:#776e71">// 노드 삽입
-</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">LInsert</span>(List <span style="color:#5bc4bf">*</span> plist, Data data)
-{
-	Node <span style="color:#5bc4bf">*</span> newNode <span style="color:#5bc4bf">=</span> (Node<span style="color:#5bc4bf">*</span>)malloc(<span style="color:#815ba4">sizeof</span>(Node));
-	newNode<span style="color:#5bc4bf">-&gt;</span>data <span style="color:#5bc4bf">=</span> data;
-
-	newNode<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>head; <span style="color:#776e71">// 새 노드와 기존 노드 연결
-</span><span style="color:#776e71"></span>	<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>head <span style="color:#5bc4bf">!=</span> NULL)  <span style="color:#776e71">// 두 번째 노드 이후
-</span><span style="color:#776e71"></span>		plist<span style="color:#5bc4bf">-&gt;</span>head<span style="color:#5bc4bf">-&gt;</span>prev <span style="color:#5bc4bf">=</span> newNode;
-
-	newNode<span style="color:#5bc4bf">-&gt;</span>prev <span style="color:#5bc4bf">=</span> NULL;
-	plist<span style="color:#5bc4bf">-&gt;</span>head <span style="color:#5bc4bf">=</span> newNode;
-
-	(plist<span style="color:#5bc4bf">-&gt;</span>numOfData)<span style="color:#5bc4bf">++</span>;
-}
-</code></pre></td></tr></table>
+  BTreeNode <span style="color:#5bc4bf">*</span> bstRoot;		<span style="color:#776e71">// bstRoot는 BST 루트 노드를 가리킴
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> sNode; 		
+  
+  BSTMakeAndInit(<span style="color:#5bc4bf">&amp;</span>bstRoot);		<span style="color:#776e71">// Binary Search Tree의 생성 및 초기화
+</span><span style="color:#776e71"></span>  
+  BSTInsert(<span style="color:#5bc4bf">&amp;</span>bstRoot, <span style="color:#f99b15">1</span>);
+  BSTInsert(<span style="color:#5bc4bf">&amp;</span>bstRoot, <span style="color:#f99b15">2</span>);
+  BSTInsert(<span style="color:#5bc4bf">&amp;</span>bstRoot, <span style="color:#f99b15">3</span>);
+  
+  <span style="color:#776e71">// 노드 탐색
+</span><span style="color:#776e71"></span>  sNode <span style="color:#5bc4bf">=</span> BSTSearch(bstRoot, <span style="color:#f99b15">1</span>);
+  
+  <span style="color:#776e71">// 사용자 입장에서는 단순히 데이터를 저장하고 탐색하면 되고 트리가 어떤 형태인지는 알 필요 없다
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(sNode <span style="color:#5bc4bf">==</span> NULL)
+    printf(<span style="color:#48b685">&#34;탐색 실패 </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>);
+  <span style="color:#815ba4">else</span>
+    printf(<span style="color:#48b685">&#34;탐색 키 값: %d </span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>, BSTGetNodeData(sNode));
+  
+  <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+}</code></pre></td></tr></table>
 </div>
 </div>
-<p><figure><img src="/images/compu/DS/chap5/6.png" alt="3%20Linked%20List%201%202391bffe280542fe83f0c81d9e03d829/Untitled.png"></figure></p>
+<ul>
+<li>삽입과 탐색 : 가는 경로 동일 → 비교 대상이 없을 때까지 내려간다. 비교대상이 없는 그 위치가 새 데이터가 저장될 위치이다.</li>
+</ul>
 <div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1750,41 +1532,519 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#fec418">int</span> <span style="color:#06b6ef">LFirst</span>(List <span style="color:#5bc4bf">*</span> plist, Data <span style="color:#5bc4bf">*</span> pdata)
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">void</span> <span style="color:#06b6ef">BSTInsert</span>(BTreeNode <span style="color:#5bc4bf">**</span> pRoot, BSTData data)
 {
-	<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>head <span style="color:#5bc4bf">==</span> NULL)
-		<span style="color:#815ba4">return</span> FALSE;
-
-	plist<span style="color:#5bc4bf">-&gt;</span>cur <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>head;
-	<span style="color:#5bc4bf">*</span>pdata <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>data;
-
-	<span style="color:#815ba4">return</span> TRUE;
+  BTreeNode <span style="color:#5bc4bf">*</span> pNode <span style="color:#5bc4bf">=</span> NULL;			<span style="color:#776e71">// parent node
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> cNode <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">*</span>pRoot;		<span style="color:#776e71">// current node
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> nNode <span style="color:#5bc4bf">=</span> NULL;			<span style="color:#776e71">// new node
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// 새로운 노드가(새 데이터가 담긴 노드가 추가될 위치를 찾는다.)
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">while</span>(cNode <span style="color:#5bc4bf">!=</span> NULL)
+  {
+    <span style="color:#815ba4">if</span>(data <span style="color:#5bc4bf">==</span> GetData(cNode))
+      <span style="color:#815ba4">return</span>;			<span style="color:#776e71">// 데이터의 중복 허용 금지
+</span><span style="color:#776e71"></span>    
+    pNode <span style="color:#5bc4bf">=</span> cNode;		<span style="color:#776e71">// parent node 백업 -&gt; 자식 노드 확인시 필요
+</span><span style="color:#776e71"></span>    
+    <span style="color:#815ba4">if</span>(GetData(cNode) <span style="color:#5bc4bf">&gt;</span> data)
+      cNode <span style="color:#5bc4bf">=</span> GetLeftSubTree(cNode);
+    <span style="color:#815ba4">else</span>
+      cNode <span style="color:#5bc4bf">=</span> GetRightSubTree(cNode);
+    
+    <span style="color:#776e71">// pNode의 자식 노드로 새 노드를 추가
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">if</span>(pNode <span style="color:#5bc4bf">!=</span> NuLL)		<span style="color:#776e71">// 새 노드가 루트 노드가 아니라면
+</span><span style="color:#776e71"></span>    {
+      <span style="color:#815ba4">if</span>(data <span style="color:#5bc4bf">&lt;</span> GetData(pNode))
+        MakeLeftSubTree(pNode, nNode);
+      <span style="color:#815ba4">else</span>
+        MakeRightSubTree(pNode, nNode);
+    }
+    <span style="color:#815ba4">else</span>			<span style="color:#776e71">// 새 노드가 루트 노드라면,
+</span><span style="color:#776e71"></span>    {
+      <span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">=</span> nNode;
+    }
+  }
 }
 
-<span style="color:#fec418">int</span> <span style="color:#06b6ef">LNext</span>(List <span style="color:#5bc4bf">*</span> plist, Data <span style="color:#5bc4bf">*</span> pdata)
+BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">BSTSearch</span>(BTreeNode <span style="color:#5bc4bf">*</span> bst, BSTData target)
 {
-	<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>next <span style="color:#5bc4bf">==</span> NULL)
-		<span style="color:#815ba4">return</span> FALSE;
+  BTreeNode <span style="color:#5bc4bf">*</span> cNode <span style="color:#5bc4bf">=</span> bst;		<span style="color:#776e71">// current node
+</span><span style="color:#776e71"></span>  BSTData cd; 								<span style="color:#776e71">// current data
+</span><span style="color:#776e71"></span>  
+  <span style="color:#815ba4">while</span>(cNode <span style="color:#5bc4bf">!=</span> NULL)			<span style="color:#776e71">// 삽입 과정을 근거로 탐색 진행
+</span><span style="color:#776e71"></span>  {
+    cd <span style="color:#5bc4bf">=</span> GetData(cNode);
+    
+    <span style="color:#815ba4">if</span>(target <span style="color:#5bc4bf">==</span> cd)
+      <span style="color:#815ba4">return</span> cNode;		<span style="color:#776e71">// 탐색 성공시 해당 노드 주소값 반환
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span>(target <span style="color:#5bc4bf">&lt;</span> cd)
+      cNode <span style="color:#5bc4bf">=</span> GetLeftSubTree(cNode);
+    <span style="color:#815ba4">else</span>
+      cNode <span style="color:#5bc4bf">=</span> GetRightSubTree(cNode);
+  }
+  
+  <span style="color:#815ba4">return</span> NULL;		<span style="color:#776e71">// 탐색 대상 저장되어있지 않음
+</span><span style="color:#776e71"></span>}</code></pre></td></tr></table>
+</div>
+</div>
+<h5 id="이진-탐색-트리-삭제-구현">이진 탐색 트리 삭제 구현</h5>
 
-	plist<span style="color:#5bc4bf">-&gt;</span>cur <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>next;
-	<span style="color:#5bc4bf">*</span>pdata <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>data;
+<ul>
+<li>삭제는 해당 노드의 부모 노드의 주소값을 알아야 함</li>
+<li>삭제로 빈 자리를 어떻게 채워야 할까?</li>
+<li>루트 노드가 루트 노드가 아닌 것처럼 취급할 것 ⇒ 삭제 이전에 노드를 하나 만들어서 root가 서브트리인 것처럼 할 것
 
-	<span style="color:#815ba4">return</span> TRUE;
+<ol>
+<li>삭제할 노드가 단말 노드인 경우</li>
+<li>삭제할 노드가 하나의 자식 노드(서브 트리)를 갖는 경우</li>
+<li>삭제할 노드가 두 개의 자식 노드(서브 트리)를 갖는 경우</li>
+</ol></li>
+</ul>
+
+<ol>
+<li>삭제 노드가 단말 노드인 경우</li>
+</ol>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// dNode와 pNode는 삭제할 노드와 이의 부모 노드를 가리키는 포인터 변수
+</span><span style="color:#776e71"></span><span style="color:#815ba4">if</span>(<span style="color:#ef6155">삭제할</span> <span style="color:#ef6155">노드가</span> <span style="color:#ef6155">단말</span> <span style="color:#ef6155">노드이다</span><span style="color:#5bc4bf">!</span>)
+{
+  <span style="color:#815ba4">if</span>(GetLeftSubTree(pNode) <span style="color:#5bc4bf">==</span> dNode)		<span style="color:#776e71">// 삭제할 노드가 왼쪽 자식 노드라면,
+</span><span style="color:#776e71"></span>    RemoveLeftSubTree(pNode);			<span style="color:#776e71">// 왼쪽 자식 노드 트리에서 제거
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">else</span>													<span style="color:#776e71">// 삭제할 노드가 오른쪽 자식 노드라면,
+</span><span style="color:#776e71"></span>    RemoveRightSubTree(pNode);		<span style="color:#776e71">// 오른쪽 자식 노드 트리에서 제거
+</span><span style="color:#776e71"></span>}</code></pre></td></tr></table>
+</div>
+</div>
+<ol start="2">
+<li>삭제할 노드가 하나의 자식 노드를 갖는 경우</li>
+</ol>
+
+<p>→ 삭제 후 자식 노드를 가져다 놓는다.</p>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// dNode와 pNode는 삭제할 노드와 이의 부모 노드를 가리키는 포인터 변수
+</span><span style="color:#776e71"></span><span style="color:#815ba4">if</span>(<span style="color:#ef6155">삭제할</span> <span style="color:#ef6155">노드가</span> <span style="color:#ef6155">하나의</span> <span style="color:#ef6155">자식</span> <span style="color:#ef6155">노드를</span> <span style="color:#ef6155">지닌다</span>)
+{
+  BTreeNode <span style="color:#5bc4bf">*</span> dcNode;			<span style="color:#776e71">// 삭제 대상의 자식 노드를 가리키는 포인터 변수
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// 삭제 대상의 자식 노드를 찾는다. 자식노드 백업
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(GetLeftSubTree(dNode) <span style="color:#5bc4bf">!=</span> NULL)    <span style="color:#776e71">// 왼쪽 자식 노드
+</span><span style="color:#776e71"></span>    dcNode <span style="color:#5bc4bf">=</span> GetLeftSubTree(dNode);
+  <span style="color:#815ba4">else</span>									<span style="color:#776e71">// 오른쪽 자식 노드
+</span><span style="color:#776e71"></span>    dcNode <span style="color:#5bc4bf">=</span> GetRightSubTree(dNode);
+  
+  <span style="color:#776e71">// 삭제 대상의 부모 노드와 자식 노드를 연결한다
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(GetLeftSubTree(pNode) <span style="color:#5bc4bf">==</span> dNode) 		<span style="color:#776e71">// 삭제 대상이 왼쪽 자식 노드라면,
+</span><span style="color:#776e71"></span>    ChangeLeftSubTree(pNode, dcNode);		<span style="color:#776e71">// 왼쪽 연결
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">else</span> 					<span style="color:#776e71">// 삭제 대상이 오른쪽 자식 노드 이면,
+</span><span style="color:#776e71"></span>    ChangeRightSubTree(pNode, dcNode);	<span style="color:#776e71">// 오른쪽 연결
+</span><span style="color:#776e71"></span>}</code></pre></td></tr></table>
+</div>
+</div>
+<ol start="3">
+<li>삭제할 노드가 두 개의 자식 노드(서브 트리)를 갖는 경우
+
+<ul>
+<li>삭제 대상을 <strong>왼쪽 서브 트리에서 가장 큰 값, 혹은 오른쪽 서브 트리에서 가장 작은 값</strong>으로 대체 → 대체하다보면 구조가 바뀜</li>
+</ul></li>
+</ol>
+
+<p><figure><img src="/images/compu/DS/chap11/2.png" alt="image"></figure></p>
+
+<ul>
+<li>삭제 대상을 직접 연결하는 것이 아니라 채우기 위한 연결이다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// dNode와 pNode는 각각 삭제할 노드와 이의 부모 노드를 가리키는 포인터 변수
+</span><span style="color:#776e71"></span><span style="color:#815ba4">if</span>(<span style="color:#ef6155">삭제할</span> <span style="color:#ef6155">노드가</span> <span style="color:#ef6155">두</span> <span style="color:#ef6155">개의</span> <span style="color:#ef6155">자식</span> <span style="color:#ef6155">노드를</span> <span style="color:#ef6155">지닌다</span>)
+{
+  BTreeNode <span style="color:#5bc4bf">*</span> mNode <span style="color:#5bc4bf">=</span> GetRightSubTree(dNode);	<span style="color:#776e71">// mNode는 대체노드
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> mpNode <span style="color:#5bc4bf">=</span> dNode		<span style="color:#776e71">// mpNode는 대체노드의 부모 노드
+</span><span style="color:#776e71"></span>  ....
+  <span style="color:#776e71">// 1. 삭제 대상의 대체 노드를 찾는다.
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">while</span>(GetLeftSubTree(mNode) <span style="color:#5bc4bf">!=</span> NULL)
+  {
+    mpNode <span style="color:#5bc4bf">=</span> mNode;
+    mNode <span style="color:#5bc4bf">=</span> GetLeftSubTree(mNode);
+  }
+  
+  <span style="color:#776e71">// 2. 대체할 노드에 저장된 값을 삭제할 노드에 대합니다
+</span><span style="color:#776e71"></span>  SetData(dNode, GetData(mNode));
+  
+  <span style="color:#776e71">// 3. 대체할 노드의 부모 노드와 자식 노드를 연결한다.
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(GetLeftSUbTree(mpNode) <span style="color:#5bc4bf">==</span> mNode)		<span style="color:#776e71">// 대체할 노드가 왼쪽 자식 노드라면
+</span><span style="color:#776e71"></span>  {
+    <span style="color:#776e71">// 대체할 노드의 자식 노드를 부모 노드의 왼쪽에 연결
+</span><span style="color:#776e71"></span>    ChangeLeftSubTree(mpNode, GetLeftSubTree(mNode));		<span style="color:#776e71">// 자식 노드가 있다면 왼쪽 자식노드 이다.
+</span><span style="color:#776e71"></span>  }
+  <span style="color:#815ba4">else</span> 		<span style="color:#776e71">// 대체할 노드가 오른쪽 자식 노드라면
+</span><span style="color:#776e71"></span>  {
+    <span style="color:#776e71">// 대체할 노드의 자식 노드를 부모 노드의 오른쪽에 연결
+</span><span style="color:#776e71"></span>    ChangeRightSubTree(mpNode, GetRightSubTree(mNode));		<span style="color:#776e71">// 자식 노드가 있다면 오른쪽노드 이다.
+</span><span style="color:#776e71"></span>  }
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>삭제를 위한 이진 트리의 확장</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 왼쪽 자식 노드를 트리에서 제거, 제거된 노드의 주소값 반환
+</span><span style="color:#776e71"></span>BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">RemoveLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
+{
+  BTreeNode <span style="color:#5bc4bf">*</span> delNode;
+  
+  <span style="color:#815ba4">if</span>(bt <span style="color:#5bc4bf">!=</span> NULL)
+  {
+    delNode <span style="color:#5bc4bf">=</span> bt<span style="color:#5bc4bf">-&gt;</span>left;
+    bt<span style="color:#5bc4bf">-&gt;</span>left <span style="color:#5bc4bf">=</span> NULL;
+  }
+  
+  <span style="color:#815ba4">return</span> delNode;
 }
 
-<span style="color:#fec418">int</span> <span style="color:#06b6ef">LPrevious</span>(List <span style="color:#5bc4bf">*</span> plist, Data <span style="color:#5bc4bf">*</span> pdata)
+<span style="color:#776e71">// 오른쪽 자식 노드를 트리에서 제거, 제거된 노드의 주소값 반환
+</span><span style="color:#776e71"></span>BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">RemoveRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> bt)
 {
-	<span style="color:#815ba4">if</span>(plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>prev <span style="color:#5bc4bf">==</span> NULL)
-		<span style="color:#815ba4">return</span> FALSE;
-
-	plist<span style="color:#5bc4bf">-&gt;</span>cur <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>prev;
-	<span style="color:#5bc4bf">*</span>pdata <span style="color:#5bc4bf">=</span> plist<span style="color:#5bc4bf">-&gt;</span>cur<span style="color:#5bc4bf">-&gt;</span>data;
-
-	<span style="color:#815ba4">return</span> TRUE;
+  BTreeNode <span style="color:#5bc4bf">*</span> delNode;
+  
+  <span style="color:#815ba4">if</span>(bt <span style="color:#5bc4bf">!=</span> NULL)
+  {
+    delNode <span style="color:#5bc4bf">=</span> bt<span style="color:#5bc4bf">-&gt;</span>right;
+    bt<span style="color:#5bc4bf">-&gt;</span>right <span style="color:#5bc4bf">=</span> NULL;
+  }
+  
+  <span style="color:#815ba4">return</span> delNode;
 }
-</code></pre></td></tr></table>
+
+<span style="color:#776e71">// 메모리 소멸을 수반하지 않고 main의 왼쪽 자식 노드 변경
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">ChangeLeftSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub)
+{
+  main<span style="color:#5bc4bf">-&gt;</span>left <span style="color:#5bc4bf">=</span> sub;
+}
+
+<span style="color:#776e71">// 메모리 소멸을 수반하지 않고 main의 오른쪽 자식 노드 변경
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">ChangeRightSubTree</span>(BTreeNode <span style="color:#5bc4bf">*</span> main, BTreeNode <span style="color:#5bc4bf">*</span> sub)
+{
+  main<span style="color:#5bc4bf">-&gt;</span>right <span style="color:#5bc4bf">=</span> sub;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>이진 탐색 트리 삭제의 완전한 구현
+
+<ul>
+<li>가상 루트 노드 형성 : 삭제할 노드가 루트 노드인 경우의 예외적인 삭제 흐름을 일반화 하기 위함</li>
+</ul></li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">BSTRemove</span>(BTreeNode <span style="color:#5bc4bf">**</span> pRoot, BSTData target)
+{
+  <span style="color:#776e71">// Initialization
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> pVRoot <span style="color:#5bc4bf">=</span> MakeBTreeNode();
+  BTreeNode <span style="color:#5bc4bf">*</span> pNode <span style="color:#5bc4bf">=</span> pVRoot;
+  BTreeNode <span style="color:#5bc4bf">*</span> cNode <span style="color:#5bc4bf">=</span> <span style="color:#5bc4bf">*</span>pRoot;
+  BTreeNode <span style="color:#5bc4bf">*</span> dNode;
+  
+  ChangeRightSubTree(pVRoot, <span style="color:#5bc4bf">*</span>pRoot);
+  
+  <span style="color:#776e71">/* 준비 과정 */</span>
+  <span style="color:#776e71">// 삭제 대상 노드 탐색
+</span><span style="color:#776e71"></span>  <span style="color:#776e71">// cNode의 부모 노드를 pNode가 가리키게 해야해서 BSTSearch 호출로 대신할 수 없다.
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">while</span>(cNode <span style="color:#5bc4bf">!=</span> NULL <span style="color:#5bc4bf">&amp;&amp;</span> GetData(cNode) <span style="color:#5bc4bf">!=</span> target)
+  {
+    pNode <span style="color:#5bc4bf">=</span> cNode;
+    
+    <span style="color:#815ba4">if</span>(target <span style="color:#5bc4bf">&lt;</span> GetData(cNode))
+      cNode <span style="color:#5bc4bf">=</span> GetLeftSubTree(cNode);
+    <span style="color:#815ba4">else</span>
+      cNode <span style="color:#5bc4bf">=</span> GetRightSubTree(cNode);
+  }
+  
+  <span style="color:#815ba4">if</span>(cNode <span style="color:#5bc4bf">==</span> NULL)			<span style="color:#776e71">// 삭제 대상이 없다면
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">return</span> NULL;
+  
+  dNode <span style="color:#5bc4bf">=</span> cNode;		<span style="color:#776e71">// 삭제 대상을 dNode가 가리킴
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">/* 구현 */</span>
+  <span style="color:#776e71">// 1. 삭제 대상이 단말 노드인 경우
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(GetLeftSubTree(dNode) <span style="color:#5bc4bf">==</span> NULL <span style="color:#5bc4bf">&amp;&amp;</span> GetRightSubTree(dNode) <span style="color:#5bc4bf">==</span> NULL)
+  {
+    <span style="color:#815ba4">if</span>(GetLeftSubTree(pNode) <span style="color:#5bc4bf">==</span> dNode)
+      RemoveLeftSubTree(pNode);
+    <span style="color:#815ba4">else</span>
+      RemoveRightSubTree(pNode);
+  }
+  
+  <span style="color:#776e71">// 2. 삭제 대상이 하나의 자식 노드를 갖는 경우
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (GetLeftSubTree(dNode) <span style="color:#5bc4bf">==</span> NULL <span style="color:#5bc4bf">||</span> GetRightSubTree(dNode) <span style="color:#5bc4bf">==</span> NULL)
+  {
+    BTreeNode <span style="color:#5bc4bf">*</span> dcNode;
+    
+    <span style="color:#815ba4">if</span>(GetLeftSubTree(dNode) <span style="color:#5bc4bf">!=</span> NULL)
+      dcNode <span style="color:#5bc4bf">=</span> GetLeftSubTree(dNode);
+    <span style="color:#815ba4">else</span> 
+      dcNode <span style="color:#5bc4bf">=</span> GetRightSubTree(dNode);
+    
+    <span style="color:#815ba4">if</span>(GetLeftSubTree(pNode) <span style="color:#5bc4bf">==</span> dNode)
+      ChangeLeftSubTree(pNode, dcNode);
+    <span style="color:#815ba4">else</span>
+      ChangeRightSubTree(pNode, dcNode);
+  }
+  
+  <span style="color:#776e71">// 3. 두 개의 자식 노드를 모두 갖는 경우
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">else</span>
+  {
+    BTreeNode <span style="color:#5bc4bf">*</span> mNode <span style="color:#5bc4bf">=</span> GetRightSubTree(dNode);	<span style="color:#776e71">// 대체 노드 가리킴
+</span><span style="color:#776e71"></span>    BTreeNode <span style="color:#5bc4bf">*</span> mpNode <span style="color:#5bc4bf">=</span> dNode;		<span style="color:#776e71">// 대체 노드의 부모 노드 가리킴
+</span><span style="color:#776e71"></span>    <span style="color:#fec418">int</span> delData;
+    
+    <span style="color:#776e71">// 삭제 대상의 대체 노드를 찾는다.
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">while</span>(GetLeftSubTree(mNode) <span style="color:#5bc4bf">!=</span> NULL)
+    {
+      mpNode <span style="color:#5bc4bf">=</span> mNode;
+      mNode <span style="color:#5bc4bf">=</span> GetLeftSubTree(mNode);
+    }
+    
+    <span style="color:#776e71">// 대체 노드에 저장된 값을 삭제할 노드에 대입한다.
+</span><span style="color:#776e71"></span>    delData <span style="color:#5bc4bf">=</span> GetData(dNode);
+    SetData(dNode, GetData(mNode));
+    
+    <span style="color:#776e71">// 대체 노드의 부모 노드와 자식 노드를 연결
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">if</span>(GetLeftSubTree(mpNode) <span style="color:#5bc4bf">==</span> mNode)
+      ChangeLeftSubTree(mpNode, GetRightSubTree(mNode));
+    <span style="color:#815ba4">else</span>
+      ChangeRightSubTree(mpNode, GetRightSubTree(mNode));
+    
+    dNode <span style="color:#5bc4bf">=</span> mNode;
+    SetData(dNode, delData); 		<span style="color:#776e71">// 백업 데이터 복원
+</span><span style="color:#776e71"></span>  }
+  
+  <span style="color:#776e71">// 삭제된 노드가 루트 노드인 경우에 대한 추가 처리
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(GetRightSubTree(pVRoot) <span style="color:#5bc4bf">!=</span> <span style="color:#5bc4bf">*</span>pRoot)
+    <span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">=</span> GetRightSubTree(pVRoot);		<span style="color:#776e71">// 루트 노드의 변경 반영
+</span><span style="color:#776e71"></span>  
+  free(pVRoot);			<span style="color:#776e71">// 가상 루트 노드의 소멸
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">return</span> dNode;			<span style="color:#776e71">// 삭제 대상의 반환
+</span><span style="color:#776e71"></span>}</code></pre></td></tr></table>
 </div>
 </div>
 
