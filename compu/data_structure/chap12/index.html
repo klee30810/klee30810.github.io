@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.80.0" />
-    <meta name="description" content="Disecting member of Truss">
+    <meta name="description" content="Search-2">
 <meta name="author" content="Kyungmin Lee, Kevin">
 
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
@@ -14,24 +14,24 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
  
-   <title>Chap6. Structural Analysis - Kevin&#39;s Codex</title>
+   <title>Chap12. Search-2 - Kevin&#39;s Codex</title>
 
     
-    <link href="/css/nucleus.css?1616887920" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1616887920" rel="stylesheet">
-    <link href="/css/hybrid.css?1616887920" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1616887920" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1616887920" rel="stylesheet">
-    <link href="/css/auto-complete.css?1616887920" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1616887920" rel="stylesheet">
-    <link href="/css/theme.css?1616887920" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1616887920" rel="stylesheet">
+    <link href="/css/nucleus.css?1616887919" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1616887919" rel="stylesheet">
+    <link href="/css/hybrid.css?1616887919" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1616887919" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1616887919" rel="stylesheet">
+    <link href="/css/auto-complete.css?1616887919" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1616887919" rel="stylesheet">
+    <link href="/css/theme.css?1616887919" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1616887919" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1616887920" rel="stylesheet">
+    <link href="/css/theme-blue.css?1616887919" rel="stylesheet">
     
-    <link href="/css/foo.css?1616887920" rel="stylesheet"><link href="/css/bar.css?1616887920" rel="stylesheet">
+    <link href="/css/foo.css?1616887919" rel="stylesheet"><link href="/css/bar.css?1616887919" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1616887920"></script>
+    <script src="/js/jquery-3.3.1.min.js?1616887919"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/mech/statics/chap6/">
+  <body class="" data-url="/compu/data_structure/chap12/">
     <nav id="sidebar" class="">
 
 
@@ -61,14 +61,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1616887920"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1616887920"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1616887919"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1616887919"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/klee30810.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1616887920"></script>
+<script type="text/javascript" src="/js/search.js?1616887919"></script>
 
     
   </div>
@@ -200,7 +200,7 @@
   
     
     <li data-nav-id="/mech/" title="Mechanical Engineering" class="dd-item
-        parent
+        
         
         
         ">
@@ -229,7 +229,7 @@
   
     
     <li data-nav-id="/mech/statics/" title="Statics" class="dd-item
-        parent
+        
         
         
         ">
@@ -407,7 +407,7 @@
   
     
     <li data-nav-id="/compu/" title="Computer Science" class="dd-item
-        
+        parent
         
         
         ">
@@ -514,7 +514,7 @@
   
     
     <li data-nav-id="/compu/data_structure/" title="Data Structure" class="dd-item
-        
+        parent
         
         
         ">
@@ -1204,7 +1204,7 @@
                   <span class="links">
                  
                  
-                   Chap6. Structural Analysis
+                   Chap12. Search-2
                  
                   </span>
                 </div>
@@ -1223,7 +1223,7 @@
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/statics">statics</a>
+  <a class="tag-link" href="/tags/data-structure">Data Structure</a>
 
 </div>
 
@@ -1233,82 +1233,401 @@
           
             <h1>
               
-              Chap6. Structural Analysis
+              Chap12. Search-2
             </h1>
           
 
         
 
 
-<p>Objectives</p>
+<h3 id="121-균형-잡힌-이진-탐색-트리--avl-트리의-이해">12.1 균형 잡힌 이진 탐색 트리 : AVL 트리의 이해</h3>
+
+<hr>
 
 <ul>
-<li>To show how to determine the forces in the members of a truss using the method of joints and the method od sections</li>
-<li>To analyze the forces acting on the members of frames and machines composed of pin-connected members</li>
-</ul>
-
-<h3 id="61-simple-trusses">6.1 Simple Trusses</h3>
+<li>트리 → 이진트리 → 이진탐색트리 → 균형잡힌 이진탐색트리</li>
+<li>이진 탐색 트리의 연산은 원래 \(O(\log_2n)\)의 시간 복잡도를 가지지만 트리 균형이 맞지 않을수록 \(O(n)\)에 가까운 시간 복잡도를 보인다. ⇒ <strong>약간의 순서 변화로 균형이 잡힌다.</strong></li>
+<li>AVL 는 균형 인수(Balance Factor)를 기준으로 트리의 균형을 잡기 위한 리밸런싱시기를 결정한다.
 
 <ul>
-<li>truss : a structure composed of slender members joined together at their end points</li>
+<li>균형 인수 = 왼쪽 서브 트리의 높이 - 오른쪽 서브 트리의 높이</li>
+<li><strong>균형 인수의 절댓값이 2 이상인 경우 리밸런싱 진행!</strong></li>
+</ul></li>
 </ul>
 
-<p>(1) Assumptions for Design =&gt; Two-force member</p>
-
-<p>a. All loadings are applied at the joints</p>
+<h5 id="리밸런싱">리밸런싱</h5>
 
 <ul>
-<li>frequently the weight of the members is neglected bacause the force supported by each member is usually much larger than its weight</li>
-</ul>
+<li><p>LL회전 : 왼쪽 자식노드로 만 이어져 있는 트리를 오른쪽 회전을 통해 밸런스 잡기</p></li>
 
-<p>b. The members are joined together by smooth pin : provided the center lines of the joining members are concurrent</p>
+<li><p>RR 회전 : 오른쪽 자식노드로 만 이어져 있는 트리를 왼쪽 회전을 통해 밸런스 잡기</p></li>
 
-<p>(2) Simple Truss : if a truss can be constructed by expanding the basic triangular truss</p>
-
-<h3 id="62-the-method-of-joints">6.2 The Method of Joints</h3>
+<li><p>LR 상태 : 트리 이루를한번의 회전으로 균형이 잡히는 LL 혹은 RR 상태를 만든 후 회전을 시킨다.</p>
 
 <ul>
-<li>Based on the fact that if the entire truss is in equilibrium, then each of its joints is also in equilibrium. =&gt; force equilibrium equations can be used to obtain the member forces acting on each joint.</li>
-<li>Always satrt at a joint having at least one known force and at most two unkonwn forces</li>
-<li>Always assume the unknown member forces acting on the joint's free=body diagram to be in tension =&gt; positive scalars for tension members and negative scalars for compression members.</li>
+<li>LL, RR은 부모 자식의 관계가 바뀌는 부수적인 효과가 있다.</li>
+</ul></li>
 </ul>
 
-<h3 id="63-zeroforce-members">6.3 Zero-Force Members</h3>
+<p><figure><img src="/images/compu/DS/chap12/1.png" alt="image"></figure></p>
 
 <ul>
-<li>used to increase the stability of the truss during construction and to provide added support if the loading is changed.</li>
-<li>if only two members form a truss joint and no external load or support reaction is applied to the joint, the two members must be zero-force members</li>
-<li>if three members form a truss joint for which two of the members are collinear, the third member is a zero-force member provided no external force or support reaction is applied to the joint.</li>
+<li>LR 회전</li>
 </ul>
 
-<h3 id="64-the-method-of-sections">6.4 The Method of Sections</h3>
+<p><figure><img src="/images/compu/DS/chap12/2.png" alt="image"></figure></p>
+
+<p>→ LR 상태 LR 회전, 그리고 RL상태 RL회전은 방향에서만 차이를 보인다</p>
+
+<h3 id="2-avl-트리의-구현">2. AVL 트리의 구현</h3>
 
 <ul>
-<li>If the truss is in equilibrium then any segment of the truss is also in equilibrium.</li>
-<li>the line of action of each member force is specified from the geometry of the truss, since the force in a member is along its axis.</li>
-<li>the member forces acting on one part of the truss are equal but opposite to those acting on the other part (Newton's 3rd Law)</li>
-<li>Always assume that the unknown member forces at the cut section are tensile forces on the member. =&gt; positive scalars in tension and negative scalars in compression</li>
+<li>BST 함수 트리에 노드 추가 및 제거 과정에서 트리의 균형이 깨지게 되므로 해당 함수(BSTInsert, BSTRemove)에 리밸런싱 단계를 추가한다.</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 두 서브 트리의 높이의 차(균형 인수)를 반환
+</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">GetHeightDiff</span>(BTreeNode <span style="color:#5bc4bf">*</span> bst)
+{
+  <span style="color:#fec418">int</span> lsh;		<span style="color:#776e71">// left sub tree height
+</span><span style="color:#776e71"></span>  <span style="color:#fec418">int</span> rsh;		<span style="color:#776e71">// right sub tree height
+</span><span style="color:#776e71"></span>  
+  <span style="color:#815ba4">if</span>(bst <span style="color:#5bc4bf">==</span> NULL)
+    <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+  
+  lsh <span style="color:#5bc4bf">=</span> GetHeight(GetLeftSubTree(bst));
+  rsh <span style="color:#5bc4bf">=</span> GetHeight(GetRightSubTree(bst));
+  
+  <span style="color:#815ba4">return</span> lsh <span style="color:#5bc4bf">-</span> rsh;
+}
+
+<span style="color:#776e71">// 트리의 높이를 계산하여 반혼
+</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">GetHeight</span>(BTreeNode <span style="color:#5bc4bf">*</span> bst)
+{
+  <span style="color:#fec418">int</span> leftH;		<span style="color:#776e71">// left height
+</span><span style="color:#776e71"></span>  <span style="color:#fec418">int</span> rightH;		<span style="color:#776e71">// right height
+</span><span style="color:#776e71"></span>  
+  <span style="color:#815ba4">if</span>(bst <span style="color:#5bc4bf">==</span> NULL)
+    <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+  
+  leftH <span style="color:#5bc4bf">=</span> GetHeight(GetLeftSubTree(bst));
+  rightH <span style="color:#5bc4bf">=</span> GetHeight(GetRightSubTree(bst));
+  
+  <span style="color:#776e71">// 큰 값의 높이를 반환한다.
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(leftH <span style="color:#5bc4bf">&gt;</span> rightH)	<span style="color:#776e71">// 높이가 작은 값 버림
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">return</span> leftH <span style="color:#5bc4bf">+</span> <span style="color:#f99b15">1</span>;
+  <span style="color:#815ba4">else</span>
+    <span style="color:#815ba4">return</span> rightH <span style="color:#5bc4bf">+</span> <span style="color:#f99b15">1</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h5 id="리밸런싱-도구">리밸런싱 도구</h5>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// LL 회전
+</span><span style="color:#776e71"></span>BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">RotateLL</span>(BTreeNode <span style="color:#5bc4bf">*</span> bst)
+{
+  BTreeNode <span style="color:#5bc4bf">*</span> pNode;		<span style="color:#776e71">// parent node
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> cNode;		<span style="color:#776e71">// child node
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// pNode와 cNode가 LL회전을 위해 적절한 위치를 가리키게 한다.
+</span><span style="color:#776e71"></span>  pNode <span style="color:#5bc4bf">=</span> bst;
+  cNode <span style="color:#5bc4bf">=</span> GetLeftSubTree(pNode);
+  
+  <span style="color:#776e71">// LL회전
+</span><span style="color:#776e71"></span>  ChangeLeftSubTree(pNode, GetRightSubTree(cNode));
+  ChangeRightSubTree(cNode, pNode);
+  
+  <span style="color:#776e71">// LL회전으로 인해 변경된 루트 노드의 주소값 반환
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">return</span> cNode;
+}
+
+<span style="color:#776e71">// RR 회전
+</span><span style="color:#776e71"></span>BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">RotateRR</span>(BTreeNode <span style="color:#5bc4bf">*</span> bst)
+{
+  BTreeNode <span style="color:#5bc4bf">*</span> pNode;		<span style="color:#776e71">// parent node
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> cNode;		<span style="color:#776e71">// child node
+</span><span style="color:#776e71"></span>
+	<span style="color:#776e71">// pNode와 cNode가 RR회전을 위해 적절한 위치를 가리키게 한다.
+</span><span style="color:#776e71"></span>  pNode <span style="color:#5bc4bf">=</span> bst;
+  cNode <span style="color:#5bc4bf">=</span> GetRightSubTree(pNode);
+  
+  <span style="color:#776e71">// RR 회전
+</span><span style="color:#776e71"></span>  ChangeRightSubTree(pNode, GetLeftSubTree(cNode));
+  ChangeLeftSubTree(cNode, pNode);
+  
+  <span style="color:#776e71">// 변경된 주소값 반환
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">return</span> cNode;
+}
+
+<span style="color:#776e71">// LR회전 : 부분적 RR회전에 이어서 LL회전 진행
+</span><span style="color:#776e71"></span>BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">RotateLR</span>(BTreeNode <span style="color:#5bc4bf">*</span> bst)
+{
+  BTreeNode <span style="color:#5bc4bf">*</span> pNode;		<span style="color:#776e71">// parent node
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> cNode;		<span style="color:#776e71">// child node
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// pNode와 cNode가 LR회전을 위해 적절한 위치를 가리키게 한다.
+</span><span style="color:#776e71"></span>  pNode <span style="color:#5bc4bf">=</span> bst;
+  cNode <span style="color:#5bc4bf">=</span> GetLeftSubTree(pNode);
+  
+  <span style="color:#776e71">// LR회전 : 부분적 RR회전 후 LR 회전
+</span><span style="color:#776e71"></span>  ChangeLeftSubTree(pNode, RotateRR(cNode));
+  <span style="color:#815ba4">return</span> RotateLL(pNode);
+}
+
+<span style="color:#776e71">// RL회전 : 부분적 LL회전에 이어서 RR회전 진행
+</span><span style="color:#776e71"></span>BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">RotateRL</span>(BTreeNode <span style="color:#5bc4bf">*</span> bst)
+{
+  BTreeNode <span style="color:#5bc4bf">*</span> pNode;			<span style="color:#776e71">// parent node
+</span><span style="color:#776e71"></span>  BTreeNode <span style="color:#5bc4bf">*</span> cNode;			<span style="color:#776e71">// child node
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// pNode와 cNode가 RL회전을 위해 적절한 위치를 가리키게 한다.
+</span><span style="color:#776e71"></span>  pNode <span style="color:#5bc4bf">=</span> bst;
+  cNode <span style="color:#5bc4bf">=</span> GetRightSubTree(pNode);
+  
+  <span style="color:#776e71">// RL회전 : 부분적 LL회전 후 RR회전
+</span><span style="color:#776e71"></span>  ChangeRightSubTree(pNode, RotateLL(cNode));
+  <span style="color:#815ba4">return</span> RotateRR(pNode);
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>LL, LR, RR, RL 상태의 구분</li>
 </ul>
 
-<h3 id="66-frames-and-machines">6.6 Frames and Machines</h3>
+<p><figure><img src="/images/compu/DS/chap12/3.png" alt="image"></figure></p>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">Rebalance</span>(BTreeNode <span style="color:#5bc4bf">**</span> pRoot) <span style="color:#776e71">// 상황에 따른 적절한 함수 실행
+</span><span style="color:#776e71"></span>{
+  <span style="color:#fec418">int</span> hDiff <span style="color:#5bc4bf">=</span> GetHeightDiff(<span style="color:#5bc4bf">*</span>pRoot);	<span style="color:#776e71">// 	균형 인수 계산
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// 균형 인수가 +2 이상이면 왼쪽으로 길게 불균형이므로 LL 또는 LR상태
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(hDiff <span style="color:#5bc4bf">&gt;</span> <span style="color:#f99b15">1</span>)		<span style="color:#776e71">// 왼쪽 서브트리 방향 높이가 2이상 크다면
+</span><span style="color:#776e71"></span>  {
+    <span style="color:#815ba4">if</span>(GetHeightDiff(GetLeftSubTree(<span style="color:#5bc4bf">*</span>pRoot))<span style="color:#5bc4bf">&gt;</span><span style="color:#f99b15">0</span>)
+  	 <span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">=</span> RotateLL(<span style="color:#5bc4bf">*</span>pRoot);
+	  <span style="color:#815ba4">else</span>
+   	 <span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">=</span> RotateLR(<span style="color:#5bc4bf">*</span>pRoot);
+  }
+    
+
+<span style="color:#776e71">// 균형 인수가 -2 이하면 오른쪽으로 길계 불균형이므로 RR 또는 RL상태
+</span><span style="color:#776e71"></span>	<span style="color:#815ba4">if</span>(hDiff <span style="color:#5bc4bf">&lt;</span> <span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>)	<span style="color:#776e71">// 오른쪽 서브트리 방향으로 2 이상 크다면
+</span><span style="color:#776e71"></span>  {
+    <span style="color:#815ba4">if</span>(GetHeightDiff(GetRightSubTree(<span style="color:#5bc4bf">*</span>pRoot)) <span style="color:#5bc4bf">&lt;</span> <span style="color:#f99b15">0</span>)
+      <span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">=</span> RotateRR(<span style="color:#5bc4bf">*</span>pRoot);
+    <span style="color:#815ba4">else</span>
+      <span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">=</span> RotateRL(<span style="color:#5bc4bf">*</span>pRoot);
+  }
+  
+  <span style="color:#815ba4">return</span> <span style="color:#5bc4bf">*</span>pRoot;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>BSTInsert 함수의 마지막 부분에서 루트 노드를 기준으로 리밸런싱의 필요성을 판단하고 리밸런싱 진행 → 하위 노드 기준으로는 불균형이 또 일어날 수 있다.</li>
+</ul>
+
+<p>⇒ 노드 추가 후 모든 노드의 균형을 검사하도록 <strong>재귀적으로</strong> 재구성 한다.</p>
 
 <ul>
-<li>frame : support loads / machines : contain moving parts</li>
-<li>provided a frame or machine contains no more supports or members than are necessary to prevent its collapse, the forces acting at the joints and supports can be determined by applying the equations of equilibrium to each of its members.</li>
+<li>루트 노드를 대상으로 하여 데이터의 저장 시도(함수 호출)
+
+<ol>
+<li>루트 노드에 저장된 데이터와 새 데이터 비교</li>
+<li>비교하여 새 데이터의 값이 작으면 왼쪽 자식 노드를 루트 노드로 하여 데이터의 저장 시도</li>
+<li>비교하여 새 데이터의 값이 크면 오른쪽 자식 노드를 루트 노드로 하여 데이터의 저장 시도</li>
+<li>저장이 완료되면 해당 루트 노드를 기준으로 리밸런싱</li>
+</ol></li>
 </ul>
-
-<p>(1) Free-Body Diagrams</p>
-
-<p>a. Isolate each part by drawing its outlined shape, then show all the forces and couple moments that act on the part.</p>
-
-<p>b. Identify all the two-force members in the structure and represent their free-body diagrams as having two equal but opposite collinear forces acting on their points.</p>
-
-<p>c. Forces common to any two contacting members act with equal magnitudes but opposite sense on the respective members</p>
-
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">BTreeNode <span style="color:#5bc4bf">*</span> <span style="color:#06b6ef">BSTInsert</span>(BTreeNode <span style="color:#5bc4bf">**</span> pRoot, BSTData data)
+{
+  <span style="color:#815ba4">if</span>(<span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">==</span> NULL)	<span style="color:#776e71">// 아무것도 없는 상태
+</span><span style="color:#776e71"></span>  {
+    <span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">=</span> MakeBTreeNode();
+    SetData(<span style="color:#5bc4bf">*</span>pRoot, data);
+  }
+  <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span>(data <span style="color:#5bc4bf">&lt;</span> GetData(<span style="color:#5bc4bf">*</span>pRoot))
+  {
+    BSTInsert(<span style="color:#5bc4bf">&amp;</span>((<span style="color:#5bc4bf">*</span>pRoot)<span style="color:#5bc4bf">-&gt;</span>left), data);
+    <span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">=</span> Rebalance(pRoot); <span style="color:#776e71">// 자리를 다 잡고 올라가면 Rebalance 호출
+</span><span style="color:#776e71"></span>  }
+  <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span>(data <span style="color:#5bc4bf">&gt;</span> GetData(<span style="color:#5bc4bf">*</span>pRoot))
+  {
+    BSTInsert(<span style="color:#5bc4bf">&amp;</span>((<span style="color:#5bc4bf">*</span>pRoot)<span style="color:#5bc4bf">-&gt;</span>right), data);
+    <span style="color:#5bc4bf">*</span>pRoot <span style="color:#5bc4bf">=</span> Rebalance(pRoot);
+  }
+  <span style="color:#815ba4">else</span>
+  {
+    <span style="color:#815ba4">return</span> NULL;		<span style="color:#776e71">// 키의 중복 허용하지 않음
+</span><span style="color:#776e71"></span>  }
+  
+  <span style="color:#815ba4">return</span> <span style="color:#5bc4bf">*</span>pRoot;
+}</code></pre></td></tr></table>
+</div>
+</div>
 
 <footer class="footline">
 	
-	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 07/03/2021
 	    </div>
 	
 </footer>
@@ -1418,7 +1737,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1434,7 +1752,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1447,9 +1764,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1587,6 +1901,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1602,6 +1917,9 @@
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -1612,22 +1930,6 @@
                     
                         
             
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -1823,6 +2125,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1830,6 +2148,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1909,6 +2228,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2293,19 +2615,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1616887920"></script>
-    <script src="/js/perfect-scrollbar.min.js?1616887920"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1616887920"></script>
-    <script src="/js/jquery.sticky.js?1616887920"></script>
-    <script src="/js/featherlight.min.js?1616887920"></script>
-    <script src="/js/highlight.pack.js?1616887920"></script>
+    <script src="/js/clipboard.min.js?1616887919"></script>
+    <script src="/js/perfect-scrollbar.min.js?1616887919"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1616887919"></script>
+    <script src="/js/jquery.sticky.js?1616887919"></script>
+    <script src="/js/featherlight.min.js?1616887919"></script>
+    <script src="/js/highlight.pack.js?1616887919"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1616887920"></script>
-    <script src="/js/learn.js?1616887920"></script>
-    <script src="/js/hugo-learn.js?1616887920"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1616887919"></script>
+    <script src="/js/learn.js?1616887919"></script>
+    <script src="/js/hugo-learn.js?1616887919"></script>
     
         
-            <script src="/mermaid/mermaid.js?1616887920"></script>
+            <script src="/mermaid/mermaid.js?1616887919"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

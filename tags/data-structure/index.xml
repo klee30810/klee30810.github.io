@@ -6,7 +6,7 @@
     <description>Recent content in Data Structure on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 07 Mar 2021 14:35:23 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Mar 2021 14:35:25 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chap1. 자료구조와 알고리즘 이해</title>
       <link>https://klee30810.github.io/compu/data_structure/chap1/</link>
@@ -113,6 +113,15 @@
       
       <guid>https://klee30810.github.io/compu/data_structure/chap11/</guid>
       <description>&amp;quot;탐색을 잘하기 위한 저장 방법은 무엇인가?&amp;quot; 탐색은 이전에 데이터 정렬이 필수적  1. 탐색의 이해와 보간 탐색   효율적인 탐색을 위한 저장방법, 효율적인 탐색이 가능한 대표적인 자료구조는 &amp;quot;이진트리&amp;quot;이다.  보간 탐색  이진 탐색 : 무조건 중간에 위치한 데이터를 탐색의 위치로 결정 보간 탐색 : 대상에 비례하여 탐색의 위치를 결정 → 단순 비례 가정 후 비슷한 위치 찾기 노력 비례식 구성 → 완전 비례 가정  s : 탐색 대상이 저장된 인덱스 값   \[ A:Q=(high-low):(s-low) \Rightarrow s=\frac{Q}{A}(high-low)+low \\ \Rightarrow s=\frac{x-arr[low]}{arr[high]-arr[low]}(high-low)+low\]</description>
+    </item>
+    
+    <item>
+      <title>Chap12. Search-2</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap12/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:25 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap12/</guid>
+      <description>12.1 균형 잡힌 이진 탐색 트리 : AVL 트리의 이해   트리 → 이진트리 → 이진탐색트리 → 균형잡힌 이진탐색트리 이진 탐색 트리의 연산은 원래 \(O(\log_2n)\)의 시간 복잡도를 가지지만 트리 균형이 맞지 않을수록 \(O(n)\)에 가까운 시간 복잡도를 보인다. ⇒ 약간의 순서 변화로 균형이 잡힌다. AVL 는 균형 인수(Balance Factor)를 기준으로 트리의 균형을 잡기 위한 리밸런싱시기를 결정한다.  균형 인수 = 왼쪽 서브 트리의 높이 - 오른쪽 서브 트리의 높이 균형 인수의 절댓값이 2 이상인 경우 리밸런싱 진행!</description>
     </item>
     
   </channel>

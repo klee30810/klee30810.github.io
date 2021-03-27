@@ -547,6 +547,15 @@ __01. 설명 변수  거대한 표현을 쪼개는 가장 쉬운 방법은 작�
     </item>
     
     <item>
+      <title>Chap12. Search-2</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap12/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:25 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap12/</guid>
+      <description>12.1 균형 잡힌 이진 탐색 트리 : AVL 트리의 이해   트리 → 이진트리 → 이진탐색트리 → 균형잡힌 이진탐색트리 이진 탐색 트리의 연산은 원래 \(O(\log_2n)\)의 시간 복잡도를 가지지만 트리 균형이 맞지 않을수록 \(O(n)\)에 가까운 시간 복잡도를 보인다. ⇒ 약간의 순서 변화로 균형이 잡힌다. AVL 는 균형 인수(Balance Factor)를 기준으로 트리의 균형을 잡기 위한 리밸런싱시기를 결정한다.  균형 인수 = 왼쪽 서브 트리의 높이 - 오른쪽 서브 트리의 높이 균형 인수의 절댓값이 2 이상인 경우 리밸런싱 진행!</description>
+    </item>
+    
+    <item>
       <title>2102_4</title>
       <link>https://klee30810.github.io/language/chinese/2102_4/</link>
       <pubDate>Sun, 21 Feb 2021 22:36:43 +0900</pubDate>
