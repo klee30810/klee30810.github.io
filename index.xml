@@ -581,6 +581,15 @@ __01. 설명 변수  거대한 표현을 쪼개는 가장 쉬운 방법은 작�
     </item>
     
     <item>
+      <title>Chap13. Table &amp; Hash*</title>
+      <link>https://klee30810.github.io/compu/data_structure/chap13/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:27 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap13/</guid>
+      <description>13.1 빠른 탐색을 보이는 해쉬 테이블  테이블 자료구조  데이터가 key와 value로 한 쌍을 이루며, key가 데이터의 저장 및 탐색의 도구가 된다. 테이블 자료구조에서는 원하는 데이터를 단번에 찾을 수 있다. key 역시 의미있는 데이터로 정의하는 것이 좋다.  데이터에 근거하여 생성되어야 하며 중복되면 안된다.  테이블 자료구조의 탐색 연산은 O(1)의 시간복잡도를 보인다. 사전구조 혹은 맵(map)이라고 불린다.  배열 기반 테이블 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  typedef struct _empInfo { int empNum;	// 고유번호 : key  int age;	// 나이 : value } Empinfo; int main() { EmpInfo empInfoArr[1000]; EmpInfo ei; int eNum; printf(&amp;#34;Enter empnum &amp;amp; age: &amp;#34;); scanf(&amp;#34;%d %d&amp;#34;, &amp;amp;(ei.</description>
+    </item>
+    
+    <item>
       <title>Chap13. 코드 분량 줄이기</title>
       <link>https://klee30810.github.io/compu/readable_code/chap13/</link>
       <pubDate>Mon, 15 Feb 2021 07:55:09 +0900</pubDate>
