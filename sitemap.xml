@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://klee30810.github.io/mech/material/lect/chap12/</loc>
+    <lastmod>2021-04-04T10:32:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/material/lect/</loc>
+    <lastmod>2021-04-04T10:27:32+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://klee30810.github.io/mldl/mathml/chap1/</loc>
     <lastmod>2021-03-15T11:15:46+09:00</lastmod>
   </url>
@@ -85,6 +95,11 @@
   <url>
     <loc>https://klee30810.github.io/battery/battery-basics/</loc>
     <lastmod>2021-02-09T21:14:47+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/mech/material/lect/chap3/</loc>
+    <lastmod>2021-04-04T20:07:02+09:00</lastmod>
   </url>
   
   <url>
@@ -443,12 +458,17 @@
   </url>
   
   <url>
-    <loc>https://klee30810.github.io/tags/machine-learning/</loc>
-    <lastmod>2021-03-15T11:15:51+09:00</lastmod>
+    <loc>https://klee30810.github.io/tags/material-mechanics/</loc>
+    <lastmod>2021-04-04T20:07:02+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://klee30810.github.io/tags/</loc>
+    <lastmod>2021-04-04T20:07:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://klee30810.github.io/tags/machine-learning/</loc>
     <lastmod>2021-03-15T11:15:51+09:00</lastmod>
   </url>
   

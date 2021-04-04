@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HGU Lecture on Kevin&#39;s Codex</title>
+    <link>https://klee30810.github.io/mech/material/lect/</link>
+    <description>Recent content in HGU Lecture on Kevin&#39;s Codex</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 04 Apr 2021 10:27:32 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/mech/material/lect/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chap1, 2. Statics Review</title>
+      <link>https://klee30810.github.io/mech/material/lect/chap12/</link>
+      <pubDate>Sun, 04 Apr 2021 10:32:01 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/material/lect/chap12/</guid>
+      <description>4대 힘 : Tension &amp;amp; Compression (Axial Loading) / Bending (중립축에 90도) / Shear (단변적 평행방향 힘, 각도 변화) / Twist 외력에 대한 deformation field 구하기 :  Governing Equation \(\triangledown σ + \overrightarrow{b} = \rho \frac{\partial v}{\partial t}\), Stress-strain equation \(σ=D\varepsilon\), Displacement - strain equation \(\varepsilon = \frac{\partial u}{\partial x}\)   Statics Review → Equilibrium  Analysis of load acting on physical system  Do not experience acceleration Newton&#39;s Law  An object tends to either remain at rest or continue to move at constant velocity \(\sum\overrightarrow{F}=m\overrightarrow{a}\): resultant force로 표현가능 작용 &amp;amp; 반작용 : 같은 크기 반대방향 힘, 작용점이 같아야 함  반작용 : 움직이지 않는 부분은 같은 크기 반대방향 힘이 걸림 → 가장 안 움직이는 점을 반력 작용점으로.</description>
+    </item>
+    
+    <item>
+      <title>Chap3. Mechanical Properties of Materials</title>
+      <link>https://klee30810.github.io/mech/material/lect/chap3/</link>
+      <pubDate>Sun, 04 Apr 2021 20:07:02 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/material/lect/chap3/</guid>
+      <description>모든 방향에 힘이 같다는 등방성 가정!!
+Force - Displacement Curve </description>
+    </item>
+    
+  </channel>
+</rss>
