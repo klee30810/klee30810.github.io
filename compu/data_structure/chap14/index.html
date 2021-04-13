@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.80.0" />
-    <meta name="description" content="Kevin&#39;s Codex Blog">
+    <meta name="description" content="Graph">
 <meta name="author" content="Kyungmin Lee, Kevin">
 
     <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
@@ -14,24 +14,24 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
  
-   <title>Chap9. 변수와 가독성 - Kevin&#39;s Codex</title>
+   <title>Chap14. Graph  - Kevin&#39;s Codex</title>
 
     
-    <link href="/css/nucleus.css?1618352089" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1618352089" rel="stylesheet">
-    <link href="/css/hybrid.css?1618352089" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1618352089" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1618352089" rel="stylesheet">
-    <link href="/css/auto-complete.css?1618352089" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1618352089" rel="stylesheet">
-    <link href="/css/theme.css?1618352089" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1618352089" rel="stylesheet">
+    <link href="/css/nucleus.css?1618352088" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1618352088" rel="stylesheet">
+    <link href="/css/hybrid.css?1618352088" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1618352088" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1618352088" rel="stylesheet">
+    <link href="/css/auto-complete.css?1618352088" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1618352088" rel="stylesheet">
+    <link href="/css/theme.css?1618352088" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1618352088" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1618352089" rel="stylesheet">
+    <link href="/css/theme-blue.css?1618352088" rel="stylesheet">
     
-    <link href="/css/foo.css?1618352089" rel="stylesheet"><link href="/css/bar.css?1618352089" rel="stylesheet">
+    <link href="/css/foo.css?1618352088" rel="stylesheet"><link href="/css/bar.css?1618352088" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1618352089"></script>
+    <script src="/js/jquery-3.3.1.min.js?1618352088"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/compu/readable_code/chap9/">
+  <body class="" data-url="/compu/data_structure/chap14/">
     <nav id="sidebar" class="">
 
 
@@ -61,14 +61,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1618352089"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1618352089"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1618352088"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1618352088"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/klee30810.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1618352089"></script>
+<script type="text/javascript" src="/js/search.js?1618352088"></script>
 
     
   </div>
@@ -490,7 +490,7 @@
   
     
     <li data-nav-id="/compu/readable_code/" title="Readable Code Book Review" class="dd-item
-        parent
+        
         
         
         ">
@@ -568,7 +568,7 @@
   
     
     <li data-nav-id="/compu/data_structure/" title="Data Structure" class="dd-item
-        
+        parent
         
         
         ">
@@ -1264,7 +1264,7 @@
                   <span class="links">
                  
                  
-                   Chap9. 변수와 가독성
+                   Chap14. Graph 
                  
                   </span>
                 </div>
@@ -1283,7 +1283,7 @@
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/programming">programming</a>
+  <a class="tag-link" href="/tags/data-structures">Data Structures</a>
 
 </div>
 
@@ -1293,39 +1293,34 @@
           
             <h1>
               
-              Chap9. 변수와 가독성
+              Chap14. Graph 
             </h1>
           
 
         
 
 
+<h3 id="141-그래프-이해와-종류">14.1 그래프 이해와 종류</h3>
+
+<hr>
+
 <ul>
-<li>변수를 잘못 사용하면 다음과 같은 문제가 있다.</li>
+<li>무방향 완전 그래프 : 연락의 방향성이 없음 → 안전한 구조 (둘 다 연락 시 백업이 되므로)</li>
+<li>방향 완전 그래프 : 위험성 존재</li>
+<li>부분 그래프 : 일부 정점과 간선으로 구성이 된 그래프</li>
 </ul>
 
-<ol>
-<li><p>변수의 수가 많을수록 기억하고 다루기 더 어려워진다.</p></li>
-
-<li><p>변수의 범위가 넓어질수록 기억하고 다루는 시간이 더 길어진다.</p></li>
-
-<li><p>변수값이 자주 바뀔수록 현재값을 기억하고 다루기가 더 어려워진다.</p></li>
-</ol>
-
-<h3 id="01-변수-제거하기">__01. 변수 제거하기</h3>
+<h5 id="그래프의-집합-표현">그래프의 집합 표현</h5>
 
 <ul>
-<li><p>가독성에 도움되지 않는 변수는 제거하는 것이 좋다.</p>
+<li>정점 집합 : {A, B, C, D}</li>
+<li>간선 집합 : {(A,B), (A,D), (C,D)} → 무방향 / 방향 있을 경우 &lt;&gt;</li>
+</ul>
+
+<h5 id="그래프의-adt">그래프의 ADT</h5>
 
 <ul>
-<li>It isn’t breaking down a complex expression.</li>
-<li>It doesn’t add clarification—the expression datetime.datetime.now() is clear enough.</li>
-<li>It’s used only once, so it doesn’t compress any redundant code.</li>
-</ul></li>
-
-<li><p>불필요한 임시 변수 : 복잡한 표현을 나누는 것도 아니고, 명확성에 도움이 되는 것도 아니고, 중복된 코드를 압축하지도 않는 임시 변수.</p></li>
-
-<li><p>중간 결과 삭제하기</p></li>
+<li>그래프 최종목적 : 특정 정보를 그대로 담을 수 있도록 표현</li>
 </ul>
 <div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1344,58 +1339,38 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#776e71">// BAD
-</span><span style="color:#776e71"></span><span style="color:#815ba4">var</span> <span style="color:#06b6ef">remove_one</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">array</span>, <span style="color:#06b6ef">value_to_remove</span>) {
-		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">index_to_remove</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">null</span>;
-		<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">&lt;</span> <span style="color:#06b6ef">array</span>.<span style="color:#06b6ef">length</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">+=</span> <span style="color:#f99b15">1</span>) {
-				<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">array</span>[<span style="color:#06b6ef">i</span>] <span style="color:#5bc4bf">===</span> <span style="color:#06b6ef">value_to_remove</span>) {
-						<span style="color:#06b6ef">index_to_remove</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">i</span>;
-						<span style="color:#815ba4">break</span>;
-				}
-		}
-		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">index_to_remove</span> <span style="color:#5bc4bf">!==</span> <span style="color:#815ba4">null</span>) {
-				<span style="color:#06b6ef">array</span>.<span style="color:#06b6ef">splice</span>(<span style="color:#06b6ef">index_to_remove</span>, <span style="color:#f99b15">1</span>);
-		}
-};</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">remove_one</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">array</span>, <span style="color:#06b6ef">value_to_remove</span>) {
-		<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">&lt;</span> <span style="color:#06b6ef">array</span>.<span style="color:#06b6ef">length</span>; <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">+=</span> <span style="color:#f99b15">1</span>) {
-				<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">array</span>[<span style="color:#06b6ef">i</span>] <span style="color:#5bc4bf">===</span> <span style="color:#06b6ef">value_to_remove</span>) {
-						<span style="color:#06b6ef">array</span>.<span style="color:#06b6ef">splice</span>(<span style="color:#06b6ef">i</span>, <span style="color:#f99b15">1</span>);
-						<span style="color:#815ba4">return</span>;
-				}
-		}
-};
-
-<span style="color:#ef6155">// it’s a good strategy to complete the task as quickly as possible.</span></code></pre></td></tr></table>
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#815ba4">enum</span> {A, B, C, D, E, F}	<span style="color:#776e71">// 정점 이름 선언
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> GraphInit(UALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> nv);
+<span style="color:#776e71">// 그래프 초기화, 두번째 인자로 정점의 수 전달
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphDestory</span>(UALGraph <span style="color:#5bc4bf">*</span> pg);
+<span style="color:#776e71">// 그래프 초기화 과정 중, 할당한 리소스 반환
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">AddEdge</span>(UALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV);
+<span style="color:#776e71">// fromV와 toV로 전달된 정점을 연결하는 간선을 그래프에 추가
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowGraphEdgeInfo</span>(UALGraph <span style="color:#5bc4bf">*</span> pg);
+<span style="color:#5bc4bf">//</span> <span style="color:#ef6155">그래프</span> <span style="color:#ef6155">간선정보</span> <span style="color:#ef6155">출력</span></code></pre></td></tr></table>
 </div>
 </div>
-<ul>
-<li>흐름 제어 변수 제거하기 : 순수하게 프로그램의 실행 방향을 설정하는데 사용하는 변수는 구조를 변경하는 것으로 제거할 수 있다.</li>
-</ul>
-
-<h3 id="02-변수의-범위를-좁혀라">__02. 변수의 범위를 좁혀라</h3>
-
-<p><strong>★ 모든 변수에 대해서 변수가 적용되는 범위를 최대한 좁게 만들어라.</strong>  </p>
+<h5 id="그래프를-구현하는-두-가지-방법">그래프를 구현하는 두 가지 방법</h5>
 
 <ul>
-<li>변수의 범위를 좁히면 코드를 읽는 사람이 한꺼번에 생각해야 하는 변수의 수를 줄여주기 때문이다.</li>
-<li>클래스 멤버 변수도 클래스 안의 전역 변수라 할 수 있다. 이런 변수도 지역변수로 강등시키는 것이 좋다.</li>
+<li><p>인접 행렬 기반 : 배열 선언 후 간선 정보 기록</p></li>
+
+<li><p>인접 리스트 기반 : A → B → C → D 와 같은 방식</p></li>
 </ul>
+
+<p>→ B, C 가 연결된 것이 아니라 A와 연결된 정점이 B,C,D이다.</p>
+
+<p>→ 무방향일 경우 반대 방향도 연결</p>
+
+<h3 id="142-인접-리스트-기반의-그래프-구현">14.2 인접 리스트 기반의 그래프 구현</h3>
+
+<hr>
+
+<h5 id="그래프-헤더파일">그래프 헤더파일</h5>
 <div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1410,66 +1385,235 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#776e71">// For this case, it may make sense to “demote” str_ to be a local variable:
-</span><span style="color:#776e71"></span><span style="color:#815ba4">class</span> <span style="color:#fec418">LargeClass</span> {
-		<span style="color:#fec418">void</span> <span style="color:#06b6ef">Method1</span>() {
-				string str <span style="color:#5bc4bf">=</span> ...;
-				Method2(str);
-		}
-		<span style="color:#fec418">void</span> <span style="color:#06b6ef">Method2</span>(string str) {
-				<span style="color:#776e71">// Uses str
-</span><span style="color:#776e71"></span>		}
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 연결 리스트 사용
+</span><span style="color:#776e71"></span><span style="color:#776e71">#include</span> <span style="color:#776e71">&#34;DLinkedList.h&#34;</span><span style="color:#776e71">
+</span><span style="color:#776e71"></span>
+<span style="color:#776e71">// 정점 상수화
+</span><span style="color:#776e71"></span><span style="color:#815ba4">enum</span> {A, B, C, D, E, F, G, H, I, J}
 
-		<span style="color:#776e71">// Now other methods can&#39;t see str.
-</span><span style="color:#776e71"></span>};
-</code></pre></td></tr></table>
+<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> _ual
+{
+  <span style="color:#fec418">int</span> numV;			<span style="color:#776e71">// 정점 수
+</span><span style="color:#776e71"></span>  <span style="color:#fec418">int</span> numE;			<span style="color:#776e71">// 간선 수
+</span><span style="color:#776e71"></span>  List <span style="color:#5bc4bf">*</span> adjList;		<span style="color:#776e71">// 간선 정보
+</span><span style="color:#776e71"></span>} ALGraph;
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphInit</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> nv);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphDestroy</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">AddEdge</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowGraphEdgeInfo</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);</code></pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>메소드를 정적 static으로 만들어 클래스 멤버 접근을 제한하면 읽는 사람에게 이 메소드가 변수들로부터 독립적이라는 사실을 알려줄 수 있다.</li>
-
-<li><p>커다란 클래스를 독립적인 작은 클래스로 나눌 수 있다면 나누는 것이 좋다.  - 변수는 사용하기 직전에 선언해서 사용 범위가 끝나면 해제되게 하는 것이 좋다.</p></li>
-
-<li><p>C++에서는 조건문 안에서 변수를 선언할 수 있다. 이렇게 하면 그 변수는 조건문 안에서만 사용되는 것이 명확해진다.</p></li>
-
-<li><p>자바스크립트에서는 클로저(closure) 내부에 집어넣어 그 함수에서만 사용되게 할 수 있다.</p></li>
-
-<li><p>자바스크립트에서 변수를 정의할 때 var를 생략하면 해당 변수는 전역 변수가 된다.</p></li>
-
-<li><p>파이썬과 자바스크립트에는 중첩된 범위가 없으므로 '가장 인접한 공통 조상(closer common ancestor)'에 정의하여 코드의 가독성을 높일 수 있다.</p></li>
-</ul>
-
-<h3 id="03-값을-한-번만-할당하는-변수를-선호하라">__03. 값을 한 번만 할당하는 변수를 선호하라</h3>
-
-<ul>
-<li>값이 고정된 변수는 읽는 사람에게 별다른 추가적인 생각을 요구하지 않는다. 그러므로 C++에서는 const 사용을, 자바에서는 final 사용을 권장한다.</li>
-</ul>
-
-<p><strong>★ 변수값이 달라지는 곳이 많을수록 현재값을 추측하기 더 어려워진다. 그러므로 최대한 적은 횟수로 변하도록 설계하라.</strong></p>
-
-<h3 id="04-마지막-예">__04. 마지막 예</h3>
-
-<ul>
-<li>아래와 같은 HTML이 있고,</li>
-</ul>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#5bc4bf">input</span> <span style="color:#06b6ef">type</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;text&#34;</span> <span style="color:#06b6ef">id</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;input1&#34;</span> <span style="color:#06b6ef">value</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;Dustin&#34;</span>&gt;
-&lt;<span style="color:#5bc4bf">input</span> <span style="color:#06b6ef">type</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;text&#34;</span> <span style="color:#06b6ef">id</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;input2&#34;</span> <span style="color:#06b6ef">value</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;Trevor&#34;</span>&gt;
-&lt;<span style="color:#5bc4bf">input</span> <span style="color:#06b6ef">type</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;text&#34;</span> <span style="color:#06b6ef">id</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;input3&#34;</span> <span style="color:#06b6ef">value</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;&#34;</span>&gt;
-&lt;<span style="color:#5bc4bf">input</span> <span style="color:#06b6ef">type</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;text&#34;</span> <span style="color:#06b6ef">id</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;input4&#34;</span> <span style="color:#06b6ef">value</span><span style="color:#5bc4bf">=</span><span style="color:#48b685">&#34;Melissa&#34;</span>&gt;</code></pre></td></tr></table>
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">main</span>()
+{
+  ALGraph graph;
+  GraphInit(<span style="color:#5bc4bf">&amp;</span>graph, <span style="color:#f99b15">5</span>);
+  
+  AddEdge(<span style="color:#5bc4bf">&amp;</span>graph, A, B);
+  AddEdge(<span style="color:#5bc4bf">&amp;</span>graph, A, B);
+  AddEdge(<span style="color:#5bc4bf">&amp;</span>graph, A, B);
+  AddEdge(<span style="color:#5bc4bf">&amp;</span>graph, A, B);
+  AddEdge(<span style="color:#5bc4bf">&amp;</span>graph, A, B);
+  AddEdge(<span style="color:#5bc4bf">&amp;</span>graph, A, B);
+  
+  ShowGraphEdgeInfo(<span style="color:#5bc4bf">&amp;</span>graph);
+  GraphDestory(<span style="color:#5bc4bf">&amp;</span>graph);
+  
+  <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">WhoIsPrecede</span>(<span style="color:#fec418">int</span> data1, <span style="color:#fec418">int</span> data2)
+{
+  <span style="color:#815ba4">if</span>(data1<span style="color:#5bc4bf">&lt;</span>data2)
+    <span style="color:#815ba4">return</span> <span style="color:#f99b15">0</span>;
+  <span style="color:#815ba4">else</span>
+    <span style="color:#815ba4">return</span> <span style="color:#f99b15">1</span>;
+}
+
+<span style="color:#776e71">// 그래프 초기화
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphInit</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> nv)
+{
+  <span style="color:#fec418">int</span> i;
+  
+  <span style="color:#776e71">// 정점의 수에 해당하는 길이의 리스트 배열 생성
+</span><span style="color:#776e71"></span>  pg<span style="color:#5bc4bf">-&gt;</span>adjList <span style="color:#5bc4bf">=</span> (List<span style="color:#5bc4bf">*</span>)malloc(<span style="color:#815ba4">sizeof</span>(List)<span style="color:#5bc4bf">*</span>nv);	<span style="color:#776e71">// 간선 정보 저장할 리스트 생성
+</span><span style="color:#776e71"></span>  
+  pg<span style="color:#5bc4bf">-&gt;</span>numV <span style="color:#5bc4bf">=</span> nv;		<span style="color:#776e71">// 정점 수는 nv에 저장된 값으로 결정
+</span><span style="color:#776e71"></span>  pg<span style="color:#5bc4bf">-&gt;</span>numE <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">0</span>;			<span style="color:#776e71">// 초기 간선 수 0개
+</span><span style="color:#776e71"></span>  
+  <span style="color:#776e71">// 정점 수 만큼 생성된 리스트 초기화
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span>nv; i<span style="color:#5bc4bf">++</span>)
+  {
+    ListInit(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[i]));
+    SetSortRule(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[i]), WhoIsPrecede);
+    <span style="color:#776e71">// 그래프와 연관성이 없지만 연결 리스트가 요구하므로 함수 등록
+</span><span style="color:#776e71"></span>  }
+}
+
+<span style="color:#776e71">// 그래프 리소스 해제
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphDestory</span>(ALGraph <span style="color:#5bc4bf">*</span> pg)
+{
+  <span style="color:#815ba4">if</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList <span style="color:#5bc4bf">!=</span> NULL)
+    free(pg<span style="color:#5bc4bf">-&gt;</span>adjList);		<span style="color:#776e71">// 동적 연결 리스트 소멸
+</span><span style="color:#776e71"></span>}
+
+<span style="color:#776e71">// 간선 추가 - 무방향 그래프
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">AddEdge</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV)
+{
+  LInsert(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[fromV]), toV);
+  LInsert(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[toV]), fromV);
+  
+  pg<span style="color:#5bc4bf">-&gt;</span>numE <span style="color:#5bc4bf">+=</span> <span style="color:#f99b15">1</span>;
+}
+
+<span style="color:#776e71">// 간선 정보 출력
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowGraphEdgeInfo</span>(ALGraph <span style="color:#5bc4bf">*</span> pg)
+{
+  <span style="color:#fec418">int</span> i, vx;
+  
+  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span>pg<span style="color:#5bc4bf">-&gt;</span>numV; i<span style="color:#5bc4bf">++</span>)
+  {
+    printf(<span style="color:#48b685">&#34;%c와 연결된 정점 : &#34;</span>, i<span style="color:#5bc4bf">+</span><span style="color:#f99b15">65</span>);
+    
+    <span style="color:#815ba4">if</span>(LFirst(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[i]), <span style="color:#5bc4bf">&amp;</span>vx))
+    {
+      printf(<span style="color:#48b685">&#34;%c &#34;</span>, vx<span style="color:#5bc4bf">+</span><span style="color:#f99b15">65</span>);
+      <span style="color:#815ba4">while</span>(LNext(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[i]), <span style="color:#5bc4bf">&amp;</span>vx))
+        printf(<span style="color:#48b685">&#34;%c &#34;</span>, vx<span style="color:#5bc4bf">+</span><span style="color:#f99b15">65</span>);
+    }
+    printf(<span style="color:#48b685">&#34;</span><span style="color:#f99b15">\n</span><span style="color:#48b685">&#34;</span>);
+  }
+}</code></pre></td></tr></table>
 </div>
 </div>
+<h3 id="143-그래프의-탐색">14.3 그래프의 탐색</h3>
+
+<hr>
+
 <ul>
-<li>string을 하나 받고 첫번째 empty &lt;input&gt;에 넣는 setFirstEmptyInput() 함수를 작성하려 한다.</li>
+<li>그래프는 정형회된 틀이 아니므로 내용에 따라 형태가 어떻게 바뀔지 모름 → 탐색이 어려움</li>
+</ul>
+
+<h5 id="깊이-우선-탐색--depth-first-search">깊이 우선 탐색 - Depth First Search</h5>
+
+<ul>
+<li>한명씩 깊이로 가다보면 연결되니 결국 다 연결되지 않을까?</li>
+<li>한명씩 깊이로 연락을 취해감</li>
+<li>연락할 곳이 없으면 역으로 되돌아가면서 연락 취할 곳을 찾는다</li>
+<li>시작점으로 되돌아 오면 연락 끝</li>
+<li>시작점에서 다른 노드가 있다면 → 내 주변 연락가능지점을 다시 찾고 그사람으로 부터 다시 돌아옴</li>
+</ul>
+
+<h5 id="너비-우선-탐색--breath-first-search">너비 우선 탐색 - Breath First Search</h5>
+
+<ul>
+<li>내 주변 직접 연결된 모든 정점에 연락</li>
+</ul>
+
+<h5 id="dfs-구현">DFS 구현</h5>
+
+<ul>
+<li>방문 정보 기록의 목적으로 <strong>배열</strong> , 경로 정보 추적의 목적으로 <strong>스택</strong>을 이용</li>
+<li>다른 정점으로 이동될 때 이전 정점의 정보가 스택으로 이동한다.</li>
+<li>이미 주변 정점이 모두 연락을 받았을 경우(연락 할 사람이 없는 경우), <em>되돌아갈 정보를 스택에서 하나 얻는다.</em>
+
+<ul>
+<li>이전의 방문한 정점에 가더라도 스택에 정점 정보는 저장된다</li>
+</ul></li>
+<li>스택에 저장된 정보를 마지막까지 꺼내어 역으로 그 경로를 추적하다 보면 시작위치로 이동 가능하다.</li>
 </ul>
 <div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1489,34 +1633,82 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">setFirstEmptyInput</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">new_value</span>) {
-		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">found</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">false</span>;
-		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>;
-		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">elem</span> <span style="color:#5bc4bf">=</span> document.<span style="color:#06b6ef">getElementById</span>(<span style="color:#48b685">&#39;input&#39;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">i</span>);
-		<span style="color:#815ba4">while</span> (<span style="color:#06b6ef">elem</span> <span style="color:#5bc4bf">!==</span> <span style="color:#815ba4">null</span>) {
-				<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">elem</span>.<span style="color:#06b6ef">value</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;&#39;</span>) {
-						<span style="color:#06b6ef">found</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">true</span>;
-						<span style="color:#815ba4">break</span>;
-				}
-				<span style="color:#06b6ef">i</span><span style="color:#5bc4bf">++</span>;
-				<span style="color:#06b6ef">elem</span> <span style="color:#5bc4bf">=</span> document.<span style="color:#06b6ef">getElementById</span>(<span style="color:#48b685">&#39;input&#39;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">i</span>);
-		}
-		
-		<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">found</span>) <span style="color:#06b6ef">elem</span>.<span style="color:#06b6ef">value</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">new_value</span>;
-		<span style="color:#815ba4">return</span> <span style="color:#06b6ef">elem</span>;
-};</code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li><p>변수 관점 : var found, i, elem</p>
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// ALGraphDFS.h
+</span><span style="color:#776e71"></span><span style="color:#815ba4">enum</span> {A,B,C,D,E,F,G,H,I,J}
 
-<ul>
-<li>found 같은 intermediate variables는 미리 return</li>
-</ul></li>
-</ul>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> _ual
+{
+  <span style="color:#fec418">int</span> numV;		<span style="color:#776e71">// 정점 수
+</span><span style="color:#776e71"></span>  <span style="color:#fec418">int</span> numE;		<span style="color:#776e71">// 간선 수
+</span><span style="color:#776e71"></span>  List <span style="color:#5bc4bf">*</span> adjList;		<span style="color:#776e71">// 간선 정보
+</span><span style="color:#776e71"></span>  <span style="color:#fec418">int</span> <span style="color:#5bc4bf">*</span> visitInfo;	<span style="color:#776e71">// 탐색 과정에서 탐색이 진행된 정점 정보를 담기 위한 멤버 추가
+</span><span style="color:#776e71"></span>} ALGraph;
+
+<span style="color:#776e71">// graph initialization
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphInit</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> nv);
+
+<span style="color:#776e71">// graph resource cancel
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphDestory</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);
+
+<span style="color:#776e71">// add edge
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">AddEdge</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV);
+
+<span style="color:#776e71">// edge info print
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowGraphEdgeInfo</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);
+
+<span style="color:#776e71">// Show Vertex info based on DFS
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">DFShowGraphVertex</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> startV);
+
+<span style="color:#776e71">// visitInfo related added codes
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphInit</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> nv)
+{
+  ....
+  <span style="color:#776e71">// 정점의 수를 길이로 하여 배열을 할당
+</span><span style="color:#776e71"></span>  pg<span style="color:#5bc4bf">-&gt;</span>visitInfo <span style="color:#5bc4bf">=</span> (<span style="color:#fec418">int</span><span style="color:#5bc4bf">*</span>)malloc(<span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>) <span style="color:#5bc4bf">*</span> pg <span style="color:#5bc4bf">-&gt;</span> numV);
+  
+  <span style="color:#776e71">// 배열 모든 요소를 0으로 초기화
+</span><span style="color:#776e71"></span>  memset(pg<span style="color:#5bc4bf">-&gt;</span>visitInfo, <span style="color:#f99b15">0</span>, <span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>)<span style="color:#5bc4bf">*</span>pg<span style="color:#5bc4bf">-&gt;</span>numV);
+}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphDestroy</span>(ALGraph <span style="color:#5bc4bf">*</span> pg)
+{
+  ....
+   <span style="color:#776e71">// allocated array destory
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(pg<span style="color:#5bc4bf">-&gt;</span>visitInfo <span style="color:#5bc4bf">!=</span> NULL)
+    free(pg<span style="color:#5bc4bf">-&gt;</span>visitInfo);
+}</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
@@ -1532,74 +1724,125 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">setFirstEmptyInput</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">new_value</span>) {
-		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>;
-		<span style="color:#815ba4">var</span> <span style="color:#06b6ef">elem</span> <span style="color:#5bc4bf">=</span> document.<span style="color:#06b6ef">getElementById</span>(<span style="color:#48b685">&#39;input&#39;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">i</span>);
-		<span style="color:#815ba4">while</span> (<span style="color:#06b6ef">elem</span> <span style="color:#5bc4bf">!==</span> <span style="color:#815ba4">null</span>) {
-				<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">elem</span>.<span style="color:#06b6ef">value</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;&#39;</span>) {
-						<span style="color:#06b6ef">elem</span>.<span style="color:#06b6ef">value</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">new_value</span>;
-						<span style="color:#815ba4">return</span> <span style="color:#06b6ef">elem</span>;
-				}
-				<span style="color:#06b6ef">i</span><span style="color:#5bc4bf">++</span>;
-				<span style="color:#06b6ef">elem</span> <span style="color:#5bc4bf">=</span> document.<span style="color:#06b6ef">getElementById</span>(<span style="color:#48b685">&#39;input&#39;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">i</span>);
-		}
-		
-		<span style="color:#815ba4">return</span> <span style="color:#815ba4">null</span>;
-};</code></pre></td></tr></table>
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 방문한 정점의 정보를 그래프 멤버 visitInfo가 가리키는 배열에 등록하는 기능 제공
+</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">VisitVertex</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> visitV)
+{
+  <span style="color:#815ba4">if</span>(pg<span style="color:#5bc4bf">-&gt;</span>visitInfo[visitV] <span style="color:#5bc4bf">==</span> <span style="color:#f99b15">0</span>)		<span style="color:#776e71">// 처음 방문
+</span><span style="color:#776e71"></span>  {
+    pg<span style="color:#5bc4bf">-&gt;</span>visitInfo[visitV] <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>;	<span style="color:#776e71">// visitV에 방문 기록
+</span><span style="color:#776e71"></span>    printf(<span style="color:#48b685">&#34;%c &#34;</span>, visitV <span style="color:#5bc4bf">+</span> <span style="color:#f99b15">65</span>); <span style="color:#776e71">// 정점 이름 출력
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">return</span> TRUE;	<span style="color:#776e71">// 방문 성공
+</span><span style="color:#776e71"></span>  }
+  <span style="color:#815ba4">return</span> FALSE;			<span style="color:#776e71">// 방문 실패(이미 방문)	
+</span><span style="color:#776e71"></span>}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">DFShowGraphVertex</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> startV)
+{
+  <span style="color:#776e71">// initizliation
+</span><span style="color:#776e71"></span>  Stack stack;
+  <span style="color:#fec418">int</span> visitV <span style="color:#5bc4bf">=</span> startV, nextV;
+  StackInit(<span style="color:#5bc4bf">&amp;</span>stack);
+  VisitVertex(pg, visitV);	<span style="color:#776e71">// 시작 정점 방문
+</span><span style="color:#776e71"></span>  SPush(<span style="color:#5bc4bf">&amp;</span>stack, visitV);	<span style="color:#776e71">// 시작 정점 떠나며 스택으로
+</span><span style="color:#776e71"></span>  
+  <span style="color:#815ba4">while</span>(LFirst(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[visitV]), <span style="color:#5bc4bf">&amp;</span>nextV) <span style="color:#5bc4bf">==</span> TRUE)  <span style="color:#776e71">// 연결된 정점 정보를 얻어서
+</span><span style="color:#776e71"></span>  {
+    <span style="color:#fec418">int</span> visitFlag <span style="color:#5bc4bf">=</span> FALSE;
+    <span style="color:#815ba4">if</span>(VisitVertex(pg, nextV) <span style="color:#5bc4bf">==</span> TRUE)
+    {
+      <span style="color:#776e71">// 방문 시도했는데 방문 성공 시
+</span><span style="color:#776e71"></span>      <span style="color:#776e71">// 방문 정점 떠나기 위해 해당 정보를 스택으로
+</span><span style="color:#776e71"></span>      SPush(<span style="color:#5bc4bf">&amp;</span>stack, visitV);
+      visitV <span style="color:#5bc4bf">=</span> nextV;
+      visitFlag <span style="color:#5bc4bf">=</span> TRUE;
+    }
+    <span style="color:#815ba4">else</span>
+    {
+      <span style="color:#776e71">// 방문 시도했는데 방문한 적이 있다면 연결리스트의 정보를 가져옴
+</span><span style="color:#776e71"></span>      <span style="color:#776e71">// 연결된 다른 정점을 찾아서 방문을 시도하는 일련의 과정
+</span><span style="color:#776e71"></span>      <span style="color:#815ba4">while</span>(LNext(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[visitV]), <span style="color:#5bc4bf">&amp;</span>nextV) <span style="color:#5bc4bf">==</span> TRUE)
+      {
+        <span style="color:#815ba4">if</span>(VisitVertex(pg, nextV) <span style="color:#5bc4bf">==</span> TRUE)
+        {
+          SPush(<span style="color:#5bc4bf">&amp;</span>stack, visitV);
+          visitV <span style="color:#5bc4bf">=</span> nextV;
+          visitFlag <span style="color:#5bc4bf">=</span> TRUE;
+          <span style="color:#815ba4">break</span>;  <span style="color:#776e71">// 방문 성공
+</span><span style="color:#776e71"></span>        }
+      }
+    }
+    
+    <span style="color:#815ba4">if</span>(visitFlag <span style="color:#5bc4bf">==</span> FALSE)  <span style="color:#776e71">// 연결된 정점과의 방문 완료시
+</span><span style="color:#776e71"></span>    {
+      <span style="color:#815ba4">if</span>(SIsEmpty(<span style="color:#5bc4bf">&amp;</span>stack) <span style="color:#5bc4bf">==</span> TRUE)
+        <span style="color:#815ba4">break</span>;  <span style="color:#776e71">// 스택 비면 종료
+</span><span style="color:#776e71"></span>      <span style="color:#815ba4">else</span>
+        visitV <span style="color:#5bc4bf">=</span> SPop(<span style="color:#5bc4bf">&amp;</span>Stack); <span style="color:#776e71">// 되돌아가기 위한 Pop 연산
+</span><span style="color:#776e71"></span>    }
+  }
+  <span style="color:#776e71">// 마무리
+</span><span style="color:#776e71"></span>  memset(pg<span style="color:#5bc4bf">-&gt;</span>visitInfo, <span style="color:#f99b15">0</span>, <span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>)<span style="color:#5bc4bf">*</span>pg<span style="color:#5bc4bf">-&gt;</span>numV);
+}</code></pre></td></tr></table>
 </div>
 </div>
-<ul>
-<li>elem은 loopy하게 쓰이는데 1부터 올라가는 순서로 바꿔써본다</li>
-</ul>
-<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#815ba4">var</span> <span style="color:#06b6ef">setFirstEmptyInput</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">function</span> (<span style="color:#06b6ef">new_value</span>) {
-		<span style="color:#815ba4">for</span> (<span style="color:#815ba4">var</span> <span style="color:#06b6ef">i</span> <span style="color:#5bc4bf">=</span> <span style="color:#f99b15">1</span>; <span style="color:#815ba4">true</span>; <span style="color:#06b6ef">i</span><span style="color:#5bc4bf">++</span>) {
-				<span style="color:#815ba4">var</span> <span style="color:#06b6ef">elem</span> <span style="color:#5bc4bf">=</span> document.<span style="color:#06b6ef">getElementById</span>(<span style="color:#48b685">&#39;input&#39;</span> <span style="color:#5bc4bf">+</span> <span style="color:#06b6ef">i</span>);
-				<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">elem</span> <span style="color:#5bc4bf">===</span> <span style="color:#815ba4">null</span>)
-						<span style="color:#815ba4">return</span> <span style="color:#815ba4">null</span>; <span style="color:#776e71">// Search Failed. No empty input found.
-</span><span style="color:#776e71"></span>				<span style="color:#815ba4">if</span> (<span style="color:#06b6ef">elem</span>.<span style="color:#06b6ef">value</span> <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;&#39;</span>) {
-						<span style="color:#06b6ef">elem</span>.<span style="color:#06b6ef">value</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">new_value</span>;
-						<span style="color:#815ba4">return</span> <span style="color:#06b6ef">elem</span>;
-				}
-		}
-};</code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="요약">__요약</h3>
+<h5 id="bfs-구현">BFS 구현</h5>
 
 <ul>
-<li>You can make your code easier to read by having fewer variables and
-making them as “lightweight” as possible. Specifically:
-
-<ul>
-<li><strong>Eliminate variables that just get in the way</strong>. In particular, we showed a few examples
-of how to eliminate “intermediate result” variables by handling the result immediately.</li>
-<li><strong>Reduce the scope of each variable to be as small as possible.</strong> Move each variable to a place where the fewest lines of code can see it. Out of sight is out of mind.</li>
-<li><strong>Prefer write-once variables.</strong> Variables that are set only once (or const, final, or
-otherwise immutable) make code easier to understand.</li>
-</ul></li>
+<li>방문 정보 기록을 위한 배열 선언</li>
+<li>방문 차례 기록을 위한 Queue 선언</li>
 </ul>
 
 
 <footer class="footline">
 	
-	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 15/02/2021
+	    <i class='fas fa-user'></i> <a href="mailto:klee30810@gmail.com">Kevin Lee</a>  <i class='fas fa-calendar'></i> 07/03/2021
 	    </div>
 	
 </footer>
@@ -1917,25 +2160,6 @@ otherwise immutable) make code easier to understand.</li>
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1947,6 +2171,8 @@ otherwise immutable) make code easier to understand.</li>
                     
 
                     
+                        
+            
             
         
                     
@@ -2051,26 +2277,6 @@ otherwise immutable) make code easier to understand.</li>
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -2146,6 +2352,19 @@ otherwise immutable) make code easier to understand.</li>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -2153,6 +2372,26 @@ otherwise immutable) make code easier to understand.</li>
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -2242,6 +2481,9 @@ otherwise immutable) make code easier to understand.</li>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2626,19 +2868,19 @@ otherwise immutable) make code easier to understand.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1618352089"></script>
-    <script src="/js/perfect-scrollbar.min.js?1618352089"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1618352089"></script>
-    <script src="/js/jquery.sticky.js?1618352089"></script>
-    <script src="/js/featherlight.min.js?1618352089"></script>
-    <script src="/js/highlight.pack.js?1618352089"></script>
+    <script src="/js/clipboard.min.js?1618352088"></script>
+    <script src="/js/perfect-scrollbar.min.js?1618352088"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1618352088"></script>
+    <script src="/js/jquery.sticky.js?1618352088"></script>
+    <script src="/js/featherlight.min.js?1618352088"></script>
+    <script src="/js/highlight.pack.js?1618352088"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1618352089"></script>
-    <script src="/js/learn.js?1618352089"></script>
-    <script src="/js/hugo-learn.js?1618352089"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1618352088"></script>
+    <script src="/js/learn.js?1618352088"></script>
+    <script src="/js/hugo-learn.js?1618352088"></script>
     
         
-            <script src="/mermaid/mermaid.js?1618352089"></script>
+            <script src="/mermaid/mermaid.js?1618352088"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

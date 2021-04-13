@@ -619,6 +619,15 @@ __01. 그 기능을 구현하려고 애쓰지 마라 - 그럴 필요가 없다  
     </item>
     
     <item>
+      <title>Chap14. Graph </title>
+      <link>https://klee30810.github.io/compu/data_structure/chap14/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:29 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap14/</guid>
+      <description>14.1 그래프 이해와 종류   무방향 완전 그래프 : 연락의 방향성이 없음 → 안전한 구조 (둘 다 연락 시 백업이 되므로) 방향 완전 그래프 : 위험성 존재 부분 그래프 : 일부 정점과 간선으로 구성이 된 그래프  그래프의 집합 표현  정점 집합 : {A, B, C, D} 간선 집합 : {(A,B), (A,D), (C,D)} → 무방향 / 방향 있을 경우 &amp;lt;&amp;gt;  그래프의 ADT  그래프 최종목적 : 특정 정보를 그대로 담을 수 있도록 표현  1 2 3 4 5 6 7 8 9 10 11 12 13  enum {A, B, C, D, E, F}	// 정점 이름 선언  void GraphInit(UALGraph * pg, int nv); // 그래프 초기화, 두번째 인자로 정점의 수 전달  void GraphDestory(UALGraph * pg); // 그래프 초기화 과정 중, 할당한 리소스 반환  void AddEdge(UALGraph * pg, int fromV, int toV); // fromV와 toV로 전달된 정점을 연결하는 간선을 그래프에 추가  void ShowGraphEdgeInfo(UALGraph * pg); // 그래프 간선정보 출력   그래프를 구현하는 두 가지 방법  인접 행렬 기반 : 배열 선언 후 간선 정보 기록</description>
+    </item>
+    
+    <item>
       <title>Chap14. 테스트와 가독성</title>
       <link>https://klee30810.github.io/compu/readable_code/chap14/</link>
       <pubDate>Mon, 15 Feb 2021 07:55:12 +0900</pubDate>

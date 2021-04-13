@@ -133,5 +133,14 @@
       <description>13.1 빠른 탐색을 보이는 해쉬 테이블  테이블 자료구조  데이터가 key와 value로 한 쌍을 이루며, key가 데이터의 저장 및 탐색의 도구가 된다. 테이블 자료구조에서는 원하는 데이터를 단번에 찾을 수 있다. key 역시 의미있는 데이터로 정의하는 것이 좋다.  데이터에 근거하여 생성되어야 하며 중복되면 안된다.  테이블 자료구조의 탐색 연산은 O(1)의 시간복잡도를 보인다. 사전구조 혹은 맵(map)이라고 불린다.  배열 기반 테이블 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  typedef struct _empInfo { int empNum;	// 고유번호 : key  int age;	// 나이 : value } Empinfo; int main() { EmpInfo empInfoArr[1000]; EmpInfo ei; int eNum; printf(&amp;#34;Enter empnum &amp;amp; age: &amp;#34;); scanf(&amp;#34;%d %d&amp;#34;, &amp;amp;(ei.</description>
     </item>
     
+    <item>
+      <title>Chap14. Graph </title>
+      <link>https://klee30810.github.io/compu/data_structure/chap14/</link>
+      <pubDate>Sun, 07 Mar 2021 14:35:29 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/compu/data_structure/chap14/</guid>
+      <description>14.1 그래프 이해와 종류   무방향 완전 그래프 : 연락의 방향성이 없음 → 안전한 구조 (둘 다 연락 시 백업이 되므로) 방향 완전 그래프 : 위험성 존재 부분 그래프 : 일부 정점과 간선으로 구성이 된 그래프  그래프의 집합 표현  정점 집합 : {A, B, C, D} 간선 집합 : {(A,B), (A,D), (C,D)} → 무방향 / 방향 있을 경우 &amp;lt;&amp;gt;  그래프의 ADT  그래프 최종목적 : 특정 정보를 그대로 담을 수 있도록 표현  1 2 3 4 5 6 7 8 9 10 11 12 13  enum {A, B, C, D, E, F}	// 정점 이름 선언  void GraphInit(UALGraph * pg, int nv); // 그래프 초기화, 두번째 인자로 정점의 수 전달  void GraphDestory(UALGraph * pg); // 그래프 초기화 과정 중, 할당한 리소스 반환  void AddEdge(UALGraph * pg, int fromV, int toV); // fromV와 toV로 전달된 정점을 연결하는 간선을 그래프에 추가  void ShowGraphEdgeInfo(UALGraph * pg); // 그래프 간선정보 출력   그래프를 구현하는 두 가지 방법  인접 행렬 기반 : 배열 선언 후 간선 정보 기록</description>
+    </item>
+    
   </channel>
 </rss>
