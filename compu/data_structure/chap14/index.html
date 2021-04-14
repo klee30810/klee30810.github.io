@@ -17,21 +17,21 @@
    <title>Chap14. Graph  - Kevin&#39;s Codex</title>
 
     
-    <link href="/css/nucleus.css?1618352088" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1618352088" rel="stylesheet">
-    <link href="/css/hybrid.css?1618352088" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1618352088" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1618352088" rel="stylesheet">
-    <link href="/css/auto-complete.css?1618352088" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1618352088" rel="stylesheet">
-    <link href="/css/theme.css?1618352088" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1618352088" rel="stylesheet">
+    <link href="/css/nucleus.css?1618435399" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1618435399" rel="stylesheet">
+    <link href="/css/hybrid.css?1618435399" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1618435399" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1618435399" rel="stylesheet">
+    <link href="/css/auto-complete.css?1618435399" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1618435399" rel="stylesheet">
+    <link href="/css/theme.css?1618435399" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1618435399" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1618352088" rel="stylesheet">
+    <link href="/css/theme-blue.css?1618435399" rel="stylesheet">
     
-    <link href="/css/foo.css?1618352088" rel="stylesheet"><link href="/css/bar.css?1618352088" rel="stylesheet">
+    <link href="/css/foo.css?1618435399" rel="stylesheet"><link href="/css/bar.css?1618435399" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1618352088"></script>
+    <script src="/js/jquery-3.3.1.min.js?1618435399"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -61,14 +61,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1618352088"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1618352088"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1618435399"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1618435399"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/klee30810.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1618352088"></script>
+<script type="text/javascript" src="/js/search.js?1618435399"></script>
 
     
   </div>
@@ -1837,8 +1837,489 @@
 <ul>
 <li>방문 정보 기록을 위한 배열 선언</li>
 <li>방문 차례 기록을 위한 Queue 선언</li>
+<li>가까운 것 중 누구에게 먼저 가는지는 그렇게 중요하지 않으며 대상의 정보를 큐에 저장</li>
+<li>큐에 꺼내어 방문을 진행하고, 방문한 정점의 정보를 다시 큐에 넣는 일련의 과정을 <em>큐가 빌 때까지</em> 반복</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// ALGraphBFS.h
+</span><span style="color:#776e71"></span><span style="color:#815ba4">enum</span> {A,B,C,D,E,F,G,H,I,H};
+
+<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> _ual
+{
+  <span style="color:#fec418">int</span> numV;
+  <span style="color:#fec418">int</span> numE;
+  List <span style="color:#5bc4bf">*</span> adjList;
+  <span style="color:#fec418">int</span> <span style="color:#5bc4bf">*</span> visitInfo;
+} ALGraph;
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphInit</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> nv);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphDestory</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">AddEdge</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowGraphEdgeInfo</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">BFShowGraphVertex</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> startV);</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">void</span> <span style="color:#06b6ef">BFShowGraphVertex</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> startV)
+{
+  Queue queue;
+  <span style="color:#fec418">int</span> visitV <span style="color:#5bc4bf">=</span> startV;
+  <span style="color:#fec418">int</span> nextV;
+  
+  QueueInit(<span style="color:#5bc4bf">&amp;</span>queue);
+  VisitVertex(pg, visitV);
+  
+  <span style="color:#815ba4">while</span>(LFirst(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[visitV]), <span style="color:#5bc4bf">&amp;</span>nextV) <span style="color:#5bc4bf">==</span> TRUE)
+  {
+    <span style="color:#815ba4">if</span>(VisitVertex(pg, nextV) <span style="color:#5bc4bf">==</span> TRUE)
+      Enqueue(<span style="color:#5bc4bf">&amp;</span>queue, nextV);
+    
+    <span style="color:#815ba4">while</span>(LNext(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[visitV]), <span style="color:#5bc4bf">&amp;</span>nextV) <span style="color:#5bc4bf">==</span> TRUE)
+    {
+      <span style="color:#815ba4">if</span>(VisitVertex(pg, nextV) <span style="color:#5bc4bf">==</span> TRUE)
+        Enqueue(<span style="color:#5bc4bf">&amp;</span>queue, nextV);
+    }
+    
+    <span style="color:#815ba4">if</span>(QIsEmpty(<span style="color:#5bc4bf">&amp;</span>queue) <span style="color:#5bc4bf">==</span> TRUE)
+      <span style="color:#815ba4">break</span>;	<span style="color:#776e71">// 큐가 비면 탈출조건 성립
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">else</span>
+      visitV <span style="color:#5bc4bf">=</span> Dequeue(<span style="color:#5bc4bf">&amp;</span>queue);
+  }
+  memset(pg<span style="color:#5bc4bf">-&gt;</span>visitInfo, <span style="color:#f99b15">0</span>, <span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>)<span style="color:#5bc4bf">*</span>pg<span style="color:#5bc4bf">-&gt;</span>numV);
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="144-최소-비용-신장-트리">14.4 최소 비용 신장 트리</h3>
+
+<hr>
+
+<ul>
+<li>단순경로 : 중복된 간선을 포함하지 않는 경로</li>
+<li>사이클 : 시작점과 끝점이 같은 단순 경로(폐공간)</li>
+<li>신장 트리 : 어떻게 경로를 구성하더라도 '사이클'을 형성하지 않는 그래프
+
+<ul>
+<li>그래프의 모든 정점이 간선에 의해서 하나로 연결되어 있다.</li>
+<li>그래프 내에서 사이클을 형성하지 않는다.</li>
+</ul></li>
 </ul>
 
+<h5 id="크루스칼-알고리즘">크루스칼 알고리즘</h5>
+
+<ul>
+<li>가중치를 기준으로 간선을 정렬한 후에 MST가 될때 까지 간선을 하나씩 선택 또는 삭제해나가는 과정
+
+<ul>
+<li>간선을 다 지우고 가중치가 낮은 것부터 추가 + 사이클 형성 간선은 건너뜀</li>
+<li>최소 비용 신장 트리의 조건인 <strong>간선의 수 + 1 = 정점의 수</strong> 만족시 최소 비용 신장 트리 형성 완료</li>
+</ul></li>
+<li>높은 가중치의 간선을 하나씩 빼는 방식
+
+<ul>
+<li>독립정점을 만들지 않고 신장 트리 조건을 항상 확인</li>
+<li>최소 비용 신장 트리의 조건인 <strong>간선의 수 + 1 = 정점의 수</strong> 만족시 최소 비용 신장 트리 형성 완료</li>
+</ul></li>
+</ul>
+
+<h5 id="구현">구현</h5>
+
+<ul>
+<li>가중치를 기준으로 간선을 내림차순으로 정렬한 다음 높은 가중치의 간선부터 시작해서 하나씩 그래프에서 제거하는 방식</li>
+<li>&quot;이 간선을 삭제한 후에도 이 간선에 의해 연결된 두 정점을 연결하는 경로가 있는가?&quot; → DFShowGraphVertex 함수 확장</li>
+<li>&quot;그래프를 구성하는 간선들을 가중치를 기준으로 정렬할 수 있어야 함&quot; → 우선순위 큐 활용</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// header
+</span><span style="color:#776e71"></span><span style="color:#815ba4">enum</span> {A,B,C,D,E,F,G,H,I,j}
+
+<span style="color:#815ba4">typedef</span> <span style="color:#815ba4">struct</span> _ual
+{
+  <span style="color:#fec418">int</span> numV;
+  <span style="color:#fec418">int</span> numE;
+  List <span style="color:#5bc4bf">*</span> adjList;
+  <span style="color:#fec418">int</span> <span style="color:#5bc4bf">*</span> visitInfo;
+  PQueue pqueue;		<span style="color:#776e71">// 간선의 가중치 정보 저장
+</span><span style="color:#776e71"></span>} ALGraph;
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphInit</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> nv);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphDestory</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">AddEdge</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV, <span style="color:#fec418">int</span> weight);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowGraphEdgeInfo</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">DFShowGraphVertex</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> startV);
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">ConKruskalMST</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);		<span style="color:#776e71">// 최소 비용 신장 트리의 구성
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">ShowGraphEdgeWeightInfo</span>(ALGraph <span style="color:#5bc4bf">*</span> pg);		<span style="color:#5bc4bf">//</span> <span style="color:#ef6155">가중치</span> <span style="color:#ef6155">정보</span> <span style="color:#ef6155">출력</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">PQWeightComp</span>(Edge d1, Edge d2)
+{
+  <span style="color:#815ba4">return</span> d1.weight <span style="color:#5bc4bf">-</span> d2.weight;
+} <span style="color:#776e71">// 가중치 기준 내림차순으로 간선 정보 꺼내기 위한 정의
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">GraphInit</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> nv)
+{
+  ....
+   
+  <span style="color:#776e71">// 우선순위 큐 초기화
+</span><span style="color:#776e71"></span>  PQueueInit(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>pqueue), PQWeightComp);
+}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">AddEdge</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV, <span style="color:#fec418">int</span> weight)
+{
+  Edge edge <span style="color:#5bc4bf">=</span> {fromV, toV, weight};		<span style="color:#776e71">// 간선 가중치 정보 담음
+</span><span style="color:#776e71"></span>  LInsert(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[fromV]), toV);
+  LInsert(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[toV]), fromV);
+  pg<span style="color:#5bc4bf">-&gt;</span>numE <span style="color:#5bc4bf">+=</span> <span style="color:#f99b15">1</span>;
+  
+  <span style="color:#776e71">// 간선의 가중치 정보 우선순위 큐에 저장
+</span><span style="color:#776e71"></span>  PEnqueue(<span style="color:#5bc4bf">&amp;</span>(pq<span style="color:#5bc4bf">-&gt;</span>pqueue), edge);
+}
+
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">ConKruskalMST</span>(ALGraph <span style="color:#5bc4bf">*</span> pg)	<span style="color:#776e71">// 크루스칼 알고리즘 기반 MST 구성
+</span><span style="color:#776e71"></span>{
+  Edge recvEdge[<span style="color:#f99b15">20</span>];		<span style="color:#776e71">// 복원 간선 정보 저장
+</span><span style="color:#776e71"></span>  Edge edge;
+  <span style="color:#fec418">int</span> eidx<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>, i;
+  
+  <span style="color:#776e71">// MST 형성할 때까지 while문 반복
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">while</span>(pg<span style="color:#5bc4bf">-&gt;</span>numE<span style="color:#5bc4bf">+</span><span style="color:#f99b15">1</span> <span style="color:#5bc4bf">&gt;</span> pg<span style="color:#5bc4bf">-&gt;</span>numV)		<span style="color:#776e71">// MST 간선의 수 + 1 == 정점의 수
+</span><span style="color:#776e71"></span>  {
+    edge <span style="color:#5bc4bf">=</span> PDequeue(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>pqueue));	<span style="color:#776e71">// 가중치 순으로 간선 정보 획득
+</span><span style="color:#776e71"></span>    RemoveEdge(pg, edge.v1, edge.v2);	<span style="color:#776e71">// 획득한 정보의 간선 실제 삭제
+</span><span style="color:#776e71"></span>    
+    <span style="color:#815ba4">if</span>(<span style="color:#5bc4bf">!</span>IsConnVertex(pg, edge.v1, edge.v2))		<span style="color:#776e71">// 삭제 후 두 정점 연결경로 있는지 확인 (&#34;삭제 해도 연결 되는가?&#34;)
+</span><span style="color:#776e71"></span>    {
+      RecoverEdge(pg, edge.v1, edge.v2, edge.weight);	<span style="color:#776e71">// 연결 경로 없으면 간선 복원
+</span><span style="color:#776e71"></span>      recvEdge[eidx<span style="color:#5bc4bf">++</span>] <span style="color:#5bc4bf">=</span> edge;
+    }
+  }
+  
+  <span style="color:#776e71">// 우선순위 큐에서 삭제된 간선의 정보를 회복
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">for</span>(i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">0</span>; i<span style="color:#5bc4bf">&lt;</span>eidx; i<span style="color:#5bc4bf">++</span>)
+    PEnqueue(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>pqueue), recvEdge[i]);
+}</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">98
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// 간선의 소멸
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">RemoveEdge</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV)
+{
+  RemoveWayEdge(pg, fromV, toV);
+  RemoveWayEdge(pg, toV, fromV);
+  (pg<span style="color:#5bc4bf">-&gt;</span>numE)<span style="color:#5bc4bf">--</span>;
+}  <span style="color:#776e71">// 인접 리스트 기반 무방향 그래프인 관계로 하나의 간선을 완전히 소멸하기 위해서는 두 개의 간선 정보를 소멸시켜야 한다.
+</span><span style="color:#776e71"></span>
+<span style="color:#fec418">void</span> <span style="color:#06b6ef">RecoverEdge</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV, <span style="color:#fec418">int</span> weight)
+{
+  LInsert(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[fromV]), toV);
+  LInsert(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[toV]), fromV);
+  (pg<span style="color:#5bc4bf">-&gt;</span>numE)<span style="color:#5bc4bf">++</span>;
+}		<span style="color:#776e71">// AddEdge 함수와 달리 간선의 가중치 정보를 별도로 저장하지 않는다. 
+</span><span style="color:#776e71"></span>
+<span style="color:#776e71">// 한쪽 방향 간선의 소멸
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">RemoveWayEdge</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> fromV, <span style="color:#fec418">int</span> toV)
+{
+  <span style="color:#fec418">int</span> edge;
+  <span style="color:#776e71">// 지워질 때까지 찾아가서 삭제
+</span><span style="color:#776e71"></span>  <span style="color:#815ba4">if</span>(LFirst(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[fromV]), <span style="color:#5bc4bf">&amp;</span>edge))
+  {
+    <span style="color:#815ba4">if</span>(edge <span style="color:#5bc4bf">==</span> toV)
+    {
+      LRemove(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[fromV]));
+      <span style="color:#815ba4">return</span>;
+    }
+    <span style="color:#815ba4">while</span>(LNext(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[fromV]), <span style="color:#5bc4bf">&amp;</span>edge))
+    {
+      <span style="color:#815ba4">if</span>(edge <span style="color:#5bc4bf">==</span> toV)
+      {
+        LRemove(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[fromV]));
+        <span style="color:#815ba4">return</span>;
+      }
+    }
+  }
+}
+
+<span style="color:#776e71">// 인자로 전달된 두 정점이 연결되어 있다면 TRUE, 그렇지 않다면 FALSE
+</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">IsConnVertex</span>(ALGraph <span style="color:#5bc4bf">*</span> pg, <span style="color:#fec418">int</span> v1, <span style="color:#fec418">int</span> v2)
+{
+  Stack stack;
+  <span style="color:#fec418">int</span> visitV <span style="color:#5bc4bf">=</span> v1;
+  <span style="color:#fec418">int</span> nextV;
+  
+  StackInit(<span style="color:#5bc4bf">&amp;</span>stack);
+  VisitVertex(pg, visitV);
+  SPush(<span style="color:#5bc4bf">&amp;</span>stack, visitV);
+  
+  <span style="color:#815ba4">while</span>(LFirst(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[visitV]), <span style="color:#5bc4bf">&amp;</span>nextV) <span style="color:#5bc4bf">==</span> TRUE)
+  {
+    <span style="color:#fec418">int</span> visitFlag <span style="color:#5bc4bf">=</span> FALSE;
+    
+    <span style="color:#776e71">// 정점을 돌아다니는 도중 목표를 찾는다면 TRUE 반환
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">if</span>(next <span style="color:#5bc4bf">==</span> v2)
+    {
+      <span style="color:#776e71">// 함수가 반환하기 전 초기화 진행
+</span><span style="color:#776e71"></span>      memset(pg<span style="color:#5bc4bf">-&gt;</span>visitInfo, <span style="color:#f99b15">0</span>, <span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>)<span style="color:#5bc4bf">*</span>pg<span style="color:#5bc4bf">-&gt;</span>numV);
+      <span style="color:#815ba4">return</span> TRUE;	<span style="color:#776e71">// 목표를 찾음
+</span><span style="color:#776e71"></span>    }
+    
+    <span style="color:#815ba4">if</span>(VisitVertex(pg, nextV) <span style="color:#5bc4bf">==</span> TRUE)
+    {
+      SPush(<span style="color:#5bc4bf">&amp;</span>stack, visitV);
+      visitV <span style="color:#5bc4bf">=</span> nextV;
+      visitFlag <span style="color:#5bc4bf">=</span> TRUE;
+    }
+    <span style="color:#815ba4">else</span>
+    {
+      <span style="color:#815ba4">while</span>(LNext(<span style="color:#5bc4bf">&amp;</span>(pg<span style="color:#5bc4bf">-&gt;</span>adjList[visitV]), <span style="color:#5bc4bf">&amp;</span>nextV) <span style="color:#5bc4bf">==</span> TRUE)
+      {
+        <span style="color:#776e71">// 정점을 돌아다니는 도중 목표를 찾는다면 TRUE 반환
+</span><span style="color:#776e71"></span>        <span style="color:#815ba4">if</span>(nextV <span style="color:#5bc4bf">==</span> v2)
+        {
+          <span style="color:#776e71">// 함수가 반환하기 전 초기화 진행
+</span><span style="color:#776e71"></span>          memset(pf<span style="color:#5bc4bf">-&gt;</span>visitInfo, <span style="color:#f99b15">0</span>, <span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>)<span style="color:#5bc4bf">*</span>pg<span style="color:#5bc4bf">-&gt;</span>numV);
+          <span style="color:#815ba4">return</span> TRUE;		<span style="color:#776e71">// 목표 찾음
+</span><span style="color:#776e71"></span>        }
+        <span style="color:#815ba4">if</span>(VisitVertex(pg, nextV) <span style="color:#5bc4bf">==</span> TRUE)
+        {
+          SPush(<span style="color:#5bc4bf">&amp;</span>stack, visitV);
+          visitV <span style="color:#5bc4bf">=</span> nextV;
+          visitFlag <span style="color:#5bc4bf">=</span> TRUE;
+          <span style="color:#815ba4">break</span>;
+        }
+      }
+    }
+    <span style="color:#815ba4">if</span>(visitFlag <span style="color:#5bc4bf">==</span> FALSE)
+    {
+      <span style="color:#815ba4">if</span>(SIsEmpty(<span style="color:#5bc4bf">&amp;</span>stack) <span style="color:#5bc4bf">==</span> TRUE)
+        <span style="color:#815ba4">break</span>;
+      <span style="color:#815ba4">else</span>
+        visitV <span style="color:#5bc4bf">=</span> SPop(<span style="color:#5bc4bf">&amp;</span>stack);
+    }
+  }
+  memset(pg<span style="color:#5bc4bf">-&gt;</span>visitInfo, <span style="color:#f99b15">0</span>, <span style="color:#815ba4">sizeof</span>(<span style="color:#fec418">int</span>)<span style="color:#5bc4bf">*</span>pg<span style="color:#5bc4bf">-&gt;</span>numV);
+  <span style="color:#815ba4">return</span> FALSE;
+}</code></pre></td></tr></table>
+</div>
+</div>
 
 <footer class="footline">
 	
@@ -2868,19 +3349,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1618352088"></script>
-    <script src="/js/perfect-scrollbar.min.js?1618352088"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1618352088"></script>
-    <script src="/js/jquery.sticky.js?1618352088"></script>
-    <script src="/js/featherlight.min.js?1618352088"></script>
-    <script src="/js/highlight.pack.js?1618352088"></script>
+    <script src="/js/clipboard.min.js?1618435400"></script>
+    <script src="/js/perfect-scrollbar.min.js?1618435400"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1618435400"></script>
+    <script src="/js/jquery.sticky.js?1618435400"></script>
+    <script src="/js/featherlight.min.js?1618435400"></script>
+    <script src="/js/highlight.pack.js?1618435400"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1618352088"></script>
-    <script src="/js/learn.js?1618352088"></script>
-    <script src="/js/hugo-learn.js?1618352088"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1618435400"></script>
+    <script src="/js/learn.js?1618435400"></script>
+    <script src="/js/hugo-learn.js?1618435400"></script>
     
         
-            <script src="/mermaid/mermaid.js?1618352088"></script>
+            <script src="/mermaid/mermaid.js?1618435400"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
