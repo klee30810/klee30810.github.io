@@ -245,6 +245,13 @@
 	"content": "Chapter 2 Mechanical Engineering Mechanical Engineering Studies  Statics   Material Mechanics   Thermodynamics   Mechanical experiment   "
 },
 {
+	"uri": "https://klee30810.github.io/battery/electrochem/",
+	"title": "Electro-Chemistry",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 3 Electro-Chemistry Electro-Chemistry referenced by \u0026ldquo;전기화학 - 오승모\u0026rdquo;\n "
+},
+{
 	"uri": "https://klee30810.github.io/compu/data_structure/chap3/",
 	"title": "Chap3. Linked List 1",
 	"tags": ["Data Structure"],
@@ -438,7 +445,7 @@
 	"title": "Battery",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 6 Battery Battery Studies in diverse field  Battery Basics   Principles \u0026amp; Applications of Lithium Secondary Batteries   "
+	"content": "Chapter 6 Battery Battery Studies in diverse field  Battery Basics   Principles \u0026amp; Applications of Lithium Secondary Batteries   Electro-Chemistry   "
 },
 {
 	"uri": "https://klee30810.github.io/compu/data_structure/chap7/",
