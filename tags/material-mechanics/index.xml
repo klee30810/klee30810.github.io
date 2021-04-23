@@ -6,7 +6,7 @@
     <description>Recent content in Material Mechanics on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 04 Apr 2021 20:07:02 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/material-mechanics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 12:25:19 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/material-mechanics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chap1, 2. Statics Review</title>
       <link>https://klee30810.github.io/mech/material/lect/chap12/</link>
@@ -27,6 +27,15 @@ Force - Displacement Curve
  fracture : 재료의 붕괴 시점 ⇒ 예측 불가능 UTS를 지나면 약한 부분이 necking K : stiffness(강성) → 변형 구간의 변형정도 strength(강도) → 힘을 얼마나 줄 수 있느냐 Area = F x d : 흡수 가능한 (견딜 수 있는) 에너지 (toughness)  
  work(strain) hardening : 소성영역에서 더 강해짐 / 에너지 흡수 등력이 줄어들음  
  ductile : large plastic deformation, metal, energy absorption (소성변형 시)</description>
+    </item>
+    
+    <item>
+      <title>Chap4. Axial Load</title>
+      <link>https://klee30810.github.io/mech/material/lect/chap4/</link>
+      <pubDate>Sun, 18 Apr 2021 12:25:19 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/mech/material/lect/chap4/</guid>
+      <description></description>
     </item>
     
   </channel>

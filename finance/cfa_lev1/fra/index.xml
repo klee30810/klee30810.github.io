@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Financial Reporting &amp; Analysis on Kevin&#39;s Codex</title>
+    <link>https://klee30810.github.io/finance/cfa_lev1/fra/</link>
+    <description>Recent content in Financial Reporting &amp; Analysis on Kevin&#39;s Codex</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 18 Apr 2021 12:27:58 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/finance/cfa_lev1/fra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Introduction</title>
+      <link>https://klee30810.github.io/finance/cfa_lev1/fra/1_intro/</link>
+      <pubDate>Tue, 20 Apr 2021 06:53:12 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/cfa_lev1/fra/1_intro/</guid>
+      <description>Financial Reporting Analysis   Financial Reporting : 기업의 이해관계자들에게 주는 회사정보 ⇒ FS + α   FS 1 : Balance Sheet (Statement of Financial Position) : 재무 상태표 FS 2 : Income Statement (Statement of Operating Result) : 손익 계산서 FS 3 : Cash Flow Statement : 현금흐름표 FS 4 : Statement of Change in Equity : 자본 변동표 α : audit report, annual report, 경영 report, footnotes etc.</description>
+    </item>
+    
+  </channel>
+</rss>
