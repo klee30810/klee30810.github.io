@@ -262,12 +262,17 @@ __01. 예: Filter()  filter라는 변수명은 의미가 모호하다. 대상을
     </item>
     
     <item>
-      <title>Chap4. Axial Load</title>
-      <link>https://klee30810.github.io/mech/material/lect/chap4/</link>
+      <title>Chap4&amp;5. Axial Load &amp; Torsion</title>
+      <link>https://klee30810.github.io/mech/material/lect/chap45/</link>
       <pubDate>Sun, 18 Apr 2021 12:25:19 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/mech/material/lect/chap4/</guid>
-      <description></description>
+      <guid>https://klee30810.github.io/mech/material/lect/chap45/</guid>
+      <description>Chap 4. Torsion   Saint Vernant Principle : stress concentration이 먼 곳에서는 beam 내부의 stress distribution이 uniform 하다고 가정  → 응력 집중의 효과는 국부적이므로 힘의 원인에서 충분히 떨어진 고셍서는 응력이 균일하다고 볼 수 있다.
+ Equilibrium equation : \(σ A(x)=N(x)\)
+ Stress Strain equation : \(σ{xx}=E\varepsilon{xx} ⇒ E\frac{\partial u}{\partial x}A(x)=N(x)\)
+ Strain-Displacement equation : \(\varepsilon_{xx}=\frac{\partial u_{xx}}{\partial x}\)
+  \[\frac{\partial u}{\partial x}=\frac{N(x)}{EA(x)} → u=\int \frac{N(x)}{EA(x)}dx \]
+ Boundary Condition : reaction force를 주는 것 ⇒ 움직일 수 있으면 reaction force가 없다  Chapter 5.</description>
     </item>
     
     <item>
