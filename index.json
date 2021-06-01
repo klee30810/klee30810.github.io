@@ -1,10 +1,17 @@
 [
 {
+	"uri": "https://klee30810.github.io/finance/ajae/prior/",
+	"title": "Prior",
+	"tags": ["finance"],
+	"description": "Prior of Walstreet Ajae",
+	"content": "Three wisdom of Trading 1. Probability  카지노의 우위 : 무조건 50% 이상 이길 확률 차지 확률에 대한 절대적인 존중 필요. 불확실성은 적이면서 동반자이다. 1회성 결과에 일희일비 하지 말라 이론적 확률에 집착하라. 승률이 50% 이상인 매매를 하면 져도 이긴 것이다. 51% 승률의 매매를 하면 결과에 상관 없이 1%의 확률적 이익을 얻었다고 생각. 확률적 이익을 모으는 것이 트레이딩 확률적 우연에 의한 승리에 도취되지 말라  2. Budget  마틴게일 베팅 : 카지노  "
+},
+{
 	"uri": "https://klee30810.github.io/finance/halto/1_100/",
 	"title": "1~100 Review",
 	"tags": ["finance"],
 	"description": "1~100",
-	"content": "2. 버핏의 계량화 8. 모멘텀의 오묘한 세계 Jeegadesh/Titman - Returns to buying Winners and Selling Losers\n Fama/French : 소형주, 저PBR Jeegaesh/Titman : 중기 모멘텀\n 최근 많이 오른 주식을 매수하고, 최근 많이 내린 주식을 공매도하는 투자전략을 활용하면 상당한 초과수익을 낼 수 있다.\n 초과수익은 3~12개월 유지된다.\n 결과 1 : 최근 3~12개월간 가장 많이 오른 놈 사는 것이 장땡 결과 2 : 중소형주, 고베타 주식에서 잘먹힘 → 한국에서는 중소형주에서는 모멘텀이 안먹힘 결과 3 : 1월에는 하지마라 결과 4 : 1965~89 데이터를 5년 단위로 찢어도 (거의) 다 통한다.   9. 저평가, 우량주, 모멘텀 대통합 AQR - A New Core Equity Paradigm (2013)\n"
+	"content": "2. 버핏의 계량화 8. 모멘텀의 오묘한 세계 Jeegadesh/Titman - Returns to buying Winners and Selling Losers\n Fama/French : 소형주, 저PBR Jeegaesh/Titman : 중기 모멘텀\n 최근 많이 오른 주식을 매수하고, 최근 많이 내린 주식을 공매도하는 투자전략을 활용하면 상당한 초과수익을 낼 수 있다.\n 초과수익은 3~12개월 유지된다.\n 결과 1 : 최근 3~12개월간 가장 많이 오른 놈 사는 것이 장땡 결과 2 : 중소형주, 고베타 주식에서 잘먹힘 → 한국에서는 중소형주에서는 모멘텀이 안먹힘 결과 3 : 1월에는 하지마라 결과 4 : 1965~89 데이터를 5년 단위로 찢어도 (거의) 다 통한다.   10. 저평가, 우량주, 모멘텀 대통합 AQR - A New Core Equity Paradigm (2013)\n 저평가(밸류) 순위가 우수하고, 우량주(퀄리티) 순위가 우수하고, 최근 많이 오른(모멘텀) 주식을 사야하지 않을까? 주가지수를 베낄 벤치마크 제시\n 대부분 투자자는 주가지수를 벤치마크로 사용하지만, 저평가+우량주+모멘텀을 벤치마크로 삼음 → 수익이 높은 건 당연하고 리스크도 낮아짐  저평가 + 우량주 : \u0026quot;과거 실적과 재무 안정성이 중요 (퀄리티), PER/PBR가 높으면 안되 (밸류)\u0026quot;\n 모멘텀 : 최근 1년간 상대적으로 많이 오른 주식 사는 전략, 미국 등 전세계에서 거의 다 통하지만, 한국은 대형주만 통함\n 사용 지표\n 저평가 : PBR, PER, 미래 PER, 현금흐름/EV, 매출/EV 우량주 : ROA, 매출총이익/매출, 현금흐름/자산 모멘텀 : 최근 12개월 수익 (최근 한달 제외[급등주는 고꾸라지므로])  요소 하나씩 붙이면 수익이 늘어난다!\n  "
 },
 {
 	"uri": "https://klee30810.github.io/finance/paper_review/qmj/",
@@ -364,6 +371,13 @@
 	"content": "Chapter 3 Electrical \u0026amp; Electronic Engineering Electrical \u0026amp; Electronic Engineering Studies {  "
 },
 {
+	"uri": "https://klee30810.github.io/finance/ajae/",
+	"title": "Walstreet Ajae",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 4 Walstreet Ajae Walstreet Ajae Study from Youtube Channel\n Prior   "
+},
+{
 	"uri": "https://klee30810.github.io/mech/material/lect/chap45/",
 	"title": "Chap4&amp;5. Axial Load &amp; Torsion",
 	"tags": ["Material Mechanics"],
@@ -536,7 +550,7 @@
 	"title": "Finance",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 7 Finance Finance Studies.\n CFA level 1   할수있다 알고투자 Study   Paper_review   "
+	"content": "Chapter 7 Finance Finance Studies.\n CFA level 1   할수있다 알고투자 Study   Paper_review   Walstreet Ajae   "
 },
 {
 	"uri": "https://klee30810.github.io/compu/data_structure/chap8/",
