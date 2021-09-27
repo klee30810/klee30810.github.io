@@ -8,6 +8,24 @@
     <language>ko-kr</language>
     <lastBuildDate>Mon, 08 Feb 2021 23:39:19 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Warm up</title>
+      <link>https://klee30810.github.io/finance/halto/hmdd/chap1/warm_up/</link>
+      <pubDate>Sun, 26 Sep 2021 09:23:13 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/halto/hmdd/chap1/warm_up/</guid>
+      <description>1. Book Structure   투자의 3 기술 : 자산 배분, 마켓 타이밍, 종목 선정  자산 배분 : 기대 수익률과 위험 수준이 다른 자산군(주식, 채권, 금, 원자재, 부동산, 암호화폐 등)에 투자 자금을 배분 ⇒ 높은 수익이 아니라 적절한 수익을 유지하면서 리스크를 최소화 마켓 타이밍 : 단기적으로 높은 수익이 기대되는 자산군의 비중을 늘리고 단기적으로 낮은 수익이 기대되는 자산군의 비중을 낮춰서, 리스크는 자산 배분과 같은 수준으로 유지하되 수익을 높이려는 전략 (가격, 계절성, 경제지표, 밸류에이션 .</description>
+    </item>
+    
+    <item>
+      <title>Todays</title>
+      <link>https://klee30810.github.io/finance/ajae/80days/todays/</link>
+      <pubDate>Mon, 23 Aug 2021 06:31:12 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/80days/todays/</guid>
+      <description>7/28  코로나 변이 바이러스, 중국 규제, 테이퍼링, 인플레이션 중국 규제 - 중국 기술주 폭락  중국의 내외적인 모습 때문에 시진핑이 초조한 모습을 보이고 있다. 혁신의 아이콘들을 길들이려 하고 있음 → 독재를 하면 완전한 자본주의를 허용할 수 없다. 미국 주식에 대해서는 해당 주식을 제외하고는 의미 없음  아마존 루머 - 아마존의 비트코인 관련 채용공고  비트코인 채택 가능성 거의 없다 : 거래 체결 속도 차이 국제 배송 및 글로벌 배송 관련 업무 시작 → 외환 딜러의 역할, 환전을 조금만 해도 많은 수익을 남길 수도 있다 규제 : 미국 국내에서 페이스북이 리브라 하다가 두들겨 맞음 바이든의 빅테크에 부정적 국가마다 암호화폐 관련 규제가 전부 다름 제3세계의 비즈니스에서 부분적으로 사용하는 것이 아닐까, 해당 세계에서는 변동성이 너무 크기 때문   7/29  중국 규제 관련 하락 회복 : 현재 중국 규제는 해당 기업 제외 미국 시장에 영향 없음  미중 무역 전쟁은 중국이 방어 상태  FED 어조를 보니 테이퍼링 언급이 있겠구나.</description>
+    </item>
+    
+    <item>
       <title>Prior - Things you should know before investment</title>
       <link>https://klee30810.github.io/finance/ajae/prior/</link>
       <pubDate>Wed, 02 Jun 2021 06:50:29 +0900</pubDate>
@@ -135,6 +153,24 @@ Review   Quality Security : stocks that are safe, profitable, growing and well m
     </item>
     
     <item>
+      <title>Investment Psychology</title>
+      <link>https://klee30810.github.io/finance/halto/hmdd/chap1/terms/</link>
+      <pubDate>Sun, 26 Sep 2021 09:31:26 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/halto/hmdd/chap1/terms/</guid>
+      <description>5. 우리의 투자 뇌는 원숭이보다 못하다   투자 성패에 전략의 영향은 20% 정도로 추정되고, 80%는 바로 투자 심리가 결정한다.    우리 두뇌는 투자하면 망하도록 최적화 되어있다. 사람의 주관이 투자 과정에 개입하는 것이 모든 불행의 시작이다.    펀드매니저가 단순 주가지수를 이긴 경우는 거의 없다. 투자는 직접 해야 하는 것이다. 행동경제학에 기여한 노벨 경제학상 수상자 대니얼 카너먼  우리 뇌는 본능적인 능력을 관리하는 시스템 1, 논리적 능력을 관리하는 시스템 2가 공존한다.</description>
+    </item>
+    
+    <item>
+      <title>Terms</title>
+      <link>https://klee30810.github.io/finance/ajae/80days/terms/</link>
+      <pubDate>Tue, 17 Aug 2021 23:03:25 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/80days/terms/</guid>
+      <description>7/28  capacity : 용량, 수용력  전략이나 매매 기법이 감당할 수 있는 자금의 크기 잡주 매매 기법 : Capacity가 작음, 물량 소화가 안되서 체결이 안됨 → 점점 높은 가격을 제시하면서 체결해야 함 차익 거래 : 보통 capacity가 작음 장기 투자 일 수록, 거래량이 많을 수록 capacity가 높아짐   7/29  자사주 취득 - 거의 호재  회사가 돈이 생기면 : 설비투자, 배당금 주기, 당사 주식 구매 자사주 매입도 주주이익 : 지분희석의 반대 → 기존 기분의 수를 줄여주어 한 주당 가치를 올려줌 회사가 공개적으로 자사주 취득 발표 or 취득 발표 회사가 자기 주식에게 투자 : 우리 회사 주식이 저평가 느낌이 듦 혹은 회계상 ROA, ROE, EPS가 상승 : 총 자산 감소 주식은 양도소득세 : 절세방안   8/3  마켓 센티먼트 : 시장 참여자들의 전반적인 태도</description>
+    </item>
+    
+    <item>
       <title>Basic 1 - Players of Financial Market</title>
       <link>https://klee30810.github.io/finance/ajae/basic1/</link>
       <pubDate>Tue, 06 Jul 2021 21:04:01 +0900</pubDate>
@@ -247,6 +283,15 @@ Force - Displacement Curve
 __01. 특정한 단어 고르기  구체적인 단어를 선택하라. 더 &#39;화려한&#39; 단어를 찾아보면 그 변수에 더 적합한 단어를 찾는데 도움이 된다.  ★ 재치 있는 이름보다 명확하고 간결한 이름이 더 좋다.
 
 __02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclidean_norm = function (v) { var retval = 0.</description>
+    </item>
+    
+    <item>
+      <title>Valuation</title>
+      <link>https://klee30810.github.io/finance/ajae/80days/valuation/</link>
+      <pubDate>Tue, 17 Aug 2021 23:03:39 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/80days/valuation/</guid>
+      <description></description>
     </item>
     
     <item>
