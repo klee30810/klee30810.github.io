@@ -8,6 +8,15 @@
     <language>ko-kr</language>
     <lastBuildDate>Mon, 08 Feb 2021 23:39:19 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Mathematical logic</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/mathematical_logic/</link>
+      <pubDate>Fri, 22 Oct 2021 14:06:03 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/mathematical_logic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Warm up</title>
       <link>https://klee30810.github.io/finance/halto/hmdd/chap1/warm_up/</link>
       <pubDate>Sun, 26 Sep 2021 09:23:13 +0900</pubDate>
@@ -283,6 +292,17 @@ Force - Displacement Curve
 __01. 특정한 단어 고르기  구체적인 단어를 선택하라. 더 &#39;화려한&#39; 단어를 찾아보면 그 변수에 더 적합한 단어를 찾는데 도움이 된다.  ★ 재치 있는 이름보다 명확하고 간결한 이름이 더 좋다.
 
 __02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclidean_norm = function (v) { var retval = 0.</description>
+    </item>
+    
+    <item>
+      <title>Valuation</title>
+      <link>https://klee30810.github.io/finance/ajae/80days/valuation_/</link>
+      <pubDate>Tue, 17 Aug 2021 23:03:39 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/80days/valuation_/</guid>
+      <description>주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작   건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함
+ 금융 자산은 미래에 예상되는 현금흐름을 기대하고 사는 것 가격산정과 가치평가를 구분하라  가치평가 접근법 : 두 가지 부분을 혼용하여 접근
+ 내재적(Intrinsic) 접근 : 자산으로부터 발생할 미래 현금흐름과 그에 대한 확신의 정도 상대적(Relative) 접근 : 비슷한 자산들의 가격에 따라 가치평가 옵션 이론을 통한 가치평가 방법도 존재  가치평가에 대한 오해</description>
     </item>
     
     <item>
