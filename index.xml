@@ -286,17 +286,6 @@ __02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclid
     </item>
     
     <item>
-      <title>Valuation</title>
-      <link>https://klee30810.github.io/finance/ajae/80days/valuation/</link>
-      <pubDate>Tue, 17 Aug 2021 23:03:39 +0900</pubDate>
-      
-      <guid>https://klee30810.github.io/finance/ajae/80days/valuation/</guid>
-      <description>주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작   건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함
- 금융 자산은 미래에 예상되는 현금흐름을 기대하고 사는 것 가격산정과 가치평가를 구분하라  가치평가 접근법 : 두 가지 부분을 혼용하여 접근
- 내재적(Intrinsic) 접근 : 자산으로부터 발생할 미래 현금흐름과 그에 대한 확신의 정도 상대적(Relative) 접근 : 비슷한 자산들의 가격에 따라 가치평가 옵션 이론을 통한 가치평가 방법도 존재  가치평가에 대한 오해</description>
-    </item>
-    
-    <item>
       <title>Basic 2 - Financial Products</title>
       <link>https://klee30810.github.io/finance/ajae/basic2/</link>
       <pubDate>Thu, 08 Jul 2021 07:31:09 +0900</pubDate>
@@ -797,6 +786,17 @@ __01. 그 기능을 구현하려고 애쓰지 마라 - 그럴 필요가 없다  
       
       <guid>https://klee30810.github.io/paper_review/battery/goodenough2013/</guid>
       <description>The Li-Ion Rechargeable Battery: A Perspective  Author : Kyungmin Lee Thesis : Li-Ion Battery is hot trend of technology with its cathode, anode, electrolyte, and separation membrane. Citation : Goodenough, J. B., &amp;amp; Park, K. S. (2013). The Li-ion rechargeable battery: a perspective. Journal of the American Chemical Society, 135(4), 1167-1176.  Abstract   Each cell of a battery stores electrical energy as chemical energy in two electrodes, a reductant (anode) and an oxidant (cathode)  separated by an electrolyte that transfers the ionic component of the chemical reaction inside the cell and forces the electronic component outside the battery  The chemical reaction of a rechargeable battery must be reversible on the application of a charging I and V.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://klee30810.github.io/finance/ajae/80days/valuation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/80days/valuation/</guid>
+      <description>title: &amp;ldquo;Valuation&amp;rdquo; description: &amp;ldquo;Valuation study&amp;rdquo; menuTitle : &amp;ldquo;valuation&amp;rdquo; weight: 3 date: 2021-08-17T23:03:39+09:00 draft: false katex: true markup: mmark tags: [&amp;ldquo;finance&amp;rdquo;] hidden: true
+LastModifierDisplayName : &amp;ldquo;Kevin Lee&amp;rdquo; LastModifierEmail : &amp;ldquo;klee30810@gmail.com&amp;rdquo;
+주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작    건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함</description>
     </item>
     
   </channel>
