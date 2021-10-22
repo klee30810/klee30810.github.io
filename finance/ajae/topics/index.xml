@@ -13,7 +13,8 @@
       <pubDate>Fri, 22 Oct 2021 14:06:03 +0900</pubDate>
       
       <guid>https://klee30810.github.io/finance/ajae/topics/mathematical_logic/</guid>
-      <description></description>
+      <description>바이든 증세의 시장 영향 - 거친 분석  \[ 주주가치 = \frac{기대 배당금}{자기자본비용-기대성장률} = \frac{세후\ 순이익\times 배당성향}{자기자본비용-기대성장률}=\frac{세전 순이익 \times(1-세율) \times 배당성향}{자기자본비용 - 기대성장률}=(1-세율) \times C,\ 라고\ 가정\]
+ \[ 증세\ 전\ 주주가치 = (1-0.21)\times C\] \[ 증세\ 후\ 주주가치 = (1-0.28)\times C\] \[ 주주가치하락률 = 1-증세\ 후\ 주주가치 / 증세\ 전\ 주주가치 = 1-0.72C/0.79C = 0.0886\]  ⇒ 아주 단순한 가정하에, 28%로 증세되면 주식 시장의 밸류에이션은 8.88% 하락 &amp;gt; 이론적 한계치 형성 → 가정을 하나씩 풀어나가면서 줄여가면 실제 하락률은 줄어들 것</description>
     </item>
     
   </channel>
