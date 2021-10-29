@@ -6,7 +6,16 @@
     <description>Recent content in finance on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 22 Oct 2021 18:39:13 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Oct 2021 10:07:09 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trade_diary</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/trade_diary/</link>
+      <pubDate>Fri, 29 Oct 2021 10:07:09 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/trade_diary/</guid>
+      <description>매매일지 작성법 프레임   육체적, 심리적 컨디션 기록  수치적으로 기록할 수 없으므로 상, 중, 하 정도  진입 가설 - 진입하는 이유  검증 가능한 가설이어야 함, 옳은 판단인지 결과가 명확히 나올 수 있어야 함 수익, 손실로 승률을 계산하기 보다는 매매에 진입하기 전 까지 논리의 단계들을 세부적으로 나누어 각각을 검증하라  인플레가 예상치보다 높게 나올 것이고, (경기 지표) 지속되는 높은 인플레에 금리 인상 기대감이 높아져 단기 금리가 상승할 것이며, (국채 금리) 경기 둔화 우려로 인한 장기 금리의 하락까지 동반하여 장단기 금리차가 좁혀지면서, (국채 금리) 금융주들이 타격을 입을 것이므로 공매도 한다.</description>
+    </item>
+    
     <item>
       <title>Big_picture</title>
       <link>https://klee30810.github.io/finance/halto/hmdd/chap2/big_picture/</link>
@@ -14,16 +23,6 @@
       
       <guid>https://klee30810.github.io/finance/halto/hmdd/chap2/big_picture/</guid>
       <description>10. 투자로 돈 버는 3가지 방법  자산배분  자산을 서로 성격이 다른 자산군에 배분하는 행위 → 높은 수익을 추구하는 것 보다 손실을 낮게 유지해 포트폴리오 가치를 유지하겠다는 경향이 강함  주식, 채권, 실물 자산(금, 원자재 등), 기타 자산군(부동산, 암호화폐)   마켓 타이밍  조만간 오를 가능성이 큰 자산을 사고, 조만간 하락할 가능성이 큰 자산을 파는 행위 과거의 가격 변동(모멘텀), 계절성, 경제 지표 등을 보고 매수와 매도 타이밍을 결정한다.  종목 선정  전체 시장보다 수익이 높거나 리스크가 낮을 것이라고 기대되는 종목을 사는 것 여러 지표 : 저평가 지표(밸류), 우량주 지표(퀄리티), 모멘텀 지표  11.</description>
-    </item>
-    
-    <item>
-      <title>Mathematical logic</title>
-      <link>https://klee30810.github.io/finance/ajae/topics/mathematical_logic/</link>
-      <pubDate>Fri, 22 Oct 2021 14:06:03 +0900</pubDate>
-      
-      <guid>https://klee30810.github.io/finance/ajae/topics/mathematical_logic/</guid>
-      <description>바이든 증세의 시장 영향 - 거친 분석  \[ 주주가치 = \frac{기대 배당금}{자기자본비용-기대성장률} = \frac{세후\ 순이익\times 배당성향}{자기자본비용-기대성장률}=\frac{세전 순이익 \times(1-세율) \times 배당성향}{자기자본비용 - 기대성장률}=(1-세율) \times C,\ 라고\ 가정\]
- \[ 증세\ 전\ 주주가치 = (1-0.21)\times C\] \[ 증세\ 후\ 주주가치 = (1-0.28)\times C\] \[ 주주가치하락률 = 1-증세\ 후\ 주주가치 / 증세\ 전\ 주주가치 = 1-0.72C/0.79C = 0.0886\]  ⇒ 아주 단순한 가정하에, 28%로 증세되면 주식 시장의 밸류에이션은 8.88% 하락 &amp;gt; 이론적 한계치 형성 → 가정을 하나씩 풀어나가면서 줄여가면 실제 하락률은 줄어들 것</description>
     </item>
     
     <item>
@@ -77,6 +76,16 @@ Review   Quality Security : stocks that are safe, profitable, growing and well m
     </item>
     
     <item>
+      <title>Mathematical logic</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/mathematical_logic/</link>
+      <pubDate>Fri, 22 Oct 2021 14:06:03 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/mathematical_logic/</guid>
+      <description>바이든 증세의 시장 영향 - 거친 분석  \[ 주주가치 = \frac{기대 배당금}{자기자본비용-기대성장률} = \frac{세후\ 순이익\times 배당성향}{자기자본비용-기대성장률}=\frac{세전 순이익 \times(1-세율) \times 배당성향}{자기자본비용 - 기대성장률}=(1-세율) \times C,\ 라고\ 가정\]
+ \[ 증세\ 전\ 주주가치 = (1-0.21)\times C\] \[ 증세\ 후\ 주주가치 = (1-0.28)\times C\] \[ 주주가치하락률 = 1-증세\ 후\ 주주가치 / 증세\ 전\ 주주가치 = 1-0.72C/0.79C = 0.0886\]  ⇒ 아주 단순한 가정하에, 28%로 증세되면 주식 시장의 밸류에이션은 8.88% 하락 &amp;gt; 이론적 한계치 형성 → 가정을 하나씩 풀어나가면서 줄여가면 실제 하락률은 줄어들 것</description>
+    </item>
+    
+    <item>
       <title>Investment Psychology</title>
       <link>https://klee30810.github.io/finance/halto/hmdd/chap1/terms/</link>
       <pubDate>Sun, 26 Sep 2021 09:31:26 +0900</pubDate>
@@ -117,10 +126,10 @@ Introduction   an investment strategy that a seven-year-old could understand, wi
     
     <item>
       <title>Valuation</title>
-      <link>https://klee30810.github.io/finance/ajae/80days/valuation/</link>
+      <link>https://klee30810.github.io/finance/ajae/curriculum/valuation/</link>
       <pubDate>Tue, 17 Aug 2021 23:03:39 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/finance/ajae/80days/valuation/</guid>
+      <guid>https://klee30810.github.io/finance/ajae/curriculum/valuation/</guid>
       <description>주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작   건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함
  금융 자산은 미래에 예상되는 현금흐름을 기대하고 사는 것 가격산정과 가치평가를 구분하라  가치평가 접근법 : 두 가지 부분을 혼용하여 접근
  내재적(Intrinsic) 접근 : 자산으로부터 발생할 미래 현금흐름과 그에 대한 확신의 정도 상대적(Relative) 접근 : 비슷한 자산들의 가격에 따라 가치평가 옵션 이론을 통한 가치평가 방법도 존재  가치평가에 대한 오해</description>

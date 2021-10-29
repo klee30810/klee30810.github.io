@@ -25,16 +25,5 @@
       <description>7/28  capacity : 용량, 수용력  전략이나 매매 기법이 감당할 수 있는 자금의 크기 잡주 매매 기법 : Capacity가 작음, 물량 소화가 안되서 체결이 안됨 → 점점 높은 가격을 제시하면서 체결해야 함 차익 거래 : 보통 capacity가 작음 장기 투자 일 수록, 거래량이 많을 수록 capacity가 높아짐   7/29  자사주 취득 - 거의 호재  회사가 돈이 생기면 : 설비투자, 배당금 주기, 당사 주식 구매 자사주 매입도 주주이익 : 지분희석의 반대 → 기존 기분의 수를 줄여주어 한 주당 가치를 올려줌 회사가 공개적으로 자사주 취득 발표 or 취득 발표 회사가 자기 주식에게 투자 : 우리 회사 주식이 저평가 느낌이 듦 혹은 회계상 ROA, ROE, EPS가 상승 : 총 자산 감소 주식은 양도소득세 : 절세방안   8/3  마켓 센티먼트 : 시장 참여자들의 전반적인 태도</description>
     </item>
     
-    <item>
-      <title>Valuation</title>
-      <link>https://klee30810.github.io/finance/ajae/80days/valuation/</link>
-      <pubDate>Tue, 17 Aug 2021 23:03:39 +0900</pubDate>
-      
-      <guid>https://klee30810.github.io/finance/ajae/80days/valuation/</guid>
-      <description>주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작   건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함
- 금융 자산은 미래에 예상되는 현금흐름을 기대하고 사는 것 가격산정과 가치평가를 구분하라  가치평가 접근법 : 두 가지 부분을 혼용하여 접근
- 내재적(Intrinsic) 접근 : 자산으로부터 발생할 미래 현금흐름과 그에 대한 확신의 정도 상대적(Relative) 접근 : 비슷한 자산들의 가격에 따라 가치평가 옵션 이론을 통한 가치평가 방법도 존재  가치평가에 대한 오해</description>
-    </item>
-    
   </channel>
 </rss>
