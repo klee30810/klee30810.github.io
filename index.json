@@ -1,5 +1,19 @@
 [
 {
+	"uri": "https://klee30810.github.io/finance/nycitizen/chap1/market_struct/",
+	"title": "Market_struct",
+	"tags": ["finance"],
+	"description": "미국 주식 시장구조",
+	"content": "바이사이드와 셀사이드 그리고 SEC  바이사이드 : 투자 대상을 분석, 선별해 자산을 투자하거나 관리하는 운용주체  외부 투자자의 자금을 운용하는 것이 주 업무  셀사이드 : 증권 유통 과정을 실행하는 주체  증권사, 투자은행  SEC : 바이사이드와 셀사이드 플레이어가 미국 증권법에 준해 공정한 매매를 하는지 관리 감독과 규제를 맡음  세 플레이어의 이해관계  셀 사이드 애널리스트 : 기업 중개 서비스 \u0026amp; 기업 분석 보고서  투자자와의 접점에서 공유하는 모든 정보는 시장 전체에 공개하는 것이 의무이기 때문에 시차가 있을 뿐 결국 개인투자자도 주요 내용을 알 수 있음   기업 IR 사이트  Retail Investors도 기업 정보를 잘 알 수 있음  "
+},
+{
+	"uri": "https://klee30810.github.io/finance/nycitizen/chap1/",
+	"title": "Chap1",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 1 USA Security Market Structure 비무장 상태로 미국 주식시장에 뛰어들지 마라\n Market_struct   "
+},
+{
 	"uri": "https://klee30810.github.io/finance/ajae/topics/trade_diary/",
 	"title": "Trade_diary",
 	"tags": ["finance"],
@@ -490,18 +504,18 @@
 	"content": "Chapter 3 Electrical \u0026amp; Electronic Engineering Electrical \u0026amp; Electronic Engineering Studies {  "
 },
 {
+	"uri": "https://klee30810.github.io/finance/nycitizen/",
+	"title": "New York Citizen",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 4 New York Citizen Review of 뉴욕주민의 진짜 미국식 주식투자 written by 뉴욕주민\n Chap1   Chap6   Chap5   Chap4   Chap3   Chap2   "
+},
+{
 	"uri": "https://klee30810.github.io/finance/halto/hmdd/chap4/",
 	"title": "New Investment Strategy",
 	"tags": [],
 	"description": "",
 	"content": "Chapter 4 New Investment Strategy  "
-},
-{
-	"uri": "https://klee30810.github.io/finance/paper_review/",
-	"title": "Paper_review",
-	"tags": [],
-	"description": "",
-	"content": "Chapter 4 Paper Review  Literature Review of Finance\n Quality Minus Junk   Ifucan   "
 },
 {
 	"uri": "https://klee30810.github.io/mech/material/lect/chap45/",
@@ -683,7 +697,7 @@
 	"title": "Finance",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 7 Finance Finance Studies.\n CFA level 1   할수있다 알고투자 Study   Walstreet Ajae   Paper_review   Nycitizen   "
+	"content": "Chapter 7 Finance Finance Studies.\n CFA level 1   할수있다 알고투자 Study   Walstreet Ajae   New York Citizen   Paper_review   "
 },
 {
 	"uri": "https://klee30810.github.io/compu/data_structure/chap8/",
@@ -742,6 +756,13 @@
 	"content": "Chapter 9 Science Science Studies  Fundamental Physics   "
 },
 {
+	"uri": "https://klee30810.github.io/finance/paper_review/",
+	"title": "Paper_review",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 10 Paper Review  Literature Review of Finance\n Quality Minus Junk   Ifucan   "
+},
+{
 	"uri": "https://klee30810.github.io/compu/data_structure/chap10/",
 	"title": "Chap10. Sort",
 	"tags": ["Data Structure"],
@@ -795,7 +816,7 @@
 	"title": "Industry Analysis",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 11 Industrial Analysis Industrial Analysis  Semi-conductor Analysis    1. Introduction      Automobile Analysis     "
+	"content": "Chapter 11 Industrial Analysis Industrial Analysis  Semi-conductor Analysis     Automobile Analysis     "
 },
 {
 	"uri": "https://klee30810.github.io/compu/data_structure/chap12/",
@@ -880,20 +901,6 @@
 	"tags": [],
 	"description": "",
 	"content": "Chapter X Some Chapter title Lorem Ipsum.\n "
-},
-{
-	"uri": "https://klee30810.github.io/finance/nycitizen/chap1/",
-	"title": "Chap1",
-	"tags": [],
-	"description": "",
-	"content": "Chapter X Some Chapter title Lorem Ipsum.\n "
-},
-{
-	"uri": "https://klee30810.github.io/finance/nycitizen/",
-	"title": "Nycitizen",
-	"tags": [],
-	"description": "",
-	"content": "Chapter X Some Chapter title Lorem Ipsum.\n Chap6   Chap5   Chap4   Chap3   Chap2   Chap1   "
 },
 {
 	"uri": "https://klee30810.github.io/battery/principles_lithium/chap3-3/",
