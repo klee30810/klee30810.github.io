@@ -45,10 +45,10 @@
     
     <item>
       <title>Todays</title>
-      <link>https://klee30810.github.io/finance/ajae/80days/todays/</link>
+      <link>https://klee30810.github.io/finance/ajae/todays/</link>
       <pubDate>Mon, 23 Aug 2021 06:31:12 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/finance/ajae/80days/todays/</guid>
+      <guid>https://klee30810.github.io/finance/ajae/todays/</guid>
       <description>7/28  코로나 변이 바이러스, 중국 규제, 테이퍼링, 인플레이션 중국 규제 - 중국 기술주 폭락  중국의 내외적인 모습 때문에 시진핑이 초조한 모습을 보이고 있다. 혁신의 아이콘들을 길들이려 하고 있음 → 독재를 하면 완전한 자본주의를 허용할 수 없다. 미국 주식에 대해서는 해당 주식을 제외하고는 의미 없음  아마존 루머 - 아마존의 비트코인 관련 채용공고  비트코인 채택 가능성 거의 없다 : 거래 체결 속도 차이 국제 배송 및 글로벌 배송 관련 업무 시작 → 외환 딜러의 역할, 환전을 조금만 해도 많은 수익을 남길 수도 있다 규제 : 미국 국내에서 페이스북이 리브라 하다가 두들겨 맞음 바이든의 빅테크에 부정적 국가마다 암호화폐 관련 규제가 전부 다름 제3세계의 비즈니스에서 부분적으로 사용하는 것이 아닐까, 해당 세계에서는 변동성이 너무 크기 때문   7/29  중국 규제 관련 하락 회복 : 현재 중국 규제는 해당 기업 제외 미국 시장에 영향 없음  미중 무역 전쟁은 중국이 방어 상태  FED 어조를 보니 테이퍼링 언급이 있겠구나.</description>
     </item>
     
@@ -323,14 +323,12 @@ __02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclid
     </item>
     
     <item>
-      <title>Valuation</title>
-      <link>https://klee30810.github.io/finance/ajae/curriculum/valuation/</link>
-      <pubDate>Tue, 17 Aug 2021 23:03:39 +0900</pubDate>
+      <title>Index Investment</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/index_invest/</link>
+      <pubDate>Sat, 30 Oct 2021 08:55:58 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/finance/ajae/curriculum/valuation/</guid>
-      <description>주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작   건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함
- 금융 자산은 미래에 예상되는 현금흐름을 기대하고 사는 것 가격산정과 가치평가를 구분하라  가치평가 접근법 : 두 가지 부분을 혼용하여 접근
- 내재적(Intrinsic) 접근 : 자산으로부터 발생할 미래 현금흐름과 그에 대한 확신의 정도 상대적(Relative) 접근 : 비슷한 자산들의 가격에 따라 가치평가 옵션 이론을 통한 가치평가 방법도 존재  가치평가에 대한 오해</description>
+      <guid>https://klee30810.github.io/finance/ajae/topics/index_invest/</guid>
+      <description>지수와 지수 추종 전략이란   지수 : 금융상품을 그룹으로 묶어 놓은 것 지수 추종 전략 : 지수를 구성하는 회사의 주식을 똑같은 비율로 매수하여, 지수 수익률과 동일한 수익을 내는 전략 ⇒ 인덱스 투자(펀드, ETF), Passive Investing  지수의 계산법   일반적으로 지수가 만들어진 시점을 인덱스 값 100으로 두고, 구성 회사들의 상승에 따라 상승 구성 회사들 간의 비중은 어떻게 계산하는가  동일한 비중으로 평균 : 다우지수 시가총액으로 가중평균 : S&amp;amp;P 500, 나스닥, 러셀 거래량으로 가중평균 펀더멘털 지표로 가중평균   지수추종 하는 법   S&amp;amp;P 500 추종 : 구성회사 500 개를 시가총액 비중에 맞게 매수 개인이 일일이 하기 힘드므로 펀드매니저가 이 일을 대신해주고 소액의 수수료를 챙김 펀드 매니저의 자의적 판단이 없으므로 기계적으로 추종 : Passive 대표적 인덱스 ETF : SPY, QQQ, IWM 지수 추종 전략은 좋은가?</description>
     </item>
     
     <item>
@@ -406,6 +404,26 @@ __02. tmp나 retval 같은 보편적인 이름 피하기 1 2 3 4 5 6  var euclid
       <guid>https://klee30810.github.io/compu/readable_code/chap3/</guid>
       <description>★ 본인이 지은 이름을 &amp;quot;다른 사람들이 다른 의미로 해석할 수 있을까?&amp;quot;라는 질문을 던져보며 철저하게 확인해야 한다.
 __01. 예: Filter()  filter라는 변수명은 의미가 모호하다. 대상을 &#39;고르는&#39; 기능을 원한다면 select가 &#39;제거하는&#39; 기능을 원한다면 exclude가 더 낫다.  __02. 예: Clip(text, length)  어떤 문단의 내용을 오려내는 함수 Clip(text,length)라면 두 가지 방식으로 이해할 수 있다. 이 함수의 기능은 문단을 처음부터 최대 length만큼 잘라내는 것이므로 truncate(text,max_chars)가 더 좋다. max_length 은 몇몇 애매모호함을 가지고 있다.</description>
+    </item>
+    
+    <item>
+      <title>Econimic Freedom</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/econimic_freedom/</link>
+      <pubDate>Sat, 30 Oct 2021 09:37:23 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/econimic_freedom/</guid>
+      <description>경제적 자유의 4가지 요소  월급 받는 것을 &amp;quot;노예&amp;quot;라고 표현하고, 상식적인 삶을 &amp;quot;서행차선&amp;quot;이라고 하고, 무언가 잘못 살고 있다는 느낌을 받도록 가스라이팅하거나, 막차 떠난다며 FOMO를 조장  1. 실력   돈을 버는데 필요한 모든 종류의 능력, 본인이 축적해나갈 수 있는 부의 기대값을 올려주는 모든 것 스펙/연봉이 얼마인지, 투자 실력이 얼마나 되는지, 얼마나 검소할 수 있는지 부의 축적되는 각도를 상승시킬 수 있음 실력있는 자가 없는 자보다 못한 구간도 존재, 그러나 장기적으로는 실력으로 수렴  2.</description>
+    </item>
+    
+    <item>
+      <title>Valuation</title>
+      <link>https://klee30810.github.io/finance/ajae/curriculum/valuation/</link>
+      <pubDate>Tue, 17 Aug 2021 23:03:39 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/curriculum/valuation/</guid>
+      <description>주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작   건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함
+ 금융 자산은 미래에 예상되는 현금흐름을 기대하고 사는 것 가격산정과 가치평가를 구분하라  가치평가 접근법 : 두 가지 부분을 혼용하여 접근
+ 내재적(Intrinsic) 접근 : 자산으로부터 발생할 미래 현금흐름과 그에 대한 확신의 정도 상대적(Relative) 접근 : 비슷한 자산들의 가격에 따라 가치평가 옵션 이론을 통한 가치평가 방법도 존재  가치평가에 대한 오해</description>
     </item>
     
     <item>

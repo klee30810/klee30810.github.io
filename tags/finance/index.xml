@@ -6,7 +6,7 @@
     <description>Recent content in finance on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 29 Oct 2021 16:35:50 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Oct 2021 08:55:58 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Market_struct</title>
       <link>https://klee30810.github.io/finance/nycitizen/chap1/market_struct/</link>
@@ -45,10 +45,10 @@
     
     <item>
       <title>Todays</title>
-      <link>https://klee30810.github.io/finance/ajae/80days/todays/</link>
+      <link>https://klee30810.github.io/finance/ajae/todays/</link>
       <pubDate>Mon, 23 Aug 2021 06:31:12 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/finance/ajae/80days/todays/</guid>
+      <guid>https://klee30810.github.io/finance/ajae/todays/</guid>
       <description>7/28  코로나 변이 바이러스, 중국 규제, 테이퍼링, 인플레이션 중국 규제 - 중국 기술주 폭락  중국의 내외적인 모습 때문에 시진핑이 초조한 모습을 보이고 있다. 혁신의 아이콘들을 길들이려 하고 있음 → 독재를 하면 완전한 자본주의를 허용할 수 없다. 미국 주식에 대해서는 해당 주식을 제외하고는 의미 없음  아마존 루머 - 아마존의 비트코인 관련 채용공고  비트코인 채택 가능성 거의 없다 : 거래 체결 속도 차이 국제 배송 및 글로벌 배송 관련 업무 시작 → 외환 딜러의 역할, 환전을 조금만 해도 많은 수익을 남길 수도 있다 규제 : 미국 국내에서 페이스북이 리브라 하다가 두들겨 맞음 바이든의 빅테크에 부정적 국가마다 암호화폐 관련 규제가 전부 다름 제3세계의 비즈니스에서 부분적으로 사용하는 것이 아닐까, 해당 세계에서는 변동성이 너무 크기 때문   7/29  중국 규제 관련 하락 회복 : 현재 중국 규제는 해당 기업 제외 미국 시장에 영향 없음  미중 무역 전쟁은 중국이 방어 상태  FED 어조를 보니 테이퍼링 언급이 있겠구나.</description>
     </item>
     
@@ -134,14 +134,12 @@ Introduction   an investment strategy that a seven-year-old could understand, wi
     </item>
     
     <item>
-      <title>Valuation</title>
-      <link>https://klee30810.github.io/finance/ajae/curriculum/valuation/</link>
-      <pubDate>Tue, 17 Aug 2021 23:03:39 +0900</pubDate>
+      <title>Index Investment</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/index_invest/</link>
+      <pubDate>Sat, 30 Oct 2021 08:55:58 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/finance/ajae/curriculum/valuation/</guid>
-      <description>주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작   건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함
- 금융 자산은 미래에 예상되는 현금흐름을 기대하고 사는 것 가격산정과 가치평가를 구분하라  가치평가 접근법 : 두 가지 부분을 혼용하여 접근
- 내재적(Intrinsic) 접근 : 자산으로부터 발생할 미래 현금흐름과 그에 대한 확신의 정도 상대적(Relative) 접근 : 비슷한 자산들의 가격에 따라 가치평가 옵션 이론을 통한 가치평가 방법도 존재  가치평가에 대한 오해</description>
+      <guid>https://klee30810.github.io/finance/ajae/topics/index_invest/</guid>
+      <description>지수와 지수 추종 전략이란   지수 : 금융상품을 그룹으로 묶어 놓은 것 지수 추종 전략 : 지수를 구성하는 회사의 주식을 똑같은 비율로 매수하여, 지수 수익률과 동일한 수익을 내는 전략 ⇒ 인덱스 투자(펀드, ETF), Passive Investing  지수의 계산법   일반적으로 지수가 만들어진 시점을 인덱스 값 100으로 두고, 구성 회사들의 상승에 따라 상승 구성 회사들 간의 비중은 어떻게 계산하는가  동일한 비중으로 평균 : 다우지수 시가총액으로 가중평균 : S&amp;amp;P 500, 나스닥, 러셀 거래량으로 가중평균 펀더멘털 지표로 가중평균   지수추종 하는 법   S&amp;amp;P 500 추종 : 구성회사 500 개를 시가총액 비중에 맞게 매수 개인이 일일이 하기 힘드므로 펀드매니저가 이 일을 대신해주고 소액의 수수료를 챙김 펀드 매니저의 자의적 판단이 없으므로 기계적으로 추종 : Passive 대표적 인덱스 ETF : SPY, QQQ, IWM 지수 추종 전략은 좋은가?</description>
     </item>
     
     <item>
@@ -152,6 +150,17 @@ Introduction   an investment strategy that a seven-year-old could understand, wi
       <guid>https://klee30810.github.io/finance/ajae/curriculum/basic2/</guid>
       <description>Financial Products 1 - Volatility  변동성 : 가격이 얼마나 변동하는지, 주식 수익률의 표준편차, 리스크  변동성의 종류  실제 변동성 : 실제로 가격이 얼마나 변동하는지
  과거 실제 변동성 (actual historical volatility) : 과거 특정 기간(30일, 1년 등) 동안의 실제 변동성 현재 실제 변동성 (actual current volatility) : 현재 순간의 변동성은 개념적으로 존재하나 측정 불가 미래 실제 변동성 (actual future volatility) : 미래 특정기간 동안의 실제 변동성  내재 변동성 (implied volatility) : 시장이 생각하는 변동성</description>
+    </item>
+    
+    <item>
+      <title>Valuation</title>
+      <link>https://klee30810.github.io/finance/ajae/curriculum/valuation/</link>
+      <pubDate>Tue, 17 Aug 2021 23:03:39 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/curriculum/valuation/</guid>
+      <description>주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작   건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함
+ 금융 자산은 미래에 예상되는 현금흐름을 기대하고 사는 것 가격산정과 가치평가를 구분하라  가치평가 접근법 : 두 가지 부분을 혼용하여 접근
+ 내재적(Intrinsic) 접근 : 자산으로부터 발생할 미래 현금흐름과 그에 대한 확신의 정도 상대적(Relative) 접근 : 비슷한 자산들의 가격에 따라 가치평가 옵션 이론을 통한 가치평가 방법도 존재  가치평가에 대한 오해</description>
     </item>
     
   </channel>

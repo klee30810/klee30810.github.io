@@ -26,5 +26,23 @@
  \[ 증세\ 전\ 주주가치 = (1-0.21)\times C\] \[ 증세\ 후\ 주주가치 = (1-0.28)\times C\] \[ 주주가치하락률 = 1-증세\ 후\ 주주가치 / 증세\ 전\ 주주가치 = 1-0.72C/0.79C = 0.0886\]  ⇒ 아주 단순한 가정하에, 28%로 증세되면 주식 시장의 밸류에이션은 8.88% 하락 &amp;gt; 이론적 한계치 형성 → 가정을 하나씩 풀어나가면서 줄여가면 실제 하락률은 줄어들 것</description>
     </item>
     
+    <item>
+      <title>Index Investment</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/index_invest/</link>
+      <pubDate>Sat, 30 Oct 2021 08:55:58 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/index_invest/</guid>
+      <description>지수와 지수 추종 전략이란   지수 : 금융상품을 그룹으로 묶어 놓은 것 지수 추종 전략 : 지수를 구성하는 회사의 주식을 똑같은 비율로 매수하여, 지수 수익률과 동일한 수익을 내는 전략 ⇒ 인덱스 투자(펀드, ETF), Passive Investing  지수의 계산법   일반적으로 지수가 만들어진 시점을 인덱스 값 100으로 두고, 구성 회사들의 상승에 따라 상승 구성 회사들 간의 비중은 어떻게 계산하는가  동일한 비중으로 평균 : 다우지수 시가총액으로 가중평균 : S&amp;amp;P 500, 나스닥, 러셀 거래량으로 가중평균 펀더멘털 지표로 가중평균   지수추종 하는 법   S&amp;amp;P 500 추종 : 구성회사 500 개를 시가총액 비중에 맞게 매수 개인이 일일이 하기 힘드므로 펀드매니저가 이 일을 대신해주고 소액의 수수료를 챙김 펀드 매니저의 자의적 판단이 없으므로 기계적으로 추종 : Passive 대표적 인덱스 ETF : SPY, QQQ, IWM 지수 추종 전략은 좋은가?</description>
+    </item>
+    
+    <item>
+      <title>Econimic Freedom</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/econimic_freedom/</link>
+      <pubDate>Sat, 30 Oct 2021 09:37:23 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/econimic_freedom/</guid>
+      <description>경제적 자유의 4가지 요소  월급 받는 것을 &amp;quot;노예&amp;quot;라고 표현하고, 상식적인 삶을 &amp;quot;서행차선&amp;quot;이라고 하고, 무언가 잘못 살고 있다는 느낌을 받도록 가스라이팅하거나, 막차 떠난다며 FOMO를 조장  1. 실력   돈을 버는데 필요한 모든 종류의 능력, 본인이 축적해나갈 수 있는 부의 기대값을 올려주는 모든 것 스펙/연봉이 얼마인지, 투자 실력이 얼마나 되는지, 얼마나 검소할 수 있는지 부의 축적되는 각도를 상승시킬 수 있음 실력있는 자가 없는 자보다 못한 구간도 존재, 그러나 장기적으로는 실력으로 수렴  2.</description>
+    </item>
+    
   </channel>
 </rss>
