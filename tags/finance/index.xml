@@ -6,7 +6,7 @@
     <description>Recent content in finance on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 30 Oct 2021 11:25:23 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Oct 2021 11:53:17 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Market_struct</title>
       <link>https://klee30810.github.io/finance/nycitizen/chap1/market_struct/</link>
@@ -45,10 +45,10 @@
     
     <item>
       <title>Todays</title>
-      <link>https://klee30810.github.io/finance/ajae/todays/</link>
+      <link>https://klee30810.github.io/finance/ajae/80days/todays/</link>
       <pubDate>Mon, 23 Aug 2021 06:31:12 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/finance/ajae/todays/</guid>
+      <guid>https://klee30810.github.io/finance/ajae/80days/todays/</guid>
       <description>7/28  코로나 변이 바이러스, 중국 규제, 테이퍼링, 인플레이션 중국 규제 - 중국 기술주 폭락  중국의 내외적인 모습 때문에 시진핑이 초조한 모습을 보이고 있다. 혁신의 아이콘들을 길들이려 하고 있음 → 독재를 하면 완전한 자본주의를 허용할 수 없다. 미국 주식에 대해서는 해당 주식을 제외하고는 의미 없음  아마존 루머 - 아마존의 비트코인 관련 채용공고  비트코인 채택 가능성 거의 없다 : 거래 체결 속도 차이 국제 배송 및 글로벌 배송 관련 업무 시작 → 외환 딜러의 역할, 환전을 조금만 해도 많은 수익을 남길 수도 있다 규제 : 미국 국내에서 페이스북이 리브라 하다가 두들겨 맞음 바이든의 빅테크에 부정적 국가마다 암호화폐 관련 규제가 전부 다름 제3세계의 비즈니스에서 부분적으로 사용하는 것이 아닐까, 해당 세계에서는 변동성이 너무 크기 때문   7/29  중국 규제 관련 하락 회복 : 현재 중국 규제는 해당 기업 제외 미국 시장에 영향 없음  미중 무역 전쟁은 중국이 방어 상태  FED 어조를 보니 테이퍼링 언급이 있겠구나.</description>
     </item>
     
@@ -170,6 +170,15 @@ Introduction   an investment strategy that a seven-year-old could understand, wi
       
       <guid>https://klee30810.github.io/finance/ajae/topics/esg_invest/</guid>
       <description>ESG의 허와 실  Damodaran youtube : https://youtu.be/5H6_60Tv0i0  ESG는 무엇인가?   기업의 사회적인 책임을 강조하는 기준 Environmental : 회사의 전력 소비, 환경 오염, 자연 보존, 동물 취급 등 Social : 공급 회사도 ESG기준 선정 여부, 사회 환원, 직원들의 자원봉사, 근로환경 Governance : 투명한 회계, 소액 주주 대응, 정치 기부, 불법 행위 근절, 경영진 이해 상충  ESG 비판 1. 객관성의 문제   우리가 &amp;quot;선량함&amp;quot;을 객관적으로 측정할 수 있는가</description>
+    </item>
+    
+    <item>
+      <title>Quant Investment Facts</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/quant_invest/</link>
+      <pubDate>Sat, 30 Oct 2021 11:53:17 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/quant_invest/</guid>
+      <description>퀀트 투자의 허와 실 퀀트의 분류   초고빈도 매매(Ultra HFT) : 서버 colocation, 기계어 레벨 코딩, 하드웨어 알고리즘 트레이딩(Algorithmic Trading) : MACD, RSI등 기술적 지표, Rule-based 통계적 차익거래 (Statistical Arbitrage) : 페어 트레이딩, 통계적 모델, 기법 팩터 인베스팅 (Factor Investing) : 모멘텀 팩터, 가치 팩터... 퀀터멘탈 : 펀더멘탈 분석을 계략화 데이터 과학, 기계학습, 빅데이터, 대안 데이터  퀀트 매매의 원칙   투자 아이디어/가설 (Hypothesis) 백테스팅 실전 매매 리스크 관리  백테스팅의 가정   과거의 패턴이, 미래에도 반복될 것이라는, 보장되지 않은 가정하에, 과거에 수익성이 좋았던 패턴을 찾는 것 지난 과거의 수익성이 좋았던 패턴의 개수는 무한하다.</description>
     </item>
     
   </channel>

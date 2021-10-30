@@ -53,5 +53,14 @@
       <description>ESG의 허와 실  Damodaran youtube : https://youtu.be/5H6_60Tv0i0  ESG는 무엇인가?   기업의 사회적인 책임을 강조하는 기준 Environmental : 회사의 전력 소비, 환경 오염, 자연 보존, 동물 취급 등 Social : 공급 회사도 ESG기준 선정 여부, 사회 환원, 직원들의 자원봉사, 근로환경 Governance : 투명한 회계, 소액 주주 대응, 정치 기부, 불법 행위 근절, 경영진 이해 상충  ESG 비판 1. 객관성의 문제   우리가 &amp;quot;선량함&amp;quot;을 객관적으로 측정할 수 있는가</description>
     </item>
     
+    <item>
+      <title>Quant Investment Facts</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/quant_invest/</link>
+      <pubDate>Sat, 30 Oct 2021 11:53:17 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/quant_invest/</guid>
+      <description>퀀트 투자의 허와 실 퀀트의 분류   초고빈도 매매(Ultra HFT) : 서버 colocation, 기계어 레벨 코딩, 하드웨어 알고리즘 트레이딩(Algorithmic Trading) : MACD, RSI등 기술적 지표, Rule-based 통계적 차익거래 (Statistical Arbitrage) : 페어 트레이딩, 통계적 모델, 기법 팩터 인베스팅 (Factor Investing) : 모멘텀 팩터, 가치 팩터... 퀀터멘탈 : 펀더멘탈 분석을 계략화 데이터 과학, 기계학습, 빅데이터, 대안 데이터  퀀트 매매의 원칙   투자 아이디어/가설 (Hypothesis) 백테스팅 실전 매매 리스크 관리  백테스팅의 가정   과거의 패턴이, 미래에도 반복될 것이라는, 보장되지 않은 가정하에, 과거에 수익성이 좋았던 패턴을 찾는 것 지난 과거의 수익성이 좋았던 패턴의 개수는 무한하다.</description>
+    </item>
+    
   </channel>
 </rss>
