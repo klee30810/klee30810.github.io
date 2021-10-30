@@ -6,7 +6,7 @@
     <description>Recent content in finance on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 30 Oct 2021 08:55:58 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Oct 2021 11:25:23 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Market_struct</title>
       <link>https://klee30810.github.io/finance/nycitizen/chap1/market_struct/</link>
@@ -161,6 +161,15 @@ Introduction   an investment strategy that a seven-year-old could understand, wi
       <description>주식 평가 가치 입문  주식 가치평가를 위한 작은 책 - Aswath Damodaran  1. 가치, 건강한 투자의 시작   건강한 투자 : 어떤 자산에 대해 그 자산이 가진 가치보다 높은 가격을 지불하지 않는 것 ⇒ 무엇을 사려고 하든 그 전에 가치를 계산해 보아야 함
  금융 자산은 미래에 예상되는 현금흐름을 기대하고 사는 것 가격산정과 가치평가를 구분하라  가치평가 접근법 : 두 가지 부분을 혼용하여 접근
  내재적(Intrinsic) 접근 : 자산으로부터 발생할 미래 현금흐름과 그에 대한 확신의 정도 상대적(Relative) 접근 : 비슷한 자산들의 가격에 따라 가치평가 옵션 이론을 통한 가치평가 방법도 존재  가치평가에 대한 오해</description>
+    </item>
+    
+    <item>
+      <title>ESG investment</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/esg_invest/</link>
+      <pubDate>Sat, 30 Oct 2021 11:25:23 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/esg_invest/</guid>
+      <description>ESG의 허와 실  Damodaran youtube : https://youtu.be/5H6_60Tv0i0  ESG는 무엇인가?   기업의 사회적인 책임을 강조하는 기준 Environmental : 회사의 전력 소비, 환경 오염, 자연 보존, 동물 취급 등 Social : 공급 회사도 ESG기준 선정 여부, 사회 환원, 직원들의 자원봉사, 근로환경 Governance : 투명한 회계, 소액 주주 대응, 정치 기부, 불법 행위 근절, 경영진 이해 상충  ESG 비판 1. 객관성의 문제   우리가 &amp;quot;선량함&amp;quot;을 객관적으로 측정할 수 있는가</description>
     </item>
     
   </channel>

@@ -408,10 +408,10 @@ __01. 예: Filter()  filter라는 변수명은 의미가 모호하다. 대상을
     
     <item>
       <title>Econimic Freedom</title>
-      <link>https://klee30810.github.io/finance/ajae/topics/econimic_freedom/</link>
+      <link>https://klee30810.github.io/finance/ajae/topics/economic_freedom/</link>
       <pubDate>Sat, 30 Oct 2021 09:37:23 +0900</pubDate>
       
-      <guid>https://klee30810.github.io/finance/ajae/topics/econimic_freedom/</guid>
+      <guid>https://klee30810.github.io/finance/ajae/topics/economic_freedom/</guid>
       <description>경제적 자유의 4가지 요소  월급 받는 것을 &amp;quot;노예&amp;quot;라고 표현하고, 상식적인 삶을 &amp;quot;서행차선&amp;quot;이라고 하고, 무언가 잘못 살고 있다는 느낌을 받도록 가스라이팅하거나, 막차 떠난다며 FOMO를 조장  1. 실력   돈을 버는데 필요한 모든 종류의 능력, 본인이 축적해나갈 수 있는 부의 기대값을 올려주는 모든 것 스펙/연봉이 얼마인지, 투자 실력이 얼마나 되는지, 얼마나 검소할 수 있는지 부의 축적되는 각도를 상승시킬 수 있음 실력있는 자가 없는 자보다 못한 구간도 존재, 그러나 장기적으로는 실력으로 수렴  2.</description>
     </item>
     
@@ -489,6 +489,15 @@ __01. 예: Filter()  filter라는 변수명은 의미가 모호하다. 대상을
 3. 서로 연관된 코드는 하나의 블록으로 묶어라.
 ※ 여기서 말하는 미학은 가독성 만을 위한 것으로 새롭게 설계하는 리팩토링은 서로 독립된 아이디어에 해당한다. 두 가지 모두를 추구하는게 이상적이다.
 __01. 미학이 무슨 상관인가?  미학적으로 보기 좋은 코드가 사용하기 더 편리하다. 우리는 대부분의 시간을 코드를 그저 바라보는 데 쓴다는 것을 명심하라.</description>
+    </item>
+    
+    <item>
+      <title>ESG investment</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/esg_invest/</link>
+      <pubDate>Sat, 30 Oct 2021 11:25:23 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/esg_invest/</guid>
+      <description>ESG의 허와 실  Damodaran youtube : https://youtu.be/5H6_60Tv0i0  ESG는 무엇인가?   기업의 사회적인 책임을 강조하는 기준 Environmental : 회사의 전력 소비, 환경 오염, 자연 보존, 동물 취급 등 Social : 공급 회사도 ESG기준 선정 여부, 사회 환원, 직원들의 자원봉사, 근로환경 Governance : 투명한 회계, 소액 주주 대응, 정치 기부, 불법 행위 근절, 경영진 이해 상충  ESG 비판 1. 객관성의 문제   우리가 &amp;quot;선량함&amp;quot;을 객관적으로 측정할 수 있는가</description>
     </item>
     
     <item>
