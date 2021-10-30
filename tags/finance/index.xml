@@ -6,7 +6,7 @@
     <description>Recent content in finance on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 30 Oct 2021 11:53:17 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Oct 2021 16:28:03 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Market_struct</title>
       <link>https://klee30810.github.io/finance/nycitizen/chap1/market_struct/</link>
@@ -179,6 +179,41 @@ Introduction   an investment strategy that a seven-year-old could understand, wi
       
       <guid>https://klee30810.github.io/finance/ajae/topics/quant_invest/</guid>
       <description>퀀트 투자의 허와 실 퀀트의 분류   초고빈도 매매(Ultra HFT) : 서버 colocation, 기계어 레벨 코딩, 하드웨어 알고리즘 트레이딩(Algorithmic Trading) : MACD, RSI등 기술적 지표, Rule-based 통계적 차익거래 (Statistical Arbitrage) : 페어 트레이딩, 통계적 모델, 기법 팩터 인베스팅 (Factor Investing) : 모멘텀 팩터, 가치 팩터... 퀀터멘탈 : 펀더멘탈 분석을 계략화 데이터 과학, 기계학습, 빅데이터, 대안 데이터  퀀트 매매의 원칙   투자 아이디어/가설 (Hypothesis) 백테스팅 실전 매매 리스크 관리  백테스팅의 가정   과거의 패턴이, 미래에도 반복될 것이라는, 보장되지 않은 가정하에, 과거에 수익성이 좋았던 패턴을 찾는 것 지난 과거의 수익성이 좋았던 패턴의 개수는 무한하다.</description>
+    </item>
+    
+    <item>
+      <title>Inflation Investment</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/inflation_invest/</link>
+      <pubDate>Sat, 30 Oct 2021 12:57:46 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/inflation_invest/</guid>
+      <description>인플레이션 시기 투자 전략  인플레이션이 왔을 때 각 자산군 비교 The Best Strategies for Inflationary Times - Man Group https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3813202
+ 인플레이션을 주장하는 사람들의 3가지 증거
+ 미국 통화량 M2 : 1년간 $15.5T 에서 19.7T로 급증 재정 정책 : 2020년 GDP 15%, 2021년 GDP 10% → 이와 같은 전례는 1,2차 세계대전 뿐 채권 시장에서 시그널 : 장기 국채 금리 상승 중  지속적으로 인플레이션이 올지에 대해는 갑론을박 중
+ 지속적이면 어떻게 대응해야 하는가?</description>
+    </item>
+    
+    <item>
+      <title>Scenario in Inflation</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/scenario_inflation/</link>
+      <pubDate>Sat, 30 Oct 2021 15:48:06 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/scenario_inflation/</guid>
+      <description>인플레이션 대비 시나리오 분석법 시나리오 분석하는 방법   향후 화두가 되는 중요한 요인을 파악 : 성장, 인플레 요인을 조합한 시나리오를 나열한다 : 임시인플레/강한성장, 임시인플레/성장둔화, 지속인플레/강한성장, 지속인플레/성장둔화 시나리오 별 각 자산군 (주식, 채권, 금, 산업금속 등) 혹은 섹터들의 호재/악재를 파악한다 각 시나리오에 확률을 배정하고 점수를 계산한다 경제 지표 발표와 뉴스를 따라가며 시나리오별 확률을 재조정해 나가면서 자산배분을 조정하거나 매매를 진입/청산     시나리오/상품(섹터) 가치주 성장주 국채 달러 귀금속 산업금속 원유     인플레 지속 + 강한 성장 25%, 32% ?</description>
+    </item>
+    
+    <item>
+      <title>Hedge</title>
+      <link>https://klee30810.github.io/finance/ajae/topics/hedge/</link>
+      <pubDate>Sat, 30 Oct 2021 16:28:03 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/ajae/topics/hedge/</guid>
+      <description>헷지를 하는 4가지 이유, 그리고 방법 헷지를 하는 이유 4가지   엣지를 격리하기 위해서
+ 특정 위험 요소를 격리하기 위해서
+ 엣지 = 우위
+ 삼성전자 매매 : 주식, 한국, 반도체주, 삼성전자, 현재 시점 이라는 5가지 선택을 한 것
+ 엣지 격리 : 내가 해당 주식을 사는 이유, 혹은 내가 전문성이 있는 파트 만을 격리 하는것
+  예) 테슬라의 전기차 전망외에 온갖 주식시장 변수에 따라 변동 : 테슬라 매수 &amp;amp; 미국 시장 ETF 공매도 ⇒ 전체 주식시장에 따른 수익 변동을 감소시키면서, 전기차 미래 변화에서 오는 가격 변동에만 수익이 노출되도록 격리</description>
     </item>
     
   </channel>
