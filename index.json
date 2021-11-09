@@ -893,7 +893,7 @@
 	"title": "Industry Analysis",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 11 Industrial Analysis Industrial Analysis  Semi-conductor Analysis     Automobile Analysis    Chap1. 코드는 이해하기 쉬워야 한다.     Chap2. 이름에 정보 담기     Chap3. 오해할 수 없는 이름들     Chap4. 미학     Chap5. 주석에 담아야 하는 대상     Chap6. 명확하고 간결한 주석 달기     Chap7. 읽기 쉽게 흐름제어 만들기     Chap8. 거대한 표현을 잘게 쪼개기     Chap9. 변수와 가독성     Chap10. 상관없는 하위문제 추출     Chap11. 한 번에 하나씩     Chap12. 생각을 코드로 만들기     Chap13. 코드 분량 줄이기     Chap14. 테스트와 가독성      "
+	"content": "Chapter 11 Industrial Analysis Industrial Analysis  Semi-conductor Analysis     Automobile Analysis     "
 },
 {
 	"uri": "https://klee30810.github.io/compu/data_structure/chap12/",
