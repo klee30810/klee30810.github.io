@@ -7,5 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Sun, 14 Nov 2021 22:06:59 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/math/stats/intro_stats/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1_Introduction</title>
+      <link>https://klee30810.github.io/math/stats/intro_stats/1_introduction/</link>
+      <pubDate>Sun, 14 Nov 2021 22:09:51 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/math/stats/intro_stats/1_introduction/</guid>
+      <description>1. Introduction  Statistics : science of collecting, analyzing, presenting and interpreting data, and of making decisions based on such analysis  Types   Descriptive : describing data by using tables etc. Inferential : using samples results to help make decisions &amp;amp; predictions population : 모집단 sample : 표면 (모집단의 일부, 대표성) element : 원소  Measurement Scale   Normal scale : 명목척도, 분류, 도수 ⇒ 분류 (둘 이상의 범주) Ordinal scale : 순서, 대소관계 ⇒ 분류 + 서열 (대소 관계) Internal scale : 구간 척도 (일정한 유닛에서 더하고 빼는 것) ⇒ 분류 + 서열 + 등간 (연속적 척도) Ratio scale : 비율척도 (일정한 간격에 몇배가 되는 가) ⇒ 분류 + 서열 + 등간 + 절대기준  Variables   Quantitative variable : 변수가 숫자  Discrete : only certain values with no intermidiate values Continuous : value over a certain internal values  Qualitative variable : 변수가 글자 Sampling error : differences between sample survey&#39;s result &amp;amp; whole population survey&#39;s  Sampling Techniques   simple random sampling : 단순 랜덤 추출 systematic random sampling : 표본 나누어 일정 간격의 맨 앞것만 추출 stratified random sampling : divide population into several strata samples got from each stratum cluster sampling : cluster group(geographic) 별로 나누고, random sample of cluster is selected  </description>
+    </item>
+    
   </channel>
 </rss>
