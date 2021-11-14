@@ -17,21 +17,21 @@
    <title>Dynamic Programming - Kevin&#39;s Codex</title>
 
     
-    <link href="/css/nucleus.css?1636470315" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1636470315" rel="stylesheet">
-    <link href="/css/hybrid.css?1636470315" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1636470315" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1636470315" rel="stylesheet">
-    <link href="/css/auto-complete.css?1636470315" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1636470315" rel="stylesheet">
-    <link href="/css/theme.css?1636470315" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1636470315" rel="stylesheet">
+    <link href="/css/nucleus.css?1636894720" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1636894720" rel="stylesheet">
+    <link href="/css/hybrid.css?1636894720" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1636894720" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1636894720" rel="stylesheet">
+    <link href="/css/auto-complete.css?1636894720" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1636894720" rel="stylesheet">
+    <link href="/css/theme.css?1636894720" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1636894720" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1636470315" rel="stylesheet">
+    <link href="/css/theme-blue.css?1636894720" rel="stylesheet">
     
-    <link href="/css/foo.css?1636470315" rel="stylesheet"><link href="/css/bar.css?1636470315" rel="stylesheet">
+    <link href="/css/foo.css?1636894720" rel="stylesheet"><link href="/css/bar.css?1636894720" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1636470315"></script>
+    <script src="/js/jquery-3.3.1.min.js?1636894720"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -61,14 +61,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1636470315"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1636470315"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1636894720"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1636894720"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/klee30810.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1636470315"></script>
+<script type="text/javascript" src="/js/search.js?1636894720"></script>
 
     
   </div>
@@ -1526,6 +1526,24 @@
           
             
             
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/finance/ajae/curriculum/valuation/" title="Valuation" class="dd-item ">
+        <a href="/finance/ajae/curriculum/valuation/">
+        valuation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
         
         </ul>
@@ -2471,6 +2489,250 @@
     }
   }
   <span style="color:#815ba4">return</span> binom[n][k];
+}</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="예시--행렬-경로-문제">예시 : 행렬 경로 문제</h2>
+
+<hr>
+
+<ul>
+<li>정수들이 저장된 nxn행렬의 좌상단에서 우하단까지 이동한다. 단, 오른쪽이나 아래쪽 방향으로만 이동할 수 있다.</li>
+
+<li><p>방문한 칸에 있는 정수들의 합이 최소화 되도록 하라</p></li>
+
+<li><p>동적 계획법 : <strong>순환식을 세우고</strong> 계산하는 것, general case와 exception case를 완전하게 구하라</p></li>
+
+<li><p>Key observation : (i,j)에 도달하기 위해서는 (i,j-1) 혹은 (i-1, j)를 거쳐야 한다. 또한 (i,j-1) 혹은 (i-1, j)까지는 최선의 방법으로 이동해야 한다.
+<span  class="math">\(
+L[i,j]:(1,1)에서\ (i,j)까지 이르는 최소 합\\
+L[i,j]=\begin{cases} m_{ij} & if\ i=1\ \&j=1;\\L[i-1,j]+m_{ij}\ & if\ j=1; \\ L[i,j-1]+m_{ij} & if\ i=1; \\ min(L[i-1, j],L[i,j-1])+m_{ij} & otherwise.\end{cases}
+\)</span></p>
+
+<ul>
+<li>i=1 : 맨 아래 줄일 경우, 그냥 왼쪽을 구하기</li>
+<li>j=1 : 맨 오른쪽 일 경우, 그냥 위쪽을 구하기</li>
+</ul></li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">mat</span>(<span style="color:#fec418">int</span> i, <span style="color:#fec418">int</span> j)  <span style="color:#776e71">// recursive algorithm, 모든 경우 계산하므로 계산량이 너무 많음
+</span><span style="color:#776e71"></span>{
+	<span style="color:#815ba4">if</span>(i<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span> <span style="color:#5bc4bf">&amp;&amp;</span> j<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+		<span style="color:#815ba4">return</span> m[i][j];
+	<span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (i<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+		<span style="color:#815ba4">return</span> mat(<span style="color:#f99b15">1</span>,j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>) <span style="color:#5bc4bf">+</span> m[i][j];
+	<span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (j<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+		<span style="color:#815ba4">return</span> mat(i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>, <span style="color:#f99b15">1</span>) <span style="color:#5bc4bf">+</span> m[i][j];
+	<span style="color:#815ba4">else</span>
+		<span style="color:#815ba4">return</span> Math.min(mat(i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>,j), mat(i,j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>))<span style="color:#5bc4bf">+</span>m[i,j]
+}
+
+<span style="color:#fec418">int</span> <span style="color:#06b6ef">mat</span>(<span style="color:#fec418">int</span> i, <span style="color:#fec418">int</span> j)  <span style="color:#776e71">// Memoization
+</span><span style="color:#776e71"></span>{
+  <span style="color:#815ba4">if</span> (L[i][j] <span style="color:#5bc4bf">!=</span> <span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>) <span style="color:#815ba4">return</span> L[i][j];
+	<span style="color:#815ba4">if</span>(i<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span> <span style="color:#5bc4bf">&amp;&amp;</span> j<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+		<span style="color:#815ba4">return</span> L[i][j] <span style="color:#5bc4bf">=</span> m[i][j];
+	<span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (i<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+		<span style="color:#815ba4">return</span> L[i][j] <span style="color:#5bc4bf">=</span> mat(<span style="color:#f99b15">1</span>,j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>) <span style="color:#5bc4bf">+</span> m[i][j];
+	<span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (j<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+		<span style="color:#815ba4">return</span> L[i][j] <span style="color:#5bc4bf">=</span> mat(i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>, <span style="color:#f99b15">1</span>) <span style="color:#5bc4bf">+</span> m[i][j];
+	<span style="color:#815ba4">else</span>
+		<span style="color:#815ba4">return</span> L[i][j] <span style="color:#5bc4bf">=</span> Math.min(mat(i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>,j), mat(i,j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>))<span style="color:#5bc4bf">+</span>m[i,j]
+   <span style="color:#815ba4">return</span> L[i][j];
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>해당 지점의 위나 왼쪽먼저 계산하도록 순서가 되면 필요한 값이 항상 먼저 계산됨</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#fec418">int</span> <span style="color:#06b6ef">mat</span>() <span style="color:#776e71">// bottom-up
+</span><span style="color:#776e71"></span>{
+  <span style="color:#815ba4">for</span> (<span style="color:#fec418">int</span> i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>; i<span style="color:#5bc4bf">&lt;=</span>n; i<span style="color:#5bc4bf">++</span>)
+  {
+    <span style="color:#815ba4">for</span> (<span style="color:#fec418">int</span> j<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>; j<span style="color:#5bc4bf">&lt;=</span>n; j<span style="color:#5bc4bf">++</span>)
+    {
+      <span style="color:#815ba4">if</span> (i<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span> <span style="color:#5bc4bf">&amp;&amp;</span> j<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+        L[i][j] <span style="color:#5bc4bf">=</span> m[<span style="color:#f99b15">1</span>][<span style="color:#f99b15">1</span>];
+      <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (i<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+        L[i][j] <span style="color:#5bc4bf">=</span> m[i][j] <span style="color:#5bc4bf">+</span> L[i][j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>];
+      <span style="color:#815ba4">else</span> <span style="color:#815ba4">if</span> (j<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+        L[i][j] <span style="color:#5bc4bf">=</span> m[i][j] <span style="color:#5bc4bf">+</span> L[i][j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>];
+      <span style="color:#815ba4">else</span>
+        L[i][j] <span style="color:#5bc4bf">=</span> m[i][j] <span style="color:#5bc4bf">+</span> Math.min(L[i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>][j], L[i][j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>]);
+    }
+  }
+  <span style="color:#815ba4">return</span> L[n][n];
+}
+
+<span style="color:#776e71">// initialize L with L[0][j]=L[i][0]=inf. for all i &amp; j
+</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">mat</span>()
+{
+  <span style="color:#815ba4">for</span> (<span style="color:#fec418">int</span> i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>; i<span style="color:#5bc4bf">&lt;=</span>n; i<span style="color:#5bc4bf">++</span>)
+  {
+    <span style="color:#815ba4">for</span> (<span style="color:#fec418">int</span> j<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>; j<span style="color:#5bc4bf">&lt;=</span>n; j<span style="color:#5bc4bf">++</span>)
+    {
+      <span style="color:#815ba4">if</span> (i<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span> <span style="color:#5bc4bf">&amp;&amp;</span> j<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+        L[i][j] <span style="color:#5bc4bf">=</span> m[<span style="color:#f99b15">1</span>][<span style="color:#f99b15">1</span>];
+      <span style="color:#815ba4">else</span>
+        L[i][j] <span style="color:#5bc4bf">=</span> m[i][j] <span style="color:#5bc4bf">+</span> Math.min(L[i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>][j], L[i][j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>]);
+    }
+  }
+  <span style="color:#815ba4">return</span> L[n][n];
+}</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>경로 구하기 : 경로 배열 저장, 왼쪽이나 위쪽의 것 중에 작은 것에 대한 방향 저장</li>
+</ul>
+<div class="highlight"><div style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#776e71">// initialize L with L[0][j]=L[i][0]=inf. for all i &amp; j
+</span><span style="color:#776e71"></span><span style="color:#fec418">int</span> <span style="color:#06b6ef">mat</span>()
+{
+  <span style="color:#815ba4">for</span> (<span style="color:#fec418">int</span> i<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>; i<span style="color:#5bc4bf">&lt;=</span>n; i<span style="color:#5bc4bf">++</span>)
+  {
+    <span style="color:#815ba4">for</span> (<span style="color:#fec418">int</span> j<span style="color:#5bc4bf">=</span><span style="color:#f99b15">1</span>; j<span style="color:#5bc4bf">&lt;=</span>n; j<span style="color:#5bc4bf">++</span>)
+    {
+      <span style="color:#815ba4">if</span> (i<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span> <span style="color:#5bc4bf">&amp;&amp;</span> j<span style="color:#5bc4bf">==</span><span style="color:#f99b15">1</span>)
+        L[i][j] <span style="color:#5bc4bf">=</span> m[<span style="color:#f99b15">1</span>][<span style="color:#f99b15">1</span>];
+      	P[i][j] <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#39;-&#39;</span>;
+      <span style="color:#815ba4">else</span>
+        <span style="color:#815ba4">if</span> (L[i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>][j] <span style="color:#5bc4bf">&lt;</span> L[i][j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>])
+        {
+        	L[i][j] <span style="color:#5bc4bf">=</span> m[i][j] <span style="color:#5bc4bf">+</span> (L[i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>][j]);  
+          P[i][j] <span style="color:#5bc4bf">=</span> <span style="color:#ef6155">&#39;</span><span style="color:#5bc4bf">-&gt;</span><span style="color:#ef6155">&#39;</span>;
+        }
+      	<span style="color:#815ba4">else</span>
+        {
+          L[i][j] <span style="color:#5bc4bf">=</span> m[i][j] <span style="color:#5bc4bf">+</span> L[i][j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>];
+          P[i][j] <span style="color:#5bc4bf">=</span> <span style="color:#ef6155">&#39;</span><span style="color:#5bc4bf">&lt;-</span><span style="color:#ef6155">&#39;</span>
+        }
+    }
+  }
+  <span style="color:#815ba4">return</span> L[n][n];
+}
+
+<span style="color:#776e71">// 경로를 출력
+</span><span style="color:#776e71"></span><span style="color:#fec418">void</span> <span style="color:#06b6ef">printPathRecursive</span>(<span style="color:#fec418">int</span> i, <span style="color:#fec418">int</span> j)
+{
+	<span style="color:#815ba4">if</span>(P[i][j] <span style="color:#5bc4bf">==</span> <span style="color:#48b685">&#39;-&#39;</span>)
+    print(i <span style="color:#5bc4bf">+</span> <span style="color:#48b685">&#39; &#39;</span> <span style="color:#5bc4bf">+</span> j);
+  <span style="color:#815ba4">else</span> 
+  {
+    <span style="color:#815ba4">if</span> (P[i][j]<span style="color:#5bc4bf">==</span><span style="color:#ef6155">&#39;</span><span style="color:#5bc4bf">&lt;-</span><span style="color:#ef6155">&#39;</span>)
+      printPathRecursive(i,j<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>);
+    <span style="color:#815ba4">else</span>
+      printPathRecursive(i<span style="color:#5bc4bf">-</span><span style="color:#f99b15">1</span>, j);
+    print(i<span style="color:#5bc4bf">+</span><span style="color:#48b685">&#39; &#39;</span><span style="color:#5bc4bf">+</span>j);
+  }
 }</code></pre></td></tr></table>
 </div>
 </div>
@@ -3667,6 +3929,17 @@
                         
             
             
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
         
                     
             
@@ -4113,19 +4386,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1636470315"></script>
-    <script src="/js/perfect-scrollbar.min.js?1636470315"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1636470315"></script>
-    <script src="/js/jquery.sticky.js?1636470315"></script>
-    <script src="/js/featherlight.min.js?1636470315"></script>
-    <script src="/js/highlight.pack.js?1636470315"></script>
+    <script src="/js/clipboard.min.js?1636894720"></script>
+    <script src="/js/perfect-scrollbar.min.js?1636894720"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1636894720"></script>
+    <script src="/js/jquery.sticky.js?1636894720"></script>
+    <script src="/js/featherlight.min.js?1636894720"></script>
+    <script src="/js/highlight.pack.js?1636894720"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1636470315"></script>
-    <script src="/js/learn.js?1636470315"></script>
-    <script src="/js/hugo-learn.js?1636470315"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1636894720"></script>
+    <script src="/js/learn.js?1636894720"></script>
+    <script src="/js/hugo-learn.js?1636894720"></script>
     
         
-            <script src="/mermaid/mermaid.js?1636470315"></script>
+            <script src="/mermaid/mermaid.js?1636894720"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
