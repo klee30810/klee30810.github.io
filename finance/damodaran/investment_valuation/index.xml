@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Investment_valuation on Kevin&#39;s Codex</title>
+    <link>https://klee30810.github.io/finance/damodaran/investment_valuation/</link>
+    <description>Recent content in Investment_valuation on Kevin&#39;s Codex</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 05 Dec 2021 14:41:26 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/finance/damodaran/investment_valuation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Introduction</title>
+      <link>https://klee30810.github.io/finance/damodaran/investment_valuation/chap1/</link>
+      <pubDate>Sun, 05 Dec 2021 14:41:38 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/damodaran/investment_valuation/chap1/</guid>
+      <description>Introduction to Valuation Philosophical basis for valuation   A postulate of sound investing is that an investor does not pay more for an asset than its worth. Consequently, perceptions of value have to be backed up by reality, which implies that the price paid for any asset should reflect the cashflows that it is expected to generate.  Generalities about Valuation  1. Since valuation models are quantitative, valuation is objective  the inputs leave plenty of room for subjective judgments.</description>
+    </item>
+    
+    <item>
+      <title>2. Approaches to Valuation </title>
+      <link>https://klee30810.github.io/finance/damodaran/investment_valuation/chap2/</link>
+      <pubDate>Sun, 05 Dec 2021 14:41:41 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/damodaran/investment_valuation/chap2/</guid>
+      <description>Approaches to Valuation 1. Discounted Cashflow Valuation   The the value of an asset to the present value of expected future cashflows on that asset the value of any aset is the present value of expected future cashflows that the asset generates  \( value\ =\ Σ^{t=n}_{t=1}\frac{CF_t}{(1+r)^t}\) r : reflecting the riskiness of estimated cashflows
+ Categorizing DCF Models
+ equity valuation - value just the equity stake in the business (residual cashflows after metting all expenses, reinvestment needs , tax obligations and net debt payments  \[value\ of\ equity = Σ^{t=n}_{t=1}\frac{CF\ to\ equity_t}{(1+k_e)^t}, k_e:\ cost\ of \ equity\]</description>
+    </item>
+    
+  </channel>
+</rss>
