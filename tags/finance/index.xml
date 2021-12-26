@@ -6,7 +6,25 @@
     <description>Recent content in finance on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 05 Dec 2021 14:41:43 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Dec 2021 11:27:26 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Market 4 seasons</title>
+      <link>https://klee30810.github.io/finance/etf/4seasons/</link>
+      <pubDate>Sat, 11 Dec 2021 11:27:26 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/etf/4seasons/</guid>
+      <description>우라가미 구니오의 &amp;lt;주식시장 4계절 이론&amp;gt;  금융 장세 → 실적 장세 → (중간 반락) → 역금융 장세 → 역실적 장세 → (중간 반등) 1. 금융 장세   금리 하락 &amp;amp; 기업 실적 악화, 그럼에도 주가 상승 ⇒ 기업 실적이 나빠지면 국가 경기 하락하여 정부 금리인하 시작 침체기가 끝나고 성장의 신호, 저금리가 지속되나 주요 지표 상승 시작 소비가 진작되면서 부동산, 주식 상승 기업 실적이 내려가 주식 매입을 머뭇 → 정부 금융/재정정책 촉발로 주가 급상승 일부 투자자는 일회성 현상으로 이해하나, 지속 상승시 매수 포지션으로 급히 전환하며 주가 추가 상승 가능 주도주 : 금융주와 같은 금리 민감주, 업종 대표주, 낙폭 과대주, 건설주, 유틸리티  2.</description>
+    </item>
+    
+    <item>
+      <title>SPY</title>
+      <link>https://klee30810.github.io/finance/etf/market/spy/</link>
+      <pubDate>Sat, 11 Dec 2021 10:37:46 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/etf/market/spy/</guid>
+      <description>Profile   S&amp;amp;P 500 지수 추종 : 대부분 미국 우량 기업으로 시가총액 순으로 선정 SPDR S&amp;amp;P 500 ETF Trust, 1993 Jan 22 Incepted structure : UIT  Unit Investment Trust : 단위 투자 신탁, 펀드 매니저가 종목 선택에 대해 재량권을 선택할 수 없고 지수만을 정확히 따라가야함 보유 주식에 대한 배당금을 재 투자할 수 없고 지수의 모든 종목을 보유해야함  운용 자금 미국 최대 수준 : 매수 매도가 용이 운용 보수 : 0.</description>
+    </item>
+    
     <item>
       <title>1. Introduction</title>
       <link>https://klee30810.github.io/finance/damodaran/investment_valuation/chap1/</link>
@@ -91,6 +109,15 @@
       <guid>https://klee30810.github.io/finance/paper_review/qmj/</guid>
       <description>Asness, C. S., Frazzini, A., &amp;amp; Pedersen, L. H. (2019). Quality minus junk. Review of Accounting Studies, 24(1), 34-112.
 Review   Quality Security : stocks that are safe, profitable, growing and well managed. high quality : higher prices on average, but not by a very large margin A quality-minus-junk(QMJ) factor that goes long high-quality stocks and shorts low-quality stocks earns significant risk-adjusted returns in the U.S. and globally across 24 countries price-to-book value  \[ \frac{P}{B}=\frac{profitability \times payout.</description>
+    </item>
+    
+    <item>
+      <title>QQQ</title>
+      <link>https://klee30810.github.io/finance/etf/market/qqq/</link>
+      <pubDate>Sat, 11 Dec 2021 10:40:49 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/etf/market/qqq/</guid>
+      <description>Profile   NASDAQ-100 지수 추종 : 대부분 미국 우량 기업으로 시가총액 순으로 선정 Invest QQQ Trus, 1999 Mar 10 Incepted structure : UIT significant average daily trading volumes → less as a components of a balanced long-term strategy hefty allocation to technology companies → heightened exposure to a sector that has historically experienced both impressive rallies and devastating busts 운용 자금 미국 최대 수준 : 매수 매도가 용이 운용 보수 : 0.</description>
     </item>
     
     <item>
