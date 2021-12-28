@@ -40,5 +40,14 @@
   The Basic Account Statements  Balance Sheet  summarizes the assets owned by a firm, the value of these assets and the mix of financing, debt and equity, used to finance these assets at a point in time.</description>
     </item>
     
+    <item>
+      <title>4. The Basics of Risk</title>
+      <link>https://klee30810.github.io/finance/damodaran/investment_valuation/chap4/</link>
+      <pubDate>Sun, 05 Dec 2021 14:41:45 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/damodaran/investment_valuation/chap4/</guid>
+      <description>The Basics of Risk Risk   the likelihood that we will receive a return on an investment that is different from the return we expected to make (not only low, but also high)  Equity Risk &amp;amp; Expected Return   a market where the marginal investor is well diversified, and the only market risk that will be rewareded  1. Defining Risk  variance, standard deviation : the spread of the actual returns around the expected return \(var=\frac{Σ(x_i-avg(x))}{n-1}\) skewness : the bias towards positive or negative returns kurtosis : fatter tails lead to higher kurtosis expected return : the opportunity in the investment stardard deviation or variance : the danger  → higher expected returns &amp;amp; more positive skewness is preferred</description>
+    </item>
+    
   </channel>
 </rss>
