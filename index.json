@@ -651,6 +651,13 @@
 	"content": "Chapter 3 Electrical \u0026amp; Electronic Engineering Electrical \u0026amp; Electronic Engineering Studies {  "
 },
 {
+	"uri": "https://klee30810.github.io/finance/mckenzie_strategy/2/",
+	"title": "2. MECE &amp; Logic Tree",
+	"tags": ["finance"],
+	"description": "MECE &amp; Logic Tree",
+	"content": "기술 편 - MECE와 로직트리  전략을 생각한 뒤에 시장(고객), 경쟁사, 자사의 세 가지 움직임을 누락 없이 커버하고 깊게 포착하는 것이 얼마나 중요한지, 더욱이 전략을 실행하는 상태에서 '넓이'를 파악하여 구체화 하는 것이 얼마나 중요한지 기업 경영에 있어서 자신의 눈높이와 같은 높이에서 가장 잘보이고 신경 쓰이는 것이 경쟁사의 움직임, 가장 불안하거나 불만을 가지는 것이 자사의 업적, 가장 간과하기 쉬운 것이 시장의 움직임 전략은 소비자가 지배하는 것 : 시장(고객)에 대한 깊은 통찰력에서 새로운 비즈니스의 씨앗이 생겨남. 시장(고객)의 움직임을 파악하여 '고객에게 ㅔ있어서의 가치'를 생각해야 함  계획은 치밀하고 구체적으로, 실천은 철저히   시장(고객), 경쟁사, 자사의 사고범위에 커다란 누락을 없애면서 상황을 깊게 포착하는 것이 얼마나 중요한지 전략을 실행하는 데 따른 '범위'를 파악하면서 '구체성' 있는 대안을 철저하게 실행하는 것이 얼마나 중요한지  "
+},
+{
 	"uri": "https://klee30810.github.io/finance/damodaran/investment_valuation/chap4/",
 	"title": "4. The Basics of Risk",
 	"tags": ["false"],
@@ -893,7 +900,7 @@
 	"title": "Mckenzie Problem Solving Strategy",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 7 Mckenzie Problem-Solving Strategy Mckenzie Problem-Solving Strategy written by Saito Yoshinori\n 1. Zero-base \u0026amp; Hypothesis Thinking   1.1 Zero-based Thnking   1.2 Hypothesis Thinking   "
+	"content": "Chapter 7 Mckenzie Problem-Solving Strategy Mckenzie Problem-Solving Strategy written by Saito Yoshinori\n 1. Zero-base \u0026amp; Hypothesis Thinking   1.1 Zero-based Thnking   1.2 Hypothesis Thinking   2. MECE \u0026amp; Logic Tree   "
 },
 {
 	"uri": "https://klee30810.github.io/finance/ajae/topics/inflation_invest/",
@@ -963,7 +970,7 @@
 	"title": "Mathematics",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 8 Mathematics Mathematics Studies  Statistics    Intro_stats    Paper Review   Mechanical Engineering   Electrical \u0026amp; Electronic Studies   Computer Science   Machine Learning \u0026amp; Deep Learning   Battery   Finance   Mathematics   Science   Language   Industry Analysis    Prob_theory      "
+	"content": "Chapter 8 Mathematics Mathematics Studies  Statistics    Intro_stats    1_Introduction    Prob_theory      "
 },
 {
 	"uri": "https://klee30810.github.io/finance/ajae/topics/hedge/",

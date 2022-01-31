@@ -6,7 +6,7 @@
     <description>Recent content in finance on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 31 Jan 2022 21:40:50 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jan 2022 21:40:52 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Zero-base &amp; Hypothesis Thinking</title>
       <link>https://klee30810.github.io/finance/mckenzie_strategy/1/</link>
@@ -246,6 +246,15 @@ Introduction   an investment strategy that a seven-year-old could understand, wi
       <guid>https://klee30810.github.io/finance/ajae/curriculum/basic2/</guid>
       <description>Financial Products 1 - Volatility  변동성 : 가격이 얼마나 변동하는지, 주식 수익률의 표준편차, 리스크  변동성의 종류  실제 변동성 : 실제로 가격이 얼마나 변동하는지
  과거 실제 변동성 (actual historical volatility) : 과거 특정 기간(30일, 1년 등) 동안의 실제 변동성 현재 실제 변동성 (actual current volatility) : 현재 순간의 변동성은 개념적으로 존재하나 측정 불가 미래 실제 변동성 (actual future volatility) : 미래 특정기간 동안의 실제 변동성  내재 변동성 (implied volatility) : 시장이 생각하는 변동성</description>
+    </item>
+    
+    <item>
+      <title>2. MECE &amp; Logic Tree</title>
+      <link>https://klee30810.github.io/finance/mckenzie_strategy/2/</link>
+      <pubDate>Mon, 31 Jan 2022 21:40:52 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/mckenzie_strategy/2/</guid>
+      <description>기술 편 - MECE와 로직트리  전략을 생각한 뒤에 시장(고객), 경쟁사, 자사의 세 가지 움직임을 누락 없이 커버하고 깊게 포착하는 것이 얼마나 중요한지, 더욱이 전략을 실행하는 상태에서 &#39;넓이&#39;를 파악하여 구체화 하는 것이 얼마나 중요한지 기업 경영에 있어서 자신의 눈높이와 같은 높이에서 가장 잘보이고 신경 쓰이는 것이 경쟁사의 움직임, 가장 불안하거나 불만을 가지는 것이 자사의 업적, 가장 간과하기 쉬운 것이 시장의 움직임 전략은 소비자가 지배하는 것 : 시장(고객)에 대한 깊은 통찰력에서 새로운 비즈니스의 씨앗이 생겨남.</description>
     </item>
     
     <item>
