@@ -49,5 +49,14 @@
       <description>The Basics of Risk Risk   the likelihood that we will receive a return on an investment that is different from the return we expected to make (not only low, but also high)  Equity Risk &amp;amp; Expected Return   a market where the marginal investor is well diversified, and the only market risk that will be rewareded  1. Defining Risk  variance, standard deviation : the spread of the actual returns around the expected return \(var=\frac{Σ(x_i-avg(x))}{n-1}\) skewness : the bias towards positive or negative returns kurtosis : fatter tails lead to higher kurtosis expected return : the opportunity in the investment stardard deviation or variance : the danger  → higher expected returns &amp;amp; more positive skewness is preferred</description>
     </item>
     
+    <item>
+      <title>Chap5. Option Pricing Theory &amp; Models</title>
+      <link>https://klee30810.github.io/finance/damodaran/investment_valuation/chap5/</link>
+      <pubDate>Sun, 05 Dec 2021 14:41:48 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/damodaran/investment_valuation/chap5/</guid>
+      <description>Option Pricing Theory &amp;amp; Models  option  derive their value from the values of other assets. cash flows on the assets are contingent on the occurrence of specific events   Basics of Option Pricing   option : provides the holder with the right to buy or sell a specified quantity of an underlying asset at a fixed price (called a strike price or an exercise price) the holder can choose not to exercise the right and allow the option to expire  Call &amp;amp; Put Options : Description &amp;amp; Payoff Diagrams   Call option</description>
+    </item>
+    
   </channel>
 </rss>
