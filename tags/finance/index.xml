@@ -6,7 +6,7 @@
     <description>Recent content in finance on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 31 Jan 2022 21:40:52 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jan 2022 21:40:54 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Zero-base &amp; Hypothesis Thinking</title>
       <link>https://klee30810.github.io/finance/mckenzie_strategy/1/</link>
@@ -320,6 +320,15 @@ Introduction   an investment strategy that a seven-year-old could understand, wi
       
       <guid>https://klee30810.github.io/finance/ajae/topics/quant_invest/</guid>
       <description>퀀트 투자의 허와 실 퀀트의 분류   초고빈도 매매(Ultra HFT) : 서버 colocation, 기계어 레벨 코딩, 하드웨어 알고리즘 트레이딩(Algorithmic Trading) : MACD, RSI등 기술적 지표, Rule-based 통계적 차익거래 (Statistical Arbitrage) : 페어 트레이딩, 통계적 모델, 기법 팩터 인베스팅 (Factor Investing) : 모멘텀 팩터, 가치 팩터... 퀀터멘탈 : 펀더멘탈 분석을 계략화 데이터 과학, 기계학습, 빅데이터, 대안 데이터  퀀트 매매의 원칙   투자 아이디어/가설 (Hypothesis) 백테스팅 실전 매매 리스크 관리  백테스팅의 가정   과거의 패턴이, 미래에도 반복될 것이라는, 보장되지 않은 가정하에, 과거에 수익성이 좋았던 패턴을 찾는 것 지난 과거의 수익성이 좋았던 패턴의 개수는 무한하다.</description>
+    </item>
+    
+    <item>
+      <title>3. Solution System</title>
+      <link>https://klee30810.github.io/finance/mckenzie_strategy/3/</link>
+      <pubDate>Mon, 31 Jan 2022 21:40:54 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/mckenzie_strategy/3/</guid>
+      <description>3. Solution System  제로베이스 사고, 가설 사고, MECE, 로직트리를 통해 비즈니스 문제를 분석하여 구체적인 해결책을 입안하는 문제해결 프로세스  솔루션 시스템의 프로세스 재현   문제가 되는 현상에 대해 과제를 설정하고, 배후의 상황을 고찰한 후 해결책(가설)을 짜내고, 실행하는 프로세스  과제 설정 :문제가 되는 현상을 해결해야 할 과제로서 파악 해결책의 가설 : 과제에 대한 해결책의 가설 생성 해결책의 검증, 평가 : 가설의 검증 및 평가 해결책 실시   </description>
     </item>
     
     <item>
