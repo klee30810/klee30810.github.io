@@ -305,6 +305,15 @@ Introduction   an investment strategy that a seven-year-old could understand, wi
     </item>
     
     <item>
+      <title>2.2 Logic Tree</title>
+      <link>https://klee30810.github.io/finance/mckenzie_strategy/2_2/</link>
+      <pubDate>Mon, 31 Jan 2022 21:35:42 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/mckenzie_strategy/2_2/</guid>
+      <description>로직 트리 - 제한된 시간 속에서 확산과 깊이를 파악할 수 있다 로직트리란 무엇인가   주요 과제의 원인이나 해결책을 MECE적 사고방식에 기초휴ㅏ여 트리 모양으로 논리적으로 분해하여 정리  누락이나 중복을 미연에 확인 원인이나 해결책을 구체적으로 찾을 수 있음 각 내용의 인과관계를 분명히 함   로직트리로 원인을 찾는다   지속적인 Why?로 뿌리의 원인을 밝혀내야 한다 뿌리의 구체적인 원인을 밝혀내면 반은 해결된 것 문제 → 원인 → 세부 원인 ... → 근본 원인 → 해결책 원인의 수준이 얕으면 문제를 뒤집을 수 있는 해법이 단지 슬로건에 불과  로직트리로 해결책을 구체화한다   해결책이 지녀야 하는 2 조건  표적을 벗어나지 않을 것 바로 행동으로 이어질 수 있도록 구체성이 있을 것  해결책 구체화를 위해서 So How?</description>
+    </item>
+    
+    <item>
       <title>Quant Investment Facts</title>
       <link>https://klee30810.github.io/finance/ajae/topics/quant_invest/</link>
       <pubDate>Sat, 30 Oct 2021 11:53:17 +0900</pubDate>
