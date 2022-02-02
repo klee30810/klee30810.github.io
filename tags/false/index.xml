@@ -6,7 +6,7 @@
     <description>Recent content in false on Kevin&#39;s Codex</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 31 Jan 2022 21:35:28 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/false/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jan 2022 21:36:01 +0900</lastBuildDate><atom:link href="https://klee30810.github.io/tags/false/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1.1 Zero-based Thnking</title>
       <link>https://klee30810.github.io/finance/mckenzie_strategy/1_1/</link>
@@ -32,6 +32,15 @@
       
       <guid>https://klee30810.github.io/finance/nycitizen/chap1/value_invest_meaning/</guid>
       <description>가치투자라는 가시밭길  시장 평균 수익률을 상당기간 하회하는 특성 때문에 당장 고수익을 바라는 이들에게 외면당함  가치투자의 기본 원칙  가치투자의 기본 원칙 : 현재 시장에서 거래되는 매매가 대비 저평가되어 있다는 투자의견이 바뀌지 않는 이상 주가가 밸류에이션 수준에 도달할 떄까지 장기 보유하는 것이다. ⇒ 매수 매도 판단의 유일한 기준은 주가가 아닌 밸류에이션 저평가된 주식이 제자리를 찾아가는 데 어느 정도 시간이 걸릴지는 아무도 모른다. → 기업이나 시장에 변화가 있을 때마다 평가가치를 계속 재고하고 내가 판단한 숫자가 맞는지, 그 근거는 아직 유효한지, 적정 가치 산정에 쓰인 가정에 변화를 주어야 하는지 끊임없이 고민해야 한다 때에 따라 가치평가 결과가 틀렸다는 결론에 도달할 수도 있다.</description>
+    </item>
+    
+    <item>
+      <title>3.3 Solution Verification &amp; Assessment</title>
+      <link>https://klee30810.github.io/finance/mckenzie_strategy/3_3/</link>
+      <pubDate>Mon, 31 Jan 2022 21:36:01 +0900</pubDate>
+      
+      <guid>https://klee30810.github.io/finance/mckenzie_strategy/3_3/</guid>
+      <description>3.3 Solution Verification &amp;amp; Assessment 개별 해결책의 검증 : 사실을 기반으로 체크   개별 해결책의 검증은 반드시 사실을 기반으로 평가 정량화 한 것일수록 분석의 정확성이 뛰어나다 비즈니스에서는 기본적으로 오른쪽으로 갈 것인지 오니쪽으로 갈 것인지 판단하는 것이 중요하지, 분석 그 자체를 목적으로 해서는 안된다. 정확성의 수준은 해결책의 내용에 따라 다르다 검증과 분석 단계에서는 기존의 각종 분석 프레임워크나 도구를 최대한 이요하면서 속도와 효율성을 특히 중시해야 함 ⇒ 정확성보다 확인이 중요 리서치가 필요한경우, 증명할 가설에 대해 질문할 항목들이 가능한 한 MECE가 되도록 뽑고, 가설의 포인트가 표적을 벗어나지 않도록 해야 함  종합 해결책의 평가 : 하드 &amp;amp; 소프트 양면 평가   모든 개별 해결책이 검증된 후에 조합에 따른 종합 해결책을, 그 자체 하드한 측면과 그것을 실행하는 소프트한 측면의 양쪽으로 평가할 필요가 있다 하드한 측면  기대성과 : 해결책이 가져오는 효과를 매출, 이익, 성장의 관점에서 평가 투입자원 : 사람, 물건, 돈과 같은 투입자원의 양과 각각에 대한 기업의 제약조건을 기반으로 평가 위험 : 시장과 경쟁관계(경쟁사와의 차별화 요인)의 급변에 의한 변동이나 실패 위험을 평가 전개 속도 : 위의 세가지 요소가 모두 관꼐가 있지만, 성공의 결과를 빨리 내기 위해 조기에 시작할 수 있는 속도에 대한 평가  소프트 측면 : 기업 이념이나 스타일 과의 적합성을 추진하도록 지원하는 경영층의 커팃먼트</description>
     </item>
     
   </channel>
